@@ -3,7 +3,7 @@
 const { chromium } = require('playwright');
 const path = require('node:path');
 const fs = require('node:fs');
-const art = (n) => 'file://' + path.join(__dirname, 'art', n);
+const art = (n) => 'file://' + path.join(__dirname, 'art-full', n.replace('.jpg', '.png'));
 const head = `<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600&family=Rozha+One&family=Tiro+Devanagari+Hindi&display=swap">
 <style>*{box-sizing:border-box;margin:0}body{background:#0A0B14;color:#F1ECDD;font-family:Mukta,sans-serif}
 .d{font-family:'Rozha One',serif}.r{font-family:'Tiro Devanagari Hindi',serif}

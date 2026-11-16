@@ -110,6 +110,8 @@ ${films.map((f) => `<a href="#${f.id}"><span class="eyebrow">${esc(f.part)}</spa
 
 <section class="bible" id="bhasha"><div class="w">
 <h2>फ़िल्म की भाषा</h2>
+<div><h3>सबसे बड़ा संदेश: समय की पुकार</h3><p class="face">${esc(bible.message)}</p></div>
+<div class="rules"><div><h3>अंदाज़</h3><ol>${bible.style.map((x) => `<li><span>${esc(x)}</span></li>`).join('')}</ol></div><div><h3>टाइपोग्राफ़ी</h3><ol>${bible.type.map((x) => `<li><span>${esc(x)}</span></li>`).join('')}</ol></div></div>
 <div class="idea">
 <div class="txt"><h3>एक विचार: हद से बेहद</h3>${bible.idea.map((p) => `<p>${esc(p)}</p>`).join('')}</div>
 <div class="ratios">
@@ -123,6 +125,7 @@ ${Object.values(bible.rules).map((r) => `<div><h3>${esc(r.name)}</h3><ol>${r.ite
 </div>
 <div><h3>बार-बार लौटने वाली छवियाँ</h3><dl class="motifs">${bible.motifs.map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl></div>
 <div><h3>चेहरे का नियम</h3><p class="face">${esc(bible.face)}</p></div>
+<div><h3>बाल-पात्र</h3><p class="para">${esc(bible.child)}</p></div>
 <div><h3>नया दर्शक भी समझे, और देखता रहे</h3><ul class="sound">${bible.clarity.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
 <div><h3>बापूजी की असली तस्वीरें कहाँ आएँगी</h3><div class="scroll"><table><thead><tr><th>तस्वीर</th><th>फ़ाइल</th><th>फ़िल्म में जगह</th></tr></thead><tbody>${bible.photos.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>
 <div><h3>बनाने की विधि और क्रेडिट</h3><div class="scroll"><table><thead><tr><th>विधि</th><th>कहाँ</th><th>लागत</th></tr></thead><tbody>${bible.plan.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="para gapt">${esc(bible.planNote)}</p></div>
@@ -199,6 +202,22 @@ const tbl = (h, rows) => `| ${h.join(' | ')} |\n|${h.map(() => '---').join('|')}
 writeFileSync(join(here, 'film-ki-bhasha.md'), `# ${series.title}: फ़िल्म की भाषा
 
 ${series.logline}
+
+## सबसे बड़ा संदेश: समय की पुकार
+
+${bible.message}
+
+## अंदाज़
+
+${li(bible.style)}
+
+## टाइपोग्राफ़ी
+
+${li(bible.type)}
+
+## बाल-पात्र
+
+${bible.child}
 
 ## एक विचार: हद से बेहद
 
