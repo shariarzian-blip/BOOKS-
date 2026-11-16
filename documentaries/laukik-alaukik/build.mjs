@@ -123,6 +123,9 @@ ${Object.values(bible.rules).map((r) => `<div><h3>${esc(r.name)}</h3><ol>${r.ite
 </div>
 <div><h3>बार-बार लौटने वाली छवियाँ</h3><dl class="motifs">${bible.motifs.map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl></div>
 <div><h3>चेहरे का नियम</h3><p class="face">${esc(bible.face)}</p></div>
+<div><h3>नया दर्शक भी समझे, और देखता रहे</h3><ul class="sound">${bible.clarity.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
+<div><h3>बापूजी की असली तस्वीरें कहाँ आएँगी</h3><div class="scroll"><table><thead><tr><th>तस्वीर</th><th>फ़ाइल</th><th>फ़िल्म में जगह</th></tr></thead><tbody>${bible.photos.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>
+<div><h3>बनाने की विधि और क्रेडिट</h3><div class="scroll"><table><thead><tr><th>विधि</th><th>कहाँ</th><th>लागत</th></tr></thead><tbody>${bible.plan.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="para gapt">${esc(bible.planNote)}</p></div>
 <div><h3>कैमरा-गति: उपकरण</h3><dl class="motifs">${bible.rig.gear.map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl></div>
 <div class="rules one"><div><h3>कैमरा-गति: सात नियम</h3><ol>${bible.rig.laws.map((x) => `<li><span>${esc(x)}</span></li>`).join('')}</ol></div></div>
 <div><h3>After Effects की पूरी पाइपलाइन</h3><div class="scroll"><table><thead><tr><th>चरण</th><th>औज़ार</th><th>किसलिए</th></tr></thead><tbody>${bible.ae.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>
@@ -216,6 +219,20 @@ ${li(bible.motifs.map(([a, b]) => `**${a}.** ${b}`))}
 ## चेहरे का नियम
 
 ${bible.face}
+
+## नया दर्शक भी समझे, और देखता रहे
+
+${li(bible.clarity)}
+
+## बापूजी की असली तस्वीरें कहाँ आएँगी
+
+${tbl(['तस्वीर', 'फ़ाइल', 'फ़िल्म में जगह'], bible.photos)}
+
+## बनाने की विधि और क्रेडिट
+
+${tbl(['विधि', 'कहाँ', 'लागत'], bible.plan)}
+
+${bible.planNote}
 
 ## कैमरा-गति: उपकरण
 
