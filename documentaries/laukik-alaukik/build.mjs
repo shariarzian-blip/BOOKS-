@@ -1,4 +1,4 @@
-// node build.mjs  →  index.html (निर्माण-पुस्तिका) + bhag-1-nange-paon.md + bhag-2-behad.md
+// node build.mjs  →  index.html (निर्माण-पुस्तिका) + bhag-1-aisi-duniya-kyon.md + bhag-2-behad.md
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -157,7 +157,7 @@ ${readFileSync(join(here, 'page.js'), 'utf8')}</script>
 `;
 writeFileSync(join(here, 'index.html'), html);
 
-const files = ['bhag-1-nange-paon.md', 'bhag-2-behad.md'];
+const files = ['bhag-1-aisi-duniya-kyon.md', 'bhag-2-behad.md'];
 films.forEach((f, i) => {
   const md = `# ${f.title}
 

@@ -24,18 +24,18 @@ const series = `${head}<style>
 </style><div id="p">
 <div class="top eye">दो भागों की डॉक्यूमेंट्री</div>
 ${strips.map((s) => s ? `<div class="s ${s[2] || ''}" style="background-image:url(${art(`strip-${s[0]}.jpg`)})"><span class="d">${s[1]}</span></div>` : '<div class="gap"></div>').join('')}
-<div class="bot"><h1 class="d">लौकिक · अलौकिक</h1><p class="parts r">भाग 1 · नंगे पाँव &nbsp;&nbsp;|&nbsp;&nbsp; भाग 2 · बेहद</p><p>बापूजी दशरथभाई पटेल की लौकिक और अलौकिक कहानी</p></div>
+<div class="bot"><h1 class="d">लौकिक · अलौकिक</h1><p class="parts r">भाग 1 · ऐसी दुनिया क्यों? &nbsp;&nbsp;|&nbsp;&nbsp; भाग 2 · बेहद</p><p>बापूजी दशरथभाई पटेल की लौकिक और अलौकिक कहानी</p></div>
 </div>`;
 
 const one = `${head}<style>
 #p{position:relative;width:1074px;height:1600px;background:url(${art('keyart-1.jpg')}) center/cover;color:#2A160B;overflow:hidden}
 .eye{position:absolute;top:96px;left:0;right:0;text-align:center;color:#5A2E14}
-h1{position:absolute;top:150px;left:0;right:0;text-align:center;font-size:236px;font-weight:400;line-height:1.25;
+h1{position:absolute;top:176px;left:0;right:0;text-align:center;font-size:138px;font-weight:400;line-height:1.3;
  background:linear-gradient(rgba(40,14,4,.5),rgba(40,14,4,.5)),url(${art('strip-2.jpg')}) center/cover;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.tag{position:absolute;top:470px;left:0;right:0;text-align:center;font-size:42px;color:#4A2410}
+.tag{position:absolute;top:396px;left:0;right:0;text-align:center;font-size:42px;color:#4A2410}
 .bot{position:absolute;left:0;right:0;bottom:44px;text-align:center;font-size:25px;color:#FBF3E1;text-shadow:0 2px 14px rgba(0,0,0,.85)}
-</style><div id="p"><div class="eye">लौकिक · अलौकिक &nbsp;—&nbsp; भाग 1</div><h1 class="d">नंगे पाँव</h1>
-<p class="tag r">एक बालक, जिसने भगवान से शिकायत की</p>
+</style><div id="p"><div class="eye">लौकिक · अलौकिक &nbsp;—&nbsp; भाग 1</div><h1 class="d">ऐसी दुनिया क्यों?</h1>
+<p class="tag r">एक बालक, जिसने भगवान से सवाल किया</p>
 <p class="bot">बापूजी दशरथभाई पटेल के जीवन पर आधारित · दो भागों की डॉक्यूमेंट्री</p></div>`;
 
 const two = `${head}<style>
@@ -49,7 +49,7 @@ h1{position:absolute;top:1026px;left:0;right:0;text-align:center;font-size:176px
 
 (async () => {
   const b = await chromium.launch();
-  for (const [name, html] of [['laukik-alaukik', series], ['bhag-1-nange-paon', one], ['bhag-2-behad', two]]) {
+  for (const [name, html] of [['laukik-alaukik', series], ['bhag-1-aisi-duniya-kyon', one], ['bhag-2-behad', two]]) {
     const tmp = path.join(__dirname, 'posters', `_${name}.html`);
     fs.writeFileSync(tmp, html);
     const p = await b.newPage({ viewport: { width: 1100, height: 1700 }, deviceScaleFactor: 2 });

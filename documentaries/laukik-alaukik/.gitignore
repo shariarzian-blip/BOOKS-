@@ -6,3 +6,6 @@ pilot2/stills/
 pilot2/*.mp4
 pilot2/*.jpg
 pilot2/*.png
+pilot2/earth/src/
+pilot2/earth/_*
+pilot2/_*

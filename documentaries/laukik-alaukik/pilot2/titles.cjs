@@ -10,7 +10,7 @@ const pages = {
   intro: `${head}<div id="p"><p class="c" style="top:500px;font-weight:300;font-size:44px;word-spacing:.3em">उत्तर गुजरात</p></div>`,
   loc: `${head}<div id="p"><div class="lt"><b>मेहसाणा ज़िला, गुजरात</b><span>मई की दोपहर · 45° सेल्सियस</span></div></div>`,
   name: `${head}<div id="p"><div class="lt"><b>बापूजी दशरथभाई पटेल</b><span>विश्व परिवर्तक ईश्वरीय विद्यालय, अहमदाबाद</span></div></div>`,
-  title: `${head}<div id="p"><p class="c" style="top:300px;font:400 290px/1.25 'Rozha One',serif">नंगे पाँव</p></div>`,
+  title: `${head}<div id="p"><p class="c" style="top:352px;font:400 216px/1.25 'Rozha One',serif">ऐसी दुनिया क्यों?</p></div>`,
   part: `${head}<div id="p"><p class="c" style="top:262px;font-weight:600;font-size:30px;word-spacing:.6em;color:#E3B552">लौकिक · अलौकिक — भाग एक</p></div>`,
   tag: `${head}<div id="p"><p class="c" style="top:716px;font-weight:300;font-size:44px">एक बालक, जिसने भगवान से सवाल किया</p></div>`,
 };
