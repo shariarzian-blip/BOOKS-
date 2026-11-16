@@ -6,7 +6,7 @@
 |---|---|
 | सीरीज़ | लौकिक · अलौकिक |
 | अवधि | 16 मिनट 30 सेकंड |
-| फ़्रेम | 2.39:1, फिर पूरा फ़्रेम |
+| फ़्रेम | 2.39:1 |
 | स्वर | पुरुष स्वर, और बापूजी की अपनी आवाज़ |
 
 कथन की पंक्तियाँ उद्धरण में हैं। *(कोष्ठक)* में निर्देश और विराम हैं। **नाम:** के साथ दूसरी आवाज़ें हैं।
@@ -267,7 +267,7 @@ A glowing sphere of filamentary cosmic web representing an entire universe bloom
 
 ## दृश्य 06 · बेहद · 9:00–11:00
 
-**फ़्रेम:** 2.39:1 → पूरा फ़्रेम · **कैमरा-गति:** पुल-बैक · **लेंस:** लगातार पीछे और ऊपर · पट्टियाँ 20 सेकंड में घुलती हैं
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** पुल-बैक · **लेंस:** लगातार पीछे और ऊपर · एक ही गति-वक्र
 
 > चौथा पड़ाव। यहाँ भाषा कम पड़ने लगती है।
 >
@@ -279,7 +279,7 @@ A glowing sphere of filamentary cosmic web representing an entire universe bloom
 >
 > जो मल्टीवर्स सिमटकर ब्लैक होल जैसी नींद में चला जाता है, उसके लिए उनके पास एक शब्द है: ब्लैकवर्स।
 >
-> *(फ़्रेम की काली पट्टियाँ घुलने लगती हैं।)*
+> *(रंग एक-एक करके छूटने लगते हैं।)*
 >
 > दो हज़ार पंद्रह में उन्होंने इसके भी आगे की बात कही।
 >
@@ -297,7 +297,7 @@ A glowing sphere of filamentary cosmic web representing an entire universe bloom
 
 **दृश्य.** सत्रहवाँ यूनिवर्स पीछे हटता है, और उसके साथ सोलह और गोले दिखते हैं, हर एक अपने रंग का। सब मिलकर एक बड़ा, पारदर्शी गोला: मल्टीवर्स। कैमरा और पीछे जाता है: वह भी अनगिनत में एक। फिर एक के बाहर एक प्रकाश की इक्कीस परतें, हर बाहरी परत ज़्यादा महीन, ज़्यादा उजली। इक्कीसवीं के बाद रंग ख़त्म। आकार ख़त्म। सिर्फ़ प्रकाश।
 
-**कैमरा.** यहीं काली पट्टियाँ घुलती हैं। जो दर्शक अब तक सिनेमा-पट्टी में देख रहा था, उसकी पूरी स्क्रीन भर जाती है। कैमरे की गति धीमी होती जाती है और “बेहद” शब्द पर लगभग शून्य।
+**कैमरा.** कैमरा लगातार पीछे और ऊपर जाता है, एक ही गति-वक्र पर, बिना किसी झटके के। गति धीमी होती जाती है और “बेहद” शब्द पर लगभग शून्य।
 
 **VFX · After Effects.** सत्रह यूनिवर्स काँच जैसे गोले हैं, भीतर अलग रंग का कॉस्मिक वेब, refraction और हल्की chromatic dispersion के साथ। इक्कीस पीढ़ियाँ संकेंद्रित प्रकाश-खोल हैं; हर खोल पर पीढ़ी का अंक देवनागरी में, बहुत छोटा। HDR का सबसे उजला सफ़ेद (1000 nits) केवल यहाँ। अंत में फ़्रेम सफ़ेद नहीं होता; हर रंग इतना महीन हो जाता है कि सफ़ेद लगता है।
 
@@ -306,14 +306,14 @@ A glowing sphere of filamentary cosmic web representing an entire universe bloom
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-Seventeen translucent glass-like spheres each containing a cosmic web of a different colour, floating together inside one vast faintly glowing bubble, camera pulling back to reveal countless such bubbles, then twenty-one concentric shells of increasingly fine white-gold light extending outward to infinity, the cinematic black bars dissolving so the image fills the entire frame, black to luminous white-gold palette, minimal, photoreal volumetric light
+Seventeen translucent glass-like spheres each containing a cosmic web of a different colour, floating together inside one vast faintly glowing bubble, camera pulling back to reveal countless such bubbles, then twenty-one concentric shells of increasingly fine white-gold light extending outward to infinity, anamorphic 2.39:1, black to luminous white-gold palette, minimal, photoreal volumetric light
 ```
 
 ---
 
 ## दृश्य 07 · एक बूँद · 11:00–12:30
 
-**फ़्रेम:** पूरा फ़्रेम · **कैमरा-गति:** स्थिर · **लेंस:** स्थिर, 45 सेकंड
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** स्थिर · **लेंस:** स्थिर, 45 सेकंड
 
 > तो यह सब आया कहाँ से?
 >
@@ -348,14 +348,14 @@ Seventeen translucent glass-like spheres each containing a cosmic web of a diffe
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-An infinite horizonless ocean made of soft white-gold light rather than water, a single slow ripple crosses its surface and droplets of light rise and scatter outward in slow motion, each droplet a glowing point, mist beginning to condense around the points, static wide shot, full-frame 16:9, only white and gold tones, serene, volumetric
+An infinite horizonless ocean made of soft white-gold light rather than water, a single slow ripple crosses its surface and droplets of light rise and scatter outward in slow motion, each droplet a glowing point, mist beginning to condense around the points, static wide shot, anamorphic 2.39:1, only white and gold tones, serene, volumetric
 ```
 
 ---
 
 ## दृश्य 08 · काला बिंदु · 12:30–14:00
 
-**फ़्रेम:** पूरा फ़्रेम → 1.33:1 · **कैमरा-गति:** अवरोहण · **लेंस:** आरोहण का ठीक उलटा · 60 सेकंड
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** अवरोहण · **लेंस:** आरोहण का ठीक उलटा · 60 सेकंड
 
 > और फिर इस कहानी में एक दरार आती है।
 >
@@ -375,7 +375,7 @@ An infinite horizonless ocean made of soft white-gold light rather than water, a
 >
 > **रचयिता:** “इस बार मैं ख़ुद जाऊँगा। साधारण मनुष्य के तन में। ग़रीब से ग़रीब घर में। ताकि मुझे पता लगे कि दुख होता क्या है।”
 >
-> *(कट, बिना किसी संक्रमण के: सफ़ेद-तपा खेत। काँटा। नंगा पाँव। फ़्रेम वापस 1.33:1।)*
+> *(कट, बिना किसी संक्रमण के: सफ़ेद-तपा खेत। काँटा। नंगा पाँव।)*
 >
 > **बालक:** “तू नीचे आके ज़रा देख। पैर में काँटे लगते हैं।”
 >
@@ -385,7 +385,7 @@ An infinite horizonless ocean made of soft white-gold light rather than water, a
 
 **दृश्य.** अनंत उजाला। उसमें बहुत दूर एक काला बिंदु, इतना छोटा कि पहले धूल का कण लगे। अवरोहण उसी की ओर। बिंदु बढ़ता है: वह एक मल्टीवर्स है, जिसकी रोशनी मटमैली पड़ चुकी है। भीतर एक यूनिवर्स, एक गैलेक्सी, एक सूर्य, एक धूसर, थका हुआ नीला ग्रह। फिर कट: भाग 1 का पहला शॉट।
 
-**कैमरा.** आरोहण का ठीक उलटा: वही रास्ता, वही गति, उलटी दिशा। अंतिम कट पर फ़्रेम झटके से 1.33:1 में लौट आता है, ताकि बेहद से हद में गिरना दर्शक अपने शरीर में महसूस करे।
+**कैमरा.** आरोहण का ठीक उलटा: वही रास्ता, वही गति, उलटी दिशा। अंतिम कट सीधा है, अनंत उजाले से तपे हुए खेत में, ताकि बेहद से हद में गिरना दर्शक अपने शरीर में महसूस करे।
 
 **VFX · After Effects.** सफ़ेद पर काला: भाग 2 के पूरे रंग-विधान का उलटा। बिंदु पर साठ सेकंड का exponential zoom; भीतर की दुनिया का saturation 100% से 35% तक गिरता है। कट से पहले एक फ़्रेम का काला। भाग 1 का शॉट बिना किसी नए ग्रेड के, जैसा था वैसा।
 
@@ -394,14 +394,14 @@ An infinite horizonless ocean made of soft white-gold light rather than water, a
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-An endless field of soft white light with a single tiny black dot far in the distance, the camera descends steadily toward it as it grows into a dim, desaturated bubble universe, inside it a galaxy, a star, and a tired grey-blue planet, inverted colour logic with darkness as the anomaly inside light, full-frame 16:9, minimal, stark
+An endless field of soft white light with a single tiny black dot far in the distance, the camera descends steadily toward it as it grows into a dim, desaturated bubble universe, inside it a galaxy, a star, and a tired grey-blue planet, inverted colour logic with darkness as the anomaly inside light, anamorphic 2.39:1, minimal, stark
 ```
 
 ---
 
 ## दृश्य 09 · विनाश नहीं · 14:00–15:10
 
-**फ़्रेम:** पूरा फ़्रेम · **कैमरा-गति:** आरोहण · **लेंस:** कुएँ के भीतर से ऊपर · z-अक्ष
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** आरोहण · **लेंस:** कुएँ के भीतर से ऊपर · z-अक्ष
 
 > दुनिया के अंत की भविष्यवाणियाँ बहुत हैं। बापूजी को “विनाश” शब्द ही पसंद नहीं।
 >
@@ -434,14 +434,14 @@ An endless field of soft white light with a single tiny black dot far in the dis
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-Looking straight up from the bottom of an old stone well, a small circle of bright sky above, the camera rises smoothly up and out of the well to reveal a vast open ocean at dawn stretching to the horizon, teal and soft gold palette, full-frame 16:9, photoreal, hopeful
+Looking straight up from the bottom of an old stone well, a small circle of bright sky above, the camera rises smoothly up and out of the well to reveal a vast open ocean at dawn stretching to the horizon, teal and soft gold palette, anamorphic 2.39:1, photoreal, hopeful
 ```
 
 ---
 
 ## दृश्य 10 · बेहद की परमशांति · 15:10–16:30
 
-**फ़्रेम:** पूरा फ़्रेम · **कैमरा-गति:** अवरोहण · **लेंस:** 100mm मैक्रो · ज़मीन से 5 सेमी
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** अवरोहण · **लेंस:** 100mm मैक्रो · ज़मीन से 5 सेमी
 
 > वह इसे मंत्र कहते हैं। इसमें न कोई देवता है, न कोई माँग।
 >
@@ -478,5 +478,5 @@ Looking straight up from the bottom of an old stone well, a small circle of brig
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-Slow final descent from orbit down to a single millet field in Gujarat at dusk, the camera settles five centimetres above cracked earth, extreme macro of an acacia thorn in the foreground, rack focus to a tiny green seedling sprouting beside it, soft warm twilight, gentle breeze, full-frame 16:9, quiet, photoreal
+Slow final descent from orbit down to a single millet field in Gujarat at dusk, the camera settles five centimetres above cracked earth, extreme macro of an acacia thorn in the foreground, rack focus to a tiny green seedling sprouting beside it, soft warm twilight, gentle breeze, anamorphic 2.39:1, quiet, photoreal
 ```

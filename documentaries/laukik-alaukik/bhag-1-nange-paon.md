@@ -6,7 +6,7 @@
 |---|---|
 | सीरीज़ | लौकिक · अलौकिक |
 | अवधि | 14 मिनट 10 सेकंड |
-| फ़्रेम | 1.33:1, अंत में 2.39:1 |
+| फ़्रेम | 2.39:1 |
 | स्वर | स्त्री स्वर |
 
 कथन की पंक्तियाँ उद्धरण में हैं। *(कोष्ठक)* में निर्देश और विराम हैं। **नाम:** के साथ दूसरी आवाज़ें हैं।
@@ -15,7 +15,7 @@
 
 ## दृश्य 00 · पैंतालीस डिग्री · 0:00–1:10
 
-**फ़्रेम:** 1.33:1 · **कैमरा-गति:** मैक्रो · रैक-फ़ोकस · **लेंस:** 100mm मैक्रो · 96 fps
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** मैक्रो · रैक-फ़ोकस · **लेंस:** 100mm मैक्रो · 96 fps
 
 > गुजरात। मेहसाणा ज़िला। पैंतालीस डिग्री की दोपहर।
 >
@@ -35,7 +35,7 @@
 
 **दृश्य.** काला पर्दा, सूखी हवा। फिर सफ़ेद-तपा आसमान, बबूल की टहनी, एक काँटा। फटी ज़मीन पर एक छोटा नंगा पाँव उतरता है। काँटे को छूने से ठीक पहले कट। बालक की सिर्फ़ आँखें, भौंहों की छाया में, आसमान की ओर।
 
-**कैमरा.** कैमरा ज़मीन पर रखा है, 5 सेमी ऊँचाई। काँटे की नोक से उतरते पाँव तक रैक-फ़ोकस। फिर 50mm, बालक की आँख की ऊँचाई पर, साँस जैसी हल्की हैंडहेल्ड।
+**कैमरा.** कैमरा ज़मीन पर रखा है, 5 सेमी ऊँचाई। काँटे की नोक से उतरते पाँव तक रैक-फ़ोकस। फिर 50mm, बालक की आँख की ऊँचाई पर, स्लाइडर पर बहुत धीमा पुश।
 
 **VFX · After Effects.** गर्मी की लहर: Displacement Map को धीमे Fractal Noise से चलाएँ (क्षैतिज 6px, ऊपर की ओर बहाव)। हाइलाइट पर halation। 16mm ग्रेन और हल्का gate-weave। शीर्षक धूल के कणों से बनता है: कण अक्षरों के mask पर जमते हैं, फिर हवा उन्हें उड़ा ले जाती है।
 
@@ -44,14 +44,14 @@
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-Extreme macro, ground-level shot of a single sharp acacia (babool) thorn on cracked dry earth in rural Gujarat, white-hot overexposed noon sky, a small child's bare dusty foot descending in slow motion toward the thorn, shallow depth of field, heat shimmer, 16mm film grain, 4:3 aspect ratio, bleached straw and ochre palette, no face, no text
+Extreme macro, ground-level shot of a single sharp acacia (babool) thorn on cracked dry earth in rural Gujarat, white-hot overexposed noon sky, a small child's bare dusty foot descending in slow motion toward the thorn, shallow depth of field, heat shimmer, 35mm film grain, anamorphic 2.39:1, bleached straw and ochre palette, no face, no text
 ```
 
 ---
 
 ## दृश्य 01 · भगत का घर · 1:10–2:50
 
-**फ़्रेम:** 1.33:1 · **कैमरा-गति:** ट्रैकिंग · **लेंस:** 35mm · 40 सेकंड, बिना कट
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** ट्रैकिंग · **लेंस:** 35mm · 40 सेकंड, बिना कट
 
 > चार सौ साल पुराना एक गाँव। अंबासन। कच्चे मकान। कुएँ का पानी। न नल, न बिजली।
 >
@@ -80,14 +80,14 @@ Extreme macro, ground-level shot of a single sharp acacia (babool) thorn on crac
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-Pre-dawn blue hour in a 1950s Gujarati village of mud houses, low tracking shot at knee height following the bare feet of an elderly farmer in a white dhoti walking down a narrow lane holding a small brass hand-bell, a single oil lamp glowing in a doorway, winter mist, indigo and brass-gold palette, vintage spherical lens, 16mm grain, 4:3, no face
+Pre-dawn blue hour in a 1950s north Gujarat village (Mehsana district) of mud-plastered houses with country clay-tile roofs, a neem tree, low tracking shot at knee height following the bare feet of an elderly Gujarati farmer in a white dhoti and white turban walking down a narrow lane holding a small brass hand-bell, a single oil lamp glowing in a doorway, winter mist, indigo and brass-gold palette, vintage anamorphic lens, 35mm grain, anamorphic 2.39:1, no face
 ```
 
 ---
 
 ## दृश्य 02 · आधी रात का प्रकाश · 2:50–4:10
 
-**फ़्रेम:** 1.33:1 · **कैमरा-गति:** स्थिर · **लेंस:** 50mm · 25 सेकंड स्थिर
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** स्थिर · **लेंस:** 50mm · 25 सेकंड स्थिर
 
 > परिवार में एक क़िस्सा आज भी सुनाया जाता है।
 >
@@ -109,7 +109,7 @@ Pre-dawn blue hour in a 1950s Gujarati village of mud houses, low tracking shot 
 
 **दृश्य.** मूल रेखाचित्र (खेत, पानी की नाली, लेटा हुआ शिशु) से शुरुआत। चाँदनी रात। खेतों में दौड़ते पैर, लालटेनें। नाली के किनारे पानी में लेटा शिशु। चेहरा नहीं; सिर्फ़ छोटा पैर, पानी और रोशनी।
 
-**कैमरा.** दौड़ते पैरों के साथ हैंडहेल्ड। शिशु के पास पहुँचते ही कैमरा रुक जाता है: फ़िल्म का पहला पूरी तरह स्थिर, लंबा शॉट।
+**कैमरा.** दौड़ते पैरों के साथ स्टेडीकैम, घुटने की ऊँचाई पर। शिशु के पास पहुँचते ही कैमरा रुक जाता है: फ़िल्म का पहला पूरी तरह स्थिर, लंबा शॉट।
 
 **VFX · After Effects.** “परम सफ़ेद” पहली बार। practical LED की रोशनी पर bloom की तीन परतें; पानी पर caustics (Fractal Noise → CC Glass)। रोशनी इतनी हल्की रखें कि उसे चाँदनी भी माना जा सके। फ़ैसला दर्शक करे।
 
@@ -118,14 +118,14 @@ Pre-dawn blue hour in a 1950s Gujarati village of mud houses, low tracking shot 
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-Full-moon night in a millet field in Gujarat, a narrow irrigation channel with slowly flowing water, a soft unexplained white glow reflecting on the water where a baby's tiny foot is just visible at the edge of frame, lanterns approaching far in the background out of focus, locked-off static shot, deep blue-black palette with one area of pure white light, 4:3, film grain
+Full-moon night in a pearl-millet field on the flat sandy plain of Mehsana district, north Gujarat, a narrow irrigation channel with slowly flowing water, a soft unexplained white glow reflecting on the water where a baby's tiny foot is just visible at the edge of frame, lanterns approaching far in the background out of focus, locked-off static shot, deep blue-black palette with one area of pure white light, anamorphic 2.39:1, film grain
 ```
 
 ---
 
 ## दृश्य 03 · कछुआ · 4:10–5:40
 
-**फ़्रेम:** 1.33:1 · **कैमरा-गति:** ट्रैकिंग · **लेंस:** 35mm · 30 मीटर डॉली
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** ट्रैकिंग · **लेंस:** 35mm · 30 मीटर डॉली
 
 > चार-पाँच साल की उम्र से खेत। ऊपर का कपड़ा हो तो नीचे का नहीं। खाने में बाजरे की सूखी रोटी, मिर्च, प्याज़। और पानी।
 >
@@ -160,14 +160,14 @@ Full-moon night in a millet field in Gujarat, a narrow irrigation channel with s
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-1960s rural Gujarat, dusty two-lane highway through dry fields, a barefoot boy of about six in a torn shirt and his mother in a faded sari walking along the roadside seen from behind at child eye level, a rounded cream-coloured 1960s Indian sedan passing through the frame leaving a trail of golden dust, lateral dolly shot, ochre and millet-yellow palette, 16mm grain, 4:3, no faces
+1960s rural Gujarat, dusty two-lane highway through flat fields of pearl millet and castor with babool and neem trees, a barefoot boy of about six in a torn shirt and his mother in a faded cotton sari draped Gujarati-style with the pallu in front, walking along the roadside seen from behind at child eye level, a rounded cream-coloured 1960s Indian sedan passing through the frame leaving a trail of golden dust, lateral dolly shot, ochre and millet-yellow palette, 35mm grain, anamorphic 2.39:1, no faces
 ```
 
 ---
 
 ## दृश्य 04 · दो पैसे · 5:40–7:10
 
-**फ़्रेम:** 1.33:1 · **कैमरा-गति:** पुश-इन · **लेंस:** 50mm · धूल पर 200 fps
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** पुश-इन · **लेंस:** 50mm · धूल पर 200 fps
 
 > पढ़ाई में वह हमेशा पहला या दूसरा आता।
 >
@@ -204,14 +204,14 @@ Full-moon night in a millet field in Gujarat, a narrow irrigation channel with s
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-1960s village schoolroom in Gujarat, a row of barefoot children sitting cross-legged on a mud floor with writing slates, a shaft of dusty sunlight from a barred window, chalk dust floating in the backlight, a small boy's open palm held out in the foreground, slow push-in at child eye level, slate-green and chalk-white palette, 16mm grain, 4:3, faces not shown
+1960s village schoolroom in Gujarat, a row of barefoot children sitting cross-legged on a mud floor with writing slates, a shaft of dusty sunlight from a barred window, chalk dust floating in the backlight, a small boy's open palm held out in the foreground, slow push-in at child eye level, slate-green and chalk-white palette, 35mm grain, anamorphic 2.39:1, faces not shown
 ```
 
 ---
 
 ## दृश्य 05 · हनुमान जी, ताक़त दो · 7:10–8:40
 
-**फ़्रेम:** 1.33:1 · **कैमरा-गति:** स्थिर · **लेंस:** 35mm · ज़मीन पर लेटा कैमरा
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** स्थिर · **लेंस:** 35mm · ज़मीन पर लेटा कैमरा
 
 > रात के नौ बजे, जब गाँव सो जाता, छठी कक्षा का वह लड़का अकेला हनुमान जी के मंदिर जाता।
 >
@@ -248,14 +248,14 @@ Full-moon night in a millet field in Gujarat, a narrow irrigation channel with s
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-Night in a 1960s Gujarati village, a tiny roadside Hanuman shrine with a vermilion-orange idol lit by a single oil lamp, a small barefoot boy seen from behind standing before it with open upturned palms, deep black surroundings, saffron and soot-black palette, over-the-shoulder shot at child height, 16mm grain, 4:3
+Night in a 1960s Gujarati village, a tiny roadside Hanuman shrine with a vermilion-orange idol lit by a single oil lamp, a small barefoot boy seen from behind standing before it with open upturned palms, deep black surroundings, saffron and soot-black palette, over-the-shoulder shot at child height, 35mm grain, anamorphic 2.39:1
 ```
 
 ---
 
 ## दृश्य 06 · दस पैसे · 8:40–10:20
 
-**फ़्रेम:** 1.33:1 · **कैमरा-गति:** ट्रैकिंग · **लेंस:** 50mm · सड़क-स्तर
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** ट्रैकिंग · **लेंस:** 50mm · सड़क-स्तर
 
 > ग्यारहवीं के बाद मामा उसे अहमदाबाद ले आए। एक छोटा कमरा, जिसमें मामा का पूरा परिवार रहता था।
 >
@@ -290,14 +290,14 @@ Night in a 1960s Gujarati village, a tiny roadside Hanuman shrine with a vermili
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-1970s Ahmedabad street at harsh midday, road-level tracking shot of a young man's feet walking in worn rubber slippers whose two straps are different colours, a city bus passing in the background out of focus, bleached concrete-grey palette, vintage lens, 16mm grain, 4:3, no face
+1970s Ahmedabad street at harsh midday, road-level tracking shot of a young man's feet walking in worn rubber slippers whose two straps are different colours, a city bus passing in the background out of focus, bleached concrete-grey palette, vintage lens, 35mm grain, anamorphic 2.39:1, no face
 ```
 
 ---
 
 ## दृश्य 07 · दशरथ पटेल एंड कंपनी · 10:20–11:40
 
-**फ़्रेम:** 1.33:1 · **कैमरा-गति:** ट्रैकिंग · **लेंस:** 40mm · ट्रैक पर डॉली
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** ट्रैकिंग · **लेंस:** 40mm · ट्रैक पर डॉली
 
 > फिर एक दिन अहमदाबाद में एक बोर्ड लगा। दशरथ पटेल एंड कंपनी। इनकम टैक्स कंसल्टेंट।
 >
@@ -321,7 +321,7 @@ Night in a 1960s Gujarati village, a tiny roadside Hanuman shrine with a vermili
 
 **दृश्य.** पॉलिश किए काले जूते, दफ़्तर की सीढ़ियाँ। पुस्तक की असली “ऑफ़िस की फ़ोटो”: बोर्ड पर नाम। फ़ाइलों के ढेर, क़ानून की किताबें, काला कोट। गाँव में बनता एक पक्का मकान। अलमारी में टँगे खादी के दो कुर्ते। अंत में छापे के बाद का ख़ाली दफ़्तर, उलटी पड़ी एक कुर्सी।
 
-**कैमरा.** पहली बार चिकनी, सटीक डॉली। ग़रीबी की हैंडहेल्ड यहाँ ख़त्म होती है। फ़ाइलों के ऊपर से धीमा लेटरल मूव। खादी के कुर्तों पर स्थिर, सममित फ़्रेम। कैमरा अब वयस्क की आँख की ऊँचाई पर है, उससे ऊपर नहीं।
+**कैमरा.** यहाँ गति का स्वभाव बदलता है: मोशन-कंट्रोल जैसी सटीक, यांत्रिक डॉली। यह शहर और पेशे की दुनिया है। फ़ाइलों के ऊपर से धीमा लेटरल मूव। खादी के कुर्तों पर स्थिर, सममित फ़्रेम। कैमरा अब वयस्क की आँख की ऊँचाई पर है, उससे ऊपर नहीं।
 
 **VFX · After Effects.** असली दफ़्तर वाली तस्वीर का 2.5D। काइनेटिक टाइप: आयकर की धाराओं के नंबर फ़्रेम में तैरते हैं और बालक के पुराने सवालों में बदल जाते हैं (“किसने बनाई?” “क्यों?”)। ग्रेड गर्म सागवान, पर चेहरे की जगह पर ठंडी रोशनी।
 
@@ -330,14 +330,14 @@ Night in a 1960s Gujarati village, a tiny roadside Hanuman shrine with a vermili
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-1980s Indian tax lawyer's office in Ahmedabad, teak desk stacked with case files and law books, a black coat hung on a chair, a blank hand-painted signboard (lettering added in post), warm tungsten light through wooden blinds, smooth lateral dolly across the desk, teak-brown and brass palette, 4:3, film grain, no people
+1980s Indian tax lawyer's office in Ahmedabad, teak desk stacked with case files and law books, a black coat hung on a chair, a blank hand-painted signboard (lettering added in post), warm tungsten light through wooden blinds, smooth lateral dolly across the desk, teak-brown and brass palette, anamorphic 2.39:1, film grain, no people
 ```
 
 ---
 
 ## दृश्य 08 · पहला जवाब · 11:40–12:50
 
-**फ़्रेम:** 1.33:1 · **कैमरा-गति:** स्थिर · **लेंस:** लॉक्ड-ऑफ़ टाइमलैप्स · 12 घंटे → 20 सेकंड
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** स्थिर · **लेंस:** लॉक्ड-ऑफ़ टाइमलैप्स · 12 घंटे → 20 सेकंड
 
 > उन्नीस सौ सत्तासी। उम्र इकतीस।
 >
@@ -374,14 +374,14 @@ Night in a 1960s Gujarati village, a tiny roadside Hanuman shrine with a vermili
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-A bare meditation room before dawn, a man in white seen only as a perfectly still silhouette from behind sitting cross-legged on the floor, a rectangle of sunlight from the window sliding across the floor, a single glass of water beside him, locked-off time-lapse feeling, deep blue and soft white palette, faint glow along the silhouette edge, 4:3, film grain
+A bare meditation room before dawn, a man in white seen only as a perfectly still silhouette from behind sitting cross-legged on the floor, a rectangle of sunlight from the window sliding across the floor, a single glass of water beside him, locked-off time-lapse feeling, deep blue and soft white palette, faint glow along the silhouette edge, anamorphic 2.39:1, film grain
 ```
 
 ---
 
 ## दृश्य 09 · छह जनवरी · 12:50–14:10
 
-**फ़्रेम:** 1.33:1 → 2.39:1 · **कैमरा-गति:** आरोहण · **लेंस:** क्रेन → ड्रोन → CG · 45 सेकंड
+**फ़्रेम:** 2.39:1 · **कैमरा-गति:** आरोहण · **लेंस:** क्रेन → ड्रोन → CG · 45 सेकंड
 
 > छह जनवरी, उन्नीस सौ सत्तानवे। अहमदाबाद।
 >
@@ -389,7 +389,7 @@ A bare meditation room before dawn, a man in white seen only as a perfectly stil
 >
 > और, जैसा वह ख़ुद बताते हैं, उन्होंने देखा कि वह धरती पर खड़े हैं और उनका सिर आकाश से भी ऊपर है। चाँद, सितारे, सूरज, सब नीचे।
 >
-> *(लंबा विराम। फ़्रेम खुलना शुरू होता है।)*
+> *(लंबा विराम। क्षितिज नीचे उतरने लगता है; आसमान खुलता है।)*
 >
 > उन्होंने दफ़्तर बंद कर दिया। किराए के एक मकान में, चार-पाँच लोगों के सामने, बोलना शुरू किया। फिर अहमदाबाद के चैनपुर में ज़मीन ली, और अपने तन, मन, धन से एक आश्रम बनाया। विश्व परिवर्तक ईश्वरीय विद्यालय।
 >
@@ -411,7 +411,7 @@ A bare meditation room before dawn, a man in white seen only as a perfectly stil
 
 **दृश्य.** अहमदाबाद का एक साधारण कमरा। खाट पर लेटा आदमी; सिर्फ़ खुली आँखों का क्लोज़-अप। छत। फिर छत घुल जाती है, शहर नीचे रह जाता है, बादल, चाँद, तारे, सब नीचे। कट: दीवार से उतरता दफ़्तर का बोर्ड। किराए का कमरा, चार-पाँच लोग, एक ब्लैकबोर्ड। चैनपुर की ख़ाली ज़मीन पर पहली ईंट। असली तस्वीर: सफ़ेद वस्त्रों में तपस्या में बैठे बापूजी।
 
-**कैमरा.** पूरी फ़िल्म का नियम यहाँ टूटता है। आँखों के क्लोज़-अप से कैमरा पहली बार ऊपर उठता है: खाट से छत, छत के पार, शहर के ऊपर। इसी मूव के दौरान फ़्रेम 1.33:1 से खुलकर 2.39:1 हो जाता है।
+**कैमरा.** पूरी फ़िल्म का नियम यहाँ टूटता है। आँखों के क्लोज़-अप से कैमरा पहली बार ऊपर उठता है: खाट से छत, छत के पार, शहर के ऊपर। इसी मूव में क्षितिज पहली बार फ़्रेम के निचले किनारे तक उतरता है और आसमान पूरा फ़्रेम भर देता है।
 
 **VFX · After Effects.** छत का घुलना luma-matte से; ड्रोन प्लेट और CG आकाश का जोड़ बादलों के white-out में छिपा है। “परम सफ़ेद” तीसरी और आख़िरी बार, इस बार पूरे फ़्रेम में, दो सेकंड। नाम वाली पंक्ति पर टाइप एक ही जगह बदलता है: बालक → दशरथ → दशरथ भाई → बाबा → बापूजी।
 
@@ -420,5 +420,5 @@ A bare meditation room before dawn, a man in white seen only as a perfectly stil
 **AI प्रॉम्प्ट (मुख्य शॉट).**
 
 ```
-Continuous rising shot starting close on a man's open eyes as he lies on a simple cot in a modest 1990s Ahmedabad room, the camera lifts straight up through the dissolving ceiling into the night sky above the city, then above the clouds with the moon and stars below the horizon line, the frame widening from 4:3 to anamorphic 2.39:1, warm tungsten giving way to pure white light and then deep indigo, photoreal, cinematic, face not identifiable
+Continuous rising shot starting close on a man's open eyes as he lies on a simple cot in a modest 1990s Ahmedabad room, the camera lifts straight up through the dissolving ceiling into the night sky above the city, then above the clouds with the moon and stars below the horizon line, anamorphic 2.39:1, warm tungsten giving way to pure white light and then deep indigo, photoreal, cinematic, face not identifiable
 ```

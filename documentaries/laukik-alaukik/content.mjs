@@ -18,18 +18,19 @@ export const bible = {
   idea: [
     'हिंदी पुस्तक अपने को “लौकिक और अलौकिक कहानी” कहती है। फ़िल्म उसी बँटवारे पर खड़ी है। भाग 1 धरती पर रहता है। भाग 2 धरती छोड़ देता है।',
     'दोनों भाग एक ही शॉट पर खुलते और बंद होते हैं: तपा हुआ खेत, बबूल का काँटा, एक नंगा पाँव। भाग 1 में यह सवाल है। भाग 2 के अंत में वही शॉट जवाब बनकर लौटता है।',
-    'फ़्रेम ख़ुद कहानी कहता है। भाग 1 पुरानी तस्वीर जैसे तंग 1.33:1 फ़्रेम में है, यानी “हद”। 1997 में फ़्रेम खुलकर 2.39:1 होता है। भाग 2 में इक्कीस पीढ़ियों के पार काली पट्टियाँ घुल जाती हैं और तस्वीर पूरी स्क्रीन भर देती है, यानी “बेहद”।',
+    'पूरी सीरीज़ 2.39:1 के सिनेमा-फ़्रेम में है। हद और बेहद का फ़र्क़ क्षितिज से आता है। भाग 1 में क्षितिज फ़्रेम के ऊपरी हिस्से में रहता है: ज़मीन ज़्यादा, आसमान कम। 1997 में वह नीचे उतरता है और आसमान खुल जाता है। भाग 2 में क्षितिज ग़ायब हो जाता है।',
   ],
   rules: {
     one: {
       name: 'भाग 1 · धरती का कैमरा',
       items: [
         'कैमरा बालक की आँख से ऊँचा कभी नहीं जाता: 90 सेमी। बड़ा होने पर 150 सेमी।',
-        'सिर्फ़ ज़मीन के समानांतर गति: ट्रैक, डॉली, हैंडहेल्ड। न क्रेन, न ड्रोन।',
+        'सिर्फ़ ज़मीन के समानांतर गति: डॉली, मोटर-चालित स्लाइडर, स्टेडीकैम। न क्रेन, न ड्रोन, न हैंडहेल्ड।',
+        'क्षितिज हमेशा फ़्रेम के ऊपरी तिहाई में: ज़मीन ज़्यादा, आसमान कम।',
         'हर अध्याय पैरों के एक शॉट से शुरू होता है।',
         'हर बचपन का अध्याय पुस्तक के मूल रेखाचित्र से खुलता है, जो जीवित दृश्य में बदल जाता है।',
-        'पुराने गोल (spherical) लेंस, 16mm ग्रेन, 24 fps। काँटे और धूल के लिए 96 से 200 fps।',
-        'पहली बार कैमरा ऊपर उठता है अंतिम दृश्य में। वही क्षण फ़्रेम को खोलता है।',
+        'पुराने, नरम कोटिंग वाले 2x एनामॉर्फ़िक लेंस, 35mm ग्रेन, 24 fps। काँटे और धूल के लिए 96 से 1000 fps।',
+        'पहली बार कैमरा ऊपर उठता है अंतिम दृश्य में। वहीं क्षितिज नीचे उतरता है।',
       ],
     },
     two: {
@@ -38,7 +39,7 @@ export const bible = {
         'कैमरा सिर्फ़ ऊपर-नीचे और आगे-पीछे चलता है। दाएँ-बाएँ पैन कभी नहीं।',
         'पूरा आरोहण एक अटूट शॉट जैसा दिखता है। कट सफ़ेद और काले क्षणों में छिपे हैं।',
         'हर पड़ाव पर पिछला पड़ाव एक बिंदु बनकर फ़्रेम में टिका रहता है, ताकि पैमाना कभी न खोए।',
-        '2x एनामॉर्फ़िक लेंस, 2.39:1। “बेहद” पर पूरा फ़्रेम।',
+        'साफ़, आधुनिक 2x एनामॉर्फ़िक लेंस। क्षितिज फ़्रेम से ग़ायब।',
         'अंतरिक्ष में कोई ध्वनि-प्रभाव नहीं। सिर्फ़ तानपुरा, साँस और मौन।',
         'विज्ञान के तथ्य कथन में नहीं, स्क्रीन पर छोटे अक्षरों में आते हैं, ताकि अनुभव-कथन और मापा हुआ तथ्य कभी न घुलें।',
       ],
@@ -60,8 +61,69 @@ export const bible = {
     ['आरोहण', 'भाग 2 की रीढ़', 'ड्रोन → उपग्रह चित्र → CG। nested precomps पर exponential scale; हर 10 सेकंड में दूरी दस गुना। जोड़ सूर्य की चमक और ब्लैक होल की छाया में छिपे हैं।'],
     ['ब्लैक होल', 'भाग 2', 'ray-marched gravitational lensing (Blender), या AE में Polar Coordinates + Displacement। छल्ले की एक तरफ़ Doppler से ज़्यादा चमकीली।'],
     ['सत्रह सृजन', 'भाग 2', 'एक ही precomp सोलह बार, हर चक्र 8 फ़्रेम छोटा, hue हर बार 21° घूमती हुई। सत्रहवाँ खिलकर ठहर जाता है।'],
-    ['खुलता फ़्रेम', 'दोनों भागों का अंत', 'दो solid mattes की position keyframes: 1.33 → 2.39 (240 फ़्रेम)। भाग 2 में पट्टियाँ 20 सेकंड में पूरी तरह घुलती हैं।'],
+    ['उतरता क्षितिज', 'भाग 1 का अंत', 'क्रेन, ड्रोन और CG आकाश की तीन प्लेटें एक ही कैमरा-पथ पर; क्षितिज 240 फ़्रेम में फ़्रेम के ऊपरी तिहाई से निचले किनारे तक उतरता है। जोड़ बादलों के white-out में।'],
   ],
+  rig: {
+    gear: [
+      ['मोशन-कंट्रोल रिग', 'दोहराए जा सकने वाले मूव। लाइव प्लेट और CG एक ही रास्ते पर चलते हैं, इसलिए जोड़ दिखता नहीं।'],
+      ['टेलीस्कोपिक क्रेन', 'भाग 1 का अंतिम आरोहण: खाट से छत के पार, एक ही साँस में।'],
+      ['डॉली और ट्रैक', 'भाग 1 की हर लंबी चाल। ट्रैक समतल किया हुआ, गति मोटर से नियंत्रित।'],
+      ['स्टेडीकैम या ARRI Trinity', 'चलते पैरों और गलियों के लंबे, बिना कट के शॉट।'],
+      ['मोटर-चालित स्लाइडर और प्रोब लेंस', 'काँटे, खड़िया की धूल और पानी के मैक्रो: कैमरा चीज़ों के बीच से गुज़रता है।'],
+      ['हाई-स्पीड कैमरा', '1000 fps: उतरता पाँव, रुकती धूल, उछलती बूँदें।'],
+      ['ड्रोन', 'केवल भाग 2 में, और केवल सीधा ऊपर या सीधा नीचे।'],
+    ],
+    laws: [
+      'हर मूव ease-in और ease-out के साथ शुरू और ख़त्म होता है। रैखिक (linear) कीफ़्रेम कहीं नहीं।',
+      'एक शॉट, एक अक्ष। डॉली के साथ पैन नहीं, क्रेन के साथ ज़ूम नहीं।',
+      'गति इतनी धीमी कि दर्शक मूव को नहीं, बदलाव को महसूस करे। ज़्यादातर शॉट 20 से 60 सेकंड के हैं।',
+      'न हैंडहेल्ड, न झटका, न व्हिप-पैन, न ज़ूम, न नक़ली कैमरा-शेक।',
+      'After Effects में कैमरा हमेशा null rig पर। गति का वक्र Graph Editor में हाथ से बनाया जाता है।',
+      'CG कैमरा असली रिग की सीमाओं में रहता है (अधिकतम गति और त्वरण), ताकि वह तैरता हुआ नक़ली न लगे।',
+      'AI से बने क्लिप की गति असमान हो तो उसे स्थिर करें, optical flow से समान करें, और कैमरा-मूव 2.5D projection से दोबारा बनाएँ।',
+    ],
+  },
+  ae: [
+    ['रंग-प्रबंधन', '32-bit float, ACEScg, OpenColorIO', '3D से EXR मल्टीपास (beauty, depth, cryptomatte, motion vectors)। पूरा कम्प रैखिक रोशनी में, ताकि चमक और धुँधलापन असली लेंस की तरह बर्ताव करें।'],
+    ['3D', 'Cinema 4D + Redshift, Houdini, Blender', 'गैलेक्सी, कॉस्मिक वेब, प्रकाश का महासागर और बुलबुले यहीं बनते हैं। हल्के 3D के लिए AE में Element 3D।'],
+    ['ट्रैकिंग', '3D Camera Tracker, Mocha Pro, Lockdown', 'हर लाइव प्लेट का कैमरा हल किया जाता है, ताकि धूल, रोशनी और टाइप उसी जगह में बैठें।'],
+    ['कण', 'Trapcode Particular और Form, Stardust, Plexus', 'धूल, चॉक, तारे, बूँदें। Plexus से कॉस्मिक वेब के रेशे।'],
+    ['प्रकाश', 'Deep Glow, Optical Flares, Trapcode Shine', 'bloom भौतिक रूप से सही ढलान के साथ। flare केवल वहाँ, जहाँ फ़्रेम में सचमुच रोशनी का स्रोत है।'],
+    ['लेंस', 'Frischluft Lenscare, depth pass', 'एनामॉर्फ़िक अंडाकार bokeh, किनारों का हल्का distortion और chromatic aberration, हर CG शॉट पर असली लेंस से मिलाकर।'],
+    ['गति', 'ReelSmart Motion Blur, Twixtor', '180° शटर का motion blur हर CG और धीमे किए गए शॉट पर। धीमी गति optical flow से।'],
+    ['ग्रेन', 'Neat Video, स्कैन की हुई 35mm ग्रेन', 'पहले शोर हटाएँ, काम करें, फिर सब परतों पर एक ही ग्रेन चढ़ाएँ, ताकि AI, CG और असली फ़ुटेज एक ही फ़िल्म लगें।'],
+    ['फ़िनिश', 'DaVinci Resolve, Dolby Vision', 'भाग 1 पर फ़िल्म-प्रिंट जैसा ग्रेड और halation। भाग 2 साफ़ और गहरा; सबसे उजला सफ़ेद सिर्फ़ “बेहद” पर।'],
+  ],
+  places: [
+    ['अखज और अंबासन', 'मेहसाणा ज़िला, उत्तर गुजरात', 'समतल, अर्ध-शुष्क मैदान और रेतीली-दोमट मिट्टी। खेतों में बाजरा, अरंडी (दिवेल), जीरा, कपास। पेड़: बबूल, नीम, बरगद, आम। कच्चे, लिपे हुए मकान, देशी खपरैल की छत। कांकरेज बैलों की बैलगाड़ी, मेहसाणी भैंस। पुरुष सफ़ेद धोती और सफ़ेद पगड़ी में; स्त्रियाँ गुजराती ढंग की साड़ी में, पल्लू सामने।'],
+    ['ननिहाल का रास्ता और हाइवे', '1960 का दशक', 'दो लेन की सड़क, किनारे बबूल। गाड़ी उस दौर की हिंदुस्तान एंबेसडर, जिसे गाँव वाले “कछुआ” कहते थे। मई की दोपहर: तापमान 45 डिग्री के आसपास, आसमान सफ़ेद, परछाइयाँ छोटी।'],
+    ['अहमदाबाद', '1970 से 1990 का दशक', 'पुराने शहर की पोलें, साबरमती, कपड़ा मिलों की चिमनियाँ, लाल रंग की AMTS बसें, आश्रम रोड का दफ़्तरी इलाक़ा। दफ़्तर के दृश्य पुस्तक की असली “ऑफ़िस की फ़ोटो” से मिलाकर: बोर्ड, मेज़, काला कोट।'],
+    ['परमशांति भवन, चैनपुर', 'न्यू राणीप रोड, अहमदाबाद', 'आश्रम के सभी दृश्य असली जगह पर ही फ़िल्माए जाएँगे। ब्लैकबोर्ड वाली कक्षा उसी हॉल में दोबारा रची जाएगी। इस जगह की कोई तस्वीर AI से नहीं बनेगी।'],
+  ],
+  placeRules: [
+    'हर AI शॉट से पहले उस जगह की असली तस्वीरें Magnific में संदर्भ (reference) के रूप में दी जाएँगी। बिना संदर्भ के कोई जगह नहीं बनेगी।',
+    'गाँव के दृश्यों के लिए अखज और अंबासन में एक दिन की रेकी: मिट्टी का रंग, मकानों की बनावट, मंदिर, बरगद, कुआँ और खेत की तस्वीरें, सुबह और दोपहर दोनों रोशनी में।',
+    'मौसम और फ़सल सही रखें: काँटे और लू वाले दृश्य मई-जून के; बाजरे के खड़े खेत अगस्त से अक्टूबर के।',
+    'कपड़े, बर्तन, गाड़ियाँ और नोट-सिक्के उसी दशक के हों। परिवार की पुरानी तस्वीरें इसका पहला संदर्भ हैं।',
+    'अभी के नौ चित्र बिना असली तस्वीरों के बने हैं। वे दिशा दिखाते हैं; अंतिम चित्र असली संदर्भ मिलने पर उन्हीं से मिलाकर बनेंगे।',
+  ],
+  score: {
+    one: ['भाग 1 · धरती का संगीत', 'एकतारा, रावणहत्था, सारंगी, बाँसुरी, मंजीरा और पीतल की घंटी। असली वादक, असली कमरे में रिकॉर्ड; लाइब्रेरी के लूप नहीं। भोर के दृश्य अहीर भैरव में, गाँव के दृश्य मांड में, रात का मंदिर मालकौंस में। बारह वादकों का तार-समूह पूरी फ़िल्म में सिर्फ़ दो बार आता है: सोने की चेन पर, और छह जनवरी पर।'],
+    two: ['भाग 2 · आकाश का संगीत', 'चार तानपुरे, रुद्र वीणा, सुरबहार, बिना शब्दों का मिश्रित कंठ-समूह, चालीस वादकों का तार-समूह जो केवल लंबे हार्मोनिक्स बजाता है, और घंटी की आवाज़ से बनी दानेदार (granular) परतें। अंत भैरवी में।'],
+    themes: [
+      ['घंटी', 'तीन स्वरों का छोटा टुकड़ा। भाग 1 में पीतल की घंटी पर, भाग 2 में तीन सप्तक नीचे, अंत में फिर अपने असली स्वर में।'],
+      ['सवाल', 'ऊपर चढ़ता हुआ वाक्यांश, जो हर बार अधूरा छूटता है। यह पूरा केवल एक बार होता है: भाग 2 के अंतिम शब्द से ठीक पहले।'],
+      ['आरोहण', 'शेपर्ड टोन: ऐसा स्वर जो लगातार चढ़ता हुआ लगता है पर कहीं पहुँचता नहीं। अवरोहण में यही उलटा।'],
+    ],
+    sfx: [
+      'सारी ध्वनियाँ असली जगह पर रिकॉर्ड: मेहसाणा की लू, बाजरे के डंठल, बैलगाड़ी के पहिए की चरमराहट, कुएँ की घिरनी, झींगुर।',
+      'पास की आवाज़ें कॉन्टैक्ट माइक से: ब्लैकबोर्ड पर चॉक, स्लेट पर खड़िया, काँटे का टूटना, पानी का एक घूँट।',
+      'उस दौर की असली मशीनें: एंबेसडर का इंजन, टाइपराइटर, छत का पंखा, मिल का सायरन, साइकिल की घंटी।',
+      'अंतरिक्ष में कोई “वूश” नहीं। केवल स्वर, सब-बेस, साँस, धड़कन और मौन।',
+      'मौन असली मौन है: कमरे की आवाज़ भी नहीं। सीरीज़ में ऐसे पाँच क्षण हैं।',
+    ],
+    mix: 'Dolby Atmos (7.1.4) और 5.1 · कथन बीच में, बिना संगीत के नीचे दबे · घंटी सिर के ऊपर घूमती ध्वनि-वस्तु के रूप में · लाउडनेस: संवाद-आधारित −27 LKFS (±2), true peak −2 dBTP से नीचे',
+  },
   sound: [
     'भाग 1 के पहले बीस सेकंड में कोई संगीत नहीं। पहले लू, फिर घंटी, फिर एकतारा।',
     'भाग 1 की सूत्रधार: स्त्री स्वर, धीमा, पास का। (हिंदी पुस्तक “माँ के द्वारा” कही गई है; स्वर उसी आत्मीयता का है, पर किसी असली व्यक्ति की नक़ल नहीं।)',
@@ -69,7 +131,7 @@ export const bible = {
     'मामा का खेत में गाया गीत “शंकर जटाधारी, नंदी लिया सवारी” बिना साज़ के, दूर से।',
     'सीरीज़ का अंतिम शब्द लगभग फुसफुसाहट में है। उसके बाद संगीत नहीं लौटता।',
   ],
-  delivery: 'UHD 4K (3840×2160) · 24 fps · HDR (Dolby Vision) और SDR दोनों ग्रेड · 5.1 और Atmos मिक्स · मूल भाषा हिंदी, अंग्रेज़ी सबटाइटल',
+  delivery: '2.39:1 · UHD 4K (3840×2160 कंटेनर, सक्रिय चित्र 3840×1607) · 24 fps · HDR (Dolby Vision) और SDR दोनों ग्रेड · 5.1 और Atmos मिक्स · मूल भाषा हिंदी, अंग्रेज़ी सबटाइटल',
 };
 
 export const films = [
@@ -80,10 +142,10 @@ export const films = [
     tagline: 'एक बालक, जिसने ईश्वर से शिकायत की',
     runtime: '14 मिनट 10 सेकंड',
     voice: 'स्त्री स्वर',
-    frame: '1.33:1, अंत में 2.39:1',
+    frame: '2.39:1',
     scenes: [
       {
-        n: '00', tc: '0:00–1:10', title: 'पैंतालीस डिग्री', ar: 4 / 3, arLabel: '1.33:1', move: 'macro', lens: '100mm मैक्रो · 96 fps',
+        n: '00', tc: '0:00–1:10', title: 'पैंतालीस डिग्री', still: 'strip-1', ar: 2.39, arLabel: '2.39:1', move: 'macro', lens: '100mm मैक्रो · 96 fps',
         bg: '#F0E3B4', ink: '#1B1730', acc: '#8E3415',
         vo: [
           'गुजरात। मेहसाणा ज़िला। पैंतालीस डिग्री की दोपहर।',
@@ -96,13 +158,13 @@ export const films = [
           '~ शीर्षक: नंगे पाँव',
         ],
         scene: 'काला पर्दा, सूखी हवा। फिर सफ़ेद-तपा आसमान, बबूल की टहनी, एक काँटा। फटी ज़मीन पर एक छोटा नंगा पाँव उतरता है। काँटे को छूने से ठीक पहले कट। बालक की सिर्फ़ आँखें, भौंहों की छाया में, आसमान की ओर।',
-        camera: 'कैमरा ज़मीन पर रखा है, 5 सेमी ऊँचाई। काँटे की नोक से उतरते पाँव तक रैक-फ़ोकस। फिर 50mm, बालक की आँख की ऊँचाई पर, साँस जैसी हल्की हैंडहेल्ड।',
+        camera: 'कैमरा ज़मीन पर रखा है, 5 सेमी ऊँचाई। काँटे की नोक से उतरते पाँव तक रैक-फ़ोकस। फिर 50mm, बालक की आँख की ऊँचाई पर, स्लाइडर पर बहुत धीमा पुश।',
         vfx: 'गर्मी की लहर: Displacement Map को धीमे Fractal Noise से चलाएँ (क्षैतिज 6px, ऊपर की ओर बहाव)। हाइलाइट पर halation। 16mm ग्रेन और हल्का gate-weave। शीर्षक धूल के कणों से बनता है: कण अक्षरों के mask पर जमते हैं, फिर हवा उन्हें उड़ा ले जाती है।',
         sound: 'कोई संगीत नहीं। लू, दूर बैल की घंटी, सूखी पत्तियाँ। बालक की आवाज़ बिना रीवर्ब, बहुत पास। शीर्षक पर एक अकेली पीतल की घंटी।',
-        prompt: 'Extreme macro, ground-level shot of a single sharp acacia (babool) thorn on cracked dry earth in rural Gujarat, white-hot overexposed noon sky, a small child\'s bare dusty foot descending in slow motion toward the thorn, shallow depth of field, heat shimmer, 16mm film grain, 4:3 aspect ratio, bleached straw and ochre palette, no face, no text',
+        prompt: 'Extreme macro, ground-level shot of a single sharp acacia (babool) thorn on cracked dry earth in rural Gujarat, white-hot overexposed noon sky, a small child\'s bare dusty foot descending in slow motion toward the thorn, shallow depth of field, heat shimmer, 35mm film grain, anamorphic 2.39:1, bleached straw and ochre palette, no face, no text',
       },
       {
-        n: '01', tc: '1:10–2:50', title: 'भगत का घर', ar: 4 / 3, arLabel: '1.33:1', move: 'track', lens: '35mm · 40 सेकंड, बिना कट',
+        n: '01', tc: '1:10–2:50', title: 'भगत का घर', ar: 2.39, arLabel: '2.39:1', move: 'track', lens: '35mm · 40 सेकंड, बिना कट',
         bg: '#232745', ink: '#EFE7D2', acc: '#E0B24A',
         vo: [
           'चार सौ साल पुराना एक गाँव। अंबासन। कच्चे मकान। कुएँ का पानी। न नल, न बिजली।',
@@ -118,10 +180,10 @@ export const films = [
         camera: 'घंटी वाले बुज़ुर्ग के साथ घुटने की ऊँचाई पर लंबा ट्रैकिंग शॉट। गहनों पर 85mm, स्थिर। कोई ऊँचा कोण नहीं।',
         vfx: '“रेखाचित्र जीवित” का पहला प्रयोग। दीये की रोशनी पर हल्का flicker। कोने में छोटा सुपर: अंबासन, मेहसाणा · 1956।',
         sound: 'हर चार क़दम पर घंटी। दूर “राम… राम…”। पहली बार संगीत: एकतारे का एक सुर, घंटी के स्वर से मिला हुआ।',
-        prompt: 'Pre-dawn blue hour in a 1950s Gujarati village of mud houses, low tracking shot at knee height following the bare feet of an elderly farmer in a white dhoti walking down a narrow lane holding a small brass hand-bell, a single oil lamp glowing in a doorway, winter mist, indigo and brass-gold palette, vintage spherical lens, 16mm grain, 4:3, no face',
+        prompt: 'Pre-dawn blue hour in a 1950s north Gujarat village (Mehsana district) of mud-plastered houses with country clay-tile roofs, a neem tree, low tracking shot at knee height following the bare feet of an elderly Gujarati farmer in a white dhoti and white turban walking down a narrow lane holding a small brass hand-bell, a single oil lamp glowing in a doorway, winter mist, indigo and brass-gold palette, vintage anamorphic lens, 35mm grain, anamorphic 2.39:1, no face',
       },
       {
-        n: '02', tc: '2:50–4:10', title: 'आधी रात का प्रकाश', ar: 4 / 3, arLabel: '1.33:1', move: 'static', lens: '50mm · 25 सेकंड स्थिर',
+        n: '02', tc: '2:50–4:10', title: 'आधी रात का प्रकाश', ar: 2.39, arLabel: '2.39:1', move: 'static', lens: '50mm · 25 सेकंड स्थिर',
         bg: '#0E1B2E', ink: '#EAF0F4', acc: '#BFD4E6',
         vo: [
           'परिवार में एक क़िस्सा आज भी सुनाया जाता है।',
@@ -135,13 +197,13 @@ export const films = [
           '» माँ :: जिस पर तेरा साया है, वह कभी डूब नहीं सकता।',
         ],
         scene: 'मूल रेखाचित्र (खेत, पानी की नाली, लेटा हुआ शिशु) से शुरुआत। चाँदनी रात। खेतों में दौड़ते पैर, लालटेनें। नाली के किनारे पानी में लेटा शिशु। चेहरा नहीं; सिर्फ़ छोटा पैर, पानी और रोशनी।',
-        camera: 'दौड़ते पैरों के साथ हैंडहेल्ड। शिशु के पास पहुँचते ही कैमरा रुक जाता है: फ़िल्म का पहला पूरी तरह स्थिर, लंबा शॉट।',
+        camera: 'दौड़ते पैरों के साथ स्टेडीकैम, घुटने की ऊँचाई पर। शिशु के पास पहुँचते ही कैमरा रुक जाता है: फ़िल्म का पहला पूरी तरह स्थिर, लंबा शॉट।',
         vfx: '“परम सफ़ेद” पहली बार। practical LED की रोशनी पर bloom की तीन परतें; पानी पर caustics (Fractal Noise → CC Glass)। रोशनी इतनी हल्की रखें कि उसे चाँदनी भी माना जा सके। फ़ैसला दर्शक करे।',
         sound: 'झींगुर, पानी की धार, भागते क़दम, पुकारें। शिशु के मिलते ही सब हट जाता है, सिर्फ़ पानी बचता है। माँ का वाक्य फुसफुसाहट में।',
-        prompt: 'Full-moon night in a millet field in Gujarat, a narrow irrigation channel with slowly flowing water, a soft unexplained white glow reflecting on the water where a baby\'s tiny foot is just visible at the edge of frame, lanterns approaching far in the background out of focus, locked-off static shot, deep blue-black palette with one area of pure white light, 4:3, film grain',
+        prompt: 'Full-moon night in a pearl-millet field on the flat sandy plain of Mehsana district, north Gujarat, a narrow irrigation channel with slowly flowing water, a soft unexplained white glow reflecting on the water where a baby\'s tiny foot is just visible at the edge of frame, lanterns approaching far in the background out of focus, locked-off static shot, deep blue-black palette with one area of pure white light, anamorphic 2.39:1, film grain',
       },
       {
-        n: '03', tc: '4:10–5:40', title: 'कछुआ', ar: 4 / 3, arLabel: '1.33:1', move: 'track', lens: '35mm · 30 मीटर डॉली',
+        n: '03', tc: '4:10–5:40', title: 'कछुआ', still: 'strip-2', ar: 2.39, arLabel: '2.39:1', move: 'track', lens: '35mm · 30 मीटर डॉली',
         bg: '#D2A056', ink: '#1B1730', acc: '#5F2410',
         vo: [
           'चार-पाँच साल की उम्र से खेत। ऊपर का कपड़ा हो तो नीचे का नहीं। खाने में बाजरे की सूखी रोटी, मिर्च, प्याज़। और पानी।',
@@ -160,10 +222,10 @@ export const films = [
         camera: 'ताक़ वाला शॉट नीचे से: रोटी हमेशा फ़्रेम के ऊपरी किनारे पर, पहुँच से बाहर। हाइवे पर सड़क के समानांतर डॉली। गाड़ी फ़्रेम पार कर जाती है पर कैमरा उसका पीछा नहीं करता; सिर्फ़ बालक का सिर घूमता है।',
         vfx: 'गाड़ी की धूल की तीन परतें, अलग-अलग blur के साथ। रेखाचित्र multiply में 40%, दो सेकंड में घुलता है। पूरा अध्याय मटमैला पीला; गाड़ी इसकी अकेली चमकदार चीज़।',
         sound: 'दूर से आता इंजन, गुज़रते समय डॉप्लर। रोटी फेंके जाने की आवाज़ फ़्रेम के बाहर। माँ की हँसी सूखी नहीं, प्यार भरी।',
-        prompt: '1960s rural Gujarat, dusty two-lane highway through dry fields, a barefoot boy of about six in a torn shirt and his mother in a faded sari walking along the roadside seen from behind at child eye level, a rounded cream-coloured 1960s Indian sedan passing through the frame leaving a trail of golden dust, lateral dolly shot, ochre and millet-yellow palette, 16mm grain, 4:3, no faces',
+        prompt: '1960s rural Gujarat, dusty two-lane highway through flat fields of pearl millet and castor with babool and neem trees, a barefoot boy of about six in a torn shirt and his mother in a faded cotton sari draped Gujarati-style with the pallu in front, walking along the roadside seen from behind at child eye level, a rounded cream-coloured 1960s Indian sedan passing through the frame leaving a trail of golden dust, lateral dolly shot, ochre and millet-yellow palette, 35mm grain, anamorphic 2.39:1, no faces',
       },
       {
-        n: '04', tc: '5:40–7:10', title: 'दो पैसे', ar: 4 / 3, arLabel: '1.33:1', move: 'push', lens: '50mm · धूल पर 200 fps',
+        n: '04', tc: '5:40–7:10', title: 'दो पैसे', ar: 2.39, arLabel: '2.39:1', move: 'push', lens: '50mm · धूल पर 200 fps',
         bg: '#2F3B36', ink: '#EDE8D8', acc: '#D9C27A',
         vo: [
           'पढ़ाई में वह हमेशा पहला या दूसरा आता।',
@@ -183,10 +245,10 @@ export const films = [
         camera: 'बच्चों की क़तार के साथ धीमा पुश-इन। छड़ी का वार हम नहीं देखते; कैमरा बालक की आँखों पर रहता है। पेड़ों पर 24mm, ज़मीन से ऊपर की ओर: कैमरा नहीं उठता, सिर्फ़ नज़र उठती है। गिरते पत्ते 96 fps।',
         vfx: 'खड़िया की धूल का पहला क्लोज़-अप, बैकलिट। यह भाग 2 के “चॉक से तारे” का बीज है। कुल्हाड़ी के हर वार पर दो फ़्रेम का काला। गिरते पत्तों में CG पत्तों की एक अतिरिक्त परत। अध्याय में दो मूल रेखाचित्र: छड़ी वाला मास्टर और आम के पेड़।',
         sound: 'स्लेट पर खड़िया। सन्नाटा। छड़ी, एक ही बार, सूखी। फिर कुल्हाड़ी की ताल, जो धीरे-धीरे दिल की धड़कन बन जाती है।',
-        prompt: '1960s village schoolroom in Gujarat, a row of barefoot children sitting cross-legged on a mud floor with writing slates, a shaft of dusty sunlight from a barred window, chalk dust floating in the backlight, a small boy\'s open palm held out in the foreground, slow push-in at child eye level, slate-green and chalk-white palette, 16mm grain, 4:3, faces not shown',
+        prompt: '1960s village schoolroom in Gujarat, a row of barefoot children sitting cross-legged on a mud floor with writing slates, a shaft of dusty sunlight from a barred window, chalk dust floating in the backlight, a small boy\'s open palm held out in the foreground, slow push-in at child eye level, slate-green and chalk-white palette, 35mm grain, anamorphic 2.39:1, faces not shown',
       },
       {
-        n: '05', tc: '7:10–8:40', title: 'हनुमान जी, ताक़त दो', ar: 4 / 3, arLabel: '1.33:1', move: 'static', lens: '35mm · ज़मीन पर लेटा कैमरा',
+        n: '05', tc: '7:10–8:40', title: 'हनुमान जी, ताक़त दो', still: 'strip-3', ar: 2.39, arLabel: '2.39:1', move: 'static', lens: '35mm · ज़मीन पर लेटा कैमरा',
         bg: '#3A1508', ink: '#F5E7CF', acc: '#F08A2C',
         vo: [
           'रात के नौ बजे, जब गाँव सो जाता, छठी कक्षा का वह लड़का अकेला हनुमान जी के मंदिर जाता।',
@@ -206,10 +268,10 @@ export const films = [
         camera: 'बालक के पीछे-पीछे मंदिर तक एक ही शॉट। मूर्ति को हम उसके कंधे के ऊपर से, उसी की नज़र से देखते हैं। बरगद के नीचे कैमरा ज़मीन पर लेटा है और बालक के साथ ऊपर देखता है: स्थिर, तीस सेकंड।',
         vfx: 'आसमान के लिए असली astro-timelapse प्लेट; तारे असली अनुपात में, कोई नक़ली नेब्युला नहीं। दीये की लौ से आँखों में हल्की catch-light। “जिन्न भाई” के लिए कुछ नहीं दिखाना: सिर्फ़ बरगद की एक डाल अपने-आप हिलती है।',
         sound: 'दूर खेत से मामा का गीत, बिना साज़: “शंकर जटाधारी, नंदी लिया सवारी”। मंदिर में बालक के वाक्य के बाद पूरा सन्नाटा। तारों पर एकतारा लौटता है।',
-        prompt: 'Night in a 1960s Gujarati village, a tiny roadside Hanuman shrine with a vermilion-orange idol lit by a single oil lamp, a small barefoot boy seen from behind standing before it with open upturned palms, deep black surroundings, saffron and soot-black palette, over-the-shoulder shot at child height, 16mm grain, 4:3',
+        prompt: 'Night in a 1960s Gujarati village, a tiny roadside Hanuman shrine with a vermilion-orange idol lit by a single oil lamp, a small barefoot boy seen from behind standing before it with open upturned palms, deep black surroundings, saffron and soot-black palette, over-the-shoulder shot at child height, 35mm grain, anamorphic 2.39:1',
       },
       {
-        n: '06', tc: '8:40–10:20', title: 'दस पैसे', ar: 4 / 3, arLabel: '1.33:1', move: 'track', lens: '50mm · सड़क-स्तर',
+        n: '06', tc: '8:40–10:20', title: 'दस पैसे', ar: 2.39, arLabel: '2.39:1', move: 'track', lens: '50mm · सड़क-स्तर',
         bg: '#C9C5BA', ink: '#17182A', acc: '#7A1E1E',
         vo: [
           'ग्यारहवीं के बाद मामा उसे अहमदाबाद ले आए। एक छोटा कमरा, जिसमें मामा का पूरा परिवार रहता था।',
@@ -228,10 +290,10 @@ export const films = [
         camera: 'चप्पलों के साथ सड़क-स्तर की लंबी ट्रैकिंग; बस पास से निकल जाती है, कैमरा नहीं रुकता। चेन पर 100mm मैक्रो। अस्पताल में कैमरा गलियारे के छोर पर स्थिर है; युवक दूर से आकर फ़्रेम से निकल जाता है।',
         vfx: 'पहली बार असली सामग्री: पारिवारिक तस्वीर का 2.5D उपचार। ख़ून वाले शॉट में पूरे फ़्रेम का saturation 15% कर दें; सिर्फ़ रुई पर लाल बचा रहे (secondary key)।',
         sound: 'साइकिल की घंटियाँ, मिल का सायरन। विवाह की शहनाई दूर और धुँधली। चेन रखते समय धातु की एक महीन खनक। अस्पताल में सिर्फ़ पंखा।',
-        prompt: '1970s Ahmedabad street at harsh midday, road-level tracking shot of a young man\'s feet walking in worn rubber slippers whose two straps are different colours, a city bus passing in the background out of focus, bleached concrete-grey palette, vintage lens, 16mm grain, 4:3, no face',
+        prompt: '1970s Ahmedabad street at harsh midday, road-level tracking shot of a young man\'s feet walking in worn rubber slippers whose two straps are different colours, a city bus passing in the background out of focus, bleached concrete-grey palette, vintage lens, 35mm grain, anamorphic 2.39:1, no face',
       },
       {
-        n: '07', tc: '10:20–11:40', title: 'दशरथ पटेल एंड कंपनी', ar: 4 / 3, arLabel: '1.33:1', move: 'track', lens: '40mm · ट्रैक पर डॉली',
+        n: '07', tc: '10:20–11:40', title: 'दशरथ पटेल एंड कंपनी', ar: 2.39, arLabel: '2.39:1', move: 'track', lens: '40mm · ट्रैक पर डॉली',
         bg: '#3B2A1E', ink: '#F1E6D2', acc: '#D8B36A',
         vo: [
           'फिर एक दिन अहमदाबाद में एक बोर्ड लगा। दशरथ पटेल एंड कंपनी। इनकम टैक्स कंसल्टेंट।',
@@ -246,13 +308,13 @@ export const films = [
           'इनकम टैक्स के छापों में उसने लोगों को टूटते देखा। मरते देखा। पैसा आ गया था। और उसके साथ वैराग्य भी।',
         ],
         scene: 'पॉलिश किए काले जूते, दफ़्तर की सीढ़ियाँ। पुस्तक की असली “ऑफ़िस की फ़ोटो”: बोर्ड पर नाम। फ़ाइलों के ढेर, क़ानून की किताबें, काला कोट। गाँव में बनता एक पक्का मकान। अलमारी में टँगे खादी के दो कुर्ते। अंत में छापे के बाद का ख़ाली दफ़्तर, उलटी पड़ी एक कुर्सी।',
-        camera: 'पहली बार चिकनी, सटीक डॉली। ग़रीबी की हैंडहेल्ड यहाँ ख़त्म होती है। फ़ाइलों के ऊपर से धीमा लेटरल मूव। खादी के कुर्तों पर स्थिर, सममित फ़्रेम। कैमरा अब वयस्क की आँख की ऊँचाई पर है, उससे ऊपर नहीं।',
+        camera: 'यहाँ गति का स्वभाव बदलता है: मोशन-कंट्रोल जैसी सटीक, यांत्रिक डॉली। यह शहर और पेशे की दुनिया है। फ़ाइलों के ऊपर से धीमा लेटरल मूव। खादी के कुर्तों पर स्थिर, सममित फ़्रेम। कैमरा अब वयस्क की आँख की ऊँचाई पर है, उससे ऊपर नहीं।',
         vfx: 'असली दफ़्तर वाली तस्वीर का 2.5D। काइनेटिक टाइप: आयकर की धाराओं के नंबर फ़्रेम में तैरते हैं और बालक के पुराने सवालों में बदल जाते हैं (“किसने बनाई?” “क्यों?”)। ग्रेड गर्म सागवान, पर चेहरे की जगह पर ठंडी रोशनी।',
         sound: 'टाइपराइटर की ताल ही संगीत की ताल है। अंत में टाइपराइटर रुक जाता है; कमरे का पंखा अकेला घूमता रहता है।',
-        prompt: '1980s Indian tax lawyer\'s office in Ahmedabad, teak desk stacked with case files and law books, a black coat hung on a chair, a blank hand-painted signboard (lettering added in post), warm tungsten light through wooden blinds, smooth lateral dolly across the desk, teak-brown and brass palette, 4:3, film grain, no people',
+        prompt: '1980s Indian tax lawyer\'s office in Ahmedabad, teak desk stacked with case files and law books, a black coat hung on a chair, a blank hand-painted signboard (lettering added in post), warm tungsten light through wooden blinds, smooth lateral dolly across the desk, teak-brown and brass palette, anamorphic 2.39:1, film grain, no people',
       },
       {
-        n: '08', tc: '11:40–12:50', title: 'पहला जवाब', ar: 4 / 3, arLabel: '1.33:1', move: 'static', lens: 'लॉक्ड-ऑफ़ टाइमलैप्स · 12 घंटे → 20 सेकंड',
+        n: '08', tc: '11:40–12:50', title: 'पहला जवाब', ar: 2.39, arLabel: '2.39:1', move: 'static', lens: 'लॉक्ड-ऑफ़ टाइमलैप्स · 12 घंटे → 20 सेकंड',
         bg: '#101A3A', ink: '#E9ECF5', acc: '#9DB7FF',
         vo: [
           'उन्नीस सौ सत्तासी। उम्र इकतीस।',
@@ -272,16 +334,16 @@ export const films = [
         camera: 'स्थिर फ़्रेम। बारह घंटे का ध्यान एक ही लॉक्ड-ऑफ़ टाइमलैप्स में। अंत में छत पर 24mm, ऊपर तारों की ओर: कैमरा देखता है, उठता नहीं।',
         vfx: 'टाइमलैप्स में सिल्हूट को अलग प्लेट से कम्पोज़िट करें, ताकि वह बिल्कुल न हिले। “परम सफ़ेद” दूसरी बार: सिल्हूट के किनारों पर बहुत हल्का light-wrap, दस सेकंड में 0 से 15%। सितारों वाली पंक्ति तारों के बीच हाथ की लिखावट में उभरती है।',
         sound: 'घड़ी की टिक-टिक धीमी होकर बंद। तानपुरे का पहला प्रवेश, यानी भाग 2 का सुर। पानी का एक घूँट: फ़िल्म की सबसे पास की आवाज़।',
-        prompt: 'A bare meditation room before dawn, a man in white seen only as a perfectly still silhouette from behind sitting cross-legged on the floor, a rectangle of sunlight from the window sliding across the floor, a single glass of water beside him, locked-off time-lapse feeling, deep blue and soft white palette, faint glow along the silhouette edge, 4:3, film grain',
+        prompt: 'A bare meditation room before dawn, a man in white seen only as a perfectly still silhouette from behind sitting cross-legged on the floor, a rectangle of sunlight from the window sliding across the floor, a single glass of water beside him, locked-off time-lapse feeling, deep blue and soft white palette, faint glow along the silhouette edge, anamorphic 2.39:1, film grain',
       },
       {
-        n: '09', tc: '12:50–14:10', title: 'छह जनवरी', ar: 2.39, arLabel: '1.33:1 → 2.39:1', move: 'crane', lens: 'क्रेन → ड्रोन → CG · 45 सेकंड',
-        bg: '#EEF1F4', ink: '#14162B', acc: '#8F6412', opens: true,
+        n: '09', tc: '12:50–14:10', title: 'छह जनवरी', ar: 2.39, arLabel: '2.39:1', move: 'crane', lens: 'क्रेन → ड्रोन → CG · 45 सेकंड',
+        bg: '#EEF1F4', ink: '#14162B', acc: '#8F6412',
         vo: [
           'छह जनवरी, उन्नीस सौ सत्तानवे। अहमदाबाद।',
           'वह अपने घर में लेटे थे। आँखें खुली थीं।',
           'और, जैसा वह ख़ुद बताते हैं, उन्होंने देखा कि वह धरती पर खड़े हैं और उनका सिर आकाश से भी ऊपर है। चाँद, सितारे, सूरज, सब नीचे।',
-          '~ लंबा विराम। फ़्रेम खुलना शुरू होता है।',
+          '~ लंबा विराम। क्षितिज नीचे उतरने लगता है; आसमान खुलता है।',
           'उन्होंने दफ़्तर बंद कर दिया। किराए के एक मकान में, चार-पाँच लोगों के सामने, बोलना शुरू किया। फिर अहमदाबाद के चैनपुर में ज़मीन ली, और अपने तन, मन, धन से एक आश्रम बनाया। विश्व परिवर्तक ईश्वरीय विद्यालय।',
           'पहले वह बालक था। फिर दशरथ। फिर दशरथ भाई। फिर बाबा।',
           'और फिर, बापूजी।',
@@ -293,10 +355,10 @@ export const films = [
           '~ अंत-पट्टी: भाग 2 · बेहद',
         ],
         scene: 'अहमदाबाद का एक साधारण कमरा। खाट पर लेटा आदमी; सिर्फ़ खुली आँखों का क्लोज़-अप। छत। फिर छत घुल जाती है, शहर नीचे रह जाता है, बादल, चाँद, तारे, सब नीचे। कट: दीवार से उतरता दफ़्तर का बोर्ड। किराए का कमरा, चार-पाँच लोग, एक ब्लैकबोर्ड। चैनपुर की ख़ाली ज़मीन पर पहली ईंट। असली तस्वीर: सफ़ेद वस्त्रों में तपस्या में बैठे बापूजी।',
-        camera: 'पूरी फ़िल्म का नियम यहाँ टूटता है। आँखों के क्लोज़-अप से कैमरा पहली बार ऊपर उठता है: खाट से छत, छत के पार, शहर के ऊपर। इसी मूव के दौरान फ़्रेम 1.33:1 से खुलकर 2.39:1 हो जाता है।',
+        camera: 'पूरी फ़िल्म का नियम यहाँ टूटता है। आँखों के क्लोज़-अप से कैमरा पहली बार ऊपर उठता है: खाट से छत, छत के पार, शहर के ऊपर। इसी मूव में क्षितिज पहली बार फ़्रेम के निचले किनारे तक उतरता है और आसमान पूरा फ़्रेम भर देता है।',
         vfx: 'छत का घुलना luma-matte से; ड्रोन प्लेट और CG आकाश का जोड़ बादलों के white-out में छिपा है। “परम सफ़ेद” तीसरी और आख़िरी बार, इस बार पूरे फ़्रेम में, दो सेकंड। नाम वाली पंक्ति पर टाइप एक ही जगह बदलता है: बालक → दशरथ → दशरथ भाई → बाबा → बापूजी।',
         sound: 'राम-नाम की घंटी लौटती है, अब तानपुरे के ऊपर। ऊपर उठते हुए धरती की आवाज़ें एक-एक करके छूटती हैं। अंतिम पंक्ति पूर्ण सन्नाटे में।',
-        prompt: 'Continuous rising shot starting close on a man\'s open eyes as he lies on a simple cot in a modest 1990s Ahmedabad room, the camera lifts straight up through the dissolving ceiling into the night sky above the city, then above the clouds with the moon and stars below the horizon line, the frame widening from 4:3 to anamorphic 2.39:1, warm tungsten giving way to pure white light and then deep indigo, photoreal, cinematic, face not identifiable',
+        prompt: 'Continuous rising shot starting close on a man\'s open eyes as he lies on a simple cot in a modest 1990s Ahmedabad room, the camera lifts straight up through the dissolving ceiling into the night sky above the city, then above the clouds with the moon and stars below the horizon line, anamorphic 2.39:1, warm tungsten giving way to pure white light and then deep indigo, photoreal, cinematic, face not identifiable',
       },
     ],
   },
@@ -307,7 +369,7 @@ export const films = [
     tagline: 'ब्रह्मांड के पार की यात्रा, जैसी बापूजी बताते हैं',
     runtime: '16 मिनट 30 सेकंड',
     voice: 'पुरुष स्वर, और बापूजी की अपनी आवाज़',
-    frame: '2.39:1, फिर पूरा फ़्रेम',
+    frame: '2.39:1',
     scenes: [
       {
         n: '00', tc: '0:00–1:20', title: 'हवाई ज्ञान', ar: 2.39, arLabel: '2.39:1', move: 'push', lens: '75mm एनामॉर्फ़िक · धूल पर 1000 fps',
@@ -331,7 +393,7 @@ export const films = [
         prompt: 'Extreme slow-motion macro of white chalk dust falling through a beam of light in front of a dark green blackboard covered in hand-drawn concentric circles, the dust particles freeze in mid-air and transform into a field of stars as the board fades into deep space, anamorphic 2.39:1, shallow depth of field, photoreal, no readable text',
       },
       {
-        n: '01', tc: '1:20–2:50', title: 'तीसरा नेत्र', ar: 2.39, arLabel: '2.39:1', move: 'push', lens: '100mm एनामॉर्फ़िक · 60 सेकंड, एक शॉट',
+        n: '01', tc: '1:20–2:50', title: 'तीसरा नेत्र', still: 'strip-4', ar: 2.39, arLabel: '2.39:1', move: 'push', lens: '100mm एनामॉर्फ़िक · 60 सेकंड, एक शॉट',
         bg: '#F1F2F6', ink: '#12142A', acc: '#8A6410',
         supers: ['आश्रम के अनुसार: 1,50,000 घंटे से अधिक की तपस्या'],
         vo: [
@@ -352,7 +414,7 @@ export const films = [
         prompt: 'Perfectly symmetrical frontal shot of a seated cross-legged human silhouette with no facial features, slowly filling from within with flowing streams of white-gold light, soft volumetric glow, a single bright point at the centre of the forehead, slow push-in, pale luminous background, anamorphic 2.39:1, restrained, no face, no text',
       },
       {
-        n: '02', tc: '2:50–4:30', title: 'एक ब्रह्मांड', ar: 2.39, arLabel: '2.39:1', move: 'crane', lens: '40mm · लघुगणकीय आरोहण',
+        n: '02', tc: '2:50–4:30', title: 'एक ब्रह्मांड', still: 'strip-5', ar: 2.39, arLabel: '2.39:1', move: 'crane', lens: '40mm · लघुगणकीय आरोहण',
         bg: '#0A1A33', ink: '#E8EEF7', acc: '#F2B544',
         supers: ['विज्ञान: दूसरे तारों के 5,000 से ज़्यादा ग्रहों की पुष्टि। वहाँ जीवन की पुष्टि: अभी नहीं।'],
         vo: [
@@ -393,7 +455,7 @@ export const films = [
         prompt: 'Interior of a simple 1990s Indian ashram classroom at night, shot from the back of the room looking toward a blackboard with chalk diagrams of concentric circles, a row of empty chairs in the soft-focus foreground, the air above the empty chairs subtly shimmering like heat haze, a round out-of-focus light reflected in a window pane, slow dolly forward, anamorphic 2.39:1, dim warm practical light, nothing supernatural shown explicitly',
       },
       {
-        n: '04', tc: '5:40–7:20', title: 'महाब्रह्मांड', ar: 2.39, arLabel: '2.39:1', move: 'push', lens: 'CG · 40 सेकंड का पुश, फिर 8 सेकंड स्थिर',
+        n: '04', tc: '5:40–7:20', title: 'महाब्रह्मांड', still: 'strip-6', ar: 2.39, arLabel: '2.39:1', move: 'push', lens: 'CG · 40 सेकंड का पुश, फिर 8 सेकंड स्थिर',
         bg: '#150B2E', ink: '#EDE6F7', acc: '#E9A93C',
         supers: ['वैज्ञानिक अनुमान: आकाशगंगा में 100 से 400 अरब तारे', 'Sagittarius A* · पहली तस्वीर 2022 · द्रव्यमान लगभग 40 लाख सूर्य'],
         vo: [
@@ -442,15 +504,15 @@ export const films = [
         prompt: 'A glowing sphere of filamentary cosmic web representing an entire universe blooming outward from a single point and then collapsing back into darkness, repeated in a different jewel-toned hue each time, a row of sixteen small dim dots along the bottom of the frame and a seventeenth glowing, locked-off camera, pure black background, anamorphic 2.39:1, elegant minimal scientific visualisation',
       },
       {
-        n: '06', tc: '9:00–11:00', title: 'बेहद', ar: 16 / 9, arLabel: '2.39:1 → पूरा फ़्रेम', move: 'pull', lens: 'लगातार पीछे और ऊपर · पट्टियाँ 20 सेकंड में घुलती हैं',
-        bg: '#07050F', ink: '#F1ECDD', acc: '#F5D58A', opens: true,
+        n: '06', tc: '9:00–11:00', title: 'बेहद', still: 'strip-7', ar: 2.39, arLabel: '2.39:1', move: 'pull', lens: 'लगातार पीछे और ऊपर · एक ही गति-वक्र',
+        bg: '#07050F', ink: '#F1ECDD', acc: '#F5D58A',
         vo: [
           'चौथा पड़ाव। यहाँ भाषा कम पड़ने लगती है।',
           'बापूजी के अनुसार, हमारा यूनिवर्स अकेला नहीं। ऐसे सत्रह हैं, जिन्हें वह जी-वन से जी-सेवेंटीन कहते हैं। सब मिलकर, एक मल्टीवर्स।',
           'वह बताते हैं कि दो हज़ार बारह तक यह अनुभव बिल्कुल साफ़ हो गया था। करोड़ों ब्रह्मांड। हर एक का अपना रंग।',
           'और यह मल्टीवर्स भी, उनके अनुसार, दो बार मिट चुका है। यह तीसरी बार है।',
           'जो मल्टीवर्स सिमटकर ब्लैक होल जैसी नींद में चला जाता है, उसके लिए उनके पास एक शब्द है: ब्लैकवर्स।',
-          '~ फ़्रेम की काली पट्टियाँ घुलने लगती हैं।',
+          '~ रंग एक-एक करके छूटने लगते हैं।',
           'दो हज़ार पंद्रह में उन्होंने इसके भी आगे की बात कही।',
           'जैसे एक मल्टीवर्स है, वैसे अनंत मल्टीवर्स हैं। उनकी परतें हैं। वह उन्हें पीढ़ियाँ कहते हैं।',
           'पीढ़ी एक। पीढ़ी दो। इक्कीस तक।',
@@ -460,13 +522,13 @@ export const films = [
           '~ छह सेकंड का मौन। सीरीज़ का सबसे लंबा।',
         ],
         scene: 'सत्रहवाँ यूनिवर्स पीछे हटता है, और उसके साथ सोलह और गोले दिखते हैं, हर एक अपने रंग का। सब मिलकर एक बड़ा, पारदर्शी गोला: मल्टीवर्स। कैमरा और पीछे जाता है: वह भी अनगिनत में एक। फिर एक के बाहर एक प्रकाश की इक्कीस परतें, हर बाहरी परत ज़्यादा महीन, ज़्यादा उजली। इक्कीसवीं के बाद रंग ख़त्म। आकार ख़त्म। सिर्फ़ प्रकाश।',
-        camera: 'यहीं काली पट्टियाँ घुलती हैं। जो दर्शक अब तक सिनेमा-पट्टी में देख रहा था, उसकी पूरी स्क्रीन भर जाती है। कैमरे की गति धीमी होती जाती है और “बेहद” शब्द पर लगभग शून्य।',
+        camera: 'कैमरा लगातार पीछे और ऊपर जाता है, एक ही गति-वक्र पर, बिना किसी झटके के। गति धीमी होती जाती है और “बेहद” शब्द पर लगभग शून्य।',
         vfx: 'सत्रह यूनिवर्स काँच जैसे गोले हैं, भीतर अलग रंग का कॉस्मिक वेब, refraction और हल्की chromatic dispersion के साथ। इक्कीस पीढ़ियाँ संकेंद्रित प्रकाश-खोल हैं; हर खोल पर पीढ़ी का अंक देवनागरी में, बहुत छोटा। HDR का सबसे उजला सफ़ेद (1000 nits) केवल यहाँ। अंत में फ़्रेम सफ़ेद नहीं होता; हर रंग इतना महीन हो जाता है कि सफ़ेद लगता है।',
         sound: 'हर पीढ़ी पर तानपुरे के ऊपर एक नया स्वर जुड़ता है, इक्कीस तक। “बेहद” शब्द पर सब एक साथ रुकते हैं।',
-        prompt: 'Seventeen translucent glass-like spheres each containing a cosmic web of a different colour, floating together inside one vast faintly glowing bubble, camera pulling back to reveal countless such bubbles, then twenty-one concentric shells of increasingly fine white-gold light extending outward to infinity, the cinematic black bars dissolving so the image fills the entire frame, black to luminous white-gold palette, minimal, photoreal volumetric light',
+        prompt: 'Seventeen translucent glass-like spheres each containing a cosmic web of a different colour, floating together inside one vast faintly glowing bubble, camera pulling back to reveal countless such bubbles, then twenty-one concentric shells of increasingly fine white-gold light extending outward to infinity, anamorphic 2.39:1, black to luminous white-gold palette, minimal, photoreal volumetric light',
       },
       {
-        n: '07', tc: '11:00–12:30', title: 'एक बूँद', ar: 16 / 9, arLabel: 'पूरा फ़्रेम', move: 'static', lens: 'स्थिर, 45 सेकंड',
+        n: '07', tc: '11:00–12:30', title: 'एक बूँद', ar: 2.39, arLabel: '2.39:1', move: 'static', lens: 'स्थिर, 45 सेकंड',
         bg: '#F3DFA2', ink: '#1C1420', acc: '#7A4E08',
         vo: [
           'तो यह सब आया कहाँ से?',
@@ -485,10 +547,10 @@ export const films = [
         camera: 'पहली बार कैमरा बिल्कुल स्थिर रहकर सिर्फ़ देखता है। फिर एक बूँद को चुनकर उसके साथ नीचे उतरना शुरू करता है: अवरोहण की शुरुआत।',
         vfx: 'महासागर fluid सिमुलेशन है, पर पानी नहीं: भीतर से चमकता हुआ प्रकाश। बूँदों के लिए high-speed crown-splash का संदर्भ। “आकार लेना” कणों के चारों ओर धुंध के जमने से (Houdini, या AE में Fractal Noise की परतें और CC Vector Blur)। रंग केवल सफ़ेद और स्वर्ण।',
         sound: 'मौन से शुरुआत। संकल्प पर एक स्वर: स्त्री और पुरुष कंठ एक साथ, बिना शब्द। हर बूँद पर जलतरंग जैसा एक महीन स्वर।',
-        prompt: 'An infinite horizonless ocean made of soft white-gold light rather than water, a single slow ripple crosses its surface and droplets of light rise and scatter outward in slow motion, each droplet a glowing point, mist beginning to condense around the points, static wide shot, full-frame 16:9, only white and gold tones, serene, volumetric',
+        prompt: 'An infinite horizonless ocean made of soft white-gold light rather than water, a single slow ripple crosses its surface and droplets of light rise and scatter outward in slow motion, each droplet a glowing point, mist beginning to condense around the points, static wide shot, anamorphic 2.39:1, only white and gold tones, serene, volumetric',
       },
       {
-        n: '08', tc: '12:30–14:00', title: 'काला बिंदु', ar: 16 / 9, arLabel: 'पूरा फ़्रेम → 1.33:1', move: 'descend', lens: 'आरोहण का ठीक उलटा · 60 सेकंड',
+        n: '08', tc: '12:30–14:00', title: 'काला बिंदु', ar: 2.39, arLabel: '2.39:1', move: 'descend', lens: 'आरोहण का ठीक उलटा · 60 सेकंड',
         bg: '#F4F4F1', ink: '#0C0C12', acc: '#0C0C12', dot: true,
         vo: [
           'और फिर इस कहानी में एक दरार आती है।',
@@ -500,19 +562,19 @@ export const films = [
           '~ लंबा विराम',
           'तब, इसी मान्यता के अनुसार, बेहद के उस रचयिता ने तय किया:',
           '» रचयिता :: इस बार मैं ख़ुद जाऊँगा। साधारण मनुष्य के तन में। ग़रीब से ग़रीब घर में। ताकि मुझे पता लगे कि दुख होता क्या है।',
-          '~ कट, बिना किसी संक्रमण के: सफ़ेद-तपा खेत। काँटा। नंगा पाँव। फ़्रेम वापस 1.33:1।',
+          '~ कट, बिना किसी संक्रमण के: सफ़ेद-तपा खेत। काँटा। नंगा पाँव।',
           '» बालक :: तू नीचे आके ज़रा देख। पैर में काँटे लगते हैं।',
           '~ पाँच सेकंड कुछ नहीं',
           'जो लोग बापूजी को मानते हैं, उनके लिए उस बच्चे की शिकायत का जवाब वह बच्चा ख़ुद था।',
         ],
         scene: 'अनंत उजाला। उसमें बहुत दूर एक काला बिंदु, इतना छोटा कि पहले धूल का कण लगे। अवरोहण उसी की ओर। बिंदु बढ़ता है: वह एक मल्टीवर्स है, जिसकी रोशनी मटमैली पड़ चुकी है। भीतर एक यूनिवर्स, एक गैलेक्सी, एक सूर्य, एक धूसर, थका हुआ नीला ग्रह। फिर कट: भाग 1 का पहला शॉट।',
-        camera: 'आरोहण का ठीक उलटा: वही रास्ता, वही गति, उलटी दिशा। अंतिम कट पर फ़्रेम झटके से 1.33:1 में लौट आता है, ताकि बेहद से हद में गिरना दर्शक अपने शरीर में महसूस करे।',
+        camera: 'आरोहण का ठीक उलटा: वही रास्ता, वही गति, उलटी दिशा। अंतिम कट सीधा है, अनंत उजाले से तपे हुए खेत में, ताकि बेहद से हद में गिरना दर्शक अपने शरीर में महसूस करे।',
         vfx: 'सफ़ेद पर काला: भाग 2 के पूरे रंग-विधान का उलटा। बिंदु पर साठ सेकंड का exponential zoom; भीतर की दुनिया का saturation 100% से 35% तक गिरता है। कट से पहले एक फ़्रेम का काला। भाग 1 का शॉट बिना किसी नए ग्रेड के, जैसा था वैसा।',
         sound: 'उतरते हुए स्वर एक-एक करके छूटते हैं, इक्कीस से एक तक। कट पर अचानक लू की आवाज़, पूरी तीव्रता से। बालक का वाक्य भाग 1 की वही रिकॉर्डिंग।',
-        prompt: 'An endless field of soft white light with a single tiny black dot far in the distance, the camera descends steadily toward it as it grows into a dim, desaturated bubble universe, inside it a galaxy, a star, and a tired grey-blue planet, inverted colour logic with darkness as the anomaly inside light, full-frame 16:9, minimal, stark',
+        prompt: 'An endless field of soft white light with a single tiny black dot far in the distance, the camera descends steadily toward it as it grows into a dim, desaturated bubble universe, inside it a galaxy, a star, and a tired grey-blue planet, inverted colour logic with darkness as the anomaly inside light, anamorphic 2.39:1, minimal, stark',
       },
       {
-        n: '09', tc: '14:00–15:10', title: 'विनाश नहीं', ar: 16 / 9, arLabel: 'पूरा फ़्रेम', move: 'crane', lens: 'कुएँ के भीतर से ऊपर · z-अक्ष',
+        n: '09', tc: '14:00–15:10', title: 'विनाश नहीं', ar: 2.39, arLabel: '2.39:1', move: 'crane', lens: 'कुएँ के भीतर से ऊपर · z-अक्ष',
         bg: '#1B3A35', ink: '#EEF2E6', acc: '#F0C867',
         vo: [
           'दुनिया के अंत की भविष्यवाणियाँ बहुत हैं। बापूजी को “विनाश” शब्द ही पसंद नहीं।',
@@ -530,10 +592,10 @@ export const films = [
         camera: 'आर्काइव फ़ुटेज पर कोई बनावटी मूव नहीं। बल्ब पर 100mm मैक्रो, स्थिर। कुएँ वाला शॉट मेंढक की नज़र से ऊपर की ओर; फिर कैमरा कुएँ से सीधा ऊपर निकलता है और समुद्र खुल जाता है।',
         vfx: '“तत्व परिवर्तन”: हर तत्व की मैक्रो प्लेट कणों में बदलती है (कण-emitter को layer के luma से चलाएँ), कण चमककर ऊपर उठते हैं। विनाश की कोई छवि नहीं: न आग, न मलबा, न टूटती इमारतें। आर्काइव फ़ुटेज को upscale न करें; उसे फ़्रेम के भीतर एक छोटे फ़्रेम में, उसके असली रूप में रखें।',
         sound: 'बापूजी की असली आवाज़ आगे; सूत्रधार पीछे हट जाता है। कुएँ में गूँज, समुद्र पर खुलापन।',
-        prompt: 'Looking straight up from the bottom of an old stone well, a small circle of bright sky above, the camera rises smoothly up and out of the well to reveal a vast open ocean at dawn stretching to the horizon, teal and soft gold palette, full-frame 16:9, photoreal, hopeful',
+        prompt: 'Looking straight up from the bottom of an old stone well, a small circle of bright sky above, the camera rises smoothly up and out of the well to reveal a vast open ocean at dawn stretching to the horizon, teal and soft gold palette, anamorphic 2.39:1, photoreal, hopeful',
       },
       {
-        n: '10', tc: '15:10–16:30', title: 'बेहद की परमशांति', ar: 16 / 9, arLabel: 'पूरा फ़्रेम', move: 'descend', lens: '100mm मैक्रो · ज़मीन से 5 सेमी',
+        n: '10', tc: '15:10–16:30', title: 'बेहद की परमशांति', ar: 2.39, arLabel: '2.39:1', move: 'descend', lens: '100mm मैक्रो · ज़मीन से 5 सेमी',
         bg: '#0C0F1F', ink: '#F3EEDD', acc: '#F0C867',
         vo: [
           'वह इसे मंत्र कहते हैं। इसमें न कोई देवता है, न कोई माँग।',
@@ -553,7 +615,7 @@ export const films = [
         camera: 'उतरता कैमरा ज़मीन से 5 सेमी ऊपर आकर रुकता है: ठीक वहीं, जहाँ भाग 1 का पहला शॉट रखा गया था। काँटे से अंकुर तक एक रैक-फ़ोकस। यह सीरीज़ का आख़िरी कैमरा-निर्णय है।',
         vfx: 'यह सीरीज़ का सबसे सादा हिस्सा है। अंकुर असली। अंतिम तस्वीर पूरी तरह स्थिर, आठ सेकंड। मंत्र का टाइप काले पर, सादा देवनागरी, कोई चमक नहीं। अंत-पट्टी पर यह पंक्ति: “इस फ़िल्म में ब्रह्मांड का जो वर्णन है, वह बापूजी दशरथभाई पटेल का अपना अनुभव-कथन है।”',
         sound: 'सांझ के खेत की आवाज़ें; अब लू नहीं, हल्की हवा। राम-नाम की घंटी एक बार, अपने असली स्वर में। अंतिम शब्द के बाद संगीत नहीं लौटता।',
-        prompt: 'Slow final descent from orbit down to a single millet field in Gujarat at dusk, the camera settles five centimetres above cracked earth, extreme macro of an acacia thorn in the foreground, rack focus to a tiny green seedling sprouting beside it, soft warm twilight, gentle breeze, full-frame 16:9, quiet, photoreal',
+        prompt: 'Slow final descent from orbit down to a single millet field in Gujarat at dusk, the camera settles five centimetres above cracked earth, extreme macro of an acacia thorn in the foreground, rack focus to a tiny green seedling sprouting beside it, soft warm twilight, gentle breeze, anamorphic 2.39:1, quiet, photoreal',
       },
     ],
   },

@@ -37,7 +37,9 @@ function voMd(lines) {
 
 function sceneHtml(f, s) {
   const [label, glyph] = MOVES[s.move];
-  const ghost = s.opens ? (s.ar > 2 ? `<i class="ghost" style="aspect-ratio:4/3"></i>` : `<i class="ghost wide" style="aspect-ratio:2.39/1"></i>`) : '';
+  const inner = s.still
+    ? `<img src="art/${s.still}.jpg" alt="${esc(s.title)}: मुख्य शॉट का संकल्प-चित्र" loading="lazy">`
+    : `${s.dot ? '<i class="pt"></i>' : ''}<svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="${label}">${glyph}</svg>`;
   const spectrum = s.spectrum ? `<div class="spectrum" aria-hidden="true">${Array.from({ length: s.spectrum }, (_, i) => `<i style="--h:hsl(${i * 21} 72% 62%)"></i>`).join('')}</div>` : '';
   const supers = s.supers ? `<div class="supers"><b>स्क्रीन पर</b>${s.supers.map((x) => `<span>${esc(x)}</span>`).join('')}</div>` : '';
   return `<article class="scene" id="${f.id}-${s.n}" style="--bg:${s.bg};--ink:${s.ink};--acc:${s.acc}">
@@ -45,7 +47,7 @@ function sceneHtml(f, s) {
 <div class="slate">
 <p class="no"><b>दृश्य ${s.n}</b><span>${s.tc}</span></p>
 <h3>${esc(s.title)}</h3>
-<figure class="frame" style="aspect-ratio:${s.ar.toFixed(3)}">${ghost}${s.dot ? '<i class="pt"></i>' : ''}<svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="${label}">${glyph}</svg></figure>
+<figure class="frame${s.still ? ' has-still' : ''}">${inner}</figure>
 <p class="cap"><b>${esc(s.arLabel)}</b> · ${label}<br>${esc(s.lens)}</p>
 ${spectrum}
 </div>
@@ -69,10 +71,13 @@ ${supers}
 function filmHtml(f, i) {
   return `<section class="film f${i + 1}" id="${f.id}">
 <div class="film-head"><div class="w">
+<div class="fh-text">
 <p class="eyebrow">${esc(f.part)}</p>
 <h2>${esc(f.title)}</h2>
 <p class="tag">${esc(f.tagline)}</p>
 <p class="meta"><span><b>अवधि</b> ${esc(f.runtime)}</span><span><b>फ़्रेम</b> ${esc(f.frame)}</span><span><b>स्वर</b> ${esc(f.voice)}</span></p>
+</div>
+<img class="kart" src="art/keyart-${i + 1}.jpg" alt="${esc(f.title)} का पोस्टर-चित्र" width="537" height="800">
 <div class="script" aria-label="रंग-पटकथा">${f.scenes.map((s) => `<a href="#${f.id}-${s.n}" style="--bg:${s.bg};--ink:${s.ink};--d:${dur(s.tc)}" title="${esc(s.title)} · ${s.tc}">${s.n}</a>`).join('')}</div>
 <p class="script-cap">रंग-पटकथा: हर खंड एक दृश्य है, चौड़ाई उसकी अवधि के अनुपात में। किसी खंड पर जाएँ तो वही दृश्य खुलेगा।</p>
 </div></div>
@@ -80,10 +85,7 @@ ${f.scenes.map((s) => sceneHtml(f, s)).join('\n')}
 </section>`;
 }
 
-const strips = [
-  ['heat', 'लौ', '#1B1730', 'rgba(255,255,255,.6)'], ['earth', 'कि', '#fff'], ['night', 'क', '#fff'], null,
-  ['eye', 'अ', '#14162B', 'rgba(255,255,255,.9)'], ['sun', 'लौ', '#fff'], ['galaxy', 'कि', '#fff'], ['multi', 'क', '#fff'],
-];
+const strips = [[1, 'लौ', 'dark'], [2, 'कि'], [3, 'क'], null, [4, 'अ', 'core'], [5, 'लौ'], [6, 'कि'], [7, 'क']];
 
 const html = `<title>लौकिक · अलौकिक</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -92,8 +94,8 @@ const html = `<title>लौकिक · अलौकिक</title>
 ${readFileSync(join(here, 'page.css'), 'utf8')}</style>
 <nav class="bar"><div class="w"><b>${esc(series.title)}</b><a href="#bhasha">फ़िल्म की भाषा</a><a href="#bhag-1">भाग 1</a><a href="#bhag-2">भाग 2</a><a href="#srot">स्रोत</a></div></nav>
 <header class="hero"><div class="w">
-<div class="poster" role="img" aria-label="सात पट्टियों का पोस्टर: काँटा, फटी धरती, तारों तले बालक, नेत्र, सूर्य और कक्षाएँ, गैलेक्सी, मल्टीवर्स">
-${strips.map((s) => s ? `<div class="strip"><canvas data-art="${s[0]}"></canvas><span style="--c:${s[2]}${s[3] ? `;--s:${s[3]}` : ''}">${s[1]}</span></div>` : '<div class="gap"></div>').join('\n')}
+<div class="poster" role="img" aria-label="सात पट्टियों का पोस्टर: बबूल का काँटा, फटी धरती पर नंगे पाँव, तारों तले बालक, नेत्र, सूर्य और कक्षाएँ, गैलेक्सी का केंद्र, मल्टीवर्स">
+${strips.map((s) => s ? `<div class="strip${s[2] ? ' ' + s[2] : ''}"><img src="art/strip-${s[0]}.jpg" alt=""><span>${s[1]}</span></div>` : '<div class="gap"></div>').join('\n')}
 </div>
 <div class="intro">
 <p class="eyebrow">${esc(series.kicker)}</p>
@@ -111,9 +113,9 @@ ${films.map((f) => `<a href="#${f.id}"><span class="eyebrow">${esc(f.part)}</spa
 <div class="idea">
 <div class="txt"><h3>एक विचार: हद से बेहद</h3>${bible.idea.map((p) => `<p>${esc(p)}</p>`).join('')}</div>
 <div class="ratios">
-<div class="ratio"><i class="r1"></i><span><b>1.33:1</b>हद · भाग 1</span></div>
-<div class="ratio"><i class="r2"></i><span><b>2.39:1</b>फ़्रेम खुलता है · भाग 2</span></div>
-<div class="ratio"><i class="r3"></i><span><b>16:9</b>बेहद · पूरा फ़्रेम</span></div>
+<div class="ratio"><i style="--y:26%"></i><span><b>भाग 1</b>क्षितिज ऊपर: ज़मीन ज़्यादा, आसमान कम</span></div>
+<div class="ratio"><i style="--y:82%"></i><span><b>1997</b>क्षितिज उतरता है, आसमान खुलता है</span></div>
+<div class="ratio"><i class="none"></i><span><b>भाग 2</b>क्षितिज नहीं: बेहद</span></div>
 </div>
 </div>
 <div class="rules">
@@ -121,8 +123,15 @@ ${Object.values(bible.rules).map((r) => `<div><h3>${esc(r.name)}</h3><ol>${r.ite
 </div>
 <div><h3>बार-बार लौटने वाली छवियाँ</h3><dl class="motifs">${bible.motifs.map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl></div>
 <div><h3>चेहरे का नियम</h3><p class="face">${esc(bible.face)}</p></div>
-<div><h3>VFX और After Effects की तकनीकें</h3><div class="scroll"><table><thead><tr><th>तकनीक</th><th>कहाँ</th><th>कैसे</th></tr></thead><tbody>${bible.vfx.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>
-<div><h3>ध्वनि और स्वर</h3><ul class="sound">${bible.sound.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
+<div><h3>कैमरा-गति: उपकरण</h3><dl class="motifs">${bible.rig.gear.map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl></div>
+<div class="rules one"><div><h3>कैमरा-गति: सात नियम</h3><ol>${bible.rig.laws.map((x) => `<li><span>${esc(x)}</span></li>`).join('')}</ol></div></div>
+<div><h3>After Effects की पूरी पाइपलाइन</h3><div class="scroll"><table><thead><tr><th>चरण</th><th>औज़ार</th><th>किसलिए</th></tr></thead><tbody>${bible.ae.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>
+<div><h3>हस्ताक्षर शॉट और उनकी विधि</h3><div class="scroll"><table><thead><tr><th>तकनीक</th><th>कहाँ</th><th>कैसे</th></tr></thead><tbody>${bible.vfx.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>
+<div><h3>स्थान: जो जहाँ हुआ, वहीं जैसा दिखे</h3><div class="scroll"><table><thead><tr><th>जगह</th><th>कहाँ, कब</th><th>पर्दे पर क्या सही होना चाहिए</th></tr></thead><tbody>${bible.places.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><ul class="sound gapt">${bible.placeRules.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
+<div class="rules">${[bible.score.one, bible.score.two].map(([a, b]) => `<div><h3>${esc(a)}</h3><p class="para">${esc(b)}</p></div>`).join('')}</div>
+<div><h3>तीन संगीत-सूत्र</h3><dl class="motifs">${bible.score.themes.map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl></div>
+<div><h3>ध्वनि-प्रभाव</h3><ul class="sound">${bible.score.sfx.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><p class="spec gapt">${esc(bible.score.mix)}</p></div>
+<div><h3>स्वर और कथन</h3><ul class="sound">${bible.sound.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
 <div><h3>डिलीवरी</h3><p class="spec">${esc(bible.delivery)}</p></div>
 </div></section>
 
@@ -181,6 +190,77 @@ ${s.prompt}
 `).join('\n')}`;
   writeFileSync(join(here, files[i]), md);
 });
+
+const li = (a) => a.map((x) => `- ${x}`).join('\n');
+const tbl = (h, rows) => `| ${h.join(' | ')} |\n|${h.map(() => '---').join('|')}|\n${rows.map((r) => `| ${r.join(' | ')} |`).join('\n')}`;
+writeFileSync(join(here, 'film-ki-bhasha.md'), `# ${series.title}: फ़िल्म की भाषा
+
+${series.logline}
+
+## एक विचार: हद से बेहद
+
+${bible.idea.join('\n\n')}
+
+## ${bible.rules.one.name}
+
+${li(bible.rules.one.items)}
+
+## ${bible.rules.two.name}
+
+${li(bible.rules.two.items)}
+
+## बार-बार लौटने वाली छवियाँ
+
+${li(bible.motifs.map(([a, b]) => `**${a}.** ${b}`))}
+
+## चेहरे का नियम
+
+${bible.face}
+
+## कैमरा-गति: उपकरण
+
+${li(bible.rig.gear.map(([a, b]) => `**${a}.** ${b}`))}
+
+## कैमरा-गति: सात नियम
+
+${li(bible.rig.laws)}
+
+## After Effects की पूरी पाइपलाइन
+
+${tbl(['चरण', 'औज़ार', 'किसलिए'], bible.ae)}
+
+## हस्ताक्षर शॉट और उनकी विधि
+
+${tbl(['तकनीक', 'कहाँ', 'कैसे'], bible.vfx)}
+
+## स्थान
+
+${tbl(['जगह', 'कहाँ, कब', 'पर्दे पर क्या सही होना चाहिए'], bible.places)}
+
+${li(bible.placeRules)}
+
+## संगीत
+
+**${bible.score.one[0]}.** ${bible.score.one[1]}
+
+**${bible.score.two[0]}.** ${bible.score.two[1]}
+
+${li(bible.score.themes.map(([a, b]) => `**${a}.** ${b}`))}
+
+## ध्वनि-प्रभाव
+
+${li(bible.score.sfx)}
+
+${bible.score.mix}
+
+## स्वर और कथन
+
+${li(bible.sound)}
+
+## डिलीवरी
+
+${bible.delivery}
+`);
 
 const words = (f) => f.scenes.flatMap((s) => s.vo).filter((l) => !l.startsWith('~ ')).join(' ').split(/\s+/).length;
 console.log(films.map((f) => `${f.title}: ${f.scenes.length} दृश्य, कथन ${words(f)} शब्द`).join('\n'));

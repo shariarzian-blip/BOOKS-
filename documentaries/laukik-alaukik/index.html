@@ -12,6 +12,7 @@
   --dust: #A9A492;      /* धूल: गौण पाठ */
   --bajra: #E3B552;     /* बाजरा-स्वर्ण: ज़ोर */
   --line: #2B2E47;      /* रेखाएँ */
+  --dustland: #6B4526;  /* मिट्टी: क्षितिज के नीचे की ज़मीन */
   --display: 'Rozha One', 'Tiro Devanagari Hindi', 'Noto Serif Devanagari', serif;
   --read: 'Tiro Devanagari Hindi', 'Noto Serif Devanagari', 'Kohinoor Devanagari', serif;
   --ui: 'Mukta', 'Noto Sans Devanagari', 'Kohinoor Devanagari', system-ui, sans-serif;
@@ -38,12 +39,14 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .bar a:hover { color: var(--khadi); }
 
 /* पोस्टर */
-.hero .w { display: grid; grid-template-columns: minmax(0, 30rem) minmax(0, 1fr); gap: 2.5rem 3.5rem; align-items: center; padding-block: 2.5rem 3.5rem; }
+.hero .w { display: grid; grid-template-columns: minmax(0, 34rem) minmax(0, 1fr); gap: 2.5rem 3.5rem; align-items: center; padding-block: 2.5rem 3.5rem; }
 .poster { display: grid; gap: 3px; }
 .poster .gap { height: .6rem; }
-.strip { position: relative; height: clamp(58px, 9.2vw, 92px); overflow: hidden; background: var(--night); }
-.strip canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-.strip span { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-size: clamp(2.2rem, 6vw, 3.6rem); line-height: 1; color: var(--c, #fff); text-shadow: 0 0 18px var(--s, rgba(0, 0, 0, .55)); }
+.strip { position: relative; aspect-ratio: 1024 / 254; overflow: hidden; background: var(--night); container-type: size; }
+.strip img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.strip span { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-size: 72cqh; line-height: 1; color: var(--khadi); text-shadow: 0 2px 22px rgba(0, 0, 0, .7), 0 0 3px rgba(0, 0, 0, .5); }
+.strip.dark span { color: var(--void); text-shadow: 0 0 22px rgba(255, 255, 255, .75); }
+.strip.core span { background: radial-gradient(closest-side, rgba(6, 8, 16, .82) 0 34%, rgba(6, 8, 16, 0) 62%); }
 .intro { display: grid; gap: 1.4rem; min-width: 0; }
 .intro h1 { font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 4.6vw, 3.2rem); line-height: 1.25; text-wrap: balance; }
 .intro .log { font-family: var(--read); font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.8; max-width: 30em; }
@@ -65,13 +68,16 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .idea .txt p { font-family: var(--read); font-size: 1.125rem; line-height: 1.85; max-width: 34em; }
 .ratios { display: grid; gap: 1.1rem; }
 .ratio { display: grid; gap: .4rem; }
-.ratio i { display: block; height: 4.4rem; max-width: 100%; border: 1px solid var(--bajra); background: var(--night); }
-.ratio i.r1 { aspect-ratio: 4 / 3; }
-.ratio i.r2 { aspect-ratio: 2.39 / 1; }
-.ratio i.r3 { aspect-ratio: 16 / 9; height: 6.6rem; background: var(--khadi); border-color: var(--khadi); }
+.ratio i { display: block; position: relative; width: 100%; max-width: 17rem; aspect-ratio: 2.39 / 1; border: 1px solid var(--line); background: linear-gradient(var(--night) 0 var(--y), var(--dustland) var(--y) 100%); }
+.ratio i::after { content: ""; position: absolute; left: 0; right: 0; top: var(--y); height: 1px; background: var(--bajra); }
+.ratio i.none { background: radial-gradient(circle at 50% 40%, var(--khadi), var(--bajra) 55%, var(--night)); }
+.ratio i.none::after { display: none; }
 .ratio span { font-size: .875rem; color: var(--dust); }
 .ratio b { font-family: var(--mono); font-weight: 500; color: var(--khadi); margin-right: .5rem; }
 .rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 3.5rem; }
+.rules.one { grid-template-columns: minmax(0, 46rem); }
+.para { font-size: 1rem; max-width: 36em; }
+.gapt { margin-top: 1.4rem; }
 .rules ol { display: grid; gap: .7rem; counter-reset: r; }
 .rules li { counter-increment: r; display: grid; grid-template-columns: 1.6rem minmax(0, 1fr); font-size: 1rem; }
 .rules li::before { content: counter(r, devanagari); font-family: var(--mono); color: var(--dust); }
@@ -91,13 +97,20 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 .spec { font-family: var(--mono); font-size: .85rem; color: var(--dust); line-height: 1.8; }
 
 /* भाग का शीर्ष */
-.film-head { border-top: 1px solid var(--line); }
-.film-head .w { display: grid; gap: 1.5rem; padding-block: 3.5rem 2rem; }
-.film-head h2 { font-family: var(--display); font-weight: 400; font-size: clamp(3rem, 10vw, 6.5rem); line-height: 1.15; }
+.film-head { border-top: 1px solid var(--line); background: var(--void) center / cover no-repeat; }
+.f1 .film-head { background-image: linear-gradient(90deg, rgba(10, 11, 20, .9) 0 38%, rgba(10, 11, 20, .45)), linear-gradient(0deg, var(--void), rgba(10, 11, 20, 0) 45%), url(art/strip-3.jpg); }
+.f2 .film-head { background-image: linear-gradient(90deg, rgba(10, 11, 20, .88) 0 32%, rgba(10, 11, 20, .35)), linear-gradient(0deg, var(--void), rgba(10, 11, 20, 0) 45%), url(art/strip-6.jpg); }
+.film-head .w { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem 3rem; align-items: end; padding-block: 4.5rem 2rem; }
+.fh-text { display: grid; gap: 1.2rem; }
+.film-head .script, .film-head .script-cap { grid-column: 1 / -1; }
+.kart { width: 13.5rem; height: auto; display: block; border: 1px solid var(--line); box-shadow: 0 24px 60px rgba(0, 0, 0, .6); }
+.film-head h2 { font-family: var(--display); font-weight: 400; font-size: clamp(3.4rem, 11vw, 7.5rem); line-height: 1.2; color: var(--bajra); background: center / cover; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.f1 .film-head h2 { background-image: linear-gradient(rgba(255, 214, 150, .28), rgba(255, 214, 150, .28)), url(art/strip-2.jpg); filter: brightness(1.55) saturate(1.15); }
+.f2 .film-head h2 { background-image: url(art/strip-7.jpg); background-size: 260% auto; background-position: 96% 50%; }
 .film-head .tag { font-family: var(--read); font-size: 1.25rem; }
 .meta { display: flex; flex-wrap: wrap; gap: .4rem 2rem; font-size: .9rem; color: var(--dust); }
 .meta b { color: var(--khadi); font-weight: 600; }
-.f1 .w { max-width: var(--hadd); }
+.f1 .scene .w { max-width: var(--hadd); }
 .script { display: flex; height: 3.2rem; border: 1px solid var(--line); }
 .script a { flex: var(--d) 1 0; min-width: 0; background: var(--bg); color: var(--ink); text-decoration: none; display: grid; place-items: center; font-family: var(--mono); font-size: .75rem; }
 .script a:hover { outline: 2px solid var(--khadi); outline-offset: -2px; }
@@ -110,10 +123,10 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 .no { font-family: var(--mono); font-size: .8rem; color: var(--soft); display: flex; gap: 1rem; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
 .no b { color: var(--acc); font-weight: 500; }
 .scene h3 { font-family: var(--display); font-weight: 400; font-size: clamp(1.7rem, 3.4vw, 2.3rem); line-height: 1.3; text-wrap: balance; }
-.frame { position: relative; width: 100%; max-width: 100%; border: 1px solid var(--soft); display: grid; place-items: center; color: var(--acc); background: color-mix(in srgb, var(--ink) 7%, var(--bg)); }
-.frame svg { width: 62%; height: auto; max-height: 76%; }
-.frame .ghost { position: absolute; top: 0; bottom: 0; left: 50%; translate: -50% 0; border-inline: 1px dashed var(--soft); }
-.frame .ghost.wide { top: 50%; bottom: auto; left: 0; right: 0; translate: 0 -50%; border-inline: 0; border-block: 1px dashed var(--soft); }
+.frame { position: relative; width: 100%; max-width: 100%; aspect-ratio: 2.39 / 1; border: 1px solid var(--soft); display: grid; place-items: center; color: var(--acc); background: color-mix(in srgb, var(--ink) 7%, var(--bg)); overflow: hidden; }
+.frame svg { width: 56%; height: auto; max-height: 72%; }
+.frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.frame.has-still { border-color: transparent; }
 .frame .pt { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: var(--ink); right: 22%; top: 30%; }
 .cap { font-size: .8125rem; color: var(--soft); line-height: 1.55; }
 .cap b { font-family: var(--mono); font-weight: 500; color: var(--ink); }
@@ -145,7 +158,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 .notes li a { color: var(--khadi); overflow-wrap: anywhere; }
 
 @media (max-width: 52rem) {
-  .hero .w, .idea, .rules, .scene .w { grid-template-columns: minmax(0, 1fr); }
+  .hero .w, .idea, .rules, .scene .w, .film-head .w { grid-template-columns: minmax(0, 1fr); }
+  .kart { width: 9rem; grid-row: 1; }
   .hero .w { padding-block: 1.5rem 2.5rem; }
   .slate { grid-template-columns: minmax(0, 1fr) minmax(0, 9rem); align-items: start; }
   .slate > .no, .slate > h3 { grid-column: 1 / -1; }
@@ -153,23 +167,21 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
   .slate > .cap, .slate > .spectrum { grid-column: 1; }
   .dir { grid-template-columns: minmax(0, 1fr); }
   .scene .w { padding-block: 2.5rem; }
-  .ratios { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; }
-  .ratio i, .ratio i.r3 { height: auto; width: 100%; }
   .parts { grid-template-columns: minmax(0, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 <nav class="bar"><div class="w"><b>लौकिक · अलौकिक</b><a href="#bhasha">फ़िल्म की भाषा</a><a href="#bhag-1">भाग 1</a><a href="#bhag-2">भाग 2</a><a href="#srot">स्रोत</a></div></nav>
 <header class="hero"><div class="w">
-<div class="poster" role="img" aria-label="सात पट्टियों का पोस्टर: काँटा, फटी धरती, तारों तले बालक, नेत्र, सूर्य और कक्षाएँ, गैलेक्सी, मल्टीवर्स">
-<div class="strip"><canvas data-art="heat"></canvas><span style="--c:#1B1730;--s:rgba(255,255,255,.6)">लौ</span></div>
-<div class="strip"><canvas data-art="earth"></canvas><span style="--c:#fff">कि</span></div>
-<div class="strip"><canvas data-art="night"></canvas><span style="--c:#fff">क</span></div>
+<div class="poster" role="img" aria-label="सात पट्टियों का पोस्टर: बबूल का काँटा, फटी धरती पर नंगे पाँव, तारों तले बालक, नेत्र, सूर्य और कक्षाएँ, गैलेक्सी का केंद्र, मल्टीवर्स">
+<div class="strip dark"><img src="art/strip-1.jpg" alt=""><span>लौ</span></div>
+<div class="strip"><img src="art/strip-2.jpg" alt=""><span>कि</span></div>
+<div class="strip"><img src="art/strip-3.jpg" alt=""><span>क</span></div>
 <div class="gap"></div>
-<div class="strip"><canvas data-art="eye"></canvas><span style="--c:#14162B;--s:rgba(255,255,255,.9)">अ</span></div>
-<div class="strip"><canvas data-art="sun"></canvas><span style="--c:#fff">लौ</span></div>
-<div class="strip"><canvas data-art="galaxy"></canvas><span style="--c:#fff">कि</span></div>
-<div class="strip"><canvas data-art="multi"></canvas><span style="--c:#fff">क</span></div>
+<div class="strip core"><img src="art/strip-4.jpg" alt=""><span>अ</span></div>
+<div class="strip"><img src="art/strip-5.jpg" alt=""><span>लौ</span></div>
+<div class="strip"><img src="art/strip-6.jpg" alt=""><span>कि</span></div>
+<div class="strip"><img src="art/strip-7.jpg" alt=""><span>क</span></div>
 </div>
 <div class="intro">
 <p class="eyebrow">दो भागों की डॉक्यूमेंट्री · निर्माण-पुस्तिका</p>
@@ -177,8 +189,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <p class="log">पैंतालीस डिग्री की धूप में एक नंगे पाँव बालक ने आसमान से कहा, “तू नीचे आके ज़रा देख।” भाग 1 उस सवाल की कहानी है। भाग 2 उस जवाब की।</p>
 <p class="subj">बापूजी दशरथभाई पटेल · विश्व परिवर्तक ईश्वरीय विद्यालय, चैनपुर, अहमदाबाद</p>
 <div class="parts">
-<a href="#bhag-1"><span class="eyebrow">भाग 1 · लौकिक</span><strong>नंगे पाँव</strong><small>एक बालक, जिसने ईश्वर से शिकायत की<br>14 मिनट 10 सेकंड · 1.33:1, अंत में 2.39:1</small></a>
-<a href="#bhag-2"><span class="eyebrow">भाग 2 · अलौकिक</span><strong>बेहद</strong><small>ब्रह्मांड के पार की यात्रा, जैसी बापूजी बताते हैं<br>16 मिनट 30 सेकंड · 2.39:1, फिर पूरा फ़्रेम</small></a>
+<a href="#bhag-1"><span class="eyebrow">भाग 1 · लौकिक</span><strong>नंगे पाँव</strong><small>एक बालक, जिसने ईश्वर से शिकायत की<br>14 मिनट 10 सेकंड · 2.39:1</small></a>
+<a href="#bhag-2"><span class="eyebrow">भाग 2 · अलौकिक</span><strong>बेहद</strong><small>ब्रह्मांड के पार की यात्रा, जैसी बापूजी बताते हैं<br>16 मिनट 30 सेकंड · 2.39:1</small></a>
 </div>
 </div>
 </div></header>
@@ -186,30 +198,40 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <section class="bible" id="bhasha"><div class="w">
 <h2>फ़िल्म की भाषा</h2>
 <div class="idea">
-<div class="txt"><h3>एक विचार: हद से बेहद</h3><p>हिंदी पुस्तक अपने को “लौकिक और अलौकिक कहानी” कहती है। फ़िल्म उसी बँटवारे पर खड़ी है। भाग 1 धरती पर रहता है। भाग 2 धरती छोड़ देता है।</p><p>दोनों भाग एक ही शॉट पर खुलते और बंद होते हैं: तपा हुआ खेत, बबूल का काँटा, एक नंगा पाँव। भाग 1 में यह सवाल है। भाग 2 के अंत में वही शॉट जवाब बनकर लौटता है।</p><p>फ़्रेम ख़ुद कहानी कहता है। भाग 1 पुरानी तस्वीर जैसे तंग 1.33:1 फ़्रेम में है, यानी “हद”। 1997 में फ़्रेम खुलकर 2.39:1 होता है। भाग 2 में इक्कीस पीढ़ियों के पार काली पट्टियाँ घुल जाती हैं और तस्वीर पूरी स्क्रीन भर देती है, यानी “बेहद”।</p></div>
+<div class="txt"><h3>एक विचार: हद से बेहद</h3><p>हिंदी पुस्तक अपने को “लौकिक और अलौकिक कहानी” कहती है। फ़िल्म उसी बँटवारे पर खड़ी है। भाग 1 धरती पर रहता है। भाग 2 धरती छोड़ देता है।</p><p>दोनों भाग एक ही शॉट पर खुलते और बंद होते हैं: तपा हुआ खेत, बबूल का काँटा, एक नंगा पाँव। भाग 1 में यह सवाल है। भाग 2 के अंत में वही शॉट जवाब बनकर लौटता है।</p><p>पूरी सीरीज़ 2.39:1 के सिनेमा-फ़्रेम में है। हद और बेहद का फ़र्क़ क्षितिज से आता है। भाग 1 में क्षितिज फ़्रेम के ऊपरी हिस्से में रहता है: ज़मीन ज़्यादा, आसमान कम। 1997 में वह नीचे उतरता है और आसमान खुल जाता है। भाग 2 में क्षितिज ग़ायब हो जाता है।</p></div>
 <div class="ratios">
-<div class="ratio"><i class="r1"></i><span><b>1.33:1</b>हद · भाग 1</span></div>
-<div class="ratio"><i class="r2"></i><span><b>2.39:1</b>फ़्रेम खुलता है · भाग 2</span></div>
-<div class="ratio"><i class="r3"></i><span><b>16:9</b>बेहद · पूरा फ़्रेम</span></div>
+<div class="ratio"><i style="--y:26%"></i><span><b>भाग 1</b>क्षितिज ऊपर: ज़मीन ज़्यादा, आसमान कम</span></div>
+<div class="ratio"><i style="--y:82%"></i><span><b>1997</b>क्षितिज उतरता है, आसमान खुलता है</span></div>
+<div class="ratio"><i class="none"></i><span><b>भाग 2</b>क्षितिज नहीं: बेहद</span></div>
 </div>
 </div>
 <div class="rules">
-<div><h3>भाग 1 · धरती का कैमरा</h3><ol><li><span>कैमरा बालक की आँख से ऊँचा कभी नहीं जाता: 90 सेमी। बड़ा होने पर 150 सेमी।</span></li><li><span>सिर्फ़ ज़मीन के समानांतर गति: ट्रैक, डॉली, हैंडहेल्ड। न क्रेन, न ड्रोन।</span></li><li><span>हर अध्याय पैरों के एक शॉट से शुरू होता है।</span></li><li><span>हर बचपन का अध्याय पुस्तक के मूल रेखाचित्र से खुलता है, जो जीवित दृश्य में बदल जाता है।</span></li><li><span>पुराने गोल (spherical) लेंस, 16mm ग्रेन, 24 fps। काँटे और धूल के लिए 96 से 200 fps।</span></li><li><span>पहली बार कैमरा ऊपर उठता है अंतिम दृश्य में। वही क्षण फ़्रेम को खोलता है।</span></li></ol></div>
-<div><h3>भाग 2 · आकाश का कैमरा</h3><ol><li><span>कैमरा सिर्फ़ ऊपर-नीचे और आगे-पीछे चलता है। दाएँ-बाएँ पैन कभी नहीं।</span></li><li><span>पूरा आरोहण एक अटूट शॉट जैसा दिखता है। कट सफ़ेद और काले क्षणों में छिपे हैं।</span></li><li><span>हर पड़ाव पर पिछला पड़ाव एक बिंदु बनकर फ़्रेम में टिका रहता है, ताकि पैमाना कभी न खोए।</span></li><li><span>2x एनामॉर्फ़िक लेंस, 2.39:1। “बेहद” पर पूरा फ़्रेम।</span></li><li><span>अंतरिक्ष में कोई ध्वनि-प्रभाव नहीं। सिर्फ़ तानपुरा, साँस और मौन।</span></li><li><span>विज्ञान के तथ्य कथन में नहीं, स्क्रीन पर छोटे अक्षरों में आते हैं, ताकि अनुभव-कथन और मापा हुआ तथ्य कभी न घुलें।</span></li></ol></div>
+<div><h3>भाग 1 · धरती का कैमरा</h3><ol><li><span>कैमरा बालक की आँख से ऊँचा कभी नहीं जाता: 90 सेमी। बड़ा होने पर 150 सेमी।</span></li><li><span>सिर्फ़ ज़मीन के समानांतर गति: डॉली, मोटर-चालित स्लाइडर, स्टेडीकैम। न क्रेन, न ड्रोन, न हैंडहेल्ड।</span></li><li><span>क्षितिज हमेशा फ़्रेम के ऊपरी तिहाई में: ज़मीन ज़्यादा, आसमान कम।</span></li><li><span>हर अध्याय पैरों के एक शॉट से शुरू होता है।</span></li><li><span>हर बचपन का अध्याय पुस्तक के मूल रेखाचित्र से खुलता है, जो जीवित दृश्य में बदल जाता है।</span></li><li><span>पुराने, नरम कोटिंग वाले 2x एनामॉर्फ़िक लेंस, 35mm ग्रेन, 24 fps। काँटे और धूल के लिए 96 से 1000 fps।</span></li><li><span>पहली बार कैमरा ऊपर उठता है अंतिम दृश्य में। वहीं क्षितिज नीचे उतरता है।</span></li></ol></div>
+<div><h3>भाग 2 · आकाश का कैमरा</h3><ol><li><span>कैमरा सिर्फ़ ऊपर-नीचे और आगे-पीछे चलता है। दाएँ-बाएँ पैन कभी नहीं।</span></li><li><span>पूरा आरोहण एक अटूट शॉट जैसा दिखता है। कट सफ़ेद और काले क्षणों में छिपे हैं।</span></li><li><span>हर पड़ाव पर पिछला पड़ाव एक बिंदु बनकर फ़्रेम में टिका रहता है, ताकि पैमाना कभी न खोए।</span></li><li><span>साफ़, आधुनिक 2x एनामॉर्फ़िक लेंस। क्षितिज फ़्रेम से ग़ायब।</span></li><li><span>अंतरिक्ष में कोई ध्वनि-प्रभाव नहीं। सिर्फ़ तानपुरा, साँस और मौन।</span></li><li><span>विज्ञान के तथ्य कथन में नहीं, स्क्रीन पर छोटे अक्षरों में आते हैं, ताकि अनुभव-कथन और मापा हुआ तथ्य कभी न घुलें।</span></li></ol></div>
 </div>
 <div><h3>बार-बार लौटने वाली छवियाँ</h3><dl class="motifs"><div><dt>पाँव</dt><dd>शिशु का अँगूठा, काँटे पर उतरता पाँव, कपड़े में लिपटे पैर, अलग-अलग पट्टियों वाली चप्पलें, पॉलिश किए जूते, फिर ध्यान में नंगे पैर। एक जीवन, सिर्फ़ पैरों से।</dd></div><div><dt>काँटा → बिंदु</dt><dd>काँटे की नोक धुँधली होकर प्रकाश का बिंदु बनती है। वही बिंदु तारा है। भाग 2 में वही उलटकर उजाले के बीच काला बिंदु और ब्लैक होल बनता है।</dd></div><div><dt>चॉक की धूल → तारे</dt><dd>भाग 1 की कक्षा में खड़िया की धूल। भाग 2 के पहले शॉट में वही धूल हवा में रुककर तारों का मैदान बन जाती है।</dd></div><div><dt>घंटी → तानपुरा</dt><dd>भोर में गाँव में घूमती राम-नाम की घंटी भाग 1 का सुर है। भाग 2 में वही स्वर तीन सप्तक नीचे उतरकर तानपुरे का आधार बनता है।</dd></div><div><dt>परम सफ़ेद</dt><dd>शुद्ध सफ़ेद रोशनी भाग 1 में सिर्फ़ तीन बार आती है: आधी रात का शिशु, बारह घंटे का ध्यान, छह जनवरी। HDR में सबसे उजला सफ़ेद पूरी सीरीज़ में एक ही बार, “बेहद” पर।</dd></div></dl></div>
 <div><h3>चेहरे का नियम</h3><p class="face">बापूजी का चेहरा कभी AI से नहीं बनाया जाएगा। वह केवल असली तस्वीरों और आश्रम के असली फ़ुटेज में दिखते हैं। पुनर्रचित दृश्यों में बालक और युवक की सिर्फ़ पीठ, हाथ, पैर, आँखें या सिल्हूट आते हैं।</p></div>
-<div><h3>VFX और After Effects की तकनीकें</h3><div class="scroll"><table><thead><tr><th>तकनीक</th><th>कहाँ</th><th>कैसे</th></tr></thead><tbody><tr><td>रेखाचित्र जीवित</td><td>भाग 1, बचपन</td><td>पुस्तक के रेखाचित्र 1200 dpi पर स्कैन → shape layers → Trim Paths से रेखा-दर-रेखा उभार → Turbulent Displace 2px + Posterize Time 8 fps की line-boil → 12 फ़्रेम में मिलते हुए लाइव शॉट में डिज़ॉल्व।</td></tr><tr><td>2.5D तस्वीरें</td><td>दोनों भाग</td><td>असली फ़ोटो को Photoshop में परतों में काटें, पीछे content-aware fill, After Effects में 35mm 3D कैमरा, 20 सेकंड में 5% पुश, depth map से Camera Lens Blur, ऊपर धूल और ग्रेन।</td></tr><tr><td>चॉक से तारे</td><td>भाग 2, पहला शॉट</td><td>1000 fps मैक्रो प्लेट, कण-तंत्र (Particular या CC Particle World) प्लेट से ट्रैक; time-remap से गति शून्य; हर कण तारे के बिंदु में बदले; बोर्ड का हरा-काला ग्रेड होकर नील-काला।</td></tr><tr><td>प्रकाश शरीर</td><td>भाग 2</td><td>Roto Brush से सिल्हूट, भीतर Fractal Noise से बहती प्रकाश-धाराएँ, किनारों पर light-wrap, bloom की तीन परतें (20/60/160px)। चेहरे के नक़्श कभी नहीं।</td></tr><tr><td>आरोहण</td><td>भाग 2 की रीढ़</td><td>ड्रोन → उपग्रह चित्र → CG। nested precomps पर exponential scale; हर 10 सेकंड में दूरी दस गुना। जोड़ सूर्य की चमक और ब्लैक होल की छाया में छिपे हैं।</td></tr><tr><td>ब्लैक होल</td><td>भाग 2</td><td>ray-marched gravitational lensing (Blender), या AE में Polar Coordinates + Displacement। छल्ले की एक तरफ़ Doppler से ज़्यादा चमकीली।</td></tr><tr><td>सत्रह सृजन</td><td>भाग 2</td><td>एक ही precomp सोलह बार, हर चक्र 8 फ़्रेम छोटा, hue हर बार 21° घूमती हुई। सत्रहवाँ खिलकर ठहर जाता है।</td></tr><tr><td>खुलता फ़्रेम</td><td>दोनों भागों का अंत</td><td>दो solid mattes की position keyframes: 1.33 → 2.39 (240 फ़्रेम)। भाग 2 में पट्टियाँ 20 सेकंड में पूरी तरह घुलती हैं।</td></tr></tbody></table></div></div>
-<div><h3>ध्वनि और स्वर</h3><ul class="sound"><li>भाग 1 के पहले बीस सेकंड में कोई संगीत नहीं। पहले लू, फिर घंटी, फिर एकतारा।</li><li>भाग 1 की सूत्रधार: स्त्री स्वर, धीमा, पास का। (हिंदी पुस्तक “माँ के द्वारा” कही गई है; स्वर उसी आत्मीयता का है, पर किसी असली व्यक्ति की नक़ल नहीं।)</li><li>भाग 2 का सूत्रधार: पुरुष स्वर, गहरा, बिना नाटकीयता। जहाँ बापूजी की अपनी रिकॉर्डिंग मिलती है, वहाँ सूत्रधार चुप हो जाता है।</li><li>मामा का खेत में गाया गीत “शंकर जटाधारी, नंदी लिया सवारी” बिना साज़ के, दूर से।</li><li>सीरीज़ का अंतिम शब्द लगभग फुसफुसाहट में है। उसके बाद संगीत नहीं लौटता।</li></ul></div>
-<div><h3>डिलीवरी</h3><p class="spec">UHD 4K (3840×2160) · 24 fps · HDR (Dolby Vision) और SDR दोनों ग्रेड · 5.1 और Atmos मिक्स · मूल भाषा हिंदी, अंग्रेज़ी सबटाइटल</p></div>
+<div><h3>कैमरा-गति: उपकरण</h3><dl class="motifs"><div><dt>मोशन-कंट्रोल रिग</dt><dd>दोहराए जा सकने वाले मूव। लाइव प्लेट और CG एक ही रास्ते पर चलते हैं, इसलिए जोड़ दिखता नहीं।</dd></div><div><dt>टेलीस्कोपिक क्रेन</dt><dd>भाग 1 का अंतिम आरोहण: खाट से छत के पार, एक ही साँस में।</dd></div><div><dt>डॉली और ट्रैक</dt><dd>भाग 1 की हर लंबी चाल। ट्रैक समतल किया हुआ, गति मोटर से नियंत्रित।</dd></div><div><dt>स्टेडीकैम या ARRI Trinity</dt><dd>चलते पैरों और गलियों के लंबे, बिना कट के शॉट।</dd></div><div><dt>मोटर-चालित स्लाइडर और प्रोब लेंस</dt><dd>काँटे, खड़िया की धूल और पानी के मैक्रो: कैमरा चीज़ों के बीच से गुज़रता है।</dd></div><div><dt>हाई-स्पीड कैमरा</dt><dd>1000 fps: उतरता पाँव, रुकती धूल, उछलती बूँदें।</dd></div><div><dt>ड्रोन</dt><dd>केवल भाग 2 में, और केवल सीधा ऊपर या सीधा नीचे।</dd></div></dl></div>
+<div class="rules one"><div><h3>कैमरा-गति: सात नियम</h3><ol><li><span>हर मूव ease-in और ease-out के साथ शुरू और ख़त्म होता है। रैखिक (linear) कीफ़्रेम कहीं नहीं।</span></li><li><span>एक शॉट, एक अक्ष। डॉली के साथ पैन नहीं, क्रेन के साथ ज़ूम नहीं।</span></li><li><span>गति इतनी धीमी कि दर्शक मूव को नहीं, बदलाव को महसूस करे। ज़्यादातर शॉट 20 से 60 सेकंड के हैं।</span></li><li><span>न हैंडहेल्ड, न झटका, न व्हिप-पैन, न ज़ूम, न नक़ली कैमरा-शेक।</span></li><li><span>After Effects में कैमरा हमेशा null rig पर। गति का वक्र Graph Editor में हाथ से बनाया जाता है।</span></li><li><span>CG कैमरा असली रिग की सीमाओं में रहता है (अधिकतम गति और त्वरण), ताकि वह तैरता हुआ नक़ली न लगे।</span></li><li><span>AI से बने क्लिप की गति असमान हो तो उसे स्थिर करें, optical flow से समान करें, और कैमरा-मूव 2.5D projection से दोबारा बनाएँ।</span></li></ol></div></div>
+<div><h3>After Effects की पूरी पाइपलाइन</h3><div class="scroll"><table><thead><tr><th>चरण</th><th>औज़ार</th><th>किसलिए</th></tr></thead><tbody><tr><td>रंग-प्रबंधन</td><td>32-bit float, ACEScg, OpenColorIO</td><td>3D से EXR मल्टीपास (beauty, depth, cryptomatte, motion vectors)। पूरा कम्प रैखिक रोशनी में, ताकि चमक और धुँधलापन असली लेंस की तरह बर्ताव करें।</td></tr><tr><td>3D</td><td>Cinema 4D + Redshift, Houdini, Blender</td><td>गैलेक्सी, कॉस्मिक वेब, प्रकाश का महासागर और बुलबुले यहीं बनते हैं। हल्के 3D के लिए AE में Element 3D।</td></tr><tr><td>ट्रैकिंग</td><td>3D Camera Tracker, Mocha Pro, Lockdown</td><td>हर लाइव प्लेट का कैमरा हल किया जाता है, ताकि धूल, रोशनी और टाइप उसी जगह में बैठें।</td></tr><tr><td>कण</td><td>Trapcode Particular और Form, Stardust, Plexus</td><td>धूल, चॉक, तारे, बूँदें। Plexus से कॉस्मिक वेब के रेशे।</td></tr><tr><td>प्रकाश</td><td>Deep Glow, Optical Flares, Trapcode Shine</td><td>bloom भौतिक रूप से सही ढलान के साथ। flare केवल वहाँ, जहाँ फ़्रेम में सचमुच रोशनी का स्रोत है।</td></tr><tr><td>लेंस</td><td>Frischluft Lenscare, depth pass</td><td>एनामॉर्फ़िक अंडाकार bokeh, किनारों का हल्का distortion और chromatic aberration, हर CG शॉट पर असली लेंस से मिलाकर।</td></tr><tr><td>गति</td><td>ReelSmart Motion Blur, Twixtor</td><td>180° शटर का motion blur हर CG और धीमे किए गए शॉट पर। धीमी गति optical flow से।</td></tr><tr><td>ग्रेन</td><td>Neat Video, स्कैन की हुई 35mm ग्रेन</td><td>पहले शोर हटाएँ, काम करें, फिर सब परतों पर एक ही ग्रेन चढ़ाएँ, ताकि AI, CG और असली फ़ुटेज एक ही फ़िल्म लगें।</td></tr><tr><td>फ़िनिश</td><td>DaVinci Resolve, Dolby Vision</td><td>भाग 1 पर फ़िल्म-प्रिंट जैसा ग्रेड और halation। भाग 2 साफ़ और गहरा; सबसे उजला सफ़ेद सिर्फ़ “बेहद” पर।</td></tr></tbody></table></div></div>
+<div><h3>हस्ताक्षर शॉट और उनकी विधि</h3><div class="scroll"><table><thead><tr><th>तकनीक</th><th>कहाँ</th><th>कैसे</th></tr></thead><tbody><tr><td>रेखाचित्र जीवित</td><td>भाग 1, बचपन</td><td>पुस्तक के रेखाचित्र 1200 dpi पर स्कैन → shape layers → Trim Paths से रेखा-दर-रेखा उभार → Turbulent Displace 2px + Posterize Time 8 fps की line-boil → 12 फ़्रेम में मिलते हुए लाइव शॉट में डिज़ॉल्व।</td></tr><tr><td>2.5D तस्वीरें</td><td>दोनों भाग</td><td>असली फ़ोटो को Photoshop में परतों में काटें, पीछे content-aware fill, After Effects में 35mm 3D कैमरा, 20 सेकंड में 5% पुश, depth map से Camera Lens Blur, ऊपर धूल और ग्रेन।</td></tr><tr><td>चॉक से तारे</td><td>भाग 2, पहला शॉट</td><td>1000 fps मैक्रो प्लेट, कण-तंत्र (Particular या CC Particle World) प्लेट से ट्रैक; time-remap से गति शून्य; हर कण तारे के बिंदु में बदले; बोर्ड का हरा-काला ग्रेड होकर नील-काला।</td></tr><tr><td>प्रकाश शरीर</td><td>भाग 2</td><td>Roto Brush से सिल्हूट, भीतर Fractal Noise से बहती प्रकाश-धाराएँ, किनारों पर light-wrap, bloom की तीन परतें (20/60/160px)। चेहरे के नक़्श कभी नहीं।</td></tr><tr><td>आरोहण</td><td>भाग 2 की रीढ़</td><td>ड्रोन → उपग्रह चित्र → CG। nested precomps पर exponential scale; हर 10 सेकंड में दूरी दस गुना। जोड़ सूर्य की चमक और ब्लैक होल की छाया में छिपे हैं।</td></tr><tr><td>ब्लैक होल</td><td>भाग 2</td><td>ray-marched gravitational lensing (Blender), या AE में Polar Coordinates + Displacement। छल्ले की एक तरफ़ Doppler से ज़्यादा चमकीली।</td></tr><tr><td>सत्रह सृजन</td><td>भाग 2</td><td>एक ही precomp सोलह बार, हर चक्र 8 फ़्रेम छोटा, hue हर बार 21° घूमती हुई। सत्रहवाँ खिलकर ठहर जाता है।</td></tr><tr><td>उतरता क्षितिज</td><td>भाग 1 का अंत</td><td>क्रेन, ड्रोन और CG आकाश की तीन प्लेटें एक ही कैमरा-पथ पर; क्षितिज 240 फ़्रेम में फ़्रेम के ऊपरी तिहाई से निचले किनारे तक उतरता है। जोड़ बादलों के white-out में।</td></tr></tbody></table></div></div>
+<div><h3>स्थान: जो जहाँ हुआ, वहीं जैसा दिखे</h3><div class="scroll"><table><thead><tr><th>जगह</th><th>कहाँ, कब</th><th>पर्दे पर क्या सही होना चाहिए</th></tr></thead><tbody><tr><td>अखज और अंबासन</td><td>मेहसाणा ज़िला, उत्तर गुजरात</td><td>समतल, अर्ध-शुष्क मैदान और रेतीली-दोमट मिट्टी। खेतों में बाजरा, अरंडी (दिवेल), जीरा, कपास। पेड़: बबूल, नीम, बरगद, आम। कच्चे, लिपे हुए मकान, देशी खपरैल की छत। कांकरेज बैलों की बैलगाड़ी, मेहसाणी भैंस। पुरुष सफ़ेद धोती और सफ़ेद पगड़ी में; स्त्रियाँ गुजराती ढंग की साड़ी में, पल्लू सामने।</td></tr><tr><td>ननिहाल का रास्ता और हाइवे</td><td>1960 का दशक</td><td>दो लेन की सड़क, किनारे बबूल। गाड़ी उस दौर की हिंदुस्तान एंबेसडर, जिसे गाँव वाले “कछुआ” कहते थे। मई की दोपहर: तापमान 45 डिग्री के आसपास, आसमान सफ़ेद, परछाइयाँ छोटी।</td></tr><tr><td>अहमदाबाद</td><td>1970 से 1990 का दशक</td><td>पुराने शहर की पोलें, साबरमती, कपड़ा मिलों की चिमनियाँ, लाल रंग की AMTS बसें, आश्रम रोड का दफ़्तरी इलाक़ा। दफ़्तर के दृश्य पुस्तक की असली “ऑफ़िस की फ़ोटो” से मिलाकर: बोर्ड, मेज़, काला कोट।</td></tr><tr><td>परमशांति भवन, चैनपुर</td><td>न्यू राणीप रोड, अहमदाबाद</td><td>आश्रम के सभी दृश्य असली जगह पर ही फ़िल्माए जाएँगे। ब्लैकबोर्ड वाली कक्षा उसी हॉल में दोबारा रची जाएगी। इस जगह की कोई तस्वीर AI से नहीं बनेगी।</td></tr></tbody></table></div><ul class="sound gapt"><li>हर AI शॉट से पहले उस जगह की असली तस्वीरें Magnific में संदर्भ (reference) के रूप में दी जाएँगी। बिना संदर्भ के कोई जगह नहीं बनेगी।</li><li>गाँव के दृश्यों के लिए अखज और अंबासन में एक दिन की रेकी: मिट्टी का रंग, मकानों की बनावट, मंदिर, बरगद, कुआँ और खेत की तस्वीरें, सुबह और दोपहर दोनों रोशनी में।</li><li>मौसम और फ़सल सही रखें: काँटे और लू वाले दृश्य मई-जून के; बाजरे के खड़े खेत अगस्त से अक्टूबर के।</li><li>कपड़े, बर्तन, गाड़ियाँ और नोट-सिक्के उसी दशक के हों। परिवार की पुरानी तस्वीरें इसका पहला संदर्भ हैं।</li><li>अभी के नौ चित्र बिना असली तस्वीरों के बने हैं। वे दिशा दिखाते हैं; अंतिम चित्र असली संदर्भ मिलने पर उन्हीं से मिलाकर बनेंगे।</li></ul></div>
+<div class="rules"><div><h3>भाग 1 · धरती का संगीत</h3><p class="para">एकतारा, रावणहत्था, सारंगी, बाँसुरी, मंजीरा और पीतल की घंटी। असली वादक, असली कमरे में रिकॉर्ड; लाइब्रेरी के लूप नहीं। भोर के दृश्य अहीर भैरव में, गाँव के दृश्य मांड में, रात का मंदिर मालकौंस में। बारह वादकों का तार-समूह पूरी फ़िल्म में सिर्फ़ दो बार आता है: सोने की चेन पर, और छह जनवरी पर।</p></div><div><h3>भाग 2 · आकाश का संगीत</h3><p class="para">चार तानपुरे, रुद्र वीणा, सुरबहार, बिना शब्दों का मिश्रित कंठ-समूह, चालीस वादकों का तार-समूह जो केवल लंबे हार्मोनिक्स बजाता है, और घंटी की आवाज़ से बनी दानेदार (granular) परतें। अंत भैरवी में।</p></div></div>
+<div><h3>तीन संगीत-सूत्र</h3><dl class="motifs"><div><dt>घंटी</dt><dd>तीन स्वरों का छोटा टुकड़ा। भाग 1 में पीतल की घंटी पर, भाग 2 में तीन सप्तक नीचे, अंत में फिर अपने असली स्वर में।</dd></div><div><dt>सवाल</dt><dd>ऊपर चढ़ता हुआ वाक्यांश, जो हर बार अधूरा छूटता है। यह पूरा केवल एक बार होता है: भाग 2 के अंतिम शब्द से ठीक पहले।</dd></div><div><dt>आरोहण</dt><dd>शेपर्ड टोन: ऐसा स्वर जो लगातार चढ़ता हुआ लगता है पर कहीं पहुँचता नहीं। अवरोहण में यही उलटा।</dd></div></dl></div>
+<div><h3>ध्वनि-प्रभाव</h3><ul class="sound"><li>सारी ध्वनियाँ असली जगह पर रिकॉर्ड: मेहसाणा की लू, बाजरे के डंठल, बैलगाड़ी के पहिए की चरमराहट, कुएँ की घिरनी, झींगुर।</li><li>पास की आवाज़ें कॉन्टैक्ट माइक से: ब्लैकबोर्ड पर चॉक, स्लेट पर खड़िया, काँटे का टूटना, पानी का एक घूँट।</li><li>उस दौर की असली मशीनें: एंबेसडर का इंजन, टाइपराइटर, छत का पंखा, मिल का सायरन, साइकिल की घंटी।</li><li>अंतरिक्ष में कोई “वूश” नहीं। केवल स्वर, सब-बेस, साँस, धड़कन और मौन।</li><li>मौन असली मौन है: कमरे की आवाज़ भी नहीं। सीरीज़ में ऐसे पाँच क्षण हैं।</li></ul><p class="spec gapt">Dolby Atmos (7.1.4) और 5.1 · कथन बीच में, बिना संगीत के नीचे दबे · घंटी सिर के ऊपर घूमती ध्वनि-वस्तु के रूप में · लाउडनेस: संवाद-आधारित −27 LKFS (±2), true peak −2 dBTP से नीचे</p></div>
+<div><h3>स्वर और कथन</h3><ul class="sound"><li>भाग 1 के पहले बीस सेकंड में कोई संगीत नहीं। पहले लू, फिर घंटी, फिर एकतारा।</li><li>भाग 1 की सूत्रधार: स्त्री स्वर, धीमा, पास का। (हिंदी पुस्तक “माँ के द्वारा” कही गई है; स्वर उसी आत्मीयता का है, पर किसी असली व्यक्ति की नक़ल नहीं।)</li><li>भाग 2 का सूत्रधार: पुरुष स्वर, गहरा, बिना नाटकीयता। जहाँ बापूजी की अपनी रिकॉर्डिंग मिलती है, वहाँ सूत्रधार चुप हो जाता है।</li><li>मामा का खेत में गाया गीत “शंकर जटाधारी, नंदी लिया सवारी” बिना साज़ के, दूर से।</li><li>सीरीज़ का अंतिम शब्द लगभग फुसफुसाहट में है। उसके बाद संगीत नहीं लौटता।</li></ul></div>
+<div><h3>डिलीवरी</h3><p class="spec">2.39:1 · UHD 4K (3840×2160 कंटेनर, सक्रिय चित्र 3840×1607) · 24 fps · HDR (Dolby Vision) और SDR दोनों ग्रेड · 5.1 और Atmos मिक्स · मूल भाषा हिंदी, अंग्रेज़ी सबटाइटल</p></div>
 </div></section>
 
 <section class="film f1" id="bhag-1">
 <div class="film-head"><div class="w">
+<div class="fh-text">
 <p class="eyebrow">भाग 1 · लौकिक</p>
 <h2>नंगे पाँव</h2>
 <p class="tag">एक बालक, जिसने ईश्वर से शिकायत की</p>
-<p class="meta"><span><b>अवधि</b> 14 मिनट 10 सेकंड</span><span><b>फ़्रेम</b> 1.33:1, अंत में 2.39:1</span><span><b>स्वर</b> स्त्री स्वर</span></p>
+<p class="meta"><span><b>अवधि</b> 14 मिनट 10 सेकंड</span><span><b>फ़्रेम</b> 2.39:1</span><span><b>स्वर</b> स्त्री स्वर</span></p>
+</div>
+<img class="kart" src="art/keyart-1.jpg" alt="नंगे पाँव का पोस्टर-चित्र" width="537" height="800">
 <div class="script" aria-label="रंग-पटकथा"><a href="#bhag-1-00" style="--bg:#F0E3B4;--ink:#1B1730;--d:70" title="पैंतालीस डिग्री · 0:00–1:10">00</a><a href="#bhag-1-01" style="--bg:#232745;--ink:#EFE7D2;--d:100" title="भगत का घर · 1:10–2:50">01</a><a href="#bhag-1-02" style="--bg:#0E1B2E;--ink:#EAF0F4;--d:80" title="आधी रात का प्रकाश · 2:50–4:10">02</a><a href="#bhag-1-03" style="--bg:#D2A056;--ink:#1B1730;--d:90" title="कछुआ · 4:10–5:40">03</a><a href="#bhag-1-04" style="--bg:#2F3B36;--ink:#EDE8D8;--d:90" title="दो पैसे · 5:40–7:10">04</a><a href="#bhag-1-05" style="--bg:#3A1508;--ink:#F5E7CF;--d:90" title="हनुमान जी, ताक़त दो · 7:10–8:40">05</a><a href="#bhag-1-06" style="--bg:#C9C5BA;--ink:#17182A;--d:100" title="दस पैसे · 8:40–10:20">06</a><a href="#bhag-1-07" style="--bg:#3B2A1E;--ink:#F1E6D2;--d:80" title="दशरथ पटेल एंड कंपनी · 10:20–11:40">07</a><a href="#bhag-1-08" style="--bg:#101A3A;--ink:#E9ECF5;--d:70" title="पहला जवाब · 11:40–12:50">08</a><a href="#bhag-1-09" style="--bg:#EEF1F4;--ink:#14162B;--d:80" title="छह जनवरी · 12:50–14:10">09</a></div>
 <p class="script-cap">रंग-पटकथा: हर खंड एक दृश्य है, चौड़ाई उसकी अवधि के अनुपात में। किसी खंड पर जाएँ तो वही दृश्य खुलेगा।</p>
 </div></div>
@@ -218,8 +240,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 00</b><span>0:00–1:10</span></p>
 <h3>पैंतालीस डिग्री</h3>
-<figure class="frame" style="aspect-ratio:1.333"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="मैक्रो · रैक-फ़ोकस"><circle cx="60" cy="30" r="15"/><circle cx="60" cy="30" r="2.5" fill="currentColor"/><path d="M28 12v-4h8M92 12v-4h-8M28 48v4h8M92 48v4h-8"/></svg></figure>
-<p class="cap"><b>1.33:1</b> · मैक्रो · रैक-फ़ोकस<br>100mm मैक्रो · 96 fps</p>
+<figure class="frame has-still"><img src="art/strip-1.jpg" alt="पैंतालीस डिग्री: मुख्य शॉट का संकल्प-चित्र" loading="lazy"></figure>
+<p class="cap"><b>2.39:1</b> · मैक्रो · रैक-फ़ोकस<br>100mm मैक्रो · 96 fps</p>
 
 </div>
 <div class="body">
@@ -236,11 +258,11 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 
 <dl class="dir">
 <div><dt>दृश्य</dt><dd>काला पर्दा, सूखी हवा। फिर सफ़ेद-तपा आसमान, बबूल की टहनी, एक काँटा। फटी ज़मीन पर एक छोटा नंगा पाँव उतरता है। काँटे को छूने से ठीक पहले कट। बालक की सिर्फ़ आँखें, भौंहों की छाया में, आसमान की ओर।</dd></div>
-<div><dt>कैमरा</dt><dd>कैमरा ज़मीन पर रखा है, 5 सेमी ऊँचाई। काँटे की नोक से उतरते पाँव तक रैक-फ़ोकस। फिर 50mm, बालक की आँख की ऊँचाई पर, साँस जैसी हल्की हैंडहेल्ड।</dd></div>
+<div><dt>कैमरा</dt><dd>कैमरा ज़मीन पर रखा है, 5 सेमी ऊँचाई। काँटे की नोक से उतरते पाँव तक रैक-फ़ोकस। फिर 50mm, बालक की आँख की ऊँचाई पर, स्लाइडर पर बहुत धीमा पुश।</dd></div>
 <div><dt>VFX · After Effects</dt><dd>गर्मी की लहर: Displacement Map को धीमे Fractal Noise से चलाएँ (क्षैतिज 6px, ऊपर की ओर बहाव)। हाइलाइट पर halation। 16mm ग्रेन और हल्का gate-weave। शीर्षक धूल के कणों से बनता है: कण अक्षरों के mask पर जमते हैं, फिर हवा उन्हें उड़ा ले जाती है।</dd></div>
 <div><dt>ध्वनि</dt><dd>कोई संगीत नहीं। लू, दूर बैल की घंटी, सूखी पत्तियाँ। बालक की आवाज़ बिना रीवर्ब, बहुत पास। शीर्षक पर एक अकेली पीतल की घंटी।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Extreme macro, ground-level shot of a single sharp acacia (babool) thorn on cracked dry earth in rural Gujarat, white-hot overexposed noon sky, a small child's bare dusty foot descending in slow motion toward the thorn, shallow depth of field, heat shimmer, 16mm film grain, 4:3 aspect ratio, bleached straw and ochre palette, no face, no text</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Extreme macro, ground-level shot of a single sharp acacia (babool) thorn on cracked dry earth in rural Gujarat, white-hot overexposed noon sky, a small child's bare dusty foot descending in slow motion toward the thorn, shallow depth of field, heat shimmer, 35mm film grain, anamorphic 2.39:1, bleached straw and ochre palette, no face, no text</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -249,8 +271,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 01</b><span>1:10–2:50</span></p>
 <h3>भगत का घर</h3>
-<figure class="frame" style="aspect-ratio:1.333"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="ट्रैकिंग"><rect x="18" y="14" width="22" height="14"/><path d="M40 21h6"/><path d="M12 42h92"/><path d="M96 36l8 6-8 6"/><path d="M20 48v4M36 48v4M52 48v4M68 48v4M84 48v4"/></svg></figure>
-<p class="cap"><b>1.33:1</b> · ट्रैकिंग<br>35mm · 40 सेकंड, बिना कट</p>
+<figure class="frame"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="ट्रैकिंग"><rect x="18" y="14" width="22" height="14"/><path d="M40 21h6"/><path d="M12 42h92"/><path d="M96 36l8 6-8 6"/><path d="M20 48v4M36 48v4M52 48v4M68 48v4M84 48v4"/></svg></figure>
+<p class="cap"><b>2.39:1</b> · ट्रैकिंग<br>35mm · 40 सेकंड, बिना कट</p>
 
 </div>
 <div class="body">
@@ -271,7 +293,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div><dt>VFX · After Effects</dt><dd>“रेखाचित्र जीवित” का पहला प्रयोग। दीये की रोशनी पर हल्का flicker। कोने में छोटा सुपर: अंबासन, मेहसाणा · 1956।</dd></div>
 <div><dt>ध्वनि</dt><dd>हर चार क़दम पर घंटी। दूर “राम… राम…”। पहली बार संगीत: एकतारे का एक सुर, घंटी के स्वर से मिला हुआ।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Pre-dawn blue hour in a 1950s Gujarati village of mud houses, low tracking shot at knee height following the bare feet of an elderly farmer in a white dhoti walking down a narrow lane holding a small brass hand-bell, a single oil lamp glowing in a doorway, winter mist, indigo and brass-gold palette, vintage spherical lens, 16mm grain, 4:3, no face</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Pre-dawn blue hour in a 1950s north Gujarat village (Mehsana district) of mud-plastered houses with country clay-tile roofs, a neem tree, low tracking shot at knee height following the bare feet of an elderly Gujarati farmer in a white dhoti and white turban walking down a narrow lane holding a small brass hand-bell, a single oil lamp glowing in a doorway, winter mist, indigo and brass-gold palette, vintage anamorphic lens, 35mm grain, anamorphic 2.39:1, no face</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -280,8 +302,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 02</b><span>2:50–4:10</span></p>
 <h3>आधी रात का प्रकाश</h3>
-<figure class="frame" style="aspect-ratio:1.333"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="स्थिर"><rect x="34" y="8" width="52" height="30"/><path d="M60 16v14M53 23h14"/><path d="M60 38v6M60 44l-14 10M60 44l14 10M60 44v10"/></svg></figure>
-<p class="cap"><b>1.33:1</b> · स्थिर<br>50mm · 25 सेकंड स्थिर</p>
+<figure class="frame"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="स्थिर"><rect x="34" y="8" width="52" height="30"/><path d="M60 16v14M53 23h14"/><path d="M60 38v6M60 44l-14 10M60 44l14 10M60 44v10"/></svg></figure>
+<p class="cap"><b>2.39:1</b> · स्थिर<br>50mm · 25 सेकंड स्थिर</p>
 
 </div>
 <div class="body">
@@ -299,11 +321,11 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 
 <dl class="dir">
 <div><dt>दृश्य</dt><dd>मूल रेखाचित्र (खेत, पानी की नाली, लेटा हुआ शिशु) से शुरुआत। चाँदनी रात। खेतों में दौड़ते पैर, लालटेनें। नाली के किनारे पानी में लेटा शिशु। चेहरा नहीं; सिर्फ़ छोटा पैर, पानी और रोशनी।</dd></div>
-<div><dt>कैमरा</dt><dd>दौड़ते पैरों के साथ हैंडहेल्ड। शिशु के पास पहुँचते ही कैमरा रुक जाता है: फ़िल्म का पहला पूरी तरह स्थिर, लंबा शॉट।</dd></div>
+<div><dt>कैमरा</dt><dd>दौड़ते पैरों के साथ स्टेडीकैम, घुटने की ऊँचाई पर। शिशु के पास पहुँचते ही कैमरा रुक जाता है: फ़िल्म का पहला पूरी तरह स्थिर, लंबा शॉट।</dd></div>
 <div><dt>VFX · After Effects</dt><dd>“परम सफ़ेद” पहली बार। practical LED की रोशनी पर bloom की तीन परतें; पानी पर caustics (Fractal Noise → CC Glass)। रोशनी इतनी हल्की रखें कि उसे चाँदनी भी माना जा सके। फ़ैसला दर्शक करे।</dd></div>
 <div><dt>ध्वनि</dt><dd>झींगुर, पानी की धार, भागते क़दम, पुकारें। शिशु के मिलते ही सब हट जाता है, सिर्फ़ पानी बचता है। माँ का वाक्य फुसफुसाहट में।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Full-moon night in a millet field in Gujarat, a narrow irrigation channel with slowly flowing water, a soft unexplained white glow reflecting on the water where a baby's tiny foot is just visible at the edge of frame, lanterns approaching far in the background out of focus, locked-off static shot, deep blue-black palette with one area of pure white light, 4:3, film grain</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Full-moon night in a pearl-millet field on the flat sandy plain of Mehsana district, north Gujarat, a narrow irrigation channel with slowly flowing water, a soft unexplained white glow reflecting on the water where a baby's tiny foot is just visible at the edge of frame, lanterns approaching far in the background out of focus, locked-off static shot, deep blue-black palette with one area of pure white light, anamorphic 2.39:1, film grain</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -312,8 +334,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 03</b><span>4:10–5:40</span></p>
 <h3>कछुआ</h3>
-<figure class="frame" style="aspect-ratio:1.333"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="ट्रैकिंग"><rect x="18" y="14" width="22" height="14"/><path d="M40 21h6"/><path d="M12 42h92"/><path d="M96 36l8 6-8 6"/><path d="M20 48v4M36 48v4M52 48v4M68 48v4M84 48v4"/></svg></figure>
-<p class="cap"><b>1.33:1</b> · ट्रैकिंग<br>35mm · 30 मीटर डॉली</p>
+<figure class="frame has-still"><img src="art/strip-2.jpg" alt="कछुआ: मुख्य शॉट का संकल्प-चित्र" loading="lazy"></figure>
+<p class="cap"><b>2.39:1</b> · ट्रैकिंग<br>35mm · 30 मीटर डॉली</p>
 
 </div>
 <div class="body">
@@ -337,7 +359,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div><dt>VFX · After Effects</dt><dd>गाड़ी की धूल की तीन परतें, अलग-अलग blur के साथ। रेखाचित्र multiply में 40%, दो सेकंड में घुलता है। पूरा अध्याय मटमैला पीला; गाड़ी इसकी अकेली चमकदार चीज़।</dd></div>
 <div><dt>ध्वनि</dt><dd>दूर से आता इंजन, गुज़रते समय डॉप्लर। रोटी फेंके जाने की आवाज़ फ़्रेम के बाहर। माँ की हँसी सूखी नहीं, प्यार भरी।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>1960s rural Gujarat, dusty two-lane highway through dry fields, a barefoot boy of about six in a torn shirt and his mother in a faded sari walking along the roadside seen from behind at child eye level, a rounded cream-coloured 1960s Indian sedan passing through the frame leaving a trail of golden dust, lateral dolly shot, ochre and millet-yellow palette, 16mm grain, 4:3, no faces</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>1960s rural Gujarat, dusty two-lane highway through flat fields of pearl millet and castor with babool and neem trees, a barefoot boy of about six in a torn shirt and his mother in a faded cotton sari draped Gujarati-style with the pallu in front, walking along the roadside seen from behind at child eye level, a rounded cream-coloured 1960s Indian sedan passing through the frame leaving a trail of golden dust, lateral dolly shot, ochre and millet-yellow palette, 35mm grain, anamorphic 2.39:1, no faces</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -346,8 +368,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 04</b><span>5:40–7:10</span></p>
 <h3>दो पैसे</h3>
-<figure class="frame" style="aspect-ratio:1.333"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="पुश-इन"><rect x="14" y="6" width="92" height="48"/><rect x="46" y="22" width="28" height="16"/><path d="M14 6l32 16M106 6L74 22M14 54l32-16M106 54L74 38"/><path d="M26 30h12M33 25l6 5-6 5M94 30H82M87 25l-6 5 6 5"/></svg></figure>
-<p class="cap"><b>1.33:1</b> · पुश-इन<br>50mm · धूल पर 200 fps</p>
+<figure class="frame"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="पुश-इन"><rect x="14" y="6" width="92" height="48"/><rect x="46" y="22" width="28" height="16"/><path d="M14 6l32 16M106 6L74 22M14 54l32-16M106 54L74 38"/><path d="M26 30h12M33 25l6 5-6 5M94 30H82M87 25l-6 5 6 5"/></svg></figure>
+<p class="cap"><b>2.39:1</b> · पुश-इन<br>50mm · धूल पर 200 fps</p>
 
 </div>
 <div class="body">
@@ -372,7 +394,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div><dt>VFX · After Effects</dt><dd>खड़िया की धूल का पहला क्लोज़-अप, बैकलिट। यह भाग 2 के “चॉक से तारे” का बीज है। कुल्हाड़ी के हर वार पर दो फ़्रेम का काला। गिरते पत्तों में CG पत्तों की एक अतिरिक्त परत। अध्याय में दो मूल रेखाचित्र: छड़ी वाला मास्टर और आम के पेड़।</dd></div>
 <div><dt>ध्वनि</dt><dd>स्लेट पर खड़िया। सन्नाटा। छड़ी, एक ही बार, सूखी। फिर कुल्हाड़ी की ताल, जो धीरे-धीरे दिल की धड़कन बन जाती है।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>1960s village schoolroom in Gujarat, a row of barefoot children sitting cross-legged on a mud floor with writing slates, a shaft of dusty sunlight from a barred window, chalk dust floating in the backlight, a small boy's open palm held out in the foreground, slow push-in at child eye level, slate-green and chalk-white palette, 16mm grain, 4:3, faces not shown</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>1960s village schoolroom in Gujarat, a row of barefoot children sitting cross-legged on a mud floor with writing slates, a shaft of dusty sunlight from a barred window, chalk dust floating in the backlight, a small boy's open palm held out in the foreground, slow push-in at child eye level, slate-green and chalk-white palette, 35mm grain, anamorphic 2.39:1, faces not shown</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -381,8 +403,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 05</b><span>7:10–8:40</span></p>
 <h3>हनुमान जी, ताक़त दो</h3>
-<figure class="frame" style="aspect-ratio:1.333"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="स्थिर"><rect x="34" y="8" width="52" height="30"/><path d="M60 16v14M53 23h14"/><path d="M60 38v6M60 44l-14 10M60 44l14 10M60 44v10"/></svg></figure>
-<p class="cap"><b>1.33:1</b> · स्थिर<br>35mm · ज़मीन पर लेटा कैमरा</p>
+<figure class="frame has-still"><img src="art/strip-3.jpg" alt="हनुमान जी, ताक़त दो: मुख्य शॉट का संकल्प-चित्र" loading="lazy"></figure>
+<p class="cap"><b>2.39:1</b> · स्थिर<br>35mm · ज़मीन पर लेटा कैमरा</p>
 
 </div>
 <div class="body">
@@ -407,7 +429,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div><dt>VFX · After Effects</dt><dd>आसमान के लिए असली astro-timelapse प्लेट; तारे असली अनुपात में, कोई नक़ली नेब्युला नहीं। दीये की लौ से आँखों में हल्की catch-light। “जिन्न भाई” के लिए कुछ नहीं दिखाना: सिर्फ़ बरगद की एक डाल अपने-आप हिलती है।</dd></div>
 <div><dt>ध्वनि</dt><dd>दूर खेत से मामा का गीत, बिना साज़: “शंकर जटाधारी, नंदी लिया सवारी”। मंदिर में बालक के वाक्य के बाद पूरा सन्नाटा। तारों पर एकतारा लौटता है।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Night in a 1960s Gujarati village, a tiny roadside Hanuman shrine with a vermilion-orange idol lit by a single oil lamp, a small barefoot boy seen from behind standing before it with open upturned palms, deep black surroundings, saffron and soot-black palette, over-the-shoulder shot at child height, 16mm grain, 4:3</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Night in a 1960s Gujarati village, a tiny roadside Hanuman shrine with a vermilion-orange idol lit by a single oil lamp, a small barefoot boy seen from behind standing before it with open upturned palms, deep black surroundings, saffron and soot-black palette, over-the-shoulder shot at child height, 35mm grain, anamorphic 2.39:1</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -416,8 +438,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 06</b><span>8:40–10:20</span></p>
 <h3>दस पैसे</h3>
-<figure class="frame" style="aspect-ratio:1.333"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="ट्रैकिंग"><rect x="18" y="14" width="22" height="14"/><path d="M40 21h6"/><path d="M12 42h92"/><path d="M96 36l8 6-8 6"/><path d="M20 48v4M36 48v4M52 48v4M68 48v4M84 48v4"/></svg></figure>
-<p class="cap"><b>1.33:1</b> · ट्रैकिंग<br>50mm · सड़क-स्तर</p>
+<figure class="frame"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="ट्रैकिंग"><rect x="18" y="14" width="22" height="14"/><path d="M40 21h6"/><path d="M12 42h92"/><path d="M96 36l8 6-8 6"/><path d="M20 48v4M36 48v4M52 48v4M68 48v4M84 48v4"/></svg></figure>
+<p class="cap"><b>2.39:1</b> · ट्रैकिंग<br>50mm · सड़क-स्तर</p>
 
 </div>
 <div class="body">
@@ -441,7 +463,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div><dt>VFX · After Effects</dt><dd>पहली बार असली सामग्री: पारिवारिक तस्वीर का 2.5D उपचार। ख़ून वाले शॉट में पूरे फ़्रेम का saturation 15% कर दें; सिर्फ़ रुई पर लाल बचा रहे (secondary key)।</dd></div>
 <div><dt>ध्वनि</dt><dd>साइकिल की घंटियाँ, मिल का सायरन। विवाह की शहनाई दूर और धुँधली। चेन रखते समय धातु की एक महीन खनक। अस्पताल में सिर्फ़ पंखा।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>1970s Ahmedabad street at harsh midday, road-level tracking shot of a young man's feet walking in worn rubber slippers whose two straps are different colours, a city bus passing in the background out of focus, bleached concrete-grey palette, vintage lens, 16mm grain, 4:3, no face</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>1970s Ahmedabad street at harsh midday, road-level tracking shot of a young man's feet walking in worn rubber slippers whose two straps are different colours, a city bus passing in the background out of focus, bleached concrete-grey palette, vintage lens, 35mm grain, anamorphic 2.39:1, no face</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -450,8 +472,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 07</b><span>10:20–11:40</span></p>
 <h3>दशरथ पटेल एंड कंपनी</h3>
-<figure class="frame" style="aspect-ratio:1.333"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="ट्रैकिंग"><rect x="18" y="14" width="22" height="14"/><path d="M40 21h6"/><path d="M12 42h92"/><path d="M96 36l8 6-8 6"/><path d="M20 48v4M36 48v4M52 48v4M68 48v4M84 48v4"/></svg></figure>
-<p class="cap"><b>1.33:1</b> · ट्रैकिंग<br>40mm · ट्रैक पर डॉली</p>
+<figure class="frame"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="ट्रैकिंग"><rect x="18" y="14" width="22" height="14"/><path d="M40 21h6"/><path d="M12 42h92"/><path d="M96 36l8 6-8 6"/><path d="M20 48v4M36 48v4M52 48v4M68 48v4M84 48v4"/></svg></figure>
+<p class="cap"><b>2.39:1</b> · ट्रैकिंग<br>40mm · ट्रैक पर डॉली</p>
 
 </div>
 <div class="body">
@@ -470,11 +492,11 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 
 <dl class="dir">
 <div><dt>दृश्य</dt><dd>पॉलिश किए काले जूते, दफ़्तर की सीढ़ियाँ। पुस्तक की असली “ऑफ़िस की फ़ोटो”: बोर्ड पर नाम। फ़ाइलों के ढेर, क़ानून की किताबें, काला कोट। गाँव में बनता एक पक्का मकान। अलमारी में टँगे खादी के दो कुर्ते। अंत में छापे के बाद का ख़ाली दफ़्तर, उलटी पड़ी एक कुर्सी।</dd></div>
-<div><dt>कैमरा</dt><dd>पहली बार चिकनी, सटीक डॉली। ग़रीबी की हैंडहेल्ड यहाँ ख़त्म होती है। फ़ाइलों के ऊपर से धीमा लेटरल मूव। खादी के कुर्तों पर स्थिर, सममित फ़्रेम। कैमरा अब वयस्क की आँख की ऊँचाई पर है, उससे ऊपर नहीं।</dd></div>
+<div><dt>कैमरा</dt><dd>यहाँ गति का स्वभाव बदलता है: मोशन-कंट्रोल जैसी सटीक, यांत्रिक डॉली। यह शहर और पेशे की दुनिया है। फ़ाइलों के ऊपर से धीमा लेटरल मूव। खादी के कुर्तों पर स्थिर, सममित फ़्रेम। कैमरा अब वयस्क की आँख की ऊँचाई पर है, उससे ऊपर नहीं।</dd></div>
 <div><dt>VFX · After Effects</dt><dd>असली दफ़्तर वाली तस्वीर का 2.5D। काइनेटिक टाइप: आयकर की धाराओं के नंबर फ़्रेम में तैरते हैं और बालक के पुराने सवालों में बदल जाते हैं (“किसने बनाई?” “क्यों?”)। ग्रेड गर्म सागवान, पर चेहरे की जगह पर ठंडी रोशनी।</dd></div>
 <div><dt>ध्वनि</dt><dd>टाइपराइटर की ताल ही संगीत की ताल है। अंत में टाइपराइटर रुक जाता है; कमरे का पंखा अकेला घूमता रहता है।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>1980s Indian tax lawyer's office in Ahmedabad, teak desk stacked with case files and law books, a black coat hung on a chair, a blank hand-painted signboard (lettering added in post), warm tungsten light through wooden blinds, smooth lateral dolly across the desk, teak-brown and brass palette, 4:3, film grain, no people</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>1980s Indian tax lawyer's office in Ahmedabad, teak desk stacked with case files and law books, a black coat hung on a chair, a blank hand-painted signboard (lettering added in post), warm tungsten light through wooden blinds, smooth lateral dolly across the desk, teak-brown and brass palette, anamorphic 2.39:1, film grain, no people</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -483,8 +505,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 08</b><span>11:40–12:50</span></p>
 <h3>पहला जवाब</h3>
-<figure class="frame" style="aspect-ratio:1.333"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="स्थिर"><rect x="34" y="8" width="52" height="30"/><path d="M60 16v14M53 23h14"/><path d="M60 38v6M60 44l-14 10M60 44l14 10M60 44v10"/></svg></figure>
-<p class="cap"><b>1.33:1</b> · स्थिर<br>लॉक्ड-ऑफ़ टाइमलैप्स · 12 घंटे → 20 सेकंड</p>
+<figure class="frame"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="स्थिर"><rect x="34" y="8" width="52" height="30"/><path d="M60 16v14M53 23h14"/><path d="M60 38v6M60 44l-14 10M60 44l14 10M60 44v10"/></svg></figure>
+<p class="cap"><b>2.39:1</b> · स्थिर<br>लॉक्ड-ऑफ़ टाइमलैप्स · 12 घंटे → 20 सेकंड</p>
 
 </div>
 <div class="body">
@@ -509,7 +531,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div><dt>VFX · After Effects</dt><dd>टाइमलैप्स में सिल्हूट को अलग प्लेट से कम्पोज़िट करें, ताकि वह बिल्कुल न हिले। “परम सफ़ेद” दूसरी बार: सिल्हूट के किनारों पर बहुत हल्का light-wrap, दस सेकंड में 0 से 15%। सितारों वाली पंक्ति तारों के बीच हाथ की लिखावट में उभरती है।</dd></div>
 <div><dt>ध्वनि</dt><dd>घड़ी की टिक-टिक धीमी होकर बंद। तानपुरे का पहला प्रवेश, यानी भाग 2 का सुर। पानी का एक घूँट: फ़िल्म की सबसे पास की आवाज़।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>A bare meditation room before dawn, a man in white seen only as a perfectly still silhouette from behind sitting cross-legged on the floor, a rectangle of sunlight from the window sliding across the floor, a single glass of water beside him, locked-off time-lapse feeling, deep blue and soft white palette, faint glow along the silhouette edge, 4:3, film grain</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>A bare meditation room before dawn, a man in white seen only as a perfectly still silhouette from behind sitting cross-legged on the floor, a rectangle of sunlight from the window sliding across the floor, a single glass of water beside him, locked-off time-lapse feeling, deep blue and soft white palette, faint glow along the silhouette edge, anamorphic 2.39:1, film grain</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -518,8 +540,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 09</b><span>12:50–14:10</span></p>
 <h3>छह जनवरी</h3>
-<figure class="frame" style="aspect-ratio:2.390"><i class="ghost" style="aspect-ratio:4/3"></i><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="आरोहण"><path d="M22 54h76"/><path d="M60 54V8"/><path d="M53 16l7-8 7 8"/><path d="M68 50h8M68 44h8M68 35h8M68 22h8"/></svg></figure>
-<p class="cap"><b>1.33:1 → 2.39:1</b> · आरोहण<br>क्रेन → ड्रोन → CG · 45 सेकंड</p>
+<figure class="frame"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="आरोहण"><path d="M22 54h76"/><path d="M60 54V8"/><path d="M53 16l7-8 7 8"/><path d="M68 50h8M68 44h8M68 35h8M68 22h8"/></svg></figure>
+<p class="cap"><b>2.39:1</b> · आरोहण<br>क्रेन → ड्रोन → CG · 45 सेकंड</p>
 
 </div>
 <div class="body">
@@ -527,7 +549,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <p>छह जनवरी, उन्नीस सौ सत्तानवे। अहमदाबाद।</p>
 <p>वह अपने घर में लेटे थे। आँखें खुली थीं।</p>
 <p>और, जैसा वह ख़ुद बताते हैं, उन्होंने देखा कि वह धरती पर खड़े हैं और उनका सिर आकाश से भी ऊपर है। चाँद, सितारे, सूरज, सब नीचे।</p>
-<p class="cue">लंबा विराम। फ़्रेम खुलना शुरू होता है।</p>
+<p class="cue">लंबा विराम। क्षितिज नीचे उतरने लगता है; आसमान खुलता है।</p>
 <p>उन्होंने दफ़्तर बंद कर दिया। किराए के एक मकान में, चार-पाँच लोगों के सामने, बोलना शुरू किया। फिर अहमदाबाद के चैनपुर में ज़मीन ली, और अपने तन, मन, धन से एक आश्रम बनाया। विश्व परिवर्तक ईश्वरीय विद्यालय।</p>
 <p>पहले वह बालक था। फिर दशरथ। फिर दशरथ भाई। फिर बाबा।</p>
 <p>और फिर, बापूजी।</p>
@@ -541,11 +563,11 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 
 <dl class="dir">
 <div><dt>दृश्य</dt><dd>अहमदाबाद का एक साधारण कमरा। खाट पर लेटा आदमी; सिर्फ़ खुली आँखों का क्लोज़-अप। छत। फिर छत घुल जाती है, शहर नीचे रह जाता है, बादल, चाँद, तारे, सब नीचे। कट: दीवार से उतरता दफ़्तर का बोर्ड। किराए का कमरा, चार-पाँच लोग, एक ब्लैकबोर्ड। चैनपुर की ख़ाली ज़मीन पर पहली ईंट। असली तस्वीर: सफ़ेद वस्त्रों में तपस्या में बैठे बापूजी।</dd></div>
-<div><dt>कैमरा</dt><dd>पूरी फ़िल्म का नियम यहाँ टूटता है। आँखों के क्लोज़-अप से कैमरा पहली बार ऊपर उठता है: खाट से छत, छत के पार, शहर के ऊपर। इसी मूव के दौरान फ़्रेम 1.33:1 से खुलकर 2.39:1 हो जाता है।</dd></div>
+<div><dt>कैमरा</dt><dd>पूरी फ़िल्म का नियम यहाँ टूटता है। आँखों के क्लोज़-अप से कैमरा पहली बार ऊपर उठता है: खाट से छत, छत के पार, शहर के ऊपर। इसी मूव में क्षितिज पहली बार फ़्रेम के निचले किनारे तक उतरता है और आसमान पूरा फ़्रेम भर देता है।</dd></div>
 <div><dt>VFX · After Effects</dt><dd>छत का घुलना luma-matte से; ड्रोन प्लेट और CG आकाश का जोड़ बादलों के white-out में छिपा है। “परम सफ़ेद” तीसरी और आख़िरी बार, इस बार पूरे फ़्रेम में, दो सेकंड। नाम वाली पंक्ति पर टाइप एक ही जगह बदलता है: बालक → दशरथ → दशरथ भाई → बाबा → बापूजी।</dd></div>
 <div><dt>ध्वनि</dt><dd>राम-नाम की घंटी लौटती है, अब तानपुरे के ऊपर। ऊपर उठते हुए धरती की आवाज़ें एक-एक करके छूटती हैं। अंतिम पंक्ति पूर्ण सन्नाटे में।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Continuous rising shot starting close on a man's open eyes as he lies on a simple cot in a modest 1990s Ahmedabad room, the camera lifts straight up through the dissolving ceiling into the night sky above the city, then above the clouds with the moon and stars below the horizon line, the frame widening from 4:3 to anamorphic 2.39:1, warm tungsten giving way to pure white light and then deep indigo, photoreal, cinematic, face not identifiable</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Continuous rising shot starting close on a man's open eyes as he lies on a simple cot in a modest 1990s Ahmedabad room, the camera lifts straight up through the dissolving ceiling into the night sky above the city, then above the clouds with the moon and stars below the horizon line, anamorphic 2.39:1, warm tungsten giving way to pure white light and then deep indigo, photoreal, cinematic, face not identifiable</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -553,10 +575,13 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 
 <section class="film f2" id="bhag-2">
 <div class="film-head"><div class="w">
+<div class="fh-text">
 <p class="eyebrow">भाग 2 · अलौकिक</p>
 <h2>बेहद</h2>
 <p class="tag">ब्रह्मांड के पार की यात्रा, जैसी बापूजी बताते हैं</p>
-<p class="meta"><span><b>अवधि</b> 16 मिनट 30 सेकंड</span><span><b>फ़्रेम</b> 2.39:1, फिर पूरा फ़्रेम</span><span><b>स्वर</b> पुरुष स्वर, और बापूजी की अपनी आवाज़</span></p>
+<p class="meta"><span><b>अवधि</b> 16 मिनट 30 सेकंड</span><span><b>फ़्रेम</b> 2.39:1</span><span><b>स्वर</b> पुरुष स्वर, और बापूजी की अपनी आवाज़</span></p>
+</div>
+<img class="kart" src="art/keyart-2.jpg" alt="बेहद का पोस्टर-चित्र" width="537" height="800">
 <div class="script" aria-label="रंग-पटकथा"><a href="#bhag-2-00" style="--bg:#17211D;--ink:#EDEBDD;--d:80" title="हवाई ज्ञान · 0:00–1:20">00</a><a href="#bhag-2-01" style="--bg:#F1F2F6;--ink:#12142A;--d:90" title="तीसरा नेत्र · 1:20–2:50">01</a><a href="#bhag-2-02" style="--bg:#0A1A33;--ink:#E8EEF7;--d:100" title="एक ब्रह्मांड · 2:50–4:30">02</a><a href="#bhag-2-03" style="--bg:#1D1A16;--ink:#EFE9DA;--d:70" title="पीछे की क़तार · 4:30–5:40">03</a><a href="#bhag-2-04" style="--bg:#150B2E;--ink:#EDE6F7;--d:100" title="महाब्रह्मांड · 5:40–7:20">04</a><a href="#bhag-2-05" style="--bg:#06070D;--ink:#E9EAF2;--d:100" title="सत्रहवीं बार · 7:20–9:00">05</a><a href="#bhag-2-06" style="--bg:#07050F;--ink:#F1ECDD;--d:120" title="बेहद · 9:00–11:00">06</a><a href="#bhag-2-07" style="--bg:#F3DFA2;--ink:#1C1420;--d:90" title="एक बूँद · 11:00–12:30">07</a><a href="#bhag-2-08" style="--bg:#F4F4F1;--ink:#0C0C12;--d:90" title="काला बिंदु · 12:30–14:00">08</a><a href="#bhag-2-09" style="--bg:#1B3A35;--ink:#EEF2E6;--d:70" title="विनाश नहीं · 14:00–15:10">09</a><a href="#bhag-2-10" style="--bg:#0C0F1F;--ink:#F3EEDD;--d:80" title="बेहद की परमशांति · 15:10–16:30">10</a></div>
 <p class="script-cap">रंग-पटकथा: हर खंड एक दृश्य है, चौड़ाई उसकी अवधि के अनुपात में। किसी खंड पर जाएँ तो वही दृश्य खुलेगा।</p>
 </div></div>
@@ -565,7 +590,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 00</b><span>0:00–1:20</span></p>
 <h3>हवाई ज्ञान</h3>
-<figure class="frame" style="aspect-ratio:2.390"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="पुश-इन"><rect x="14" y="6" width="92" height="48"/><rect x="46" y="22" width="28" height="16"/><path d="M14 6l32 16M106 6L74 22M14 54l32-16M106 54L74 38"/><path d="M26 30h12M33 25l6 5-6 5M94 30H82M87 25l-6 5 6 5"/></svg></figure>
+<figure class="frame"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="पुश-इन"><rect x="14" y="6" width="92" height="48"/><rect x="46" y="22" width="28" height="16"/><path d="M14 6l32 16M106 6L74 22M14 54l32-16M106 54L74 38"/><path d="M26 30h12M33 25l6 5-6 5M94 30H82M87 25l-6 5 6 5"/></svg></figure>
 <p class="cap"><b>2.39:1</b> · पुश-इन<br>75mm एनामॉर्फ़िक · धूल पर 1000 fps</p>
 
 </div>
@@ -598,7 +623,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 01</b><span>1:20–2:50</span></p>
 <h3>तीसरा नेत्र</h3>
-<figure class="frame" style="aspect-ratio:2.390"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="पुश-इन"><rect x="14" y="6" width="92" height="48"/><rect x="46" y="22" width="28" height="16"/><path d="M14 6l32 16M106 6L74 22M14 54l32-16M106 54L74 38"/><path d="M26 30h12M33 25l6 5-6 5M94 30H82M87 25l-6 5 6 5"/></svg></figure>
+<figure class="frame has-still"><img src="art/strip-4.jpg" alt="तीसरा नेत्र: मुख्य शॉट का संकल्प-चित्र" loading="lazy"></figure>
 <p class="cap"><b>2.39:1</b> · पुश-इन<br>100mm एनामॉर्फ़िक · 60 सेकंड, एक शॉट</p>
 
 </div>
@@ -630,7 +655,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 02</b><span>2:50–4:30</span></p>
 <h3>एक ब्रह्मांड</h3>
-<figure class="frame" style="aspect-ratio:2.390"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="आरोहण"><path d="M22 54h76"/><path d="M60 54V8"/><path d="M53 16l7-8 7 8"/><path d="M68 50h8M68 44h8M68 35h8M68 22h8"/></svg></figure>
+<figure class="frame has-still"><img src="art/strip-5.jpg" alt="एक ब्रह्मांड: मुख्य शॉट का संकल्प-चित्र" loading="lazy"></figure>
 <p class="cap"><b>2.39:1</b> · आरोहण<br>40mm · लघुगणकीय आरोहण</p>
 
 </div>
@@ -662,7 +687,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 03</b><span>4:30–5:40</span></p>
 <h3>पीछे की क़तार</h3>
-<figure class="frame" style="aspect-ratio:2.390"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="पुश-इन"><rect x="14" y="6" width="92" height="48"/><rect x="46" y="22" width="28" height="16"/><path d="M14 6l32 16M106 6L74 22M14 54l32-16M106 54L74 38"/><path d="M26 30h12M33 25l6 5-6 5M94 30H82M87 25l-6 5 6 5"/></svg></figure>
+<figure class="frame"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="पुश-इन"><rect x="14" y="6" width="92" height="48"/><rect x="46" y="22" width="28" height="16"/><path d="M14 6l32 16M106 6L74 22M14 54l32-16M106 54L74 38"/><path d="M26 30h12M33 25l6 5-6 5M94 30H82M87 25l-6 5 6 5"/></svg></figure>
 <p class="cap"><b>2.39:1</b> · पुश-इन<br>50mm एनामॉर्फ़िक · 50 सेकंड, बिना कट</p>
 
 </div>
@@ -693,7 +718,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 04</b><span>5:40–7:20</span></p>
 <h3>महाब्रह्मांड</h3>
-<figure class="frame" style="aspect-ratio:2.390"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="पुश-इन"><rect x="14" y="6" width="92" height="48"/><rect x="46" y="22" width="28" height="16"/><path d="M14 6l32 16M106 6L74 22M14 54l32-16M106 54L74 38"/><path d="M26 30h12M33 25l6 5-6 5M94 30H82M87 25l-6 5 6 5"/></svg></figure>
+<figure class="frame has-still"><img src="art/strip-6.jpg" alt="महाब्रह्मांड: मुख्य शॉट का संकल्प-चित्र" loading="lazy"></figure>
 <p class="cap"><b>2.39:1</b> · पुश-इन<br>CG · 40 सेकंड का पुश, फिर 8 सेकंड स्थिर</p>
 
 </div>
@@ -726,7 +751,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 05</b><span>7:20–9:00</span></p>
 <h3>सत्रहवीं बार</h3>
-<figure class="frame" style="aspect-ratio:2.390"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="पुल-बैक"><rect x="14" y="6" width="92" height="48"/><rect x="46" y="22" width="28" height="16"/><path d="M14 6l32 16M106 6L74 22M14 54l32-16M106 54L74 38"/><path d="M38 30H24M30 25l-6 5 6 5M82 30h14M90 25l6 5-6 5"/></svg></figure>
+<figure class="frame"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="पुल-बैक"><rect x="14" y="6" width="92" height="48"/><rect x="46" y="22" width="28" height="16"/><path d="M14 6l32 16M106 6L74 22M14 54l32-16M106 54L74 38"/><path d="M38 30H24M30 25l-6 5 6 5M82 30h14M90 25l6 5-6 5"/></svg></figure>
 <p class="cap"><b>2.39:1</b> · पुल-बैक<br>डॉली-आउट, फिर लॉक्ड फ़्रेम</p>
 <div class="spectrum" aria-hidden="true"><i style="--h:hsl(0 72% 62%)"></i><i style="--h:hsl(21 72% 62%)"></i><i style="--h:hsl(42 72% 62%)"></i><i style="--h:hsl(63 72% 62%)"></i><i style="--h:hsl(84 72% 62%)"></i><i style="--h:hsl(105 72% 62%)"></i><i style="--h:hsl(126 72% 62%)"></i><i style="--h:hsl(147 72% 62%)"></i><i style="--h:hsl(168 72% 62%)"></i><i style="--h:hsl(189 72% 62%)"></i><i style="--h:hsl(210 72% 62%)"></i><i style="--h:hsl(231 72% 62%)"></i><i style="--h:hsl(252 72% 62%)"></i><i style="--h:hsl(273 72% 62%)"></i><i style="--h:hsl(294 72% 62%)"></i><i style="--h:hsl(315 72% 62%)"></i><i style="--h:hsl(336 72% 62%)"></i></div>
 </div>
@@ -764,8 +789,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 06</b><span>9:00–11:00</span></p>
 <h3>बेहद</h3>
-<figure class="frame" style="aspect-ratio:1.778"><i class="ghost wide" style="aspect-ratio:2.39/1"></i><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="पुल-बैक"><rect x="14" y="6" width="92" height="48"/><rect x="46" y="22" width="28" height="16"/><path d="M14 6l32 16M106 6L74 22M14 54l32-16M106 54L74 38"/><path d="M38 30H24M30 25l-6 5 6 5M82 30h14M90 25l6 5-6 5"/></svg></figure>
-<p class="cap"><b>2.39:1 → पूरा फ़्रेम</b> · पुल-बैक<br>लगातार पीछे और ऊपर · पट्टियाँ 20 सेकंड में घुलती हैं</p>
+<figure class="frame has-still"><img src="art/strip-7.jpg" alt="बेहद: मुख्य शॉट का संकल्प-चित्र" loading="lazy"></figure>
+<p class="cap"><b>2.39:1</b> · पुल-बैक<br>लगातार पीछे और ऊपर · एक ही गति-वक्र</p>
 
 </div>
 <div class="body">
@@ -775,7 +800,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <p>वह बताते हैं कि दो हज़ार बारह तक यह अनुभव बिल्कुल साफ़ हो गया था। करोड़ों ब्रह्मांड। हर एक का अपना रंग।</p>
 <p>और यह मल्टीवर्स भी, उनके अनुसार, दो बार मिट चुका है। यह तीसरी बार है।</p>
 <p>जो मल्टीवर्स सिमटकर ब्लैक होल जैसी नींद में चला जाता है, उसके लिए उनके पास एक शब्द है: ब्लैकवर्स।</p>
-<p class="cue">फ़्रेम की काली पट्टियाँ घुलने लगती हैं।</p>
+<p class="cue">रंग एक-एक करके छूटने लगते हैं।</p>
 <p>दो हज़ार पंद्रह में उन्होंने इसके भी आगे की बात कही।</p>
 <p>जैसे एक मल्टीवर्स है, वैसे अनंत मल्टीवर्स हैं। उनकी परतें हैं। वह उन्हें पीढ़ियाँ कहते हैं।</p>
 <p>पीढ़ी एक। पीढ़ी दो। इक्कीस तक।</p>
@@ -787,11 +812,11 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 
 <dl class="dir">
 <div><dt>दृश्य</dt><dd>सत्रहवाँ यूनिवर्स पीछे हटता है, और उसके साथ सोलह और गोले दिखते हैं, हर एक अपने रंग का। सब मिलकर एक बड़ा, पारदर्शी गोला: मल्टीवर्स। कैमरा और पीछे जाता है: वह भी अनगिनत में एक। फिर एक के बाहर एक प्रकाश की इक्कीस परतें, हर बाहरी परत ज़्यादा महीन, ज़्यादा उजली। इक्कीसवीं के बाद रंग ख़त्म। आकार ख़त्म। सिर्फ़ प्रकाश।</dd></div>
-<div><dt>कैमरा</dt><dd>यहीं काली पट्टियाँ घुलती हैं। जो दर्शक अब तक सिनेमा-पट्टी में देख रहा था, उसकी पूरी स्क्रीन भर जाती है। कैमरे की गति धीमी होती जाती है और “बेहद” शब्द पर लगभग शून्य।</dd></div>
+<div><dt>कैमरा</dt><dd>कैमरा लगातार पीछे और ऊपर जाता है, एक ही गति-वक्र पर, बिना किसी झटके के। गति धीमी होती जाती है और “बेहद” शब्द पर लगभग शून्य।</dd></div>
 <div><dt>VFX · After Effects</dt><dd>सत्रह यूनिवर्स काँच जैसे गोले हैं, भीतर अलग रंग का कॉस्मिक वेब, refraction और हल्की chromatic dispersion के साथ। इक्कीस पीढ़ियाँ संकेंद्रित प्रकाश-खोल हैं; हर खोल पर पीढ़ी का अंक देवनागरी में, बहुत छोटा। HDR का सबसे उजला सफ़ेद (1000 nits) केवल यहाँ। अंत में फ़्रेम सफ़ेद नहीं होता; हर रंग इतना महीन हो जाता है कि सफ़ेद लगता है।</dd></div>
 <div><dt>ध्वनि</dt><dd>हर पीढ़ी पर तानपुरे के ऊपर एक नया स्वर जुड़ता है, इक्कीस तक। “बेहद” शब्द पर सब एक साथ रुकते हैं।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Seventeen translucent glass-like spheres each containing a cosmic web of a different colour, floating together inside one vast faintly glowing bubble, camera pulling back to reveal countless such bubbles, then twenty-one concentric shells of increasingly fine white-gold light extending outward to infinity, the cinematic black bars dissolving so the image fills the entire frame, black to luminous white-gold palette, minimal, photoreal volumetric light</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Seventeen translucent glass-like spheres each containing a cosmic web of a different colour, floating together inside one vast faintly glowing bubble, camera pulling back to reveal countless such bubbles, then twenty-one concentric shells of increasingly fine white-gold light extending outward to infinity, anamorphic 2.39:1, black to luminous white-gold palette, minimal, photoreal volumetric light</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -800,8 +825,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 07</b><span>11:00–12:30</span></p>
 <h3>एक बूँद</h3>
-<figure class="frame" style="aspect-ratio:1.778"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="स्थिर"><rect x="34" y="8" width="52" height="30"/><path d="M60 16v14M53 23h14"/><path d="M60 38v6M60 44l-14 10M60 44l14 10M60 44v10"/></svg></figure>
-<p class="cap"><b>पूरा फ़्रेम</b> · स्थिर<br>स्थिर, 45 सेकंड</p>
+<figure class="frame"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="स्थिर"><rect x="34" y="8" width="52" height="30"/><path d="M60 16v14M53 23h14"/><path d="M60 38v6M60 44l-14 10M60 44l14 10M60 44v10"/></svg></figure>
+<p class="cap"><b>2.39:1</b> · स्थिर<br>स्थिर, 45 सेकंड</p>
 
 </div>
 <div class="body">
@@ -825,7 +850,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div><dt>VFX · After Effects</dt><dd>महासागर fluid सिमुलेशन है, पर पानी नहीं: भीतर से चमकता हुआ प्रकाश। बूँदों के लिए high-speed crown-splash का संदर्भ। “आकार लेना” कणों के चारों ओर धुंध के जमने से (Houdini, या AE में Fractal Noise की परतें और CC Vector Blur)। रंग केवल सफ़ेद और स्वर्ण।</dd></div>
 <div><dt>ध्वनि</dt><dd>मौन से शुरुआत। संकल्प पर एक स्वर: स्त्री और पुरुष कंठ एक साथ, बिना शब्द। हर बूँद पर जलतरंग जैसा एक महीन स्वर।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>An infinite horizonless ocean made of soft white-gold light rather than water, a single slow ripple crosses its surface and droplets of light rise and scatter outward in slow motion, each droplet a glowing point, mist beginning to condense around the points, static wide shot, full-frame 16:9, only white and gold tones, serene, volumetric</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>An infinite horizonless ocean made of soft white-gold light rather than water, a single slow ripple crosses its surface and droplets of light rise and scatter outward in slow motion, each droplet a glowing point, mist beginning to condense around the points, static wide shot, anamorphic 2.39:1, only white and gold tones, serene, volumetric</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -834,8 +859,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 08</b><span>12:30–14:00</span></p>
 <h3>काला बिंदु</h3>
-<figure class="frame" style="aspect-ratio:1.778"><i class="pt"></i><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="अवरोहण"><path d="M22 54h76"/><path d="M60 6v44"/><path d="M53 42l7 8 7-8"/><path d="M68 10h8M68 23h8M68 32h8M68 38h8"/></svg></figure>
-<p class="cap"><b>पूरा फ़्रेम → 1.33:1</b> · अवरोहण<br>आरोहण का ठीक उलटा · 60 सेकंड</p>
+<figure class="frame"><i class="pt"></i><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="अवरोहण"><path d="M22 54h76"/><path d="M60 6v44"/><path d="M53 42l7 8 7-8"/><path d="M68 10h8M68 23h8M68 32h8M68 38h8"/></svg></figure>
+<p class="cap"><b>2.39:1</b> · अवरोहण<br>आरोहण का ठीक उलटा · 60 सेकंड</p>
 
 </div>
 <div class="body">
@@ -849,7 +874,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <p class="cue">लंबा विराम</p>
 <p>तब, इसी मान्यता के अनुसार, बेहद के उस रचयिता ने तय किया:</p>
 <p class="say"><span>रचयिता</span>इस बार मैं ख़ुद जाऊँगा। साधारण मनुष्य के तन में। ग़रीब से ग़रीब घर में। ताकि मुझे पता लगे कि दुख होता क्या है।</p>
-<p class="cue">कट, बिना किसी संक्रमण के: सफ़ेद-तपा खेत। काँटा। नंगा पाँव। फ़्रेम वापस 1.33:1।</p>
+<p class="cue">कट, बिना किसी संक्रमण के: सफ़ेद-तपा खेत। काँटा। नंगा पाँव।</p>
 <p class="say"><span>बालक</span>तू नीचे आके ज़रा देख। पैर में काँटे लगते हैं।</p>
 <p class="cue">पाँच सेकंड कुछ नहीं</p>
 <p>जो लोग बापूजी को मानते हैं, उनके लिए उस बच्चे की शिकायत का जवाब वह बच्चा ख़ुद था।</p>
@@ -857,11 +882,11 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 
 <dl class="dir">
 <div><dt>दृश्य</dt><dd>अनंत उजाला। उसमें बहुत दूर एक काला बिंदु, इतना छोटा कि पहले धूल का कण लगे। अवरोहण उसी की ओर। बिंदु बढ़ता है: वह एक मल्टीवर्स है, जिसकी रोशनी मटमैली पड़ चुकी है। भीतर एक यूनिवर्स, एक गैलेक्सी, एक सूर्य, एक धूसर, थका हुआ नीला ग्रह। फिर कट: भाग 1 का पहला शॉट।</dd></div>
-<div><dt>कैमरा</dt><dd>आरोहण का ठीक उलटा: वही रास्ता, वही गति, उलटी दिशा। अंतिम कट पर फ़्रेम झटके से 1.33:1 में लौट आता है, ताकि बेहद से हद में गिरना दर्शक अपने शरीर में महसूस करे।</dd></div>
+<div><dt>कैमरा</dt><dd>आरोहण का ठीक उलटा: वही रास्ता, वही गति, उलटी दिशा। अंतिम कट सीधा है, अनंत उजाले से तपे हुए खेत में, ताकि बेहद से हद में गिरना दर्शक अपने शरीर में महसूस करे।</dd></div>
 <div><dt>VFX · After Effects</dt><dd>सफ़ेद पर काला: भाग 2 के पूरे रंग-विधान का उलटा। बिंदु पर साठ सेकंड का exponential zoom; भीतर की दुनिया का saturation 100% से 35% तक गिरता है। कट से पहले एक फ़्रेम का काला। भाग 1 का शॉट बिना किसी नए ग्रेड के, जैसा था वैसा।</dd></div>
 <div><dt>ध्वनि</dt><dd>उतरते हुए स्वर एक-एक करके छूटते हैं, इक्कीस से एक तक। कट पर अचानक लू की आवाज़, पूरी तीव्रता से। बालक का वाक्य भाग 1 की वही रिकॉर्डिंग।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>An endless field of soft white light with a single tiny black dot far in the distance, the camera descends steadily toward it as it grows into a dim, desaturated bubble universe, inside it a galaxy, a star, and a tired grey-blue planet, inverted colour logic with darkness as the anomaly inside light, full-frame 16:9, minimal, stark</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>An endless field of soft white light with a single tiny black dot far in the distance, the camera descends steadily toward it as it grows into a dim, desaturated bubble universe, inside it a galaxy, a star, and a tired grey-blue planet, inverted colour logic with darkness as the anomaly inside light, anamorphic 2.39:1, minimal, stark</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -870,8 +895,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 09</b><span>14:00–15:10</span></p>
 <h3>विनाश नहीं</h3>
-<figure class="frame" style="aspect-ratio:1.778"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="आरोहण"><path d="M22 54h76"/><path d="M60 54V8"/><path d="M53 16l7-8 7 8"/><path d="M68 50h8M68 44h8M68 35h8M68 22h8"/></svg></figure>
-<p class="cap"><b>पूरा फ़्रेम</b> · आरोहण<br>कुएँ के भीतर से ऊपर · z-अक्ष</p>
+<figure class="frame"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="आरोहण"><path d="M22 54h76"/><path d="M60 54V8"/><path d="M53 16l7-8 7 8"/><path d="M68 50h8M68 44h8M68 35h8M68 22h8"/></svg></figure>
+<p class="cap"><b>2.39:1</b> · आरोहण<br>कुएँ के भीतर से ऊपर · z-अक्ष</p>
 
 </div>
 <div class="body">
@@ -894,7 +919,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div><dt>VFX · After Effects</dt><dd>“तत्व परिवर्तन”: हर तत्व की मैक्रो प्लेट कणों में बदलती है (कण-emitter को layer के luma से चलाएँ), कण चमककर ऊपर उठते हैं। विनाश की कोई छवि नहीं: न आग, न मलबा, न टूटती इमारतें। आर्काइव फ़ुटेज को upscale न करें; उसे फ़्रेम के भीतर एक छोटे फ़्रेम में, उसके असली रूप में रखें।</dd></div>
 <div><dt>ध्वनि</dt><dd>बापूजी की असली आवाज़ आगे; सूत्रधार पीछे हट जाता है। कुएँ में गूँज, समुद्र पर खुलापन।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Looking straight up from the bottom of an old stone well, a small circle of bright sky above, the camera rises smoothly up and out of the well to reveal a vast open ocean at dawn stretching to the horizon, teal and soft gold palette, full-frame 16:9, photoreal, hopeful</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Looking straight up from the bottom of an old stone well, a small circle of bright sky above, the camera rises smoothly up and out of the well to reveal a vast open ocean at dawn stretching to the horizon, teal and soft gold palette, anamorphic 2.39:1, photoreal, hopeful</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -903,8 +928,8 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div class="slate">
 <p class="no"><b>दृश्य 10</b><span>15:10–16:30</span></p>
 <h3>बेहद की परमशांति</h3>
-<figure class="frame" style="aspect-ratio:1.778"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="अवरोहण"><path d="M22 54h76"/><path d="M60 6v44"/><path d="M53 42l7 8 7-8"/><path d="M68 10h8M68 23h8M68 32h8M68 38h8"/></svg></figure>
-<p class="cap"><b>पूरा फ़्रेम</b> · अवरोहण<br>100mm मैक्रो · ज़मीन से 5 सेमी</p>
+<figure class="frame"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="अवरोहण"><path d="M22 54h76"/><path d="M60 6v44"/><path d="M53 42l7 8 7-8"/><path d="M68 10h8M68 23h8M68 32h8M68 38h8"/></svg></figure>
+<p class="cap"><b>2.39:1</b> · अवरोहण<br>100mm मैक्रो · ज़मीन से 5 सेमी</p>
 
 </div>
 <div class="body">
@@ -929,7 +954,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div><dt>VFX · After Effects</dt><dd>यह सीरीज़ का सबसे सादा हिस्सा है। अंकुर असली। अंतिम तस्वीर पूरी तरह स्थिर, आठ सेकंड। मंत्र का टाइप काले पर, सादा देवनागरी, कोई चमक नहीं। अंत-पट्टी पर यह पंक्ति: “इस फ़िल्म में ब्रह्मांड का जो वर्णन है, वह बापूजी दशरथभाई पटेल का अपना अनुभव-कथन है।”</dd></div>
 <div><dt>ध्वनि</dt><dd>सांझ के खेत की आवाज़ें; अब लू नहीं, हल्की हवा। राम-नाम की घंटी एक बार, अपने असली स्वर में। अंतिम शब्द के बाद संगीत नहीं लौटता।</dd></div>
 </dl>
-<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Slow final descent from orbit down to a single millet field in Gujarat at dusk, the camera settles five centimetres above cracked earth, extreme macro of an acacia thorn in the foreground, rack focus to a tiny green seedling sprouting beside it, soft warm twilight, gentle breeze, full-frame 16:9, quiet, photoreal</pre><button type="button">कॉपी करें</button></details>
+<details class="prompt"><summary>मुख्य शॉट का AI प्रॉम्प्ट (अंग्रेज़ी में)</summary><pre>Slow final descent from orbit down to a single millet field in Gujarat at dusk, the camera settles five centimetres above cracked earth, extreme macro of an acacia thorn in the foreground, rack focus to a tiny green seedling sprouting beside it, soft warm twilight, gentle breeze, anamorphic 2.39:1, quiet, photoreal</pre><button type="button">कॉपी करें</button></details>
 </div>
 </div>
 </article>
@@ -945,165 +970,7 @@ td:nth-child(2) { color: var(--dust); white-space: nowrap; }
 <div><h3>आर्काइव फ़ुटेज के लिए (पुस्तक में दिए वीडियो)</h3><ul><li><b>Bapuji Shares Some Childhood Memories</b> <a href="https://youtu.be/chWEnq1dKQk">youtu.be/chWEnq1dKQk</a></li><li><b>Bapuji Shares His Office Life</b> <a href="https://youtu.be/FBLyiEqXawU">youtu.be/FBLyiEqXawU</a></li><li><b>1,50,000 घंटे के ध्यान के बाद क्या हुआ?</b> <a href="https://youtu.be/3pDiGVSjpgI">youtu.be/3pDiGVSjpgI</a></li><li><b>Ashram Ki Kuch Purani Yaadein</b> <a href="https://youtu.be/-6DMcYtYWu0">youtu.be/-6DMcYtYWu0</a></li><li><b>Bapuji’s Autobiography — Life Introduction</b> <a href="https://youtu.be/Cud5UVUknsA">youtu.be/Cud5UVUknsA</a></li></ul></div>
 </div></section>
 <script>
-// पोस्टर की सात पट्टियाँ: काँटा, फटी धरती, तारों तले बालक, नेत्र, एक ब्रह्मांड, गैलेक्सी, मल्टीवर्स।
 (function () {
-  var TAU = Math.PI * 2;
-  function rng(seed) {
-    return function () {
-      seed = (seed * 1664525 + 1013904223) >>> 0;
-      return seed / 4294967296;
-    };
-  }
-  function grad(g, x0, y0, x1, y1, stops) {
-    var gr = g.createLinearGradient(x0, y0, x1, y1);
-    stops.forEach(function (s, i) { gr.addColorStop(i / (stops.length - 1), s); });
-    return gr;
-  }
-  function glow(g, x, y, r, inner, outer) {
-    var gr = g.createRadialGradient(x, y, 0, x, y, r);
-    gr.addColorStop(0, inner);
-    gr.addColorStop(1, outer);
-    g.fillStyle = gr;
-    g.fillRect(x - r, y - r, r * 2, r * 2);
-  }
-  var art = {
-    heat: function (g, w, h, r) {
-      g.fillStyle = grad(g, 0, 0, 0, h, ['#FCF6DA', '#EAD388']);
-      g.fillRect(0, 0, w, h);
-      glow(g, w * 0.84, -h * 0.2, h * 1.7, 'rgba(255,255,255,.95)', 'rgba(255,255,255,0)');
-      g.strokeStyle = '#2A1A10';
-      g.lineCap = 'round';
-      var x0 = -10, y0 = h * 0.82, x1 = w * 0.66, y1 = h * 0.24;
-      g.lineWidth = 2.4;
-      g.beginPath(); g.moveTo(x0, y0); g.quadraticCurveTo(w * 0.3, h * 0.74, x1, y1); g.stroke();
-      g.lineWidth = 1.3;
-      for (var i = 1; i < 15; i++) {
-        var t = i / 15, u = 1 - t;
-        var x = u * u * x0 + 2 * u * t * w * 0.3 + t * t * x1;
-        var y = u * u * y0 + 2 * u * t * h * 0.74 + t * t * y1;
-        var len = 9 + r() * 12, a = -1.2 + (i % 2 ? 1 : -1) * (0.9 + r() * 0.4);
-        g.beginPath(); g.moveTo(x, y); g.lineTo(x + Math.cos(a) * len, y + Math.sin(a) * len); g.stroke();
-      }
-    },
-    earth: function (g, w, h, r) {
-      g.fillStyle = grad(g, 0, 0, 0, h, ['#BC6B33', '#8A4320']);
-      g.fillRect(0, 0, w, h);
-      g.strokeStyle = 'rgba(48,20,8,.85)';
-      g.lineWidth = 1.2;
-      for (var i = 0; i < 16; i++) {
-        var x = r() * w, y = r() * h * 0.3 - 6;
-        g.beginPath(); g.moveTo(x, y);
-        for (var k = 0; k < 9; k++) {
-          x += (r() - 0.5) * 46; y += 6 + r() * 14;
-          g.lineTo(x, y);
-          if (r() < 0.3) { g.lineTo(x + (r() - 0.5) * 60, y + r() * 12); g.moveTo(x, y); }
-        }
-        g.stroke();
-      }
-    },
-    night: function (g, w, h, r) {
-      g.fillStyle = grad(g, 0, 0, 0, h, ['#0B1230', '#1E2B58']);
-      g.fillRect(0, 0, w, h);
-      for (var i = 0; i < 110; i++) {
-        g.fillStyle = 'rgba(240,238,225,' + (0.3 + r() * 0.7) + ')';
-        g.beginPath(); g.arc(r() * w, r() * h * 0.78, 0.4 + r() * 1.1, 0, TAU); g.fill();
-      }
-      g.fillStyle = '#05070F';
-      g.fillRect(0, h * 0.8, w, h * 0.2);
-      var bx = w * 0.17, by = h * 0.8;
-      g.beginPath(); g.arc(bx + 1.5, by - 19, 3.6, 0, TAU); g.fill();
-      g.beginPath(); g.moveTo(bx - 3.5, by); g.lineTo(bx - 2, by - 15); g.lineTo(bx + 4, by - 15); g.lineTo(bx + 4.5, by); g.fill();
-    },
-    eye: function (g, w, h, r) {
-      g.fillStyle = '#08080F';
-      g.fillRect(0, 0, w, h);
-      var cx = w / 2, cy = h / 2, R = Math.max(h * 1.5, w * 0.34);
-      for (var i = 0; i < 260; i++) {
-        var a = r() * TAU, r0 = h * 0.3 + r() * h * 0.2, r1 = r0 + r() * (R - r0);
-        g.strokeStyle = (i % 3 ? 'hsla(42,80%,62%,' : 'hsla(176,55%,58%,') + (0.12 + r() * 0.3) + ')';
-        g.lineWidth = 0.6 + r() * 1.2;
-        g.beginPath(); g.moveTo(cx + Math.cos(a) * r0, cy + Math.sin(a) * r0); g.lineTo(cx + Math.cos(a) * r1, cy + Math.sin(a) * r1); g.stroke();
-      }
-      glow(g, cx, cy, h * 0.95, 'rgba(255,252,240,1)', 'rgba(255,240,200,0)');
-      g.fillStyle = '#FFFDF4';
-      g.beginPath(); g.arc(cx, cy, h * 0.36, 0, TAU); g.fill();
-    },
-    sun: function (g, w, h, r) {
-      g.fillStyle = '#06122A';
-      g.fillRect(0, 0, w, h);
-      for (var i = 0; i < 60; i++) {
-        g.fillStyle = 'rgba(230,236,250,' + (0.2 + r() * 0.5) + ')';
-        g.fillRect(r() * w, r() * h, 1, 1);
-      }
-      var sx = w * 0.13, sy = h * 0.5;
-      glow(g, sx, sy, h * 1.5, 'rgba(242,181,68,.6)', 'rgba(242,181,68,0)');
-      g.fillStyle = '#FFF0BE';
-      g.beginPath(); g.arc(sx, sy, h * 0.26, 0, TAU); g.fill();
-      for (var k = 1; k <= 6; k++) {
-        var rx = w * (0.1 + k * 0.125), ry = rx * 0.15;
-        g.strokeStyle = 'rgba(240,236,220,.38)';
-        g.lineWidth = 1;
-        g.setLineDash([7, 3 + r() * 3]);
-        g.beginPath(); g.ellipse(sx, sy, rx, ry, 0, 0, TAU); g.stroke();
-        g.setLineDash([]);
-        var a = -0.9 + r() * 1.8;
-        g.fillStyle = k === 3 ? '#6FB1FF' : '#E9E2CC';
-        g.beginPath(); g.arc(sx + Math.cos(a) * rx, sy + Math.sin(a) * ry, k === 3 ? 3.2 : 2, 0, TAU); g.fill();
-      }
-    },
-    galaxy: function (g, w, h, r) {
-      g.fillStyle = '#110925';
-      g.fillRect(0, 0, w, h);
-      var cx = w / 2, cy = h / 2;
-      for (var i = 0; i < 2200; i++) {
-        var t = Math.pow(r(), 0.7), th = t * 4.4 * Math.PI + (i % 2) * Math.PI;
-        var rad = 10 + t * w * 0.5, j = (r() - 0.5) * (14 + t * 46);
-        var x = cx + Math.cos(th) * rad + j, y = cy + (Math.sin(th) * rad + (r() - 0.5) * (14 + t * 46)) * 0.3;
-        g.fillStyle = 'hsla(' + (38 + t * 210) + ',' + (70 - t * 20) + '%,' + (78 - t * 12) + '%,' + (0.25 + r() * 0.6) + ')';
-        g.fillRect(x, y, 0.6 + r() * 1.2, 0.6 + r() * 1.2);
-      }
-      glow(g, cx, cy, h * 0.9, 'rgba(233,169,60,.55)', 'rgba(233,169,60,0)');
-      g.strokeStyle = '#F6C56A';
-      g.lineWidth = 3;
-      g.beginPath(); g.ellipse(cx, cy, h * 0.44, h * 0.4, 0, 0, TAU); g.stroke();
-      g.fillStyle = '#000';
-      g.beginPath(); g.ellipse(cx, cy, h * 0.4, h * 0.36, 0, 0, TAU); g.fill();
-    },
-    multi: function (g, w, h, r) {
-      g.fillStyle = '#05040A';
-      g.fillRect(0, 0, w, h);
-      for (var i = 0; i < 34; i++) {
-        var x = r() * w * 0.92, y = r() * h, rad = 6 + r() * h * 0.46, hue = Math.round(r() * 17) * 21;
-        var gr = g.createRadialGradient(x - rad * 0.3, y - rad * 0.3, 0, x, y, rad);
-        gr.addColorStop(0, 'hsla(' + hue + ',75%,70%,.22)');
-        gr.addColorStop(1, 'hsla(' + hue + ',75%,55%,.03)');
-        g.fillStyle = gr;
-        g.beginPath(); g.arc(x, y, rad, 0, TAU); g.fill();
-        g.strokeStyle = 'hsla(' + hue + ',75%,74%,.6)';
-        g.lineWidth = 1;
-        g.stroke();
-      }
-      g.fillStyle = grad(g, w * 0.62, 0, w, 0, ['rgba(250,238,198,0)', 'rgba(250,238,198,.55)', 'rgba(255,252,240,1)']);
-      g.fillRect(w * 0.62, 0, w * 0.38, h);
-    }
-  };
-  function paint() {
-    var list = document.querySelectorAll('.strip canvas');
-    for (var i = 0; i < list.length; i++) {
-      var c = list[i], w = c.clientWidth, h = c.clientHeight;
-      if (!w || !h) continue;
-      var dpr = Math.min(window.devicePixelRatio || 1, 2);
-      c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
-      var g = c.getContext('2d');
-      g.scale(dpr, dpr);
-      art[c.dataset.art](g, w, h, rng(i * 977 + 13));
-    }
-  }
-  var timer;
-  paint();
-  window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(paint, 120); });
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(paint);
-
   // प्रॉम्प्ट कॉपी
   document.addEventListener('click', function (e) {
     var b = e.target.closest('.prompt button');
