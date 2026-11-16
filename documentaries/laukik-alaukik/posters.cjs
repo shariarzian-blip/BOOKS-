@@ -35,7 +35,7 @@ h1{position:absolute;top:150px;left:0;right:0;text-align:center;font-size:236px;
 .tag{position:absolute;top:470px;left:0;right:0;text-align:center;font-size:42px;color:#4A2410}
 .bot{position:absolute;left:0;right:0;bottom:44px;text-align:center;font-size:25px;color:#FBF3E1;text-shadow:0 2px 14px rgba(0,0,0,.85)}
 </style><div id="p"><div class="eye">लौकिक · अलौकिक &nbsp;—&nbsp; भाग 1</div><h1 class="d">नंगे पाँव</h1>
-<p class="tag r">एक बालक, जिसने ईश्वर से शिकायत की</p>
+<p class="tag r">एक बालक, जिसने भगवान से शिकायत की</p>
 <p class="bot">बापूजी दशरथभाई पटेल के जीवन पर आधारित · दो भागों की डॉक्यूमेंट्री</p></div>`;
 
 const two = `${head}<style>

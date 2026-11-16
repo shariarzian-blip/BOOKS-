@@ -35,16 +35,16 @@ ffmpeg -y -loglevel error \
 
 A="aformat=sample_rates=48000:channel_layouts=stereo"
 ffmpeg -y -loglevel error -i picture.mp4 \
- -i audio/music.mp3 -i audio/v3/n1.wav -i audio/v3/n2.wav -i audio/v3/n3.wav -i audio/child-full.wav -i audio/v3/n4.wav \
+ -i audio/music.mp3 -i audio/v4/n1.wav -i audio/v4/n2.wav -i audio/v4/n3.wav -i audio/child-full.wav -i audio/v4/n4.wav \
  -i audio/sub-drop.mp3 -i audio/whoosh.mp3 -i audio/slow-cosmic-whoosh.mp3 -i audio/deep-boom.mp3 -i audio/low-fast-whoosh.mp3 \
  -i audio/approaching-riser.mp3 -i audio/reverse-whoosh-hit.mp3 -i audio/deep-braam.mp3 -i audio/deep-whoosh.mp3 -i audio/impact-hit.mp3 \
  -i audio/approaching-riser.mp3 -i audio/title-braam.mp3 -i audio/sub-boom.mp3 \
  -filter_complex "
- [2:a]$A,atempo=1.08,adelay=2000:all=1[a1];
- [3:a]$A,atempo=1.08,adelay=8000:all=1[a2];
- [4:a]$A,atempo=1.08,adelay=14200:all=1[a3];
+ [2:a]$A,atempo=1.05,adelay=2000:all=1[a1];
+ [3:a]$A,atempo=1.05,adelay=8000:all=1[a2];
+ [4:a]$A,atempo=1.05,adelay=14200:all=1[a3];
  [5:a]$A,atrim=0:2.3,volume=0.9,adelay=21700:all=1[a4];
- [6:a]$A,atempo=1.08,adelay=26300:all=1[a5];
+ [6:a]$A,atempo=1.05,adelay=26300:all=1[a5];
  [a1][a2][a3][a4][a5]amix=inputs=5:normalize=0:duration=longest,apad=whole_dur=39,volume=1.35,asplit=3[vo][k1][k2];
  [1:a]$A,atrim=0:39,volume=0.26,afade=t=in:st=0:d=0.6,afade=t=out:st=36.5:d=2.5[mu0];
  [mu0][k1]sidechaincompress=threshold=0.08:ratio=4:attack=20:release=500[mu];
@@ -63,6 +63,6 @@ ffmpeg -y -loglevel error -i picture.mp4 \
  [19:a]$A,atrim=0:6,afade=t=out:st=4:d=2,volume=0.55,adelay=32000:all=1[f13];
  [f1][f2][f3][f4][f5][f6][f7][f8][f9][f10][f11][f12][f13]amix=inputs=13:normalize=0:duration=longest,apad=whole_dur=39[fx0];
  [fx0][k2]sidechaincompress=threshold=0.08:ratio=3:attack=20:release=400[fx];
- [vo][mu][fx]amix=inputs=3:normalize=0:duration=longest,atrim=0:39,loudnorm=I=-14:TP=-1.0:LRA=11[out]" \
- -map 0:v -map "[out]" -c:v copy -c:a aac -b:a 256k -shortest nange-paon-shuruaat-v3.mp4
-ffprobe -v error -show_entries format=duration,size -of csv=p=0 nange-paon-shuruaat-v3.mp4
+ [vo][mu][fx]amix=inputs=3:normalize=0:duration=longest,atrim=0:39,loudnorm=I=-16:TP=-2.0:LRA=11,alimiter=limit=0.68:attack=1:release=80:level=disabled[out]" \
+ -map 0:v -map "[out]" -c:v copy -c:a aac -b:a 256k -shortest nange-paon-shuruaat-v4.mp4
+ffprobe -v error -show_entries format=duration,size -of csv=p=0 nange-paon-shuruaat-v4.mp4
