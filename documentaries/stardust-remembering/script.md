@@ -6,7 +6,7 @@
 |---|---|
 | Category | Documentary: Spiritual / Cosmic / Universe |
 | Format | Narrated visual essay, 16:9 |
-| Running time | About 10 minutes (roughly 1,350 words of narration at a slow, contemplative pace) |
+| Running time | About 8 minutes (roughly 1,000 words of narration at a slow, contemplative pace, plus pauses) |
 | Language | English |
 | Narrator | One voice, warm and unhurried, close to the microphone. Speaks to a single listener, never to a crowd. |
 | Music | Slow ambient drones, low strings, a single tanpura or singing-bowl tone that returns in each chapter. No percussion until Chapter 5. |

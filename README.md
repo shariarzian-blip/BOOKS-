@@ -6,4 +6,9 @@ Scripts and written works.
 
 | Title | Category | Length | Files |
 |---|---|---|---|
-| Stardust Remembering | Spiritual / Cosmic / Universe | About 10 min | [Script](documentaries/stardust-remembering/script.md) · [Shot prompts](documentaries/stardust-remembering/shot-prompts.md) |
+| लौकिक · अलौकिक (two parts, Hindi) | Spiritual / Cosmic / Universe | 14 min + 16½ min | [भाग 1: नंगे पाँव](documentaries/laukik-alaukik/bhag-1-nange-paon.md) · [भाग 2: बेहद](documentaries/laukik-alaukik/bhag-2-behad.md) · [Production bible page](documentaries/laukik-alaukik/index.html) |
+| Stardust Remembering (English) | Spiritual / Cosmic / Universe | About 8 min | [Script](documentaries/stardust-remembering/script.md) · [Shot prompts](documentaries/stardust-remembering/shot-prompts.md) |
+
+### Editing लौकिक · अलौकिक
+
+All text lives in `documentaries/laukik-alaukik/content.mjs`. After editing it, run `node build.mjs` in that folder to regenerate `index.html` and both `.md` scripts.

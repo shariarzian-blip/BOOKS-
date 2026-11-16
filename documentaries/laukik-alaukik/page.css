@@ -1,0 +1,156 @@
+/* बनावट: पन्ना पट्टियों का ढेर है। हर दृश्य अपने रंग की पूरी-चौड़ाई वाली पट्टी है,
+   और पट्टियों का क्रम ही फ़िल्म की रंग-पटकथा है। भाग 1 तंग कॉलम में (हद), भाग 2 चौड़े में (बेहद)। */
+:root {
+  color-scheme: dark;
+  --void: #0A0B14;      /* शून्य: पन्ने की ज़मीन */
+  --night: #141629;     /* नील स्याह: उठी हुई सतह */
+  --khadi: #F1ECDD;     /* खादी सफ़ेद: पाठ */
+  --dust: #A9A492;      /* धूल: गौण पाठ */
+  --bajra: #E3B552;     /* बाजरा-स्वर्ण: ज़ोर */
+  --line: #2B2E47;      /* रेखाएँ */
+  --display: 'Rozha One', 'Tiro Devanagari Hindi', 'Noto Serif Devanagari', serif;
+  --read: 'Tiro Devanagari Hindi', 'Noto Serif Devanagari', 'Kohinoor Devanagari', serif;
+  --ui: 'Mukta', 'Noto Sans Devanagari', 'Kohinoor Devanagari', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --hadd: 56rem;        /* भाग 1 की चौड़ाई */
+  --behad: 76rem;       /* भाग 2 की चौड़ाई */
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+body { background: var(--void); color: var(--khadi); font-family: var(--ui); font-size: 1.0625rem; line-height: 1.7; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--void); }
+h1, h2, h3, p, dl, dd, ul, ol, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; text-underline-offset: .2em; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--bajra); outline-offset: 3px; }
+.w { width: 100%; max-width: var(--behad); margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-family: var(--ui); font-weight: 600; font-size: .8125rem; letter-spacing: .08em; color: var(--bajra); }
+
+/* ऊपर की पट्टी */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: var(--void); border-bottom: 1px solid var(--line); }
+.bar .w { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem 1.25rem; padding-block: .6rem; }
+.bar b { font-family: var(--display); font-weight: 400; font-size: 1.05rem; margin-right: auto; }
+.bar a { font-size: .9rem; text-decoration: none; color: var(--dust); }
+.bar a:hover { color: var(--khadi); }
+
+/* पोस्टर */
+.hero .w { display: grid; grid-template-columns: minmax(0, 30rem) minmax(0, 1fr); gap: 2.5rem 3.5rem; align-items: center; padding-block: 2.5rem 3.5rem; }
+.poster { display: grid; gap: 3px; }
+.poster .gap { height: .6rem; }
+.strip { position: relative; height: clamp(58px, 9.2vw, 92px); overflow: hidden; background: var(--night); }
+.strip canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.strip span { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-size: clamp(2.2rem, 6vw, 3.6rem); line-height: 1; color: var(--c, #fff); text-shadow: 0 0 18px var(--s, rgba(0, 0, 0, .55)); }
+.intro { display: grid; gap: 1.4rem; min-width: 0; }
+.intro h1 { font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 4.6vw, 3.2rem); line-height: 1.25; text-wrap: balance; }
+.intro .log { font-family: var(--read); font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.8; max-width: 30em; }
+.intro .subj { color: var(--dust); font-size: .95rem; }
+.parts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 2rem; border-top: 1px solid var(--line); padding-top: 1.25rem; }
+.parts a { text-decoration: none; display: grid; gap: .15rem; }
+.parts strong { font-family: var(--display); font-weight: 400; font-size: 1.7rem; line-height: 1.3; }
+.parts small { color: var(--dust); font-size: .875rem; line-height: 1.55; }
+.parts a:hover strong { color: var(--bajra); }
+
+/* फ़िल्म की भाषा */
+.bible { border-top: 1px solid var(--line); }
+.bible .w { display: grid; gap: 3.5rem; padding-block: 3.5rem; }
+.bible .w > *, .notes .w > *, .film-head .w > * { min-width: 0; }
+.bible h2, .notes h2 { font-family: var(--display); font-weight: 400; font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.3; }
+.bible h3, .notes h3 { font-family: var(--ui); font-weight: 600; font-size: 1.05rem; color: var(--bajra); margin-bottom: .75rem; }
+.idea { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 2.5rem 3.5rem; align-items: start; }
+.idea .txt { display: grid; gap: 1rem; }
+.idea .txt p { font-family: var(--read); font-size: 1.125rem; line-height: 1.85; max-width: 34em; }
+.ratios { display: grid; gap: 1.1rem; }
+.ratio { display: grid; gap: .4rem; }
+.ratio i { display: block; height: 4.4rem; max-width: 100%; border: 1px solid var(--bajra); background: var(--night); }
+.ratio i.r1 { aspect-ratio: 4 / 3; }
+.ratio i.r2 { aspect-ratio: 2.39 / 1; }
+.ratio i.r3 { aspect-ratio: 16 / 9; height: 6.6rem; background: var(--khadi); border-color: var(--khadi); }
+.ratio span { font-size: .875rem; color: var(--dust); }
+.ratio b { font-family: var(--mono); font-weight: 500; color: var(--khadi); margin-right: .5rem; }
+.rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 3.5rem; }
+.rules ol { display: grid; gap: .7rem; counter-reset: r; }
+.rules li { counter-increment: r; display: grid; grid-template-columns: 1.6rem minmax(0, 1fr); font-size: 1rem; }
+.rules li::before { content: counter(r, devanagari); font-family: var(--mono); color: var(--dust); }
+.motifs { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.5rem 2.5rem; }
+.motifs dt { font-family: var(--display); font-size: 1.3rem; line-height: 1.4; }
+.motifs dd { color: var(--dust); font-size: .97rem; }
+.face { font-family: var(--read); font-size: clamp(1.2rem, 2.3vw, 1.6rem); line-height: 1.75; max-width: 32em; color: var(--bajra); }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 40rem; font-size: .95rem; }
+th, td { text-align: left; vertical-align: top; padding: .7rem 1rem .7rem 0; border-bottom: 1px solid var(--line); }
+th { font-weight: 600; color: var(--dust); font-size: .8125rem; letter-spacing: .06em; }
+td:first-child { font-weight: 600; white-space: nowrap; }
+td:nth-child(2) { color: var(--dust); white-space: nowrap; }
+.sound { display: grid; gap: .6rem; max-width: 46rem; }
+.sound li { padding-left: 1.2rem; position: relative; }
+.sound li::before { content: ""; position: absolute; left: 0; top: .8em; width: .5rem; height: 1px; background: var(--bajra); }
+.spec { font-family: var(--mono); font-size: .85rem; color: var(--dust); line-height: 1.8; }
+
+/* भाग का शीर्ष */
+.film-head { border-top: 1px solid var(--line); }
+.film-head .w { display: grid; gap: 1.5rem; padding-block: 3.5rem 2rem; }
+.film-head h2 { font-family: var(--display); font-weight: 400; font-size: clamp(3rem, 10vw, 6.5rem); line-height: 1.15; }
+.film-head .tag { font-family: var(--read); font-size: 1.25rem; }
+.meta { display: flex; flex-wrap: wrap; gap: .4rem 2rem; font-size: .9rem; color: var(--dust); }
+.meta b { color: var(--khadi); font-weight: 600; }
+.f1 .w { max-width: var(--hadd); }
+.script { display: flex; height: 3.2rem; border: 1px solid var(--line); }
+.script a { flex: var(--d) 1 0; min-width: 0; background: var(--bg); color: var(--ink); text-decoration: none; display: grid; place-items: center; font-family: var(--mono); font-size: .75rem; }
+.script a:hover { outline: 2px solid var(--khadi); outline-offset: -2px; }
+.script-cap { font-size: .8125rem; color: var(--dust); }
+
+/* दृश्य की पट्टी */
+.scene { background: var(--bg); color: var(--ink); --soft: color-mix(in srgb, var(--ink) 74%, var(--bg)); --rule: color-mix(in srgb, var(--ink) 26%, var(--bg)); }
+.scene .w { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 2rem 3rem; padding-block: 3.25rem; align-items: start; }
+.slate { display: grid; gap: .9rem; }
+.no { font-family: var(--mono); font-size: .8rem; color: var(--soft); display: flex; gap: 1rem; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.no b { color: var(--acc); font-weight: 500; }
+.scene h3 { font-family: var(--display); font-weight: 400; font-size: clamp(1.7rem, 3.4vw, 2.3rem); line-height: 1.3; text-wrap: balance; }
+.frame { position: relative; width: 100%; max-width: 100%; border: 1px solid var(--soft); display: grid; place-items: center; color: var(--acc); background: color-mix(in srgb, var(--ink) 7%, var(--bg)); }
+.frame svg { width: 62%; height: auto; max-height: 76%; }
+.frame .ghost { position: absolute; top: 0; bottom: 0; left: 50%; translate: -50% 0; border-inline: 1px dashed var(--soft); }
+.frame .ghost.wide { top: 50%; bottom: auto; left: 0; right: 0; translate: 0 -50%; border-inline: 0; border-block: 1px dashed var(--soft); }
+.frame .pt { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: var(--ink); right: 22%; top: 30%; }
+.cap { font-size: .8125rem; color: var(--soft); line-height: 1.55; }
+.cap b { font-family: var(--mono); font-weight: 500; color: var(--ink); }
+.spectrum { display: flex; gap: 3px; align-items: center; }
+.spectrum i { flex: 1 1 0; aspect-ratio: 1; border-radius: 50%; background: var(--h); opacity: .4; max-width: 12px; }
+.spectrum i:last-child { opacity: 1; box-shadow: 0 0 10px var(--h); }
+.body { display: grid; gap: 2rem; min-width: 0; }
+.vo { display: grid; gap: .95rem; font-family: var(--read); font-size: clamp(1.15rem, 1.7vw, 1.3rem); line-height: 1.9; max-width: 33em; }
+.vo .cue { font-family: var(--ui); font-size: .875rem; line-height: 1.6; color: var(--soft); letter-spacing: .02em; }
+.vo .say { color: var(--acc); padding-left: 1.5rem; }
+.vo .say span { display: block; font-family: var(--ui); font-weight: 600; font-size: .78rem; letter-spacing: .08em; color: var(--soft); }
+.supers { display: grid; gap: .4rem; font-family: var(--mono); font-size: .8rem; line-height: 1.6; color: var(--soft); border-top: 1px solid var(--rule); padding-top: .9rem; max-width: 46rem; }
+.supers b { font-family: var(--ui); font-weight: 600; letter-spacing: .06em; color: var(--ink); font-size: .78rem; }
+.dir { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem 2.2rem; border-top: 1px solid var(--rule); padding-top: 1.4rem; }
+.dir dt { font-weight: 600; font-size: .8125rem; letter-spacing: .08em; color: var(--acc); margin-bottom: .2rem; }
+.dir dd { font-size: .97rem; line-height: 1.7; color: var(--soft); }
+.prompt { border-top: 1px solid var(--rule); padding-top: .9rem; }
+.prompt summary { cursor: pointer; font-size: .875rem; font-weight: 600; color: var(--soft); }
+.prompt pre { margin: .8rem 0 .6rem; white-space: pre-wrap; overflow-wrap: anywhere; font-family: var(--mono); font-size: .82rem; line-height: 1.65; color: var(--ink); }
+.prompt button { font: 600 .8rem var(--ui); color: var(--bg); background: var(--ink); border: 0; padding: .35rem .9rem; cursor: pointer; }
+
+/* स्रोत */
+.notes { border-top: 1px solid var(--line); }
+.notes .w { display: grid; gap: 2.5rem; padding-block: 3.5rem 5rem; max-width: var(--hadd); }
+.notes ul { display: grid; gap: .7rem; }
+.notes li { padding-left: 1.2rem; position: relative; color: var(--dust); }
+.notes li::before { content: ""; position: absolute; left: 0; top: .8em; width: .5rem; height: 1px; background: var(--bajra); }
+.notes li b { color: var(--khadi); font-weight: 600; }
+.notes li a { color: var(--khadi); overflow-wrap: anywhere; }
+
+@media (max-width: 52rem) {
+  .hero .w, .idea, .rules, .scene .w { grid-template-columns: minmax(0, 1fr); }
+  .hero .w { padding-block: 1.5rem 2.5rem; }
+  .slate { grid-template-columns: minmax(0, 1fr) minmax(0, 9rem); align-items: start; }
+  .slate > .no, .slate > h3 { grid-column: 1 / -1; }
+  .slate > .frame { grid-column: 2; grid-row: 3 / span 2; }
+  .slate > .cap, .slate > .spectrum { grid-column: 1; }
+  .dir { grid-template-columns: minmax(0, 1fr); }
+  .scene .w { padding-block: 2.5rem; }
+  .ratios { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; }
+  .ratio i, .ratio i.r3 { height: auto; width: 100%; }
+  .parts { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
