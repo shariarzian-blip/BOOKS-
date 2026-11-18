@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<title>लौकिक · अलौकिक — पत्रिका</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600&family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap">
+<style>
+/* पत्रिका का रंग-रूप चुने हुए पोस्टर से लिया गया है: धूप से फीका काग़ज़, सूखी मिट्टी की बनावट वाले शीर्षक,
+   गहरी मिट्टी-भूरी स्याही। भाग दो के पन्ने रात के नीले-काले में, ठंडे सफ़ेद अक्षरों के साथ। */
+@page { size: 210mm 297mm; margin: 0; }
+:root {
+  --paper: #F4E9CF; --paper2: #EADBB5; --ink: #2A160B; --earth: #5A2E14; --rust: #8E3415; --straw: #B98A3E;
+  --rule: rgba(90, 46, 20, .35); --night: #090A13; --night2: #12142A; --star: #EEF1F6; --mist: #A9AEC2; --gold: #E3B552;
+  --display: 'Rozha One', 'Tiro Devanagari Hindi', serif; --read: 'Tiro Devanagari Hindi', serif; --ui: 'Mukta', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #777; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.pg { position: relative; width: 210mm; height: 297mm; overflow: hidden; background: var(--paper); color: var(--ink); font-family: var(--read); font-size: 12pt; line-height: 1.72; page-break-after: always; break-after: page; }
+.pg.dark { background: var(--night); color: var(--star); }
+.in { position: absolute; inset: 17mm 16mm 19mm; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tex { font-family: var(--display); font-weight: 400; line-height: 1.28; color: var(--earth);
+  background: linear-gradient(rgba(40, 14, 4, .52), rgba(40, 14, 4, .52)), url(img/strip-2.jpg) center / cover;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.kick { font-family: var(--ui); font-weight: 600; font-size: 9pt; letter-spacing: .06em; word-spacing: .3em; color: var(--rust); }
+.dark .kick { color: var(--mist); }
+h2 { font-family: var(--display); font-weight: 400; font-size: 27pt; line-height: 1.3; margin: 2mm 0 5mm; }
+h3 { font-family: var(--display); font-weight: 400; font-size: 17.5pt; line-height: 1.35; color: var(--earth); margin: 0 0 1.6mm; }
+.dark h3 { color: var(--star); }
+p + p { margin-top: 2.6mm; }
+.lede { font-size: 14.4pt; line-height: 1.66; color: var(--earth); }
+.dark .lede { color: var(--star); }
+.cols { column-count: 2; column-gap: 8mm; }
+.cols h3 { break-after: avoid; } .cols .blk { break-inside: avoid; margin-bottom: 5mm; }
+.cap { font-family: var(--ui); font-weight: 400; font-size: 8.8pt; line-height: 1.5; color: var(--earth); margin-top: 1.5mm; }
+.dark .cap { color: var(--mist); }
+.q { font-family: var(--display); font-size: 19pt; line-height: 1.45; color: var(--rust); border-left: .5mm solid var(--straw); padding: .5mm 0 .5mm 5mm; margin: 5mm 0; }
+.q small { display: block; font-family: var(--ui); font-size: 9pt; color: var(--earth); margin-top: 1.5mm; letter-spacing: .02em; }
+.dark .q { color: var(--star); border-color: var(--mist); } .dark .q small { color: var(--mist); }
+.folio { position: absolute; left: 16mm; right: 16mm; bottom: 9mm; display: flex; justify-content: space-between; font-family: var(--ui); font-size: 8.4pt; letter-spacing: .05em; word-spacing: .3em; color: var(--earth); border-top: .2mm solid var(--rule); padding-top: 1.6mm; }
+.dark .folio { color: var(--mist); border-color: rgba(169, 174, 194, .3); }
+.bleed { position: absolute; left: 0; right: 0; }
+.fig { overflow: hidden; background: var(--paper2); }
+
+/* 1 आवरण */
+.cover { background: #E9D9B4; color: var(--ink); }
+.cover .art { position: absolute; inset: 0; }
+.cover .mast { position: absolute; top: 15mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; font-family: var(--ui); font-weight: 600; font-size: 10pt; letter-spacing: .05em; word-spacing: .45em; color: var(--earth); border-bottom: .25mm solid var(--rule); padding-bottom: 2.4mm; }
+.cover h1 { position: absolute; top: 30mm; left: 0; right: 0; text-align: center; font-size: 68pt; }
+.cover .tag { position: absolute; top: 74mm; left: 0; right: 0; text-align: center; font-size: 15pt; color: #4A2410; }
+.cover .lines { position: absolute; top: 118mm; width: 58mm; font-family: var(--ui); font-size: 10.6pt; line-height: 1.45; color: #4A2410; }
+.cover .lines b { display: block; font-family: var(--display); font-weight: 400; font-size: 17pt; line-height: 1.3; color: var(--ink); margin-bottom: 1mm; }
+.cover .lines div + div { margin-top: 7mm; }
+.cover .lines.l { left: 16mm; } .cover .lines.r { right: 16mm; text-align: right; }
+.cover .scrim { position: absolute; left: 0; right: 0; bottom: 0; height: 60mm; background: linear-gradient(rgba(36, 17, 6, 0), rgba(36, 17, 6, .9)); }
+.cover .foot { position: absolute; left: 16mm; right: 16mm; bottom: 11mm; text-align: center; font-family: var(--ui); font-size: 11pt; word-spacing: .2em; color: #FBF3E1; }
+.cover .foot b { display: block; font-family: var(--display); font-weight: 400; font-size: 21pt; margin-bottom: .6mm; }
+
+/* 2 अनुक्रम */
+.toc { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; margin-top: 4mm; }
+.toc ol { list-style: none; }
+.toc li { display: grid; grid-template-columns: 11mm 1fr; align-items: baseline; padding: 1.35mm 0; border-bottom: .2mm solid var(--rule); font-size: 11.6pt; line-height: 1.4; }
+.toc li b { font-family: var(--display); font-weight: 400; font-size: 14pt; color: var(--rust); }
+.toc li i { display: block; font-style: normal; font-family: var(--ui); font-size: 8.6pt; color: var(--earth); }
+
+/* 3 पूरा पन्ना */
+.full .art { position: absolute; inset: 0; }
+.full .scrim { position: absolute; left: 0; right: 0; bottom: 0; height: 120mm; background: linear-gradient(rgba(20, 10, 4, 0), rgba(20, 10, 4, .86)); }
+.full .txt { position: absolute; left: 16mm; right: 16mm; bottom: 20mm; color: #FBF3E1; }
+.full .txt .kick { color: #E9D9B4; }
+.full .txt p.big { font-family: var(--display); font-size: 34pt; line-height: 1.32; margin-top: 2mm; }
+.full .txt p.sm { font-family: var(--ui); font-size: 9.4pt; margin-top: 3mm; color: #E9D9B4; }
+
+/* 5 धरती से गाँव तक */
+.zoom { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm 5mm; margin-top: 5mm; }
+.zoom figure .fig { height: 66mm; background: #000; }
+.zoom b { font-family: var(--ui); font-weight: 600; color: var(--rust); margin-right: 1.5mm; }
+.facts { margin-top: 5mm; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: .3mm solid var(--earth); border-bottom: .2mm solid var(--rule); }
+.facts div { padding: 2.6mm 3mm 2.8mm 0; font-family: var(--ui); font-size: 9.4pt; line-height: 1.45; color: var(--earth); }
+.facts div + div { border-left: .2mm solid var(--rule); padding-left: 3mm; }
+.facts b { display: block; font-family: var(--display); font-weight: 400; font-size: 15pt; line-height: 1.35; color: var(--ink); }
+
+/* 8–9 चित्र-निबंध */
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; }
+.pair .fig { height: 63mm; }
+.pair + .line { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; font-family: var(--display); font-size: 16pt; line-height: 1.4; margin: 1.6mm 0 5mm; }
+.pair + .line span:first-child { color: var(--straw); } .pair + .line span:last-child { color: var(--ink); }
+.poor img { filter: saturate(.8); } .rich img { filter: saturate(1.12); }
+
+/* 11 जीवन-रेखा */
+.tl { position: relative; margin-top: 5mm; padding-left: 31mm; }
+.tl::before { content: ""; position: absolute; left: 25mm; top: 2mm; bottom: 2mm; width: .3mm; background: var(--earth); }
+.tl div { position: relative; padding: 0 0 7.4mm; font-size: 12.4pt; line-height: 1.62; }
+.tl div::before { content: ""; position: absolute; left: -7.1mm; top: 2.4mm; width: 2.4mm; height: 2.4mm; border-radius: 50%; background: var(--paper); border: .4mm solid var(--rust); }
+.tl b { position: absolute; left: -31mm; top: -.6mm; width: 21mm; text-align: right; font-family: var(--display); font-weight: 400; font-size: 15pt; color: var(--rust); }
+.tl b.w { font-family: var(--ui); font-weight: 600; font-size: 9pt; top: 1.2mm; line-height: 1.3; }
+
+/* 13 पाँच पड़ाव */
+.step { display: grid; grid-template-columns: 13mm 1fr 58mm; gap: 0 5mm; align-items: start; padding: 3.4mm 0; border-top: .2mm solid rgba(169, 174, 194, .28); }
+.step .n { font-family: var(--display); font-size: 26pt; line-height: 1; color: var(--mist); }
+.step h3 { font-size: 17pt; margin-bottom: .6mm; }
+.step .sci { font-family: var(--ui); font-size: 8.8pt; color: var(--mist); letter-spacing: .03em; margin-bottom: 1.4mm; }
+.step p { font-size: 10.6pt; line-height: 1.6; }
+.step .fig { height: 27mm; background: #000; }
+.step .fig img { filter: saturate(.72); }
+.sciBox { margin-top: 4mm; border: .2mm solid rgba(169, 174, 194, .45); padding: 3.4mm 5mm; font-family: var(--ui); font-size: 9.2pt; line-height: 1.55; color: var(--mist); }
+.sciBox b { color: var(--star); font-weight: 600; }
+
+/* 15 आँकड़े */
+.nums { display: grid; grid-template-columns: repeat(4, 1fr); border-top: .3mm solid var(--earth); margin-top: 5mm; }
+.nums div { padding: 3mm 3mm 0 0; font-family: var(--ui); font-size: 9.2pt; line-height: 1.45; color: var(--earth); }
+.nums div + div { border-left: .2mm solid var(--rule); padding-left: 3mm; }
+.nums b { display: block; font-family: var(--display); font-weight: 400; font-size: 21pt; line-height: 1.25; color: var(--rust); }
+
+/* 16 पिछला आवरण */
+.way { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; margin-top: 8mm; }
+.way .card { border-top: .3mm solid var(--earth); padding-top: 4mm; display: grid; grid-template-columns: 1fr 27mm; gap: 4mm; }
+.way .card .qr { width: 27mm; height: 27mm; }
+.way .card p { font-size: 10.8pt; line-height: 1.6; }
+.way .card u { text-decoration: none; font-family: var(--ui); font-weight: 600; font-size: 8.6pt; color: var(--rust); display: block; margin-top: 1.6mm; overflow-wrap: anywhere; }
+.colophon { font-family: var(--ui); font-size: 8.2pt; line-height: 1.6; color: var(--earth); column-count: 2; column-gap: 8mm; }
+.colophon b { font-weight: 600; color: var(--ink); }
+</style>
+</head>
+<body>
+
+<!-- 1 · आवरण: चुना हुआ पोस्टर -->
+<section class="pg cover">
+  <div class="art"><img src="img/cover.jpg" alt=""></div>
+  <div class="mast"><span>लौकिक · अलौकिक</span><span>पत्रिका · विशेषांक 2026</span></div>
+  <h1 class="tex">ऐसी दुनिया क्यों?</h1>
+  <p class="tag">एक बालक, जिसने भगवान से सवाल किया</p>
+  <div class="lines l">
+    <div><b>धरती से एक गाँव तक</b>अंतरिक्ष से अंबासन तक, असली उपग्रह चित्रों में</div>
+    <div><b>कहीं थाली भरी, कहीं पेट ख़ाली</b>वह दुनिया, जो बालक ने देखी</div>
+  </div>
+  <div class="lines r">
+    <div><b>सत्रहवीं बार</b>ब्रह्मांड के पाँच पड़ाव, बापूजी के शब्दों में</div>
+    <div><b>समय की पुकार</b>विनाश नहीं, पॉज़िटिव परिवर्तन</div>
+  </div>
+  <div class="scrim"></div>
+  <div class="foot"><b>बापूजी दशरथभाई पटेल की जीवन-यात्रा</b>धरती से बेहद तक · विश्व परिवर्तक ईश्वरीय विद्यालय, अहमदाबाद</div>
+</section>
+
+<!-- 2 · अनुक्रम -->
+<section class="pg">
+  <div class="in">
+    <p class="kick">इस अंक में</p>
+    <h2 class="tex" style="font-size:44pt;margin-bottom:2mm">अनुक्रम</h2>
+    <div class="toc" style="font-size:11.4pt;line-height:1.68">
+      <ol>
+        <li><b>०३</b><span>ऐसी दुनिया क्यों?<i>आवरण कथा: तपती धूप में पूछा गया एक सवाल</i></span></li>
+        <li><b>०५</b><span>धरती से एक गाँव तक<i>अंतरिक्ष से अंबासन तक का उतरान</i></span></li>
+        <li><b>०६</b><span>भगत का घर<i>और आधी रात का प्रकाश</i></span></li>
+        <li><b>०७</b><span>कछुआ, दो पैसे, और ताक़त की माँग<i>बचपन के तीन क़िस्से</i></span></li>
+        <li><b>०८</b><span>कहीं थालियाँ भरी हैं, कहीं पेट ख़ाली<i>चित्र-निबंध</i></span></li>
+        <li><b>१०</b><span>दस पैसे, एक चेन, और अपना ख़ून<i>अहमदाबाद के वर्ष</i></span></li>
+        <li><b>११</b><span>जीवन-रेखा<i>1956 से आज तक</i></span></li>
+        <li><b>१२</b><span>बेहद<i>भाग दो: ब्रह्मांड के पार की यात्रा</i></span></li>
+        <li><b>१३</b><span>पाँच पड़ाव<i>एक ब्रह्मांड से बेहद तक</i></span></li>
+        <li><b>१४</b><span>समय की पुकार<i>इस अंक का सबसे बड़ा संदेश</i></span></li>
+        <li><b>१५</b><span>आज के बापूजी<i>और चैनपुर का आश्रम</i></span></li>
+        <li><b>१६</b><span>आगे की राह<i>चैनल और निःशुल्क पुस्तकें</i></span></li>
+      </ol>
+      <div>
+        <h3>इस अंक के बारे में</h3>
+        <p>यह अंक एक सवाल से शुरू होता है। उत्तर गुजरात के एक गाँव में, तपती दोपहर में, नंगे पाँव खड़े एक बालक ने आसमान की ओर देखकर पूछा था कि ऐसी दुनिया क्यों बनाई गई। वही बालक आगे चलकर बापूजी दशरथभाई पटेल कहलाया।</p>
+        <p>पत्रिका दो हिस्सों में है, जैसे इसी नाम की डॉक्यूमेंट्री। पहला हिस्सा लौकिक है: गाँव, ग़रीबी, पढ़ाई, वकालत, और वह खोज जो कभी रुकी नहीं। दूसरा हिस्सा अलौकिक है: ब्रह्मांड का वह वर्णन, जो बापूजी अपने ध्यान के अनुभव से देते हैं।</p>
+        <p>जीवन की घटनाएँ दो पुस्तकों से ली गई हैं: “दादाजी की जीवनी – माँ के द्वारा” और “Autobiography of Bapuji”। ब्रह्मांड से जुड़ी हर बात बापूजी के अपने कथन के रूप में रखी गई है। विज्ञान के मापे हुए तथ्य अलग से दिए गए हैं।</p>
+      </div>
+    </div>
+  </div>
+  <div class="bleed fig" style="bottom:19mm;height:40mm"><img src="img/strip-1.jpg" alt=""></div>
+  <div class="folio"><span>लौकिक · अलौकिक</span><span>०२</span></div>
+</section>
+
+<!-- 3 · आवरण कथा: पूरा चित्र -->
+<section class="pg full">
+  <div class="art"><img src="img/tear.jpg" alt=""></div>
+  <div class="scrim"></div>
+  <div class="txt">
+    <p class="kick">आवरण कथा</p>
+    <p class="big">“भगवान... तूने ऐसी दुनिया क्यों बनाई?”</p>
+    <p class="sm">फ़िल्म का बाल-पात्र, आसमान की ओर देखते हुए। चित्र फ़िल्म के लिए AI से बनाया गया है।</p>
+  </div>
+</section>
+
+<!-- 4 · आवरण कथा: लेख -->
+<section class="pg">
+  <div class="bleed fig" style="top:0;height:104mm"><img src="img/wide.jpg" alt="" style="object-position:50% 66%"></div>
+  <div class="in" style="top:111mm;font-size:13pt">
+    <p class="kick">आवरण कथा</p>
+    <h2 class="tex" style="font-size:25pt">पैंतालीस डिग्री की धूप, और एक सवाल</h2>
+    <div style="display:grid;grid-template-columns:1fr 50mm;gap:8mm">
+      <div>
+        <p class="lede">मई की दोपहर। मेहसाणा ज़िले का एक छोटा-सा गाँव। खेत की ज़मीन फटी हुई, और उस पर बबूल के काँटे।</p>
+        <p>एक बालक वहाँ खड़ा है। पैरों में चप्पल नहीं। घर में खाने का ठिकाना नहीं। ऐसे समय में बच्चे प्रार्थना करते हैं। इस बालक ने प्रार्थना नहीं की। उसने शिकायत की।</p>
+        <p class="q" style="font-size:15.5pt;margin:4mm 0">“तू नीचे आके ज़रा देख। पैर में काँटे लगते हैं। खाने का ठिकाना नहीं है। दुनिया की हालत देख।”<small>बालक दशरथ, जैसा पुस्तक में दर्ज है</small></p>
+        <p>यह शिकायत उम्र के साथ छोटी नहीं हुई। उसने तय किया कि इक्यावन साल की उम्र में हिमालय जाकर भगवान से आमने-सामने पूछेगा: तूने ऐसी दुनिया क्यों बनाई?</p>
+        <p>हिमालय जाना नहीं पड़ा। जवाब, उनके अपने शब्दों में, चालीस की उम्र में घर पर ही आने लगा। यह पत्रिका उसी सवाल से उसी जवाब तक की यात्रा है।</p>
+      </div>
+      <figure>
+        <div class="fig" style="height:113mm;background:#2B2B2D;margin-top:2mm"><img src="img/child.jpg" alt=""></div>
+        <figcaption class="cap">फ़िल्म का बाल-पात्र इसी चित्र पर आधारित है: सफ़ेद कुर्ता, नंगे पाँव, आँखें आसमान की ओर।</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="folio"><span>लौकिक · अलौकिक</span><span>०४</span></div>
+</section>
+
+<!-- 5 · धरती से एक गाँव तक -->
+<section class="pg">
+  <div class="in">
+    <p class="kick">भाग एक · लौकिक</p>
+    <h2 class="tex">धरती से एक गाँव तक</h2>
+    <p class="lede" style="max-width:150mm">डॉक्यूमेंट्री अंतरिक्ष से शुरू होती है। कैमरा बिना किसी कट के धरती की ओर उतरता है, और उस जगह पर ठहरता है जहाँ यह कहानी शुरू हुई।</p>
+    <div class="zoom">
+      <figure><div class="fig"><img src="img/e1.jpg" alt=""></div><figcaption class="cap"><b>45,000 किमी</b>पूरी धरती। भारत सामने, पश्चिमी किनारे पर रात और शहरों की बत्तियाँ।</figcaption></figure>
+      <figure><div class="fig"><img src="img/e2.jpg" alt=""></div><figcaption class="cap"><b>4,300 किमी</b>अरब सागर, ओमान का तट और गुजरात का किनारा।</figcaption></figure>
+      <figure><div class="fig"><img src="img/e3.jpg" alt=""></div><figcaption class="cap"><b>760 किमी</b>कच्छ का रण और उत्तर गुजरात का मैदान।</figcaption></figure>
+      <figure><div class="fig"><img src="img/e4.jpg" alt=""></div><figcaption class="cap"><b>17 किमी</b>खेतों के बीच अंबासन गाँव (चित्र के बीच में)।</figcaption></figure>
+    </div>
+    <div class="facts">
+      <div><b>13 दिसंबर 1956</b>जन्म की तारीख़</div>
+      <div><b>अखज</b>ननिहाल का गाँव, जहाँ जन्म हुआ</div>
+      <div><b>अंबासन</b>जहाँ बचपन बीता</div>
+      <div><b>मेहसाणा</b>ज़िला, उत्तर गुजरात</div>
+    </div>
+    <p class="cap" style="margin-top:3mm">ये फ़िल्म के असली फ़्रेम हैं, उपग्रह चित्रों से बने। ज़मीन: Sentinel-2 cloudless, EOX (Copernicus Sentinel data 2018)। बादल: NASA GIBS, 15 नवंबर 2026। अंतिम चित्र में खेतों का रंग मई की गर्मी के अनुसार ढाला गया है।</p>
+  </div>
+  <div class="folio"><span>लौकिक · अलौकिक</span><span>०५</span></div>
+</section>
+
+<!-- 6 · भगत का घर -->
+<section class="pg">
+  <div class="bleed fig" style="top:0;height:88mm"><img src="img/strip-3.jpg" alt="" style="object-position:30% 50%"></div>
+  <div class="in" style="top:96mm;font-size:13.2pt">
+    <p class="kick">बचपन</p>
+    <h2 class="tex">भगत का घर</h2>
+    <div class="cols">
+      <div class="blk">
+        <p>चार सौ साल पुराना एक गाँव। अंबासन। कच्चे मकान। कुएँ का पानी। न नल, न बिजली।</p>
+        <p>इस घर के बुज़ुर्ग को पूरा गाँव “भगत” कहता था। सुबह चार बजे वह राम-नाम की घंटी लेकर गाँव का चक्कर लगाते। खेत में जो उगता, साधु-संतों को खिला देते। और घर पर कर्ज़ चढ़ता गया।</p>
+        <p>घर की बहू, लक्ष्मी देवी, ने मायके के गहने एक-एक करके बेचे और गिरवी पड़ी ज़मीन छुड़ाई। तेरह दिसंबर, उन्नीस सौ छप्पन को, ननिहाल के गाँव अखज में, उसी माँ ने एक बेटे को जन्म दिया। नाम रखा गया: दशरथ।</p>
+      </div>
+      <div class="blk">
+        <h3>आधी रात का प्रकाश</h3>
+        <p>परिवार में एक क़िस्सा आज भी सुनाया जाता है। बालक छह महीने का था। घर की एक बुआ उसे खेत में पानी की नाली के पास छोड़कर लौट आई।</p>
+        <p>रात के बारह बजे, चाँदनी में, वह मिला। पानी में लेटा हुआ। एकदम शांत। पैर का अँगूठा चूसता हुआ। देखने वालों को लगा, जैसे उसके शरीर से सूरज जैसा प्रकाश निकल रहा हो।</p>
+        <p>माँ ने उसे उठाया, आसमान की ओर देखा, और बस एक वाक्य कहा।</p>
+      </div>
+    </div>
+    <p class="q">“जिस पर तेरा साया है, वह कभी डूब नहीं सकता।”<small>माँ, लक्ष्मी देवी</small></p>
+  </div>
+  <div class="folio"><span>लौकिक · अलौकिक</span><span>०६</span></div>
+</section>
+
+<!-- 7 · बचपन के तीन क़िस्से -->
+<section class="pg">
+  <div class="in">
+    <p class="kick">बचपन</p>
+    <h2 class="tex">कछुआ, दो पैसे, और ताक़त की माँग</h2>
+    <div class="cols">
+      <div class="blk">
+        <h3>कछुआ</h3>
+        <p>चार-पाँच साल की उम्र से खेत। खाने में बाजरे की सूखी रोटी, मिर्च, प्याज़। और पानी। एक दिन रोटी ऊँचे ताक़ पर रखी थी; हाथ नहीं पहुँचा। बुआ ने रोटी उठाकर बाहर फेंक दी: “तुझसे अच्छा, कोई कुत्ता खा ले।”</p>
+        <p>ननिहाल के रास्ते में हाइवे पड़ता। वहाँ से कभी-कभी एक गोल-सी गाड़ी गुज़रती। गाँव वाले उसे “कछुआ” कहते। बालक ने माँ से कहा: “बड़ा होकर मैं तुझे ऐसा कछुआ लाकर दूँगा।” माँ हँसी: “चल झूठा। खाने का ठिकाना नहीं, और चला है कछुआ लाने।”</p>
+      </div>
+      <div class="blk">
+        <h3>दो पैसे</h3>
+        <p>पढ़ाई में वह हमेशा पहला या दूसरा आता। एक दिन मास्टर जी ने कक्षा में दो पैसे मँगवाए। घर में किसी ने दो पैसे नहीं दिए।</p>
+        <p>छड़ी पड़ी। हाथ कई दिन सूजा रहा; वह लिख भी नहीं सका। उसी सूजे हुए हाथ के साथ, उस बच्चे ने तय किया कि ग़रीबी को मिटना होगा। कैसे, यह उसे नहीं पता था।</p>
+      </div>
+      <div class="blk">
+        <h3>हनुमान जी, ताक़त दो</h3>
+        <p>रात के नौ बजे, जब गाँव सो जाता, छठी कक्षा का वह लड़का अकेला हनुमान जी के मंदिर जाता और पूरी दुनिया बदलने की ताक़त माँगता।</p>
+        <p>वह साधुओं से पूछता: आपने भगवान को देखा है? नौवीं में उसने अपने प्रिंसिपल से पूछा: भगवान साकार है या निराकार? जवाब मिला: “खाने का ठिकाना नहीं। पहले खेत में काम कर। चला है भगवान खोजने।”</p>
+        <p>तब उसने एक योजना बनाई। पढ़ूँगा। कमाऊँगा। घर की ज़िम्मेदारी निभाऊँगा। और इक्यावन साल की उम्र में हिमालय जाकर, उससे आमने-सामने पूछूँगा।</p>
+      </div>
+    </div>
+    <p class="q">“हनुमान जी, जितनी ताक़त आपके पास है, उतनी मुझे दे दो। मुझे पूरी दुनिया बदलनी है। ऐसी दुनिया नहीं चल सकती।”<small>छठी कक्षा का बालक, रात के मंदिर में</small></p>
+  </div>
+  <div class="bleed fig" style="bottom:19mm;height:44mm"><img src="img/strip-2.jpg" alt=""></div>
+  <div class="folio"><span>लौकिक · अलौकिक</span><span>०७</span></div>
+</section>
+
+<!-- 8 · चित्र-निबंध 1 -->
+<section class="pg">
+  <div class="in">
+    <p class="kick">चित्र-निबंध</p>
+    <h2 class="tex" style="font-size:25pt;margin-bottom:4mm">उसने अपने चारों ओर देखा</h2>
+    <div class="pair"><div class="fig rich"><img src="img/a1-feast.jpg" alt=""></div><div class="fig poor"><img src="img/m1-hunger.jpg" alt=""></div></div>
+    <div class="line"><span>कहीं थालियाँ भरी हैं,</span><span>कहीं पेट ख़ाली।</span></div>
+    <div class="pair"><div class="fig rich"><img src="img/a2-water.jpg" alt="" style="object-position:20% 60%"></div><div class="fig poor"><img src="img/m2-thirst.jpg" alt=""></div></div>
+    <div class="line"><span>कहीं पानी बहता है,</span><span>कहीं कुएँ सूखे।</span></div>
+    <div class="pair"><div class="fig rich"><img src="img/a3-nature.jpg" alt=""></div><div class="fig poor"><img src="img/m3-air.jpg" alt=""></div></div>
+    <div class="line" style="margin-bottom:0"><span>कहीं खुली हवा,</span><span>कहीं घुटती साँसें।</span></div>
+  </div>
+  <div class="folio"><span>लौकिक · अलौकिक</span><span>०८</span></div>
+</section>
+
+<!-- 9 · चित्र-निबंध 2 -->
+<section class="pg">
+  <div class="bleed fig poor" style="top:0;height:138mm"><img src="img/m4-grief.jpg" alt=""></div>
+  <div class="in" style="top:146mm;font-size:13pt">
+    <div style="display:grid;grid-template-columns:1fr 84mm;gap:8mm">
+      <div>
+        <p class="kick">चित्र-निबंध</p>
+        <h2 class="tex" style="font-size:25pt">हर आँख में आँसू। हर घर में दर्द।</h2>
+        <p>बालक ने जो देखा, वह किसी एक गाँव या किसी एक दशक की बात नहीं थी। एक ही धरती पर, एक ही आसमान के नीचे, किसी के पास सब कुछ है और किसी के पास कुछ नहीं।</p>
+        <p>बापूजी बताते हैं कि पूरे विश्व का यही दुख-दर्द देखकर वह बार-बार भगवान से पूछते थे: तूने ऐसी दुनिया क्यों बनाई?</p>
+        <p class="cap" style="margin-top:4mm">इस निबंध के सभी चित्र फ़िल्म के लिए AI से बनाए गए हैं। ये किसी असली व्यक्ति की तस्वीरें नहीं हैं।</p>
+      </div>
+      <div class="fig poor" style="height:126mm"><img src="img/m5-pain.jpg" alt="" style="object-position:70% 50%"></div>
+    </div>
+  </div>
+  <div class="folio"><span>लौकिक · अलौकिक</span><span>०९</span></div>
+</section>
+
+<!-- 10 · अहमदाबाद के वर्ष -->
+<section class="pg">
+  <div class="in">
+    <p class="kick">अहमदाबाद के वर्ष</p>
+    <h2 class="tex">दस पैसे, एक चेन, और अपना ख़ून</h2>
+    <div style="display:grid;grid-template-columns:1fr 66mm;gap:9mm;font-size:13.4pt">
+      <div>
+        <p class="lede">ग्यारहवीं के बाद मामा उसे अहमदाबाद ले आए। रहने की क़ीमत थी, घर का सारा काम। उसके बाद पढ़ाई।</p>
+        <p>दस पैसे बचाने के लिए वह कॉलेज पैदल जाता। पैरों में मामा की उतरी हुई चप्पलें, दोनों की पट्टियाँ अलग-अलग रंग की।</p>
+        <p>शादी में पत्नी को सोने की एक चेन मिली थी। उसने वह चेन पति के हाथ पर रख दी: “इसे बेचकर अपनी पढ़ाई पूरी करो। मैं यहाँ गाँव में ठीक हूँ।”</p>
+        <p>और जब वह भी कम पड़ा, उसने किसी के आगे हाथ नहीं फैलाया। चौदह-पंद्रह बार, खाने और फ़ीस के लिए, उसने अपना ख़ून बेचा।</p>
+        <h3 style="margin-top:6mm">दशरथ पटेल एंड कंपनी</h3>
+        <p>फिर एक दिन अहमदाबाद में एक बोर्ड लगा: दशरथ पटेल एंड कंपनी, इनकम टैक्स कंसल्टेंट। जिस बालक की “कछुए” वाली बात पर माँ हँसी थी, वह अब शहर का नामी टैक्स वकील था।</p>
+        <p>और उस पैसे का क्या किया? जिस बुआ ने उसकी रोटी फेंकी थी, उसे मकान बनवाकर दिया। पूरे ख़ानदान को। अपने लिए, खादी के दो कुर्ते।</p>
+        <p>पर सवाल वहीं का वहीं था। पैसा आ गया था। और उसके साथ वैराग्य भी।</p>
+      </div>
+      <div>
+        <figure><div class="fig" style="height:70mm"><img src="img/young.jpg" alt=""></div><figcaption class="cap">युवावस्था की तस्वीर, पढ़ाई के वर्षों की।</figcaption></figure>
+        <p class="q" style="font-size:18pt;margin-top:12mm">“इसे बेचकर अपनी पढ़ाई पूरी करो। मैं यहाँ गाँव में ठीक हूँ।”<small>पत्नी, अपनी सोने की चेन देते हुए</small></p>
+      </div>
+    </div>
+    <div class="nums" style="position:absolute;left:0;right:0;bottom:0">
+      <div><b>10 पैसे</b>बचाने के लिए कॉलेज तक पैदल</div>
+      <div><b>1 चेन</b>सोने की, जो पत्नी ने पढ़ाई के लिए दे दी</div>
+      <div><b>14–15 बार</b>अपना ख़ून बेचा, खाने और फ़ीस के लिए</div>
+      <div><b>2 कुर्ते</b>खादी के, अपने लिए</div>
+    </div>
+  </div>
+  <div class="folio"><span>लौकिक · अलौकिक</span><span>१०</span></div>
+</section>
+
+<!-- 11 · जीवन-रेखा -->
+<section class="pg">
+  <div class="in">
+    <p class="kick">जीवन-रेखा</p>
+    <h2 class="tex">1956 से आज तक</h2>
+    <div style="display:grid;grid-template-columns:1fr 66mm;gap:9mm">
+      <div class="tl">
+        <div><b>1956</b>13 दिसंबर को ननिहाल के गाँव अखज में जन्म। बचपन अंबासन में।</div>
+        <div><b class="w">बचपन</b>चार-पाँच साल की उम्र से खेत में काम। पढ़ाई में हमेशा पहला या दूसरा।</div>
+        <div><b class="w">ग्यारहवीं के बाद</b>मामा के साथ अहमदाबाद। घर का काम, पैदल कॉलेज, और पढ़ाई।</div>
+        <div><b class="w">वकालत</b>अहमदाबाद में “दशरथ पटेल एंड कंपनी”, इनकम टैक्स कंसल्टेंट।</div>
+        <div><b>1987</b>उम्र इकतीस। ब्रह्माकुमारी संस्था में सात दिन का कोर्स। पहले ही दिन एक जवाब: “मैं शरीर नहीं। मैं आत्मा हूँ।” उसके बाद सुबह तीन बजे उठना, और हर रविवार बारह घंटे लगातार ध्यान।</div>
+        <div><b>1997</b>छह जनवरी। जैसा वह ख़ुद बताते हैं, उन्होंने देखा कि वह धरती पर खड़े हैं और उनका सिर आकाश से भी ऊपर है। उन्होंने दफ़्तर बंद कर दिया।</div>
+        <div><b>1998</b>चैनपुर में गिनती के लोगों के सामने ब्लैकबोर्ड पर ब्रह्मांड का ज्ञान। सुनने वालों ने नाम दिया: हवाई ज्ञान। उनके अनुसार इसी समय तीसरा नेत्र खुला।</div>
+        <div style="padding-bottom:0"><b>2026</b>यूट्यूब चैनल से 2.1 करोड़ से ज़्यादा लोग जुड़े। 300 से ज़्यादा निःशुल्क पुस्तकें, 25 भाषाओं में।</div>
+      </div>
+      <div>
+        <h3>पहला जवाब, और एक अटकी हुई पंक्ति</h3>
+        <p style="font-size:12pt;line-height:1.7">1987 में बचपन से चुभता एक सवाल पहली बार शांत हुआ। पर एक पंक्ति भीतर अटक गई: “हर सितारे पर अपनी-अपनी दुनिया है।” इसका जवाब किसी के पास नहीं था। बरसों की खोज के बाद एक गुरु ने बस इतना कहा: “तेरे सवालों के जवाब तेरे भीतर मिलेंगे।”</p>
+        <p class="q" style="font-size:15.5pt">पहले वह बालक था। फिर दशरथ। फिर दशरथ भाई। फिर बाबा। और फिर, बापूजी।</p>
+        <p style="font-size:12pt;line-height:1.7">योजना थी कि इक्यावन की उम्र में हिमालय जाकर भगवान से सवाल पूछेंगे। हिमालय जाना नहीं पड़ा। जवाब, चालीस की उम्र में, घर पर ही आने लगा। और वह जवाब इस धरती का नहीं था।</p>
+        <figure style="margin-top:6mm"><div class="fig" style="height:62mm"><img src="img/winter.jpg" alt="" style="object-position:50% 25%"></div><figcaption class="cap">बापूजी, आश्रम के बगीचे में।</figcaption></figure>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>लौकिक · अलौकिक</span><span>११</span></div>
+</section>
+
+<!-- 12 · भाग दो: बेहद -->
+<section class="pg dark">
+  <div class="bleed fig" style="top:0;height:184mm;background:#000"><img src="img/sky.jpg" alt="" style="object-position:50% 40%"></div>
+  <div class="bleed" style="top:126mm;height:60mm;background:linear-gradient(rgba(9,10,19,0),#090A13)"></div>
+  <div class="in" style="top:184mm">
+    <p class="kick">भाग दो · अलौकिक</p>
+    <h2 style="font-size:84pt;line-height:1.15;margin:0 0 2mm;color:var(--star)">बेहद</h2>
+    <p class="lede" style="max-width:140mm">ब्रह्मांड के पार की यात्रा, जैसी बापूजी बताते हैं।</p>
+    <p style="max-width:170mm;margin-top:4mm;color:var(--mist);font-size:11.4pt;line-height:1.66">1998 में चैनपुर के एक कमरे में एक पूर्व टैक्स वकील चॉक से गोले बना रहा था: एक के भीतर दूसरा। वह कहता, यह एक ब्रह्मांड है; ऐसे अनंत कोटि हैं। बापूजी कहते हैं, वह यह सब पढ़कर नहीं बता रहे थे। वह इसे देख रहे थे। यहाँ से आगे जो कुछ है, वह उनका अपना वर्णन है।</p>
+  </div>
+  <div class="folio"><span>लौकिक · अलौकिक</span><span>१२</span></div>
+</section>
+
+<!-- 13 · पाँच पड़ाव -->
+<section class="pg dark">
+  <div class="in">
+    <p class="kick">भाग दो · अलौकिक</p>
+    <h2 style="color:var(--star);margin-bottom:2mm">पाँच पड़ाव: एक ब्रह्मांड से बेहद तक</h2>
+    <p style="color:var(--mist);font-size:10.6pt;margin-bottom:3mm">नीचे का पूरा क्रम बापूजी के अपने वर्णन के अनुसार है। हर पड़ाव पिछले से बड़ा है।</p>
+    <div class="step"><span class="n">१</span><div><h3>ब्रह्मांड</h3><p class="sci">विज्ञान की भाषा में: सौर मंडल</p><p>हमारा सूर्य, और उसके चारों ओर घूमती हर चीज़। बापूजी की भाषा में यह पूरा, एक ब्रह्मांड है, और इसका निराकार स्वामी शिव। हर तारा एक सूर्य है; हर सूर्य, एक ब्रह्मांड।</p></div><div class="fig"><img src="img/strip-5.jpg" alt="" style="object-position:22% 50%"></div></div>
+    <div class="step"><span class="n">२</span><div><h3>महाब्रह्मांड</h3><p class="sci">विज्ञान की भाषा में: आकाशगंगा</p><p>उनके अनुसार इसमें आठ सौ अरब सूर्य हैं, सब एक ही केंद्र के चारों ओर घूमते हुए। उस केंद्र में वह बरसों से अपने बोर्ड पर एक नाम लिखते आए हैं: महाशिव।</p></div><div class="fig"><img src="img/strip-6.jpg" alt=""></div></div>
+    <div class="step"><span class="n">३</span><div><h3>परम महाब्रह्मांड</h3><p class="sci">विज्ञान की भाषा में: यूनिवर्स</p><p>अरबों गैलेक्सियाँ, एक साथ। बापूजी कहते हैं, उन्होंने दिव्य दृष्टि से देखा कि हमारा यूनिवर्स सोलह बार बनकर मिट चुका है। यह सत्रहवीं बार है।</p></div><div class="fig"><img src="img/space.jpg" alt=""></div></div>
+    <div class="step"><span class="n">४</span><div><h3>मल्टीवर्स</h3><p class="sci">सत्रह यूनिवर्स, हर एक का अपना रंग</p><p>उनके अनुसार यह मल्टीवर्स भी दो बार मिट चुका है; यह तीसरी बार है। जो मल्टीवर्स सिमटकर सो जाता है, उसे वह ब्लैकवर्स कहते हैं। ऐसे अनंत मल्टीवर्स हैं, परतों में, जिन्हें वह पीढ़ियाँ कहते हैं: इक्कीस तक।</p></div><div class="fig"><img src="img/space2.jpg" alt=""></div></div>
+    <div class="step" style="border-bottom:.2mm solid rgba(169,174,194,.28)"><span class="n">५</span><div style="grid-column:2 / 4"><h3>बेहद</h3><p>इक्कीस के पार वह, जिसकी कोई हद नहीं। बापूजी कहते हैं कि सबसे ऊपर, परमधाम में, प्रकाश का एक निराकार महासागर है, जिसे वह ऑलमाइटी अथॉरिटी कहते हैं। उसके एक संकल्प से प्रकाश की बूँदें बिखरीं; हर बूँद, एक आत्मा।</p></div></div>
+    <div class="sciBox"><b>नापा हुआ विज्ञान, अलग से।</b> दूसरे तारों के 5,000 से ज़्यादा ग्रहों की पुष्टि हो चुकी है; वहाँ जीवन की पुष्टि अभी नहीं। आकाशगंगा में वैज्ञानिक अनुमान से 100 से 400 अरब तारे हैं। उसके केंद्र के ब्लैक होल (Sagittarius A*) की पहली तस्वीर 2022 में आई; उसका द्रव्यमान लगभग 40 लाख सूर्यों के बराबर है। बार-बार बनते और मिटते ब्रह्मांड के मॉडल भौतिकी में प्रस्तावित हैं, प्रमाणित नहीं। विज्ञान इसे संभावना कहता है; बापूजी इसे अनुभव कहते हैं।</div>
+  </div>
+  <div class="folio"><span>लौकिक · अलौकिक</span><span>१३</span></div>
+</section>
+
+<!-- 14 · समय की पुकार -->
+<section class="pg">
+  <div class="bleed dark" style="top:0;height:104mm;background:var(--night);color:var(--star)">
+    <div style="position:absolute;inset:17mm 16mm 8mm">
+      <p class="kick">आश्रम की मान्यता</p>
+      <h3 style="font-size:20pt;margin:1mm 0 3mm">एक बूँद, और एक काला बिंदु</h3>
+      <div class="cols" style="font-size:11pt;line-height:1.66">
+        <p>आश्रम की मान्यता के अनुसार, उस अनंत प्रकाश में एक दिन एक हल्का-सा काला बिंदु दिखा। सबसे नीचे के एक मल्टीवर्स में, परम तत्व घटते-घटते मिट्टी की एक दुनिया बन गई थी: जन्म, मृत्यु, भूख, दुख। मृत्युलोक।</p>
+        <p>उसे ठीक करने के लिए रूप भेजे गए। युग बीते। काम पूरा नहीं हुआ। तब, इसी मान्यता के अनुसार, बेहद के उस रचयिता ने तय किया कि इस बार वह ख़ुद जाएगा: साधारण मनुष्य के तन में, ग़रीब से ग़रीब घर में, ताकि पता लगे कि दुख होता क्या है।</p>
+        <p>जो लोग बापूजी को मानते हैं, उनके लिए उस बच्चे की शिकायत का जवाब वह बच्चा ख़ुद था।</p>
+      </div>
+    </div>
+  </div>
+  <div class="in" style="top:112mm">
+    <p class="kick">इस अंक का सबसे बड़ा संदेश</p>
+    <h2 class="tex" style="font-size:48pt;margin:0 0 2mm">समय की पुकार</h2>
+    <div style="display:grid;grid-template-columns:1fr 78mm;gap:9mm;font-size:13pt">
+      <div>
+        <p class="lede">बापूजी इस समय को एक नाम देते हैं: समय की पुकार।</p>
+        <p>वह कहते हैं, महाकाल प्रलय से पहले हर आत्मा को जागना है। अपने आप को पहचानना है: मैं शरीर नहीं, मैं आत्मा हूँ।</p>
+        <p>और यह परिवर्तन, उनके अनुसार, किसी एक के बस का नहीं। यह सामूहिक चेतना से होगा। एक आत्मा शांत होती है, तो एक घर बदलता है। लाखों आत्माएँ एक साथ परमशांति का संकल्प करती हैं, तो पूरा विश्व बदल सकता है।</p>
+        <p>वह इसे तत्व परिवर्तन कहते हैं: मृत्युलोक, अमरलोक बने। और इसके लिए वह एक मंत्र देते हैं, जिसमें न कोई देवता है, न कोई माँग। बस तीन शब्द।</p>
+      </div>
+      <div>
+        <p class="q" style="margin-top:0">“विनाश नहीं। पॉज़िटिवली परिवर्तन होना चाहिए।”<small>बापूजी</small></p>
+        <p class="q">“परम शांति के वाइब्रेशन पूरी दुनिया में फैलाओ।”<small>बापूजी</small></p>
+        <p style="font-family:var(--display);font-size:25pt;line-height:1.3;color:var(--ink);margin-top:8mm">बेहद की परमशांति।</p>
+        <p class="cap">तीन शब्दों का मंत्र</p>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>लौकिक · अलौकिक</span><span>१४</span></div>
+</section>
+
+<!-- 15 · आज के बापूजी -->
+<section class="pg">
+  <div class="in">
+    <p class="kick">आज</p>
+    <h2 class="tex">आज के बापूजी, और चैनपुर का आश्रम</h2>
+    <div style="display:grid;grid-template-columns:88mm 1fr;gap:8mm">
+      <figure><div class="fig" style="height:112mm"><img src="img/bapuji.jpg" alt="" style="object-position:50% 20%"></div><figcaption class="cap">बापूजी दशरथभाई पटेल, आश्रम के बगीचे में।</figcaption></figure>
+      <div>
+        <p class="lede">1997 के बाद उन्होंने दफ़्तर बंद कर दिया। पहले चार-पाँच लोगों के सामने बोलना शुरू किया। फिर चैनपुर में अपने तन, मन, धन से एक आश्रम बनाया।</p>
+        <p>आज वही जगह परमशांति भवन है: अहमदाबाद के न्यू राणीप रोड पर सफ़ेद दो-मंज़िला भवन, सामने बड़ा खुला लॉन, घने पुराने पेड़ और लाल फूलों की झाड़ियाँ।</p>
+        <p>जिस कमरे में कभी गिनती के लोग बैठते थे, आज उसी आवाज़ के यूट्यूब चैनल से दो करोड़ से ज़्यादा लोग जुड़े हैं। ज्ञान निःशुल्क है: वीडियो भी, पुस्तकें भी।</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:6mm">
+      <figure><div class="fig" style="height:58mm"><img src="img/ashram.jpg" alt=""></div><figcaption class="cap">परमशांति भवन, चैनपुर, अहमदाबाद।</figcaption></figure>
+      <figure><div class="fig" style="height:58mm"><img src="img/podcast.jpg" alt=""></div><figcaption class="cap">रिकॉर्डिंग के दौरान। यही बातचीत चैनल पर पहुँचती है।</figcaption></figure>
+    </div>
+    <div class="nums">
+      <div><b>1,50,000+</b>घंटे की तपस्या, आश्रम के अनुसार</div>
+      <div><b>2.1 करोड़+</b>यूट्यूब सब्सक्राइबर, नवंबर 2026</div>
+      <div><b>300+</b>निःशुल्क पुस्तकें</div>
+      <div><b>25</b>भाषाएँ</div>
+    </div>
+  </div>
+  <div class="folio"><span>लौकिक · अलौकिक</span><span>१५</span></div>
+</section>
+
+<!-- 16 · पिछला आवरण -->
+<section class="pg">
+  <div class="in">
+    <p class="kick">आगे की राह</p>
+    <h2 class="tex" style="font-size:44pt;margin-bottom:3mm">यह ज्ञान निःशुल्क है।</h2>
+    <p class="lede" style="max-width:150mm">एक बालक था, जिसने नंगे पाँव, आसमान से कहा था: नीचे आकर देख। वह बड़ा हुआ, और उसने उलटा किया। वह ऊपर गया, देखने। जो लेकर लौटा, वह एक शुभकामना थी: हर उस पाँव के लिए, जिसमें आज भी काँटा चुभा है।</p>
+    <div class="way">
+      <div class="card"><div><h3>चैनल से जुड़िए</h3><p>बापूजी के यूट्यूब चैनल को सब्सक्राइब कीजिए, जहाँ दो करोड़ से ज़्यादा साधक पहले से हैं।</p><u>YouTube · Bapuji Dashrathbhai Patel</u></div><div class="qr"><img src="img/qr-yt.png" alt="यूट्यूब चैनल का QR कोड"></div></div>
+      <div class="card"><div><h3>पुस्तकें पढ़िए</h3><p>तीन सौ से ज़्यादा पुस्तकें, पच्चीस भाषाओं में, बिना किसी मूल्य के। शुरुआत के लिए: “जागो! समय तुम्हें पुकार रहा है”।</p><u>paramshantiblogs.org</u></div><div class="qr"><img src="img/qr-site.png" alt="वेबसाइट का QR कोड"></div></div>
+    </div>
+    <p class="q" style="margin-top:11mm;font-size:22pt">“ज्ञान दान, महा दान।”<small>बापूजी</small></p>
+    <p style="font-family:var(--display);font-size:46pt;line-height:1.3;color:var(--ink);margin-top:7mm">परमशांति।</p>
+    <div class="colophon" style="position:absolute;left:0;right:0;bottom:56mm">
+      <p><b>स्रोत।</b> जीवन की घटनाएँ “दादाजी की जीवनी – माँ के द्वारा” और “Autobiography of Bapuji” से। ब्रह्मांड का वर्णन बापूजी का अपना अनुभव-कथन है; यह पत्रिका उसे विज्ञान से प्रमाणित नहीं बताती।</p>
+      <p><b>चित्र।</b> बापूजी और आश्रम की तस्वीरें असली हैं। बचपन, गाँव और चित्र-निबंध के दृश्य फ़िल्म “लौकिक · अलौकिक” के लिए AI से बनाए गए हैं। उपग्रह चित्र: Sentinel-2 cloudless, EOX (Copernicus Sentinel data 2018); NASA GIBS।</p>
+    </div>
+  </div>
+  <div class="bleed fig" style="bottom:19mm;height:50mm"><img src="img/strip-1.jpg" alt=""></div>
+  <div class="folio"><span>विश्व परिवर्तक ईश्वरीय विद्यालय, चैनपुर, अहमदाबाद</span><span>१६</span></div>
+</section>
+
+</body>
+</html>
