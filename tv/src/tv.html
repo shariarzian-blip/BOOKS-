@@ -1,89 +1,114 @@
-<section class="pstv" id="pstv" lang="hi" data-w="s" aria-label="Paramshanti TV">
+<section class="pstv" id="pstv" lang="en" data-w="s" aria-label="Paramshanti TV">
   <div class="pstv-in">
-    <header class="pstv-top">
-      <div class="pstv-brand">
-        <span class="pstv-mark" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6.5" width="19" height="13" rx="2.6"/><path d="M8 2.5l4 4 4-4"/><path d="M10.2 10.2v5.6l4.8-2.8z" fill="currentColor" stroke="none"/></svg>
-        </span>
-        <div>
-          <p class="pstv-kicker" data-t="tagline">Behad ka Param Gyan</p>
-          <h1 class="pstv-logo"><span data-t="brand">परमशांति</span> <em>TV</em></h1>
-        </div>
-      </div>
-      <div class="pstv-tools">
-        <label class="pstv-search">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
-          <input type="search" id="pstv-q" autocomplete="off" placeholder="वीडियो खोजें…" aria-label="वीडियो खोजें">
-        </label>
-        <div class="pstv-ui" role="group" aria-label="Language of this page">
-          <button type="button" data-ui="hi" aria-pressed="true">हिंदी</button>
-          <button type="button" data-ui="en" aria-pressed="false">EN</button>
-        </div>
-      </div>
-    </header>
-
     <div class="pstv-set" id="pstv-set">
-      <div class="pstv-chbar">
-        <span class="pstv-chlabel" data-t="chan">चैनल</span>
-        <div class="pstv-chips" id="pstv-chips" role="tablist" aria-label="Channels"></div>
-      </div>
       <div class="pstv-stage">
         <div class="pstv-main">
-          <div class="pstv-screen" id="pstv-screen">
-            <div class="pstv-frame" id="pstv-frame">
-              <div id="pstv-player"></div>
-              <button type="button" class="pstv-dockx" id="pstv-dockx" aria-label="Close mini player">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+          <!-- the television: bezel, screen, and the on-screen channel banner under it -->
+          <div class="pstv-tv">
+            <div class="pstv-screen" id="pstv-screen">
+              <div class="pstv-frame" id="pstv-frame">
+                <div id="pstv-player"></div>
+                <button type="button" class="pstv-dockx" id="pstv-dockx" aria-label="Close mini player">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+                </button>
+              </div>
+              <button type="button" class="pstv-poster" id="pstv-poster">
+                <img id="pstv-poster-img" alt="" decoding="async">
+                <span class="pstv-poster-play">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg>
+                  <span data-t="turnon">Turn on the TV</span>
+                </span>
+                <span class="pstv-poster-text"><span class="pstv-poster-k" id="pstv-poster-k"></span><span class="pstv-poster-t" id="pstv-poster-t"></span></span>
+              </button>
+              <button type="button" class="pstv-unmute" id="pstv-unmute" hidden>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path d="M16 9l5 6M21 9l-5 6"/></svg>
+                <span data-t="unmute">Tap for sound</span>
+              </button>
+              <div class="pstv-static" id="pstv-static" aria-hidden="true"></div>
+              <div class="pstv-banner" id="pstv-banner" aria-hidden="true"><b></b><span></span></div>
+            </div>
+            <div class="pstv-osd">
+              <div class="pstv-osd-ch">
+                <b class="pstv-osd-num" id="pstv-osd-num">01</b>
+                <span class="pstv-logo-c" id="pstv-osd-logo"></span>
+                <span class="pstv-osd-name"><strong id="pstv-osd-name"></strong><span class="pstv-badge" id="pstv-badge" data-mode="tv"></span></span>
+                <time class="pstv-clock" id="pstv-clock"></time>
+              </div>
+              <div class="pstv-osd-row">
+                <i data-t="now">Now</i>
+                <div>
+                  <h2 class="pstv-title" id="pstv-title" aria-live="polite"></h2>
+                  <p class="pstv-sub" id="pstv-sub"></p>
+                  <span class="pstv-gbar" id="pstv-bar"><i></i></span>
+                </div>
+              </div>
+              <button type="button" class="pstv-osd-row is-next" id="pstv-nextrow" hidden>
+                <i data-t="next">Next</i>
+                <span id="pstv-next"></span>
               </button>
             </div>
-            <button type="button" class="pstv-poster" id="pstv-poster">
-              <img id="pstv-poster-img" alt="" decoding="async">
-              <span class="pstv-poster-play">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg>
-                <span data-t="turnon">टीवी चालू करें</span>
-              </span>
-              <span class="pstv-poster-text">
-                <span class="pstv-poster-k" id="pstv-poster-k"></span>
-                <span class="pstv-poster-t" id="pstv-poster-t"></span>
-              </span>
-            </button>
-            <button type="button" class="pstv-unmute" id="pstv-unmute" hidden>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path d="M16 9l5 6M21 9l-5 6"/></svg>
-              <span data-t="unmute">आवाज़ चालू करें</span>
-            </button>
-            <div class="pstv-banner" id="pstv-banner" aria-hidden="true"><b></b><span></span></div>
+            <div class="pstv-chin" aria-hidden="true"><span>PARAMSHANTI TV</span><i></i></div>
           </div>
-          <div class="pstv-now">
-            <div>
-              <span class="pstv-badge" id="pstv-badge" data-mode="tv"></span>
-              <h2 class="pstv-title" id="pstv-title" aria-live="polite"></h2>
-              <p class="pstv-sub" id="pstv-sub"></p>
-            </div>
-            <div class="pstv-ctl">
-              <button type="button" class="pstv-btn" id="pstv-b-tv" aria-pressed="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6.5" width="19" height="13" rx="2.6"/><path d="M8 2.5l4 4 4-4"/></svg>
-                <span data-t="tv247">24×7 टीवी</span>
+
+          <!-- the remote -->
+          <div class="pstv-ctl" role="toolbar" aria-label="TV remote">
+            <span class="pstv-rocker">
+              <button type="button" class="pstv-btn is-icon" id="pstv-ch-dn" data-ta="chdn" aria-label="Channel down">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9l7 7 7-7"/></svg>
               </button>
-              <button type="button" class="pstv-btn is-live" id="pstv-b-live" aria-pressed="false"><span class="pstv-dot"></span><span data-t="live">लाइव</span></button>
-              <button type="button" class="pstv-btn is-icon" id="pstv-b-prev" data-ta="prev" aria-label="पिछला" disabled>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h2.4v14H6zM20 5v14L9.5 12z"/></svg>
+              <em>CH</em>
+              <button type="button" class="pstv-btn is-icon" id="pstv-ch-up" data-ta="chup" aria-label="Channel up">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15l7-7 7 7"/></svg>
               </button>
-              <button type="button" class="pstv-btn is-icon" id="pstv-b-next" data-ta="next" aria-label="अगला" disabled>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.6 5H18v14h-2.4zM4 5v14l10.5-7z"/></svg>
-              </button>
-              <button type="button" class="pstv-btn is-icon" id="pstv-b-share" data-ta="share" aria-label="शेयर">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8l7.4-4.5M8.3 13.2l7.4 4.5"/></svg>
-              </button>
-              <a class="pstv-btn is-icon" id="pstv-b-yt" data-ta="yt" aria-label="YouTube पर देखें" target="_blank" rel="noopener" href="https://www.youtube.com/@bapujidashrathbhaipatel">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
-              </a>
-            </div>
+            </span>
+            <button type="button" class="pstv-btn is-icon" id="pstv-b-mute" data-ta="sound" aria-label="Sound" aria-pressed="false">
+              <svg class="on" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg>
+              <svg class="off" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path d="M16 9l5 6M21 9l-5 6"/></svg>
+            </button>
+            <button type="button" class="pstv-btn is-back" id="pstv-b-tv" aria-pressed="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6.5" width="19" height="13" rx="2.6"/><path d="M8 2.5l4 4 4-4"/></svg>
+              <span data-t="back247">Back to TV</span>
+            </button>
+            <button type="button" class="pstv-btn is-icon" id="pstv-b-prev" data-ta="prev" aria-label="Previous" disabled>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h2.4v14H6zM20 5v14L9.5 12z"/></svg>
+            </button>
+            <button type="button" class="pstv-btn is-icon" id="pstv-b-next" data-ta="next" aria-label="Next" disabled>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.6 5H18v14h-2.4zM4 5v14l10.5-7z"/></svg>
+            </button>
+            <button type="button" class="pstv-btn is-live" id="pstv-b-live" aria-pressed="false"><span class="pstv-dot"></span><span data-t="live">Live</span></button>
+            <button type="button" class="pstv-btn" id="pstv-b-guide" aria-pressed="false">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+              <span data-t="guideBtn">Guide</span>
+            </button>
+            <span class="pstv-ctl-gap"></span>
+            <button type="button" class="pstv-btn is-icon" id="pstv-sbtn" data-ta="searchBtn" aria-label="Search">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+            </button>
+            <button type="button" class="pstv-btn is-icon" id="pstv-b-share" data-ta="share" aria-label="Share">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8l7.4-4.5M8.3 13.2l7.4 4.5"/></svg>
+            </button>
           </div>
+          <label class="pstv-search" id="pstv-searchbar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+            <input type="search" id="pstv-q" autocomplete="off" placeholder="Search videos…" aria-label="Search videos">
+          </label>
         </div>
-        <aside class="pstv-guide" aria-label="Programme guide">
+
+        <!-- channel list and programme guide -->
+        <aside class="pstv-guide" id="pstv-side" data-view="ch" aria-label="Channels and programme guide">
           <div class="pstv-guide-in">
-            <div class="pstv-guide-head"><h3 id="pstv-guide-h"></h3><span class="pstv-clock" id="pstv-clock"></span></div>
-            <ol class="pstv-glist" id="pstv-glist"></ol>
+            <div class="pstv-chpane">
+              <div class="pstv-guide-head"><h3 data-t="channels">Channels</h3></div>
+              <div class="pstv-chlist" id="pstv-chips" role="tablist" aria-label="Channels"></div>
+            </div>
+            <div class="pstv-gpane">
+              <div class="pstv-guide-head"><h3 id="pstv-guide-h"></h3>
+                <button type="button" class="pstv-gx" id="pstv-gx" aria-label="Close guide">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+                </button>
+              </div>
+              <ol class="pstv-glist" id="pstv-glist"></ol>
+            </div>
             <div class="pstv-livecard" id="pstv-livecard" hidden>
               <div class="pstv-livecard-t"><b id="pstv-live-h"></b><span id="pstv-live-s"></span></div>
               <button type="button" class="pstv-btn" id="pstv-live-b"></button>
@@ -98,8 +123,8 @@
     </div>
 
     <footer class="pstv-foot">
-      <p data-t="foot">सभी वीडियो सीधे YouTube से चलते हैं। नए वीडियो यहाँ अपने-आप जुड़ते रहते हैं।</p>
-      <a class="pstv-pill" id="pstv-sub-link" target="_blank" rel="noopener" href="https://www.youtube.com/@bapujidashrathbhaipatel?sub_confirmation=1" data-t="subscribeYT">YouTube पर सब्सक्राइब करें</a>
+      <p data-t="foot">All videos play directly from YouTube. New videos appear here automatically.</p>
+      <a class="pstv-pill" id="pstv-sub-link" target="_blank" rel="noopener" href="https://www.youtube.com/@bapujidashrathbhaipatel?sub_confirmation=1" data-t="subscribeYT">Subscribe on YouTube</a>
     </footer>
   </div>
   <div class="pstv-probe" id="pstv-probe" aria-hidden="true"></div>

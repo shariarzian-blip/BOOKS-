@@ -172,8 +172,8 @@ def build(cache):
     def std_rows(cid, n, main=False):
         s = cid[2:]
         rows = []
-        spec = [("new", "UULF", "नए वीडियो", "New additions", n, 1),
-                ("live", "UULV", "लाइव सत्संग एपिसोड" if main else "लाइव", "Live satsang episodes" if main else "Live streams", n, 1),
+        spec = [("new", "UULF", "नए वीडियो", "Latest videos", n, 1),
+                ("live", "UULV", "लाइव सत्संग एपिसोड" if main else "लाइव", "Live satsang" if main else "Live streams", n, 1),
                 ("top", "UULP", "सबसे ज़्यादा देखे गए", "Most viewed", n, 0),
                 ("shorts", "UUSH", "शॉर्ट्स", "Shorts", NS, 1)]
         for key, pre, hi, en, lim, sync in spec:
@@ -193,6 +193,9 @@ def build(cache):
         ch = {"k": c["key"], "n": c["name"], "en": c["en"], "t": c["title"], "id": c["id"], "h": c["handle"], "R": [], "G": []}
         if c.get("live"):
             ch["live"] = c["live"]
+        for av in walk(cat.page("ch", c["id"] + ".playlists.html"), "channelMetadataRenderer", []):
+            for th in (av.get("avatar") or {}).get("thumbnails", [])[:1]:
+                ch["a"] = re.sub(r"=s\d+", "=s88", th.get("url", ""))
         if c.get("main"):
             ch["R"] = std_rows(c["id"], N, main=True)
             used = set()
@@ -214,7 +217,7 @@ def build(cache):
             if x:
                 ids = cat.videos(cat.page("ch", "UULF" + x[2:] + ".html"), NO)
                 if ids:
-                    ch["R"].append({"k": "audio", "l": "UULF" + x[2:], "hi": "ऑडियो बुक — अंग्रेज़ी", "en": "English audio books · Infinite Param Shanti", "ids": ids})
+                    ch["R"].append({"k": "audio", "l": "UULF" + x[2:], "hi": "ऑडियो बुक — अंग्रेज़ी", "en": "English audio books", "ids": ids})
         else:
             ch["R"] = std_rows(c["id"], NO)
             pls = [p for p in cat.playlists(cat.page("ch", c["id"] + ".playlists.html")) if p["c"] >= 3 and p["cv"]][:12]
@@ -272,8 +275,8 @@ def main():
              "<style id=\"pstv-style\">\n%s\n</style>\n%s\n<script id=\"pstv-data\" type=\"application/json\">%s</script>\n<script id=\"pstv-script\">\n%s\n</script>\n"
              % (data["gen"], css, body, safe, js))
     open(os.path.join(HERE, "squarespace-embed.html"), "w", encoding="utf-8").write(embed)
-    page = ("<!doctype html>\n<html lang=\"hi\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"
-            "<title>परमशांति TV</title>\n<style>html,body{margin:0;background:#fdfbf5}</style>\n</head>\n<body>\n%s</body>\n</html>\n" % embed)
+    page = ("<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"
+            "<title>Paramshanti TV</title>\n<style>html,body{margin:0;background:#fffdf8}.wrap{padding:0 6vw}@media(min-width:768px){.wrap{padding:0 4vw}}</style>\n</head>\n<body>\n<div class=\"wrap\">\n%s</div>\n</body>\n</html>\n" % embed)
     open(os.path.join(HERE, "paramshanti-tv.html"), "w", encoding="utf-8").write(page)
     nv = len(data["V"])
     print("videos in catalogue:", nv, "| channels:", len(data["C"]))

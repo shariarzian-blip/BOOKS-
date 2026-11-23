@@ -43,68 +43,46 @@
 
   /* ---------- words ---------- */
   var T = {
-    hi: {
-      brand: 'परमशांति', tagline: 'Behad ka Param Gyan · 24×7', search: 'वीडियो खोजें…', chan: 'चैनल',
-      onair: 'ऑन एयर · 24×7', vod: 'आपकी पसंद', list: 'प्लेलिस्ट', livenow: 'लाइव',
-      tv247: '24×7 टीवी', live: 'लाइव', prev: 'पिछला', next: 'अगला', share: 'शेयर', yt: 'YouTube पर देखें',
-      unmute: 'आवाज़ चालू करें', turnon: 'टीवी चालू करें', nowplaying: 'अभी चल रहा है', mini: 'मिनी प्लेयर में चल रहा है',
-      guide: 'कार्यक्रम सूची', upnext: 'आगे', now: 'अभी',
-      today: 'आज का संदेश', todayK: "Today's pick", latestlive: 'ताज़ा लाइव सत्संग', latestliveK: 'Latest live satsang',
-      latest: 'सबसे नया वीडियो', latestK: 'Latest video', watch: 'अभी देखें',
-      viewall: 'सभी देखें', more: 'और दिखाएँ', playall: 'सभी चलाएँ', videos: 'वीडियो', course: 'कोर्स', podcast: 'पॉडकास्ट',
-      openyt: 'YouTube पर खोलें', close: 'बंद करें', loading: 'लोड हो रहा है…',
-      cantload: 'यह सूची अभी यहाँ नहीं खुल पाई। “सभी चलाएँ” दबाएँ या YouTube पर खोलें।',
-      langs: 'हर भाषा में बापूजी', langsK: 'All channels', watchhere: 'यहाँ देखें', subscribe: 'सब्सक्राइब',
-      liveTitle: 'लाइव मेडिटेशन', liveDaily: 'रोज़ रात 10 बजे (भारतीय समय)', liveIn: 'में शुरू', yourTime: 'आपके समय से',
-      liveNowH: 'लाइव का समय है', liveNowS: 'अभी जुड़ें — बापूजी के साथ लाइव मेडिटेशन', joinLive: 'लाइव देखें', lastLive: 'पिछला लाइव',
-      liveHelp: 'लाइव अभी शुरू नहीं हुआ? पिछला लाइव देखें', copied: 'लिंक कॉपी हो गया',
-      results: 'खोज के नतीजे', resultsK: 'Search', noresults: 'इस पेज पर इस नाम का वीडियो नहीं मिला।', searchYT: 'YouTube चैनल पर खोजें',
-      foot: 'सभी वीडियो सीधे YouTube से चलते हैं। नए वीडियो यहाँ अपने-आप जुड़ते रहते हैं।', subscribeYT: 'YouTube पर सब्सक्राइब करें',
-      h: 'घं', m: 'मि', ch: 'चैनल'
-    },
-    en: {
-      brand: 'Paramshanti', tagline: 'Behad ka Param Gyan · round the clock', search: 'Search videos…', chan: 'Channels',
-      onair: 'On air · 24×7', vod: 'On demand', list: 'Playlist', livenow: 'Live',
-      tv247: '24×7 TV', live: 'Live', prev: 'Previous', next: 'Next', share: 'Share', yt: 'Watch on YouTube',
-      unmute: 'Tap for sound', turnon: 'Turn on the TV', nowplaying: 'Now playing', mini: 'Playing in the mini player',
-      guide: 'Programme guide', upnext: 'Up next', now: 'Now',
-      today: "Today's pick", todayK: 'आज का संदेश', latestlive: 'Latest live satsang', latestliveK: 'ताज़ा लाइव सत्संग',
-      latest: 'Latest video', latestK: 'सबसे नया वीडियो', watch: 'Watch now',
-      viewall: 'View all', more: 'Show more', playall: 'Play all', videos: 'videos', course: 'Course', podcast: 'Podcast',
-      openyt: 'Open on YouTube', close: 'Close', loading: 'Loading…',
-      cantload: 'This list could not be opened here just now. Press “Play all”, or open it on YouTube.',
-      langs: 'Bapuji in every language', langsK: 'सभी चैनल', watchhere: 'Watch here', subscribe: 'Subscribe',
-      liveTitle: 'Live meditation', liveDaily: 'Daily at 10 PM India time', liveIn: 'to go', yourTime: 'your time',
-      liveNowH: 'It is live time', liveNowS: 'Join now — live meditation with Bapuji', joinLive: 'Watch live', lastLive: 'Last live',
-      liveHelp: 'Live not started yet? Watch the last live', copied: 'Link copied',
-      results: 'Search results', resultsK: 'खोज', noresults: 'No video with that name on this page.', searchYT: 'Search the YouTube channel',
-      foot: 'All videos play directly from YouTube. New videos are added here automatically.', subscribeYT: 'Subscribe on YouTube',
-      h: 'h', m: 'm', ch: 'Channel'
-    }
+    search: 'Search videos…', onair: 'On air · 24×7', vod: 'On demand', list: 'Playlist', livenow: 'Live',
+    tv247: '24×7 TV', live: 'Live', prev: 'Previous', next: 'Next', share: 'Share',
+    unmute: 'Tap for sound', turnon: 'Turn on the TV', nowplaying: 'Now playing', mini: 'Playing in the mini player',
+    guide: 'Programme guide', upnext: 'Up next', now: 'Now', fullguide: 'Full guide', lessguide: 'Show less',
+    today: "Today's pick", latestlive: 'Latest live satsang', latest: 'Latest video', watch: 'Watch now',
+    viewall: 'View all', more: 'Show more', playall: 'Play all', videos: 'videos', course: 'Course', podcast: 'Podcast',
+    openyt: 'Open on YouTube', close: 'Close', loading: 'Loading…',
+    cantload: 'This list could not be opened here just now. Press “Play all”, or open it on YouTube.',
+    liveTitle: 'Live meditation', liveDaily: 'Daily at 10 PM India time', liveIn: 'to go', yourTime: 'your time',
+    liveNowH: 'It is live time', liveNowS: 'Join now — live meditation with Bapuji', joinLive: 'Watch live', lastLive: 'Last live',
+    copied: 'Link copied', results: 'Search results', noresults: 'No video with that name on this page.', searchYT: 'Search on YouTube',
+    foot: 'All videos play directly from YouTube. New videos appear here automatically.', subscribeYT: 'Subscribe on YouTube',
+    h: 'h', m: 'm', ch: 'CH', channels: 'Channels', back247: 'Back to TV', guideBtn: 'Guide', chup: 'Channel up', chdn: 'Channel down',
+    sound: 'Sound on / off', searchBtn: 'Search'
   };
-  function t(k) { return (T[S.ui] && T[S.ui][k]) || T.hi[k] || k; }
-  function L(o) { return (S.ui === 'en' ? o.en : o.hi) || o.hi || o.en || ''; }       // a row / group title
-  function K(o) { return (S.ui === 'en' ? o.hi : o.en) || ''; }                        // its kicker, in the other language
+  function t(k) { return T[k] || k; }
+  function L(o) { return o.en || o.hi || ''; }       // a row / group title
+  function K() { return ''; }
 
   /* ---------- state ---------- */
   var params = {};
   try { new URLSearchParams(location.search).forEach(function (v, k) { params[k] = v; }); } catch (e) { }
   var S = {
-    ui: store('pstv.ui') === 'en' ? 'en' : 'hi',
+    ui: 'en',
     ch: CH[0], mode: 'tv', cur: null, slot: null, queue: [], qlabel: '', list: null,
     started: false, muted: true, bad: {}, errs: 0, dockOff: false, dockBroken: false, open: null
   };
   var wantCh = params.ch || store('pstv.ch');
-  CH.forEach(function (c, i) { c.num = (i < 9 ? '0' : '') + (i + 1); if (c.k === wantCh) S.ch = c; });
+  CH.forEach(function (c, i) { c.num = (i < 9 ? '0' : '') + (i + 1); c.n = c.en || c.n; if (c.k === wantCh) S.ch = c; });
 
   var el = {
     chips: $('pstv-chips'), screen: $('pstv-screen'), frame: $('pstv-frame'), poster: $('pstv-poster'), posterImg: $('pstv-poster-img'),
     posterK: $('pstv-poster-k'), posterT: $('pstv-poster-t'), unmute: $('pstv-unmute'), banner: $('pstv-banner'),
     badge: $('pstv-badge'), title: $('pstv-title'), sub: $('pstv-sub'), bTv: $('pstv-b-tv'), bLive: $('pstv-b-live'),
-    bPrev: $('pstv-b-prev'), bNext: $('pstv-b-next'), bShare: $('pstv-b-share'), bYt: $('pstv-b-yt'),
+    bPrev: $('pstv-b-prev'), bNext: $('pstv-b-next'), bShare: $('pstv-b-share'),
     guideH: $('pstv-guide-h'), clock: $('pstv-clock'), glist: $('pstv-glist'), livecard: $('pstv-livecard'),
     liveH: $('pstv-live-h'), liveS: $('pstv-live-s'), liveB: $('pstv-live-b'), body: $('pstv-body'), q: $('pstv-q'),
-    toast: $('pstv-toast'), subLink: $('pstv-sub-link'), probe: $('pstv-probe'), set: $('pstv-set')
+    toast: $('pstv-toast'), subLink: $('pstv-sub-link'), probe: $('pstv-probe'), set: $('pstv-set'),
+    osdNum: $('pstv-osd-num'), osdLogo: $('pstv-osd-logo'), osdName: $('pstv-osd-name'), bar: $('pstv-bar'), nextRow: $('pstv-nextrow'), next: $('pstv-next'),
+    side: $('pstv-side'), bMute: $('pstv-b-mute'), bGuide: $('pstv-b-guide'), noise: $('pstv-static')
   };
 
   /* ---------- responsive width classes (the block may be narrower than the window) ---------- */
@@ -284,11 +262,18 @@
     try { if (Pready) m = P.isMuted(); } catch (e) { }
     S.muted = m;
     el.unmute.hidden = !(m && S.started && S.mode !== 'live');
+    el.bMute.setAttribute('aria-pressed', m ? 'false' : 'true');
   }
   function sound() {            // only ever called from a click, so the browser lets the sound through
     S.muted = false;
     try { if (Pready) { P.unMute(); P.setVolume(100); } } catch (e) { }
     el.unmute.hidden = true;
+    el.bMute.setAttribute('aria-pressed', 'true');
+  }
+  function quiet() {
+    S.muted = true;
+    try { if (Pready) P.mute(); } catch (e) { }
+    el.bMute.setAttribute('aria-pressed', 'false');
   }
 
   /* ---------- modes ---------- */
@@ -330,12 +315,14 @@
   }
   function goTV(user) {
     setMode('tv');
+    view('ch');
     if (user) sound();
     tuneTV();
   }
   function goVod(id, queue, label, quiet) {
     if (!okId(id)) return;
     setMode('vod');
+    if (queue && queue.length > 1) view('guide');
     S.queue = (queue && queue.length ? queue : [id]).slice();
     if (S.queue.indexOf(id) < 0) S.queue.unshift(id);
     S.qlabel = label || '';
@@ -346,6 +333,7 @@
   }
   function goList(list, label, ids) {
     setMode('list');
+    view('guide');
     S.list = list; S.qlabel = label || ''; S.queue = []; S.listIds = ids || null; S.cur = ids && ids[0] ? ids[0] : null;
     sound();
     run({ list: list });
@@ -418,12 +406,17 @@
 
   /* ---------- now bar, poster, guide ---------- */
   function renderNow() {
-    var name = S.ch.n + (S.ch.en && S.ch.en !== S.ch.n ? ' · ' + S.ch.en : '');
-    var ttl = S.cur ? title(S.cur) : '', sub = S.ch.t;
+    var ttl = S.cur ? title(S.cur) : '', sub = S.ch.t, nxt = null, pct = null;
     el.badge.setAttribute('data-mode', S.mode);
     if (S.mode === 'tv') {
-      el.badge.textContent = t('onair') + ' · ' + S.ch.num + ' ' + S.ch.n;
-      if (S.slot) sub = fmtClock(S.slot.start) + ' – ' + fmtClock(S.slot.start + S.slot.d * 1000) + ' · ' + S.ch.t;
+      el.badge.textContent = t('onair');
+      if (S.slot) {
+        sub = fmtClock(S.slot.start) + ' – ' + fmtClock(S.slot.start + S.slot.d * 1000);
+        var now = slotAt(S.ch, Date.now());
+        if (now && now.id === S.slot.id) pct = Math.min(100, now.off / now.d * 100);
+        var up = upcoming(S.ch, Date.now(), 8);
+        for (var u = 0; u < up.length - 1; u++) if (up[u].id === S.slot.id) { for (var w = u + 1; w < up.length; w++) if (!S.bad[up[w].id]) { nxt = { id: up[w].id, pre: fmtClock(up[w].start) }; break; } break; }
+      }
     } else if (S.mode === 'live') {
       var lc = liveChannel();
       el.badge.textContent = t('livenow');
@@ -431,22 +424,34 @@
       sub = t('liveDaily');
     } else {
       el.badge.textContent = S.mode === 'list' ? t('list') : t('vod');
-      if (S.qlabel) sub = S.qlabel + ' · ' + S.ch.t;
+      if (S.qlabel) sub = S.qlabel;
       if (S.mode === 'list' && !ttl) ttl = S.qlabel || t('loading');
+      var qi = S.queue.indexOf(S.cur);
+      for (var q = qi + 1; qi >= 0 && q < S.queue.length; q++) if (!S.bad[S.queue[q]]) { nxt = { id: S.queue[q], pre: '' }; break; }
     }
     markDeva(el.badge);
     el.title.textContent = ttl || t('loading');
     el.sub.textContent = sub;
+    el.osdNum.textContent = S.ch.num;
+    el.osdName.textContent = S.ch.n;
+    if (el.osdLogo.getAttribute('data-k') !== S.ch.k) { el.osdLogo.setAttribute('data-k', S.ch.k); el.osdLogo.innerHTML = logo(S.ch); }
+    el.bar.hidden = pct == null;
+    if (pct != null) el.bar.firstChild.style.width = pct.toFixed(1) + '%';
+    el.nextRow.hidden = !nxt;
+    if (nxt) {
+      el.nextRow.setAttribute('data-g', nxt.id);
+      el.next.innerHTML = (nxt.pre ? '<b>' + esc(nxt.pre) + '</b> ' : '') + '<span data-tt="' + nxt.id + '">' + esc(title(nxt.id) || '…') + '</span>';
+      needTitle(nxt.id);
+    }
+    el.bGuide.setAttribute('aria-pressed', el.side.getAttribute('data-view') === 'guide' ? 'true' : 'false');
     el.bTv.setAttribute('aria-pressed', S.mode === 'tv' ? 'true' : 'false');
     var can = S.mode === 'vod' || S.mode === 'list', i = S.queue.indexOf(S.cur);
     el.bPrev.disabled = !can || (S.mode === 'vod' && i <= 0);
     el.bNext.disabled = !can || (S.mode === 'vod' && i >= S.queue.length - 1);
-    el.bYt.href = S.mode === 'live' ? 'https://www.youtube.com/' + liveChannel().h + '/live'
-      : S.cur ? 'https://www.youtube.com/watch?v=' + S.cur + (S.list ? '&list=' + S.list : '') : 'https://www.youtube.com/' + S.ch.h;
     el.subLink.href = 'https://www.youtube.com/' + S.ch.h + '?sub_confirmation=1';
     if (S.cur && !title(S.cur)) needTitle(S.cur);
     // poster
-    el.posterK.textContent = el.screen.classList.contains('is-docked') ? t('mini') : (S.mode === 'tv' ? t('nowplaying') + ' · ' + name : t('nowplaying'));
+    el.posterK.textContent = el.screen.classList.contains('is-docked') ? t('mini') : '';
     markDeva(el.posterK);
     el.posterT.textContent = ttl;
     if (S.cur && el.posterImg.getAttribute('data-id') !== S.cur) {
@@ -494,6 +499,7 @@
       S.queue = pl;
     }
     el.clock.textContent = fmtClock(Date.now());
+    if (S.mode === 'tv') { var sb = slotAt(S.ch, Date.now()); if (sb && S.slot && sb.id === S.slot.id) el.bar.firstChild.style.width = Math.min(100, sb.off / sb.d * 100).toFixed(1) + '%'; }
     if (!force && sig === guideSig) {     // same programme: only move the progress bar
       var bar = el.glist.querySelector('.pstv-gbar i'), s0 = S.mode === 'tv' ? slotAt(S.ch, Date.now()) : null;
       if (bar && s0) bar.style.width = Math.min(100, s0.off / s0.d * 100).toFixed(1) + '%';
@@ -512,12 +518,21 @@
     var now = root.querySelectorAll('.pstv-card[data-v="' + S.cur + '"]');
     for (var j = 0; j < now.length; j++) now[j].classList.add('is-cur');
   }
-  function flashBanner() {
-    el.banner.firstChild.textContent = t('ch') + ' ' + S.ch.num;
-    el.banner.lastChild.textContent = S.ch.n + (S.ch.en && S.ch.en !== S.ch.n ? ' · ' + S.ch.en : '');
+  function flashBanner() {             // the channel number a TV shows in the corner when you change channel
+    el.banner.firstChild.textContent = S.ch.num;
+    el.banner.lastChild.textContent = S.ch.n;
     el.banner.classList.add('is-show');
-    clearTimeout(flashBanner.t);
-    flashBanner.t = setTimeout(function () { el.banner.classList.remove('is-show'); }, 2400);
+    el.noise.classList.add('is-on');
+    clearTimeout(flashBanner.t); clearTimeout(flashBanner.n);
+    flashBanner.n = setTimeout(function () { el.noise.classList.remove('is-on'); }, 420);
+    flashBanner.t = setTimeout(function () { el.banner.classList.remove('is-show'); }, 2600);
+  }
+  function logo(c) {
+    return '<i>' + esc((c.n || '?').charAt(0)) + '</i>' + (c.a ? '<img alt="" loading="lazy" decoding="async" src="' + esc(c.a) + '" onerror="this.remove()">' : '');
+  }
+  function view(v) {                   // side panel: the channel list, or the programme guide
+    el.side.setAttribute('data-view', v);
+    el.bGuide.setAttribute('aria-pressed', v === 'guide' ? 'true' : 'false');
   }
 
   /* ---------- cards and sections ---------- */
@@ -551,7 +566,7 @@
   }
   function feature(k, kk, id, queueKey) {
     return '<button type="button" class="pstv-feature" data-v="' + id + '" data-queue="' + queueKey + '">' +
-      '<p class="pstv-kicker' + dv(kk) + '">' + esc(kk) + '</p><h2 class="pstv-h2">' + esc(k) + '</h2>' +
+      '<h2 class="pstv-h2">' + esc(k) + '</h2>' +
       '<span class="pstv-th"><img loading="lazy" decoding="async" alt="" src="' + thumb(id, 'hq720') + '" data-fb="' + thumb(id) + '">' +
       (V[id] && V[id][1] ? '<span class="pstv-dur">' + fmtDur(V[id][1]) + '</span>' : '') + '<span class="pstv-pl">' + ICON.play + '</span></span>' +
       '<span class="pstv-feature-t" data-tt="' + id + '">' + esc(title(id) || '…') + '</span>' +
@@ -562,27 +577,39 @@
     var top = rowOf('top') || rowOf('all') || S.ch.R[0], live = rowOf('live'), fresh = rowOf('new') || S.ch.R[0], html = '';
     if (top) {
       var pool = top.ids.filter(function (id) { return !S.bad[id] && (!V[id] || !V[id][1] || V[id][1] >= 150); });
-      if (pool.length) html += feature(t('today'), t('todayK'), pool[Math.floor((Date.now() + IST) / 86400000) % pool.length], top.k);
+      if (pool.length) html += feature(t('today'), '', pool[Math.floor((Date.now() + IST) / 86400000) % pool.length], top.k);
     }
-    if (live && live.ids.length) html += feature(t('latestlive'), t('latestliveK'), live.ids[0], 'live');
-    else if (fresh && fresh.ids.length) html += feature(t('latest'), t('latestK'), fresh.ids[0], fresh.k);
+    if (live && live.ids.length) html += feature(t('latestlive'), '', live.ids[0], 'live');
+    else if (fresh && fresh.ids.length) html += feature(t('latest'), '', fresh.ids[0], fresh.k);
     return html ? '<section class="pstv-sec" id="pstv-duo-sec"><div class="pstv-duo">' + html + '</div></section>' : '';
   }
-  function langsHTML() {
-    return '<section class="pstv-sec" id="pstv-langs-sec">' + head({ k: t('langsK'), t: t('langs') }) + '<div class="pstv-langs">' +
-      CH.map(function (c) {
-        return '<div class="pstv-lang' + (c === S.ch ? ' is-cur' : '') + '"><span class="pstv-lang-n">' + c.num + '</span>' +
-          '<span class="pstv-lang-name">' + esc(c.n) + '</span><span class="pstv-lang-en">' + esc(c.t) + '</span>' +
-          '<span class="pstv-lang-a"><button type="button" data-ch="' + c.k + '" data-top="1">' + esc(t('watchhere')) + '</button>' +
-          '<a target="_blank" rel="noopener" href="https://www.youtube.com/' + c.h + '?sub_confirmation=1">' + esc(t('subscribe')) + ' ↗</a></span></div>';
-      }).join('') + '</div></section>';
-  }
-  function renderChips() {
-    el.chips.innerHTML = CH.map(function (c) {
-      return '<button type="button" class="pstv-chip" role="tab" data-ch="' + c.k + '" aria-selected="' + (c === S.ch) + '" title="' + esc(c.t) + '"><i>' + c.num + '</i>' + esc(c.n) + '</button>';
+  var chanSig = '';
+  function renderChips(force) {        // every channel with what is on it right now, like a set-top box channel list
+    var now = Date.now(), slots = CH.map(function (c) { return slotAt(c, now); });
+    var sig = S.ch.k + slots.map(function (x) { return x ? x.id : ''; }).join();
+    if (!force && sig === chanSig) {
+      var bars = el.chips.querySelectorAll('.pstv-gbar i');
+      for (var i = 0; i < bars.length; i++) if (slots[i]) bars[i].style.width = Math.min(100, slots[i].off / slots[i].d * 100).toFixed(1) + '%';
+      return;
+    }
+    chanSig = sig;
+    el.chips.innerHTML = CH.map(function (c, n) {
+      var x = slots[n];
+      return '<button type="button" class="pstv-chan" role="tab" data-ch="' + c.k + '" aria-selected="' + (c === S.ch) + '" title="' + esc(c.t) + '">' +
+        '<b class="pstv-chan-n">' + c.num + '</b><span class="pstv-logo-c">' + logo(c) + '</span>' +
+        '<span class="pstv-chan-t"><strong>' + esc(c.n) + '</strong>' +
+        (x ? '<span class="pstv-chan-now">' + esc(title(x.id)) + '</span><span class="pstv-gbar"><i style="width:' + Math.min(100, x.off / x.d * 100).toFixed(1) + '%"></i></span>'
+           : '<span class="pstv-chan-now">' + esc(c.t) + '</span>') + '</span></button>';
     }).join('');
     var cur = el.chips.querySelector('[aria-selected="true"]');
-    if (cur && cur.offsetLeft + cur.offsetWidth > el.chips.clientWidth) el.chips.scrollLeft = cur.offsetLeft - 20;
+    if (cur) {
+      if (el.chips.scrollWidth > el.chips.clientWidth + 4) el.chips.scrollLeft = Math.max(0, cur.offsetLeft - 14);
+      else if (cur.offsetTop + cur.offsetHeight > el.chips.scrollTop + el.chips.clientHeight || cur.offsetTop < el.chips.scrollTop) el.chips.scrollTop = Math.max(0, cur.offsetTop - 8);
+    }
+  }
+  function stepChannel(dir) {
+    var i = CH.indexOf(S.ch);
+    setChannel(CH[(i + dir + CH.length) % CH.length].k, true);
   }
   function renderBody() {
     var html = '<div id="pstv-results"></div>' + duoHTML();
@@ -592,7 +619,6 @@
       html += '<section class="pstv-sec" data-gsec="' + g.k + '">' + head({ k: K(g), t: L(g), href: 'https://www.youtube.com/' + S.ch.h + '/playlists', arrows: 1 }) +
         '<div class="pstv-rail">' + g.P.map(function (p) { return colCard(p, g); }).join('') + '</div><div data-panel="' + g.k + '"></div></section>';
     });
-    html += langsHTML();
     el.body.innerHTML = html;
     S.open = null;
     watchTitles(el.body);
@@ -609,14 +635,15 @@
     var b = root.querySelectorAll('.pstv-ui button');
     for (var k = 0; k < b.length; k++) b[k].setAttribute('aria-pressed', b[k].getAttribute('data-ui') === S.ui ? 'true' : 'false');
   }
-  function renderAll() { applyWords(); renderChips(); renderBody(); renderNow(); renderGuide(true); }
+  function renderAll() { applyWords(); renderChips(true); renderBody(); renderNow(); renderGuide(true); }
 
   function setChannel(key, user) {
     var c = CH.filter(function (x) { return x.k === key; })[0];
     if (!c || c === S.ch) return;
     S.ch = c; store('pstv.ch', key);
-    renderChips(); renderBody();
-    if (S.mode === 'tv' || S.mode === 'live') { if (user && S.started) sound(); setMode('tv'); tuneTV(); } else { renderNow(); renderGuide(true); }
+    renderChips(true); renderBody();
+    if (user && S.started) sound();
+    setMode('tv'); tuneTV();       // changing channel always puts that channel's live stream on, as on a TV
     flashBanner();
     syncChannel();
   }
@@ -856,6 +883,11 @@
     var a;
     if (x === el.poster) { sound(); if (S.mode === 'tv' && !S.started) tuneTV(); else if (Pready) { try { P.playVideo(); } catch (er) { } } return; }
     if (x === el.unmute) return sound();
+    if (x === el.bMute) { if (S.muted) sound(); else quiet(); return; }
+    if (x.id === 'pstv-ch-up') return stepChannel(1);
+    if (x.id === 'pstv-ch-dn') return stepChannel(-1);
+    if (x === el.bGuide) { view(el.side.getAttribute('data-view') === 'guide' ? 'ch' : 'guide'); return; }
+    if (x.id === 'pstv-gx') return view('ch');
     if (x === el.bTv) { goTV(true); return; }
     if (x === el.bLive) { var li = liveInfo(), l0 = latestLive(); if ((li && li.on) || !l0) goLive(); else goVod(l0.id, l0.ids, L(l0.row)); return; }
     if (x.getAttribute('data-act') === 'live') { goLive(); toStage(); return; }
@@ -864,8 +896,8 @@
     if (x === el.bNext) { sound(); step(1); return; }
     if (x === el.bShare) return share();
     if (x.id === 'pstv-dockx') { S.dockOff = true; dock(false); try { if (S.mode === 'live') goTV(); else P.pauseVideo(); } catch (er) { } return; }
-    if ((a = x.getAttribute('data-ui'))) { S.ui = a; store('pstv.ui', a); renderAll(); return; }
-    if ((a = x.getAttribute('data-ch'))) { setChannel(a, true); if (x.getAttribute('data-top')) toStage(); return; }
+    if (x.id === 'pstv-sbtn') { var on = root.classList.toggle('is-search'); if (on) el.q.focus(); else { el.q.value = ''; search(); } return; }
+    if ((a = x.getAttribute('data-ch'))) { if (CH.filter(function (c) { return c.k === a; })[0] === S.ch && S.mode !== 'tv') goTV(true); else setChannel(a, true); return; }
     if ((a = x.getAttribute('data-g'))) {
       if (S.mode === 'list') { sound(); try { P.playVideoAt(Math.max(0, (P.getPlaylist() || []).indexOf(a))); } catch (er) { } }
       else if (S.mode === 'vod') goVod(a, S.queue, S.qlabel);
@@ -898,7 +930,7 @@
   if (okId(params.v)) { goVod(params.v, [params.v], '', true); needTitle(params.v); }
   else tuneTV();
   setInterval(function () {
-    renderGuide(); renderLive();
+    renderGuide(); renderLive(); renderChips();
     if (S.mode === 'tv' && S.slot && !S.started) {      // TV still off: keep the poster on whatever is on air
       var s = slotAt(S.ch, Date.now());
       if (s && s.id !== S.cur) { S.slot = s; S.cur = s.id; pending = Pready ? null : { id: s.id, start: s.off }; renderNow(); }

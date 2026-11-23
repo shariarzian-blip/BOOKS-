@@ -6,18 +6,25 @@ snippet for a Squarespace Code Block: no API key, no server, nothing else to hos
 
 ## What is on the page
 
-- **24×7 TV** – a round-the-clock channel. The programme on air is worked out from the clock,
-  so everyone who opens the page sees the same video at the same point, with a programme guide
-  (now / next, in the viewer's local time) beside the screen.
-- **Channels** – हिंदी, English, ગુજરાતી, తెలుగు, বাংলা, मराठी, ಕನ್ನಡ, ਪੰਜਾਬੀ, plus ध्यान (Sakshi Patel),
-  पॉडकास्ट (Anant) and माँ का संदेश. Changing channel changes the 24×7 stream and every row below.
+The page is in English and has no header of its own; it starts with the television.
+
+- **The TV** – a set with a bezel and an on-screen banner under the picture: channel number,
+  channel logo and name, ON AIR, a clock, what is on NOW with a progress bar, and what is NEXT.
+  The programme on air is worked out from the clock, so everyone who opens a channel sees the
+  same video at the same point.
+- **Channels** – 01 Hindi, 02 English, 03 Gujarati, 04 Telugu, 05 Bengali, 06 Marathi,
+  07 Kannada, 08 Punjabi, 09 Meditation (Sakshi Patel), 10 Podcast (Anant) and 11 Maa ka
+  Sandesh. The channel list shows each channel's number, logo and current programme. Changing
+  channel gives a burst of static and the channel number in the corner of the screen.
+- **The remote** – CH down / up, sound, Live, Guide (the channel's schedule), search and share.
+  Previous / Next and "Back to TV" appear only while an on-demand video is playing.
 - **Live** – a card that counts down to the daily 10 PM IST live meditation, opens the live
   stream at that hour, and offers the last live replay the rest of the day.
-- **Rows** – New additions, Live satsang episodes, Most viewed, Shorts (vertical viewer),
+- **Rows** – Today's pick, Latest videos, Live satsang, Most viewed, Shorts (vertical viewer),
   then playlists grouped as Start here, Courses, Podcasts, Films / audio books / songs.
   A playlist opens as a panel with all its videos and a "Play all" button.
-- **Search**, share links (`?v=<video id>&ch=<channel>`), a mini player that follows you down
-  the page, and a हिंदी / EN switch for the page's own labels.
+- **Phones** – the block breaks out of the site's side gutters so the picture runs edge to
+  edge, the channel list becomes a strip of tiles, and a mini player follows you down the page.
 
 ## How it stays current without an API key
 
