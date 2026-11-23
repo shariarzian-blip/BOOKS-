@@ -278,6 +278,8 @@ def main():
     src = os.path.join(HERE, "src")
     css = open(os.path.join(src, "tv.css"), encoding="utf-8").read()
     body = open(os.path.join(src, "tv.html"), encoding="utf-8").read()
+    # the logo artwork (made by logos/make.cjs) is kept once in the page and drawn wherever it appears
+    body = body.replace("<!--logo-->", open(os.path.join(src, "logo.html"), encoding="utf-8").read().strip())
     js = open(os.path.join(src, "tv.js"), encoding="utf-8").read()
     safe = blob.replace("</", "<\\/")
     embed = ("<!-- Paramshanti TV · paste this whole snippet into one Squarespace Code Block (HTML) · built %s -->\n"

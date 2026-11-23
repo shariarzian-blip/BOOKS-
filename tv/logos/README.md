@@ -1,19 +1,24 @@
-# Paramshanti TV — logo options
+# Paramshanti TV — logo
 
-`logo-options.jpg` shows nine marks, each in two colourways (white on saffron-gold, and gold on white; no black),
-as a large tile, as a lockup with the name, and at the small size it would have on the page.
+The logo is the mission's own emblem (the burst of orange rays around the seated figure) with **PARAMSHANTI TV**
+on one line beneath it: the name in the mission's magenta lettering, TV in the orange of the rays.
 
-| # | Mark | Idea |
-|---|---|---|
-| 1 | Classic TV | a television with a play button |
-| 2 | Sunrise screen | the sun rising inside the screen |
-| 3 | Sun of peace | a sun whose centre is a play button |
-| 4 | Lotus TV | the screen resting on a lotus |
-| 5 | Behad (infinity) | the infinity sign with a play button in one loop |
-| 6 | Meditation screen | a seated figure inside the screen |
-| 7 | P monogram | the letter P whose bowl is a screen |
-| 8 | Jyoti (flame) | a flame with a play button |
-| 9 | Aura signal | a figure whose aura is a broadcast signal |
+| File | Use |
+|---|---|
+| `paramshanti-tv-logo.svg` / `.png` | the logo, emblem above the name (transparent background) |
+| `paramshanti-tv-logo-horizontal.svg` / `.png` | emblem beside the name, for narrow strips |
+| `paramshanti-tv-logo-square.jpg` | on white with room around it, for profile pictures and posts |
 
-`svg/` holds every mark as a standalone SVG in both colourways. `logos.cjs` draws them and builds the sheet
-(Playwright, with the Poppins font from `@fontsource/poppins` beside it and the folder served at `http://localhost:8767/`).
+Colours: orange `#F9A21B`, light gold `#FBC34B`, magenta `#FA02B9`.
+
+On the TV page the logo sits on a white plate on the set's lower edge and again at the foot of the page.
+The page keeps the artwork once (`../src/logo.html`) and draws it in both places.
+
+## How it is made
+
+- `source/` holds the two logo files the mission supplied (English and Hindi lettering).
+- `trace.py` turns them into light vector artwork in `brand.json`: each of the 113 rays as a fitted leaf shape,
+  the figure and both wordmarks as traced outlines. Needs `numpy`, `scipy`, `Pillow` and `potracer`.
+- `tv-letters.json` holds the letters TV as outlines, set in Forum (SIL Open Font License), the typeface closest
+  to the wordmark.
+- `node make.cjs` writes the SVG files, the piece the page uses, and (with Playwright installed) the PNG and JPG copies.

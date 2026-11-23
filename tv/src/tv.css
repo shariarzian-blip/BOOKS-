@@ -25,7 +25,7 @@
 
 /* ---------- the television ---------- */
 .pstv .pstv-stage{display:grid;gap:14px}
-.pstv[data-w="l"] .pstv-stage{grid-template-columns:minmax(0,max(520px,calc((100vh - 336px)*16/9))) 344px;justify-content:center;align-items:stretch;gap:22px}
+.pstv[data-w="l"] .pstv-stage{grid-template-columns:minmax(0,max(520px,calc((100vh - 364px)*16/9))) 344px;justify-content:center;align-items:stretch;gap:22px}
 .pstv .pstv-main{min-width:0}
 .pstv .pstv-tv{position:relative;border-radius:18px;padding:10px 10px 0;color:#fff;background:linear-gradient(180deg,#26262a,var(--tv-black));
   box-shadow:0 34px 60px -34px rgba(0,0,0,.75),inset 0 0 0 1px #3b3b40,inset 0 1px 0 #5a5a61}
@@ -85,8 +85,17 @@
 .pstv .pstv-osd-row.is-next>i{margin-top:0;background:rgba(255,255,255,.16);color:#fff}
 .pstv .pstv-osd-row.is-next>span{min-width:0;font:400 14px/1.4 var(--tv-sans);color:#d8d8de;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pstv .pstv-osd-row.is-next b{color:#fff;font-weight:600}
-.pstv .pstv-chin{display:flex;align-items:center;justify-content:center;gap:10px;height:26px;font:600 8.5px/1 var(--tv-sans);letter-spacing:.34em;color:#8d8d95}
-.pstv .pstv-chin i{width:6px;height:6px;border-radius:50%;background:#6b2620}
+/* the logo, on a white plate on the set's lower edge; the same two drawings make the mark at the foot of the page */
+.pstv .pstv-defs{position:absolute;width:0;height:0;overflow:hidden}
+.pstv .pstv-chin{position:relative;display:flex;align-items:center;justify-content:center;height:48px}
+.pstv .pstv-plate{display:flex;align-items:center;gap:8px;height:34px;padding:0 14px 0 9px;border-radius:9px;background:#fff;box-shadow:0 1px 0 rgba(255,255,255,.14),0 0 0 1px rgba(0,0,0,.5)}
+.pstv .pstv-plate .pstv-lg-e{width:28px;height:28px}
+.pstv .pstv-plate .pstv-lg-w{width:136px;height:12.6px}
+.pstv .pstv-chin i{position:absolute;right:12px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:#6b2620}
+.pstv:not([data-w="s"]) .pstv-chin{height:54px}
+.pstv:not([data-w="s"]) .pstv-plate{height:40px;gap:9px;padding:0 16px 0 10px;border-radius:10px}
+.pstv:not([data-w="s"]) .pstv-plate .pstv-lg-e{width:33px;height:33px}
+.pstv:not([data-w="s"]) .pstv-plate .pstv-lg-w{width:164px;height:15.2px}
 .pstv .pstv-tv.is-on .pstv-chin i{background:#3ddc84;box-shadow:0 0 8px #3ddc84}
 .pstv[data-w="l"] .pstv-tv{margin-bottom:20px}
 .pstv[data-w="l"] .pstv-tv::after{content:'';position:absolute;left:50%;bottom:-15px;width:220px;height:15px;transform:translateX(-50%);background:linear-gradient(180deg,#2a2a2e,#101013);clip-path:polygon(16% 0,84% 0,100% 100%,0 100%)}
@@ -239,7 +248,10 @@
 .pstv .pstv-note{font:400 14.5px/1.6 var(--tv-sans);color:var(--tv-muted)}
 .pstv .pstv-note a{color:var(--tv-gold);text-decoration:underline}
 .pstv .pstv-panel-foot{display:flex;justify-content:center;margin-top:20px}
-.pstv .pstv-foot{display:flex;justify-content:center;margin-top:44px;padding-top:26px;border-top:1px solid var(--tv-line)}
+.pstv .pstv-foot{display:flex;flex-direction:column;align-items:center;gap:24px;margin-top:44px;padding-top:34px;border-top:1px solid var(--tv-line)}
+.pstv .pstv-mark{display:flex;flex-direction:column;align-items:center;gap:9px}
+.pstv .pstv-mark .pstv-lg-e{width:98px;height:98px}
+.pstv .pstv-mark .pstv-lg-w{width:216px;height:20px}
 .pstv .pstv-probe{position:absolute;left:-9999px;top:0;width:200px;height:113px;overflow:hidden;visibility:hidden;pointer-events:none}
 
 /* narrow block */
@@ -265,7 +277,7 @@
   .pstv .pstv-tv{padding:0;border-radius:0;box-shadow:none;background:var(--tv-black)}
   .pstv .pstv-screen{border-radius:0;box-shadow:none}
   .pstv .pstv-osd{padding:12px 14px 0}
-  .pstv .pstv-chin{height:16px;font-size:0}
+  .pstv .pstv-chin{height:46px}
   .pstv .pstv-chin i{display:none}
   .pstv .pstv-ctl{padding:0 14px;margin-top:12px}
   .pstv .pstv-side{margin-top:0}
