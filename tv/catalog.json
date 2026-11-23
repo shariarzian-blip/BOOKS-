@@ -1838,7 +1838,6 @@
  "C": [
   {
    "k": "hi",
-   "n": "हिंदी",
    "en": "Hindi",
    "t": "Bapuji Dashrathbhai Patel",
    "id": "UC01X7d2bKFGxdk8tQ0ZKzOQ",
@@ -1847,7 +1846,6 @@
     {
      "k": "new",
      "l": "UULF01X7d2bKFGxdk8tQ0ZKzOQ",
-     "hi": "नए वीडियो",
      "en": "Latest videos",
      "ids": [
       "NcglnAtOalk",
@@ -1876,7 +1874,6 @@
     {
      "k": "live",
      "l": "UULV01X7d2bKFGxdk8tQ0ZKzOQ",
-     "hi": "लाइव सत्संग एपिसोड",
      "en": "Live satsang",
      "ids": [
       "8qNpl-ZFthw",
@@ -1905,7 +1902,6 @@
     {
      "k": "top",
      "l": "UULP01X7d2bKFGxdk8tQ0ZKzOQ",
-     "hi": "सबसे ज़्यादा देखे गए",
      "en": "Most viewed",
      "ids": [
       "w0r3IrjEaOY",
@@ -1933,7 +1929,6 @@
     {
      "k": "shorts",
      "l": "UUSH01X7d2bKFGxdk8tQ0ZKzOQ",
-     "hi": "शॉर्ट्स",
      "en": "Shorts",
      "ids": [
       "AmWdMJeADVM",
@@ -1956,7 +1951,6 @@
    "G": [
     {
      "k": "start",
-     "hi": "शुरुआत यहाँ से",
      "en": "Start here",
      "P": [
       {
@@ -1964,70 +1958,61 @@
        "t": "For Beginner... Bapuji Knowledge in brief ....",
        "c": 22,
        "cv": "zC4BQ_uOhH8",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLb8F7kBe5Xj7Mn2KR6gQvkN4VECujfn9p",
        "t": "Explore the Spiritual Course| Sakshi Patel |Behad ka Param Gyan| Sanata…",
        "c": 10,
        "cv": "WxnUNo1RKyM",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVF3Cdph7AUNEdCyrkh4Y_Mr",
        "t": "Wake up to आत्म जागृती| समय की पुकार| #SanatanDharma | #Multiverse Real…",
        "c": 25,
        "cv": "fPdMS-Hroqc",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVHXS1E1hMO6DHUp_Cj76ewe",
        "t": "IMP videos",
        "c": 35,
        "cv": "TnoKnNcpNgk",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVEdNd_8jLi3_dMTf7pNONLX",
        "t": "Must watch videos",
        "c": 1422,
        "cv": "gKUH-on1PN0",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVH7mKRdJky50rm9QdZocONP",
        "t": "Bapuji videos 2026",
        "c": 13,
        "cv": "JjMv-jTDTbE",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVE_DgY37tMvaROzxz40SbHE",
        "t": "2025",
        "c": 8,
        "cv": "VS_K_kWv2-o",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVHAMdNEQ1WoWexVqR_fOikk",
        "t": "2024",
        "c": 46,
        "cv": "lWrFPTJ9Lwg",
-       "ids": [],
-       "ty": ""
+       "ids": []
       }
      ]
     },
     {
      "k": "courses",
-     "hi": "कोर्स",
      "en": "Courses",
      "P": [
       {
@@ -2035,102 +2020,89 @@
        "t": "Man ki shakti ( Man kya he ? )",
        "c": 31,
        "cv": "h5P1TpeRMOU",
-       "ids": [],
-       "ty": "c"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVH6QUWG6hZrrBFON6Mwz3hf",
        "t": "Aura ke bareme",
        "c": 14,
        "cv": "XvlnPifSuNk",
-       "ids": [],
-       "ty": "c"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVEFx6CxgEkKrn9kkQORJtm_",
        "t": "पुनःजन्म",
        "c": 16,
        "cv": "ne0SCYKTXfA",
-       "ids": [],
-       "ty": "c"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVHAegl3ouALn3PIHf9tZhQ6",
        "t": "आत्मज्ञान",
        "c": 33,
        "cv": "IUkcnqaRaHI",
-       "ids": [],
-       "ty": "c"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVFVQH95_L9WNhme1Y-Ypjqt",
        "t": "ब्रह्मज्ञान",
        "c": 24,
        "cv": "de0lB3r6yzs",
-       "ids": [],
-       "ty": "c"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVEnE7xeasoUSJ47hqhcEWbd",
        "t": "आत्मज्ञान से जुड़े विषयों पर जानकारी",
        "c": 20,
        "cv": "VjyRdeb1K2M",
-       "ids": [],
-       "ty": "c"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVHpQyjq_dbhjSrGdHRS4Asg",
        "t": "आध्यात्मिक विकास",
        "c": 40,
        "cv": "NwAgHUwzLEk",
-       "ids": [],
-       "ty": "c"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVHrOakxPF0rX2AWCXfuU7Ok",
        "t": "जीवन में शांति, ध्यान, और आत्म-साक्षात्कार",
        "c": 34,
        "cv": "eT8N4EJWJtI",
-       "ids": [],
-       "ty": "c"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVFxDpvedIlX6RBQq8HoBSTq",
        "t": "life After Death",
        "c": 22,
        "cv": "LUqg16E_w-Y",
-       "ids": [],
-       "ty": "c"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVGokEG1ZRs7fLna3v0yQujH",
        "t": "Law of Karma",
        "c": 10,
        "cv": "yD2RsHb0tE4",
-       "ids": [],
-       "ty": "c"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVH7beR84Uvfe4ozo1IswW8n",
        "t": "सूक्ष्म साधना का महत्व",
        "c": 5,
        "cv": "osmv7HxdOZQ",
-       "ids": [],
-       "ty": "c"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVFJbuxEY-0arMrNCaJGluBH",
        "t": "परिवर्तन",
        "c": 26,
        "cv": "XK5t5NQn7II",
-       "ids": [],
-       "ty": ""
+       "ids": []
       }
      ]
     },
     {
      "k": "podcasts",
-     "hi": "बापूजी और अनंत पटेल · पॉडकास्ट",
      "en": "Podcasts",
      "P": [
       {
@@ -2138,350 +2110,300 @@
        "t": "Bapuji Interview with Anant",
        "c": 225,
        "cv": "Lv7o70foK7k",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVGbifVLNSXjLQweLHPOf1BS",
        "t": "Anant bhai podcast",
        "c": 19,
        "cv": "ckRtjYfe6f4",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVEFZ_IgwiEhtI_zBH3ORVR2",
        "t": "Unspoken Truth By Bapuji",
        "c": 349,
        "cv": "mmrq5M8L_Js",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVFjyFKzDB92rRvPfhrwI2qf",
        "t": "Mantra Shakti · Analysis",
        "c": 6,
        "cv": "kPuL--a_nkU",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVHm__1H-u-Q8qzQ_xvFnsGN",
        "t": "Climate Change Facts",
        "c": 4,
        "cv": "P6nHeU0pG6Q",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVFu3vYHAisQg9CUYihL6K0a",
        "t": "Sanatan Shastras",
        "c": 6,
        "cv": "czNPXroaWgY",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVF7h_fPP8MLck7q77USpL1k",
        "t": "Kalki Avatar",
        "c": 7,
        "cv": "z2wLccquCSI",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVFFfcno_274bviEJhBffGad",
        "t": "Mind Power: Myth or Reality?",
        "c": 2,
        "cv": "8QrnUL71t68",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVGi1dzHCeAYP_Xfz_IbEstw",
        "t": "Exclusive Spiritual Conversation- Bapuji & Anant Patel",
        "c": 33,
        "cv": "TnoKnNcpNgk",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVG0DfvXpJUyJbGu8UAuR8vc",
        "t": "Krishna Avatar Ke Rahasya",
        "c": 15,
        "cv": "qCSrrY7U9cI",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVGcX2fiuFY5Clxiwgd7WgZr",
        "t": "Our Alien Connection & UFOs",
        "c": 25,
        "cv": "c1w5YVhHlD4",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVEOvEESZN3FuL1scj50izBB",
        "t": "Best Guided Meditaiton w/ Anant Patel",
        "c": 2,
        "cv": "qRh-7_SWIpc",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVH1eLrIPb6XbHJs8EsZBpck",
        "t": "Meditation & Spirituality - Anant Patel",
        "c": 56,
        "cv": "fRZQgF2p4P0",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVFmqC1zILuwfpe9EYEkcm7g",
        "t": "The Unspoken Truth & Spirituality",
        "c": 14,
        "cv": "Exo9vYKokQc",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVFFX1hyxS4sJ8DR6gA0ICZy",
        "t": "Hindi Spiritual Talks with Behad Soul",
        "c": 49,
        "cv": "k3PpsivhfeA",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVEr6rCrf3XEDvQWAhU9aYyb",
        "t": "Bhoot Pret Facts",
        "c": 20,
        "cv": "osNXruXdFO0",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVEu1lIQuEKXw3DsBx6cPUUO",
        "t": "आत्म स्वरुप / Self Realisation · Atmaswarup - Spirituality w/Bapuji & A…",
        "c": 15,
        "cv": "m4nxFmDV__U",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVGJMaQFxdvGCC-04bApU_NX",
        "t": "Shri Ram, Hanumanji Rahasya",
        "c": 7,
        "cv": "aawTJNydO_w",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVE-fHT2Zh3-MmeowaDSRWcb",
        "t": "Black hole Science & Spirituality",
        "c": 8,
        "cv": "T7HoH-QtOJ4",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVHaD8ZRwYz3PUBjLoSJYoIj",
        "t": "Secrets of Shiv",
        "c": 15,
        "cv": "va1kVfO2580",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVEhTuXOW5SRivuEe9xRATsw",
        "t": "Pitru Koun Hai ?",
        "c": 11,
        "cv": "L5t0j_O-B4w",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVGrZujTIKU39B1CjQ8EewFt",
        "t": "Spiritual Q & A",
        "c": 11,
        "cv": "JbRcSalRI2M",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVEFC6B7GQNGo90RiBWZhrpm",
        "t": "Psychic Abilities",
        "c": 3,
        "cv": "IzYXuPnGT3c",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVHUoJGO-_qmX9Ymp4MK8QCB",
        "t": "Life After Death",
        "c": 9,
        "cv": "VQWJVvDiAQI",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVEtHOQS5sBg-y1Al-FAXXrA",
        "t": "Sukshma Vatan · Jagat",
        "c": 8,
        "cv": "mNd_QR4unw4",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVGvkoJg5yLppHRvbeZ3NhYK",
        "t": "Tantra, Mantra",
        "c": 7,
        "cv": "p87z704Iqfk",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVFItdqI2Vy57lts1vP6BqmR",
        "t": "Jyotish, Astrology",
        "c": 4,
        "cv": "8vJIhklDhCY",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVHQLrtGA1t80irpFxteBHm2",
        "t": "Pyramids · Temples",
        "c": 5,
        "cv": "hujLMe3bK6c",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVEn4U-2W8cfHlLdCqsSFcXC",
        "t": "Creation of Universe & Multiverse - Science & Spirituality w/ Bapuji &…",
        "c": 37,
        "cv": "lXBp5jZZDNQ",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       }
      ]
     },
     {
-     "k": "media",
-     "hi": "फ़िल्में, ऑडियो बुक और गीत",
-     "en": "Films, audio books & songs",
+     "k": "more",
+     "en": "More playlists",
      "P": [
       {
        "l": "PLIQms2VNi018",
        "t": "Short Animation Film 2026",
        "c": 11,
        "cv": "GhGS3oMJ9A0",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVFjkV_q8vHtTtzjWOJqrQ5I",
        "t": "Audio Books",
        "c": 13,
        "cv": "QfeHk9OK7hA",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVEoEDrQKR2BmGH7Mqoidt4Z",
        "t": "Life in Multiverse book",
        "c": 7,
        "cv": "Heuczc1505A",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVEzNegEHHacrynd50xQHUQA",
        "t": "Paramshanti Songs",
        "c": 40,
        "cv": "Uejt8-TyFQk",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVEM2Y0TMZ-oNEjIGTkpdFgO",
        "t": "paramshanti mantra",
        "c": 4,
        "cv": "uxwqtcdmyEE",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVH-EZ3KJt-Y5Bjt5F62uviq",
        "t": "Guided Meditation with Behad ke Dadaji",
        "c": 3,
        "cv": "iE9T2DnMWrc",
-       "ids": [],
-       "ty": ""
-      }
-     ]
-    },
-    {
-     "k": "more",
-     "hi": "और प्लेलिस्ट",
-     "en": "More playlists",
-     "P": [
+       "ids": []
+      },
       {
        "l": "PLhwIbX87USVE0UHW-vwWVmKeVyqn1nx4Z",
        "t": "alien disclosure Live ep",
        "c": 7,
        "cv": "-2hPvx09jiY",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVFst3TpxMLZOLaK2tlMVOxH",
        "t": "Daily Wisdom: Timeless Teachings for Modern Living",
        "c": 25,
        "cv": "H7XZe8n-v4E",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVFS6fifM222Q-513reLx3ye",
        "t": "bharat ka bhavishya",
        "c": 3,
        "cv": "ycDqFiYxqXg",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVGNstERJCstRLu5ZF4NPYzY",
        "t": "Anant videos",
        "c": 494,
        "cv": "oTJxTDz5a2g",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVGPhCK4FMg45Ece-b7PZG8H",
        "t": "Jyoti Prakashbhai class",
        "c": 53,
        "cv": "9DduAepFqMU",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVH6PVWtYYDQymlnu68g1aeD",
        "t": "Spiritual cure for diseases",
        "c": 9,
        "cv": "PLFa9vVsVtk",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLhwIbX87USVHdQUVcatuJrNKxu8cLfdmj",
        "t": "SAKSHI VIDEOS",
        "c": 36,
        "cv": "RXJW5Q1K2Qk",
-       "ids": [],
-       "ty": ""
+       "ids": []
       }
      ]
     }
@@ -2553,7 +2475,6 @@
   },
   {
    "k": "en",
-   "n": "English",
    "en": "English",
    "t": "Bapuji in English",
    "id": "UC01X7d2bKFGxdk8tQ0ZKzOQ",
@@ -2562,7 +2483,6 @@
     {
      "k": "new",
      "l": "PLhwIbX87USVHkGagUtOalE6aBX8V68Z_p",
-     "hi": "नए अंग्रेज़ी वीडियो",
      "en": "Latest English videos",
      "ids": [
       "g6TiLEqE55I",
@@ -2591,7 +2511,6 @@
     {
      "k": "all",
      "l": "PLhwIbX87USVGPxUv1w7TzEtRjYuhCtVpm",
-     "hi": "बापूजी के वीडियो — अंग्रेज़ी में",
      "en": "Bapuji's videos in English",
      "ids": [
       "-Py4zG23Ogk",
@@ -2620,7 +2539,6 @@
     {
      "k": "audio",
      "l": "UULFWB6NcdierPRCTzmL1M19-w",
-     "hi": "ऑडियो बुक — अंग्रेज़ी",
      "en": "English audio books",
      "ids": [
       "srjeNauCLNg",
@@ -2678,7 +2596,6 @@
   },
   {
    "k": "gu",
-   "n": "ગુજરાતી",
    "en": "Gujarati",
    "t": "Bapuji Dashrathbhai Patel Gujarati Channel",
    "id": "UCF_POx8OSiQ6uBpe3UyhaQw",
@@ -2687,7 +2604,6 @@
     {
      "k": "new",
      "l": "UULFF_POx8OSiQ6uBpe3UyhaQw",
-     "hi": "नए वीडियो",
      "en": "Latest videos",
      "ids": [
       "AFPowJ2nSFM",
@@ -2708,7 +2624,6 @@
     {
      "k": "top",
      "l": "UULPF_POx8OSiQ6uBpe3UyhaQw",
-     "hi": "सबसे ज़्यादा देखे गए",
      "en": "Most viewed",
      "ids": [
       "EWvbGVSaqqA",
@@ -2728,7 +2643,6 @@
     {
      "k": "shorts",
      "l": "UUSHF_POx8OSiQ6uBpe3UyhaQw",
-     "hi": "शॉर्ट्स",
      "en": "Shorts",
      "ids": [
       "wrW892T8KsM",
@@ -2749,7 +2663,6 @@
    "G": [
     {
      "k": "pl",
-     "hi": "प्लेलिस्ट",
      "en": "Playlists",
      "P": [
       {
@@ -2757,24 +2670,21 @@
        "t": "book",
        "c": 25,
        "cv": "BILlpG4PM6k",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLg43sdEbnzqFZji1t8UDHumabPUZeWpq2",
        "t": "bapuji",
        "c": 55,
        "cv": "R2m2yXs1wKY",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLg43sdEbnzqGL-hAcdKutCetd5PDXSv4q",
        "t": "anant",
        "c": 20,
        "cv": "yIYkzriXGIM",
-       "ids": [],
-       "ty": ""
+       "ids": []
       }
      ]
     }
@@ -2807,7 +2717,6 @@
   },
   {
    "k": "te",
-   "n": "తెలుగు",
    "en": "Telugu",
    "t": "Bapuji Dashrathbhai Patel Telugu",
    "id": "UCtwF3g0OiE5h28sRV24ee6g",
@@ -2816,7 +2725,6 @@
     {
      "k": "new",
      "l": "UULFtwF3g0OiE5h28sRV24ee6g",
-     "hi": "नए वीडियो",
      "en": "Latest videos",
      "ids": [
       "WSoOUXPuPeM",
@@ -2837,7 +2745,6 @@
     {
      "k": "top",
      "l": "UULPtwF3g0OiE5h28sRV24ee6g",
-     "hi": "सबसे ज़्यादा देखे गए",
      "en": "Most viewed",
      "ids": [
       "6JWN2y83s3E",
@@ -2857,7 +2764,6 @@
     {
      "k": "shorts",
      "l": "UUSHtwF3g0OiE5h28sRV24ee6g",
-     "hi": "शॉर्ट्स",
      "en": "Shorts",
      "ids": [
       "4ZdqbX4K4KY",
@@ -2880,7 +2786,6 @@
    "G": [
     {
      "k": "pl",
-     "hi": "प्लेलिस्ट",
      "en": "Playlists",
      "P": [
       {
@@ -2888,96 +2793,84 @@
        "t": "Short story video",
        "c": 521,
        "cv": "6poB1EqxdbE",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLGrNMyfX49JcNwkKp2uJGpToh98TbovEE",
        "t": "Anant ki podcast అనుభవాలు",
        "c": 33,
        "cv": "zM5nLN0dDYc",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLGrNMyfX49Jcdl3AMysYK9ruOPA3ZUikl",
        "t": "Sakshi medition విడియోలు",
        "c": 575,
        "cv": "0dASzVjHKOY",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLGrNMyfX49JfqImVsRU_G1QwF11Qcd7Kc",
        "t": "Malayalam Life in mltivers audio book'",
        "c": 3,
        "cv": "sxg7GAnsPLs",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLGrNMyfX49JdW8bJi-D3jgrOrYgY9XlMU",
        "t": "Life in multiverse book ఆడియోలు",
        "c": 34,
        "cv": "SuwlAd2hKn0",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLGrNMyfX49JdeeLk_XW4HhVaIXL2-YFid",
        "t": "2020 బాపూజీ రివిజెన్ కొత్త కోర్స్",
        "c": 52,
        "cv": "kNPqefHIegw",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLGrNMyfX49JfddVk9kvhqZm6mN30iAqxm",
        "t": "స్పేషల్ ధారణా పాయింట్లు .క్లాసులు",
        "c": 74,
        "cv": "ofgaU5sieaM",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLGrNMyfX49JdGNum1IRqxvYgsQ9Hdyaf2",
        "t": "ఈ నాటి పురుషా ర్థం only B.KS",
        "c": 2400,
        "cv": "UNKiGK-oFiQ",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLGrNMyfX49Jc7UeY87Kp4fQBaADBkqNiU",
        "t": "ఆత్మ అనుభూతి- ఆత్మిక స్థితి - atma sadhna gurinchi",
        "c": 49,
        "cv": "hynS4zakdOk",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLGrNMyfX49Je0eM3ocZ_7Wa5mqdi_AUQY",
        "t": "2018 october program videos",
        "c": 13,
        "cv": "aHKs8JAvGxM",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLGrNMyfX49Jd8-RhfjI0YLZCZiDR8kWW6",
        "t": "Tamil dubbing videos",
        "c": 23,
        "cv": "O0HMZaffG1s",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLGrNMyfX49JdrYvTcR4hoI83f0enXSODJ",
        "t": "yoga comentrys",
        "c": 59,
        "cv": "3DogpDKIxXg",
-       "ids": [],
-       "ty": ""
+       "ids": []
       }
      ]
     }
@@ -3011,7 +2904,6 @@
   },
   {
    "k": "bn",
-   "n": "বাংলা",
    "en": "Bengali",
    "t": "Bapuji Dashrathbhai Patel (বাংলা)",
    "id": "UCyrmWCqLhrLca4ezdVDyezA",
@@ -3020,7 +2912,6 @@
     {
      "k": "new",
      "l": "UULFyrmWCqLhrLca4ezdVDyezA",
-     "hi": "नए वीडियो",
      "en": "Latest videos",
      "ids": [
       "piHqQXj2Ss8",
@@ -3041,7 +2932,6 @@
     {
      "k": "top",
      "l": "UULPyrmWCqLhrLca4ezdVDyezA",
-     "hi": "सबसे ज़्यादा देखे गए",
      "en": "Most viewed",
      "ids": [
       "8NaMFnvoZsE",
@@ -3061,7 +2951,6 @@
     {
      "k": "shorts",
      "l": "UUSHyrmWCqLhrLca4ezdVDyezA",
-     "hi": "शॉर्ट्स",
      "en": "Shorts",
      "ids": [
       "jtm32AoYbJ8",
@@ -3084,7 +2973,6 @@
    "G": [
     {
      "k": "pl",
-     "hi": "प्लेलिस्ट",
      "en": "Playlists",
      "P": [
       {
@@ -3092,40 +2980,35 @@
        "t": "Akashic Records & Knowledge Centres",
        "c": 10,
        "cv": "uLnItwt-lmw",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLKpjLzNOWsZ8HFdiVFemoObwXJq6BUV8-",
        "t": "3D TO 5D",
        "c": 9,
        "cv": "ysPhv_FpqqM",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLKpjLzNOWsZ_f0NQC7QxTmBlsRF_jSPcF",
        "t": "পরম শান্তি মেডিটেশন ||পরম শান্তি ধ্যান",
        "c": 4,
        "cv": "2H53fDRDTaI",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLKpjLzNOWsZ_Oz4cPZd42qHDlD-eKMUKV",
        "t": "Life After Death মৃত্যুর পরের জীবন",
        "c": 3,
        "cv": "mP-mMsAuFyQ",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLKpjLzNOWsZ_Fc8wf7nx1ocil0CctxoQ7",
        "t": "(Bengali) VIDEOS",
        "c": 8,
        "cv": "V3NdoOL-uUQ",
-       "ids": [],
-       "ty": ""
+       "ids": []
       }
      ]
     }
@@ -3155,7 +3038,6 @@
   },
   {
    "k": "mr",
-   "n": "मराठी",
    "en": "Marathi",
    "t": "Paramshanti Marathi Parivar",
    "id": "UCLRXSYPtW9J2jl1o6WLX3hQ",
@@ -3164,7 +3046,6 @@
     {
      "k": "new",
      "l": "UULFLRXSYPtW9J2jl1o6WLX3hQ",
-     "hi": "नए वीडियो",
      "en": "Latest videos",
      "ids": [
       "FBsXw3juv5M",
@@ -3185,7 +3066,6 @@
     {
      "k": "top",
      "l": "UULPLRXSYPtW9J2jl1o6WLX3hQ",
-     "hi": "सबसे ज़्यादा देखे गए",
      "en": "Most viewed",
      "ids": [
       "LeLIbPZtTfg",
@@ -3205,7 +3085,6 @@
     {
      "k": "shorts",
      "l": "UUSHLRXSYPtW9J2jl1o6WLX3hQ",
-     "hi": "शॉर्ट्स",
      "en": "Shorts",
      "ids": [
       "IKc5fLOqgJ8",
@@ -3228,7 +3107,6 @@
    "G": [
     {
      "k": "pl",
-     "hi": "प्लेलिस्ट",
      "en": "Playlists",
      "P": [
       {
@@ -3236,96 +3114,84 @@
        "t": "Behad SOuls History",
        "c": 5,
        "cv": "9zDO0nYmjrI",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLF4sxdi-gufAjVX7hyCyrk6Ut3yV3IIZj",
        "t": "2026-2029 Predictions",
        "c": 4,
        "cv": "W8PhKzD-5Go",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLF4sxdi-gufDq02uQHG-Mg7R0jfHwvaK2",
        "t": "Bapuji Gyan Treasures",
        "c": 11,
        "cv": "4DH7wzoPwT8",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLF4sxdi-gufA1prNQm7FBI9e67Bny20oq",
        "t": "Bapuji 2012 Behad Gyan",
        "c": 4,
        "cv": "_aIzyhp0MRI",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLF4sxdi-gufDkmCgl9YaFDVK9a70OE10Z",
        "t": "Old is Gold CD Series",
        "c": 16,
        "cv": "asKPwA4SFJM",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLF4sxdi-gufAamMoCakPSGSwggWGFD-oV",
        "t": "Podcasts by Anantbhai & Sakshiji",
        "c": 11,
        "cv": "DTANvI2yMjU",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLF4sxdi-gufAXuO6X09SgQb0IS7Yikx2T",
        "t": "Wake up Brahmakumaris from False Beliefs Hindi",
        "c": 60,
        "cv": "3W8XITAT9AQ",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLF4sxdi-gufBiZdGMATa22aeC2iyPqDl9",
        "t": "Wake up Brahmakumaris from False Beliefs Marathi 9 लाख ब्रह्माकुमारीजना…",
        "c": 58,
        "cv": "jMeIMRmLFrU",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLF4sxdi-gufCarnI0AlWJYsUlnuzAfM_F",
        "t": "भगवद् गीता सार विशेष व्हिडिओज",
        "c": 26,
        "cv": "aldjVUhEwd4",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLF4sxdi-gufCiuszITpZSfLYDTyjxLAdr",
        "t": "Bapuji Avtaran Divas Special B'day Wishes By Behad Souls",
        "c": 22,
        "cv": "8FuvC4RNf6A",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLF4sxdi-gufBPdM2LHey2Y5KIFJ8vezwo",
        "t": "Maa Bapuji Milan Nov 2023",
        "c": 19,
        "cv": "BieaUh2lbHg",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLF4sxdi-gufC3k_yskeN71TMVKmrFocD-",
        "t": "बेहदचे परम ज्ञान कोर्स 10 Days Behad Gyan Course",
        "c": 15,
        "cv": "iJGP2Q5r0w0",
-       "ids": [],
-       "ty": ""
+       "ids": []
       }
      ]
     }
@@ -3356,7 +3222,6 @@
   },
   {
    "k": "kn",
-   "n": "ಕನ್ನಡ",
    "en": "Kannada",
    "t": "Paramshanti Behad Gyan Kannada",
    "id": "UCIxs7oEgqlnGyWaz2O9mRVg",
@@ -3365,7 +3230,6 @@
     {
      "k": "new",
      "l": "UULFIxs7oEgqlnGyWaz2O9mRVg",
-     "hi": "नए वीडियो",
      "en": "Latest videos",
      "ids": [
       "ElBjwmVF8g0",
@@ -3386,7 +3250,6 @@
     {
      "k": "top",
      "l": "UULPIxs7oEgqlnGyWaz2O9mRVg",
-     "hi": "सबसे ज़्यादा देखे गए",
      "en": "Most viewed",
      "ids": [
       "Z0Xjdg2_lH0",
@@ -3406,7 +3269,6 @@
     {
      "k": "shorts",
      "l": "UUSHIxs7oEgqlnGyWaz2O9mRVg",
-     "hi": "शॉर्ट्स",
      "en": "Shorts",
      "ids": [
       "1CNhCIeMpmw",
@@ -3429,7 +3291,6 @@
    "G": [
     {
      "k": "pl",
-     "hi": "प्लेलिस्ट",
      "en": "Playlists",
      "P": [
       {
@@ -3437,96 +3298,84 @@
        "t": "Aliens|ಏಲಿಯನ್ ವಿಚಾರಗಳು",
        "c": 4,
        "cv": "MvXqPWdSSbo",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLAg-Zh1tmu0z4FQ02b87WPh7S-gkJOPF6",
        "t": "Bapuji New Videos",
        "c": 134,
        "cv": "ElBjwmVF8g0",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLAg-Zh1tmu0zUpPRxSS9MKa2MsS5nWx8L",
        "t": "Sakshi behn videos",
        "c": 3,
        "cv": "5bLoqZ4pQjU",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLAg-Zh1tmu0z_d1McGMGNLBRfiEU9aHNk",
        "t": "ಭವಿಷ್ಯವಾಣಿಗಳು",
        "c": 23,
        "cv": "wdum5rG3z6w",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLAg-Zh1tmu0zbYqGzwd0OWai-f3NV6EBd",
        "t": "ಆಭಾ ಮಂಡಲಕ್ಕೆ ಸಂಬಂದಿಸಿದ ವೀಡಿಯೋಗಳು | videos related to aura",
        "c": 10,
        "cv": "W2-bMtCfI3s",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLAg-Zh1tmu0ziLXwbkC8zynurtX9leAp_",
        "t": "ಧ್ಯಾನಕ್ಕೆ ಸಂಬಂದಿಸಿದ ವೀಡಿಯೋ | videos related to meditation",
        "c": 16,
        "cv": "GZA96ThwkPc",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLAg-Zh1tmu0xqw70gT_80B80GHzdgehtm",
        "t": "ಬೀಜರೂಪಿ ಆತ್ಮಗಳ ಬಗ್ಗೆ | About seed souls",
        "c": 7,
        "cv": "vZdTzfBahMw",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLAg-Zh1tmu0yG5xtMY_8fiQMoxNLbssRW",
        "t": "ಕನ್ನಡದಲ್ಲಿ ಧ್ಯಾನ/meditation in kannada",
        "c": 9,
        "cv": "1vbC4ov7OuQ",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLAg-Zh1tmu0xDtbWH2SXOqjyHxlk0pYfG",
        "t": "ಪರಮಾಪಿತನ ಸಂದೇಶ |Supreme Father's message",
        "c": 82,
        "cv": "vj-aikLiFiY",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLAg-Zh1tmu0xBm81ausVsyrZzCQhUX2Wl",
        "t": "Supreme Father Directions - English",
        "c": 24,
        "cv": "bR0SZz7Bup8",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLAg-Zh1tmu0xfmGbTM-EiknZCgDnN2Y1B",
        "t": "33 ಕೋಟಿ ದೇವತೆಗಳ ವಿಚಾರಗಳು |33 crores devatas videos",
        "c": 11,
        "cv": "rFp08kUMcuY",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLAg-Zh1tmu0xtpmiVnAyv7RLa0HmtSLvh",
        "t": "KANNADA SHORT VIDEOS",
        "c": 64,
        "cv": "1CNhCIeMpmw",
-       "ids": [],
-       "ty": ""
+       "ids": []
       }
      ]
     }
@@ -3557,7 +3406,6 @@
   },
   {
    "k": "pa",
-   "n": "ਪੰਜਾਬੀ",
    "en": "Punjabi",
    "t": "Bapuji Dashrathbhai Patel (Punjabi)",
    "id": "UCCa5UNZLo2e8LLutAEOO1fA",
@@ -3566,7 +3414,6 @@
     {
      "k": "new",
      "l": "UULFCa5UNZLo2e8LLutAEOO1fA",
-     "hi": "नए वीडियो",
      "en": "Latest videos",
      "ids": [
       "IwkySKCZs9I",
@@ -3587,7 +3434,6 @@
     {
      "k": "top",
      "l": "UULPCa5UNZLo2e8LLutAEOO1fA",
-     "hi": "सबसे ज़्यादा देखे गए",
      "en": "Most viewed",
      "ids": [
       "U-hon0cvJ3I",
@@ -3607,7 +3453,6 @@
     {
      "k": "shorts",
      "l": "UUSHCa5UNZLo2e8LLutAEOO1fA",
-     "hi": "शॉर्ट्स",
      "en": "Shorts",
      "ids": [
       "ks8yXbXTxxY",
@@ -3630,7 +3475,6 @@
    "G": [
     {
      "k": "pl",
-     "hi": "प्लेलिस्ट",
      "en": "Playlists",
      "P": [
       {
@@ -3638,96 +3482,84 @@
        "t": "नये बेहद के बेहद की कला के ब्रह्मांड ✨🌍",
        "c": 7,
        "cv": "HM6QNMiG64c",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL-4TplsaFY6d782h9egPFbi9OOcnchldW",
        "t": "साक्षी बहन योग 🧘‍♂️",
        "c": 33,
        "cv": "2jhzEA0p7mI",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL-4TplsaFY6dY0pz5wtZWEhudn7yr0a3S",
        "t": "Punjabi, The Biggners Playlist",
        "c": 13,
        "cv": "as1oSBhOSl0",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL-4TplsaFY6fJ_WHKggod1C0iD-qUG_1n",
        "t": "ज्ञान, योग, सेवा, धारणा 4 विषयो पर videos",
        "c": 6,
        "cv": "oBTyNfg9RDE",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL-4TplsaFY6euC75XfhE0OyNUqXDtDsE5",
        "t": "अंतिम समे तक का योग 🧘‍♂️🙏",
        "c": 11,
        "cv": "uw7ves20bOk",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL-4TplsaFY6cLscbgPAWJLZe6QzYT5KHb",
        "t": "My Podcast with Anant Bhai Ji 🙏",
        "c": 4,
        "cv": "s58CR3Djqqk",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL-4TplsaFY6cO1FCTU5qG0K0rnlnVXsKQ",
        "t": "लाइफ़ इन मल्टिवर्स - झील पटेल",
        "c": 5,
        "cv": "nqbvC9-DZmI",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL-4TplsaFY6dXec42QINMHhnxJj9QuLVP",
        "t": "विश्व शांति महामंत्र",
        "c": 5,
        "cv": "4dDFCGEJrmU",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL-4TplsaFY6fVnqpkQXHvYx723rJZ4sJL",
        "t": "बेहद के बेहद का महा ब्रह्मांड",
        "c": 42,
        "cv": "pQbLs-Wt1sk",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL-4TplsaFY6ceNBcciAJziVkOPuLxDYbT",
        "t": "Bapuji live 2020, 2021 & 2022, 2023, 2024",
        "c": 53,
        "cv": "WuzpxPROkAo",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL-4TplsaFY6fCaK7zvXc-phEGKuQ_mqAe",
        "t": "माँ की powerful वाणी 🙏😇❤️",
        "c": 40,
        "cv": "IdQNZv9si2Q",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL-4TplsaFY6dezg0CKNBGpq8W2iKo728R",
        "t": "Powerful meditation list 😇",
        "c": 91,
        "cv": "7c5kKi2_BWc",
-       "ids": [],
-       "ty": ""
+       "ids": []
       }
      ]
     }
@@ -3758,7 +3590,6 @@
   },
   {
    "k": "med",
-   "n": "ध्यान",
    "en": "Meditation",
    "t": "Paramshanti Motivation & Meditation · Sakshi Patel",
    "id": "UCeu5noUbaRSDrO3Jn4VSOZQ",
@@ -3767,7 +3598,6 @@
     {
      "k": "new",
      "l": "UULFeu5noUbaRSDrO3Jn4VSOZQ",
-     "hi": "नए वीडियो",
      "en": "Latest videos",
      "ids": [
       "eV019uN-Eqw",
@@ -3788,7 +3618,6 @@
     {
      "k": "live",
      "l": "UULVeu5noUbaRSDrO3Jn4VSOZQ",
-     "hi": "लाइव",
      "en": "Live streams",
      "ids": [
       "VuuJz1Yd4wo",
@@ -3809,7 +3638,6 @@
     {
      "k": "top",
      "l": "UULPeu5noUbaRSDrO3Jn4VSOZQ",
-     "hi": "सबसे ज़्यादा देखे गए",
      "en": "Most viewed",
      "ids": [
       "nh6Ge-kj_W4",
@@ -3829,7 +3657,6 @@
     {
      "k": "shorts",
      "l": "UUSHeu5noUbaRSDrO3Jn4VSOZQ",
-     "hi": "शॉर्ट्स",
      "en": "Shorts",
      "ids": [
       "pllcWsU36vg",
@@ -3852,7 +3679,6 @@
    "G": [
     {
      "k": "pl",
-     "hi": "प्लेलिस्ट",
      "en": "Playlists",
      "P": [
       {
@@ -3860,96 +3686,84 @@
        "t": "Pitru & Afterlife",
        "c": 7,
        "cv": "T40-VHPYHis",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLeLpEpPeTRhw",
        "t": "Shravan Special eps",
        "c": 4,
        "cv": "4iucHa_jNuc",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLbLeZ_us36d4",
        "t": "Bapuji important video discussion and explaination",
        "c": 9,
        "cv": "SiKp6L_AwM0",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLE2LA-EruQLw",
        "t": "Book Review",
        "c": 11,
        "cv": "Tx-CFCoSr2U",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLb8F7kBe5Xj59Fmda5OGh08d65JwRHkxw",
        "t": "Behad ki upanishad ganga",
        "c": 56,
        "cv": "byHtCVkQSdY",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLb8F7kBe5Xj5Sp-FAHA06I5xXUylU_xU-",
        "t": "My podcast on other channels",
        "c": 19,
        "cv": "ckRtjYfe6f4",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLb8F7kBe5Xj75qd4U25xqTynV7zDo9igF",
        "t": "2024 Bapuji Milan Program LIVE MEDITATION",
        "c": 4,
        "cv": "IkbUhx9hsJA",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLb8F7kBe5Xj5uXY6C6s9LmESA9fhovQ6a",
        "t": "Best Live Meditation videos for Wisdom",
        "c": 39,
        "cv": "hDmrLTWroVA",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLb8F7kBe5Xj4HbZlUjdB5aBAw7n8IwRk7",
        "t": "Spiritual 10 Days course in English",
        "c": 10,
        "cv": "OIvI8_yhopQ",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLb8F7kBe5Xj4ja83GHjQtmyO16SLTxECQ",
        "t": "ज्ञान, योग, सेवा , धारणा क्या है?",
        "c": 6,
        "cv": "oBTyNfg9RDE",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLb8F7kBe5Xj5sLKJ-KHbW7dgVrgaEQCri",
        "t": "Preview- Explore the Spiritual Course|Sakshi Patel |Behad ka Param Gyan…",
        "c": 26,
        "cv": "AUZ7rrqc7Fs",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PLb8F7kBe5Xj7Mn2KR6gQvkN4VECujfn9p",
        "t": "Explore the Spiritual Course| Sakshi Patel |Behad ka Param Gyan| Sanata…",
        "c": 10,
        "cv": "WxnUNo1RKyM",
-       "ids": [],
-       "ty": ""
+       "ids": []
       }
      ]
     }
@@ -3994,7 +3808,6 @@
   },
   {
    "k": "pod",
-   "n": "पॉडकास्ट",
    "en": "Podcast",
    "t": "Spiritual Podcast with Anant",
    "id": "UCJhEOXyopqiGMliWhEzLvRw",
@@ -4003,7 +3816,6 @@
     {
      "k": "new",
      "l": "UULFJhEOXyopqiGMliWhEzLvRw",
-     "hi": "नए वीडियो",
      "en": "Latest videos",
      "ids": [
       "KjKbLUGDMr0",
@@ -4024,7 +3836,6 @@
     {
      "k": "live",
      "l": "UULVJhEOXyopqiGMliWhEzLvRw",
-     "hi": "लाइव",
      "en": "Live streams",
      "ids": [
       "WgdnrcwHosU",
@@ -4045,7 +3856,6 @@
     {
      "k": "top",
      "l": "UULPJhEOXyopqiGMliWhEzLvRw",
-     "hi": "सबसे ज़्यादा देखे गए",
      "en": "Most viewed",
      "ids": [
       "tYKYSGxnIZI",
@@ -4065,7 +3875,6 @@
     {
      "k": "shorts",
      "l": "UUSHJhEOXyopqiGMliWhEzLvRw",
-     "hi": "शॉर्ट्स",
      "en": "Shorts",
      "ids": [
       "vUs-CNfaPt0",
@@ -4088,7 +3897,6 @@
    "G": [
     {
      "k": "pl",
-     "hi": "प्लेलिस्ट",
      "en": "Playlists",
      "P": [
       {
@@ -4096,8 +3904,7 @@
        "t": "ALL Podcast",
        "c": 234,
        "cv": "poEA6R5nfJI",
-       "ids": [],
-       "ty": ""
+       "ids": []
       }
      ]
     }
@@ -4141,7 +3948,6 @@
   },
   {
    "k": "maa",
-   "n": "माँ का संदेश",
    "en": "Maa ka Sandesh",
    "t": "Maa ka Divya Sandesh माँ का दिव्य संदेश",
    "id": "UCYYSAqrtwdKW8dzxHHMbDeA",
@@ -4150,7 +3956,6 @@
     {
      "k": "new",
      "l": "UULFYYSAqrtwdKW8dzxHHMbDeA",
-     "hi": "नए वीडियो",
      "en": "Latest videos",
      "ids": [
       "chhgI_bFYV0",
@@ -4171,7 +3976,6 @@
     {
      "k": "top",
      "l": "UULPYYSAqrtwdKW8dzxHHMbDeA",
-     "hi": "सबसे ज़्यादा देखे गए",
      "en": "Most viewed",
      "ids": [
       "W-YiEf8JVZU",
@@ -4191,7 +3995,6 @@
     {
      "k": "shorts",
      "l": "UUSHYYSAqrtwdKW8dzxHHMbDeA",
-     "hi": "शॉर्ट्स",
      "en": "Shorts",
      "ids": [
       "0DoYBQuZLcI",
@@ -4214,7 +4017,6 @@
    "G": [
     {
      "k": "pl",
-     "hi": "प्लेलिस्ट",
      "en": "Playlists",
      "P": [
       {
@@ -4222,96 +4024,84 @@
        "t": "Maa Divya Sandesh (English)",
        "c": 37,
        "cv": "G3g1cSw9o7A",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL2alkWGa9R5nAgm6-lEYrvkHdKFaIzI5I",
        "t": "1",
        "c": 8,
        "cv": "d2YaL8P_fyU",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL2alkWGa9R5mAG8Dm6t3EWAXBTQspRibF",
        "t": "tamil",
        "c": 7,
        "cv": "_xerEB9R1HQ",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL2alkWGa9R5nS3bWLq9Sz1W1ww17YpmDq",
        "t": "punjabi",
        "c": 44,
        "cv": "W9opRPHM8ic",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PL2alkWGa9R5mk2w_o-61_cdd6sfeV0C-O",
        "t": "bengali",
        "c": 17,
        "cv": "SBa9XXnD2HU",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL2alkWGa9R5lugrXvxbaBFOXYKskqjfAx",
        "t": "gujarati",
        "c": 3,
        "cv": "Jk1HMfroHak",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL2alkWGa9R5nlaAwHJeyUYJvCAu8Piu0y",
        "t": "odia",
        "c": 17,
        "cv": "dx92Pn9te_E",
-       "ids": [],
-       "ty": "p"
+       "ids": []
       },
       {
        "l": "PL2alkWGa9R5kKD9JmpORGDxyattezRoTv",
        "t": "Marathi",
        "c": 36,
        "cv": "JaW7XLy9_10",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL2alkWGa9R5mpzWGDDmBZZGZcDVwM2ZCP",
        "t": "Marwari",
        "c": 8,
        "cv": "vUiQJC9_jJA",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL2alkWGa9R5lWzND4ZXzFRWISUHhBGR7D",
        "t": "Nepali",
        "c": 68,
        "cv": "qwITm5TI4ew",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL2alkWGa9R5neXUIjQf9MOn6N4es-wy3I",
        "t": "Bapuji's Most Watched Videos",
        "c": 9,
        "cv": "uSFD4pAtV3Q",
-       "ids": [],
-       "ty": ""
+       "ids": []
       },
       {
        "l": "PL2alkWGa9R5mJ-icdk9mhVflwHbEXE9DO",
        "t": "Daily Sandesh",
        "c": 495,
        "cv": "6y9HXc50cwE",
-       "ids": [],
-       "ty": ""
+       "ids": []
       }
      ]
     }

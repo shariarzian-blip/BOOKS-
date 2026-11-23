@@ -248,6 +248,15 @@ def build(cache):
             for p in g["P"]:
                 used.update(p["ids"])
     V = {k: v for k, v in cat.V.items() if k in used}
+    # the page is English only: drop the Hindi labels and native-script channel names it no longer shows
+    for ch in channels:
+        ch.pop("n", None)
+        for r in ch["R"]:
+            r.pop("hi", None)
+        for g in ch["G"]:
+            g.pop("hi", None)
+            for p in g["P"]:
+                p.pop("ty", None)
     return {"gen": datetime.date.today().isoformat(), "main": main_id, "V": V, "C": channels}
 
 

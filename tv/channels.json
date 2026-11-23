@@ -146,19 +146,6 @@
       ]
     },
     {
-      "key": "media",
-      "hi": "फ़िल्में, ऑडियो बुक और गीत",
-      "en": "Films, audio books & songs",
-      "lists": [
-        "PLIQms2VNi018",
-        "PLhwIbX87USVFjkV_q8vHtTtzjWOJqrQ5I",
-        "PLhwIbX87USVEoEDrQKR2BmGH7Mqoidt4Z",
-        "PLhwIbX87USVEzNegEHHacrynd50xQHUQA",
-        "PLhwIbX87USVEM2Y0TMZ-oNEjIGTkpdFgO",
-        "PLhwIbX87USVH-EZ3KJt-Y5Bjt5F62uviq"
-      ]
-    },
-    {
       "key": "more",
       "hi": "और प्लेलिस्ट",
       "en": "More playlists",
@@ -167,6 +154,14 @@
         "PLSOi3_jqOKqM",
         "PLhwIbX87USVGPxUv1w7TzEtRjYuhCtVpm",
         "PLhwIbX87USVHkGagUtOalE6aBX8V68Z_p"
+      ],
+      "lists": [
+        "PLIQms2VNi018",
+        "PLhwIbX87USVFjkV_q8vHtTtzjWOJqrQ5I",
+        "PLhwIbX87USVEoEDrQKR2BmGH7Mqoidt4Z",
+        "PLhwIbX87USVEzNegEHHacrynd50xQHUQA",
+        "PLhwIbX87USVEM2Y0TMZ-oNEjIGTkpdFgO",
+        "PLhwIbX87USVH-EZ3KJt-Y5Bjt5F62uviq"
       ]
     }
   ],
