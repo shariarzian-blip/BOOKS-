@@ -1,0 +1,190 @@
+{
+  "note": "Channel line-up for Paramshanti TV. Edit, then run fetch.sh and build.py.",
+  "rowSize": 20,
+  "rowSizeOther": 12,
+  "shortsSize": 12,
+  "collectionPreview": 0,
+  "channels": [
+    {
+      "key": "hi",
+      "name": "हिंदी",
+      "en": "Hindi",
+      "title": "Bapuji Dashrathbhai Patel",
+      "id": "UC01X7d2bKFGxdk8tQ0ZKzOQ",
+      "handle": "@bapujidashrathbhaipatel",
+      "live": [
+        22,
+        0,
+        100
+      ],
+      "main": true
+    },
+    {
+      "key": "en",
+      "name": "English",
+      "en": "English",
+      "title": "Bapuji in English",
+      "id": "UC01X7d2bKFGxdk8tQ0ZKzOQ",
+      "handle": "@bapujidashrathbhaipatel",
+      "custom": "english"
+    },
+    {
+      "key": "gu",
+      "name": "ગુજરાતી",
+      "en": "Gujarati",
+      "title": "Bapuji Dashrathbhai Patel Gujarati Channel",
+      "id": "UCF_POx8OSiQ6uBpe3UyhaQw",
+      "handle": "@paramshantigujarati"
+    },
+    {
+      "key": "te",
+      "name": "తెలుగు",
+      "en": "Telugu",
+      "title": "Bapuji Dashrathbhai Patel Telugu",
+      "id": "UCtwF3g0OiE5h28sRV24ee6g",
+      "handle": "@bapujidashrathbhaipateltel3587"
+    },
+    {
+      "key": "bn",
+      "name": "বাংলা",
+      "en": "Bengali",
+      "title": "Bapuji Dashrathbhai Patel (বাংলা)",
+      "id": "UCyrmWCqLhrLca4ezdVDyezA",
+      "handle": "@Bangla.Bapujibehadgyan"
+    },
+    {
+      "key": "mr",
+      "name": "मराठी",
+      "en": "Marathi",
+      "title": "Paramshanti Marathi Parivar",
+      "id": "UCLRXSYPtW9J2jl1o6WLX3hQ",
+      "handle": "@paramshantimarathiparivar9900"
+    },
+    {
+      "key": "kn",
+      "name": "ಕನ್ನಡ",
+      "en": "Kannada",
+      "title": "Paramshanti Behad Gyan Kannada",
+      "id": "UCIxs7oEgqlnGyWaz2O9mRVg",
+      "handle": "@paramshantikannada"
+    },
+    {
+      "key": "pa",
+      "name": "ਪੰਜਾਬੀ",
+      "en": "Punjabi",
+      "title": "Bapuji Dashrathbhai Patel (Punjabi)",
+      "id": "UCCa5UNZLo2e8LLutAEOO1fA",
+      "handle": "channel/UCCa5UNZLo2e8LLutAEOO1fA"
+    },
+    {
+      "key": "med",
+      "name": "ध्यान",
+      "en": "Meditation",
+      "title": "Paramshanti Motivation & Meditation · Sakshi Patel",
+      "id": "UCeu5noUbaRSDrO3Jn4VSOZQ",
+      "handle": "@paramshantimeditation"
+    },
+    {
+      "key": "pod",
+      "name": "पॉडकास्ट",
+      "en": "Podcast",
+      "title": "Spiritual Podcast with Anant",
+      "id": "UCJhEOXyopqiGMliWhEzLvRw",
+      "handle": "@spiritualpodcastwithanant"
+    },
+    {
+      "key": "maa",
+      "name": "माँ का संदेश",
+      "en": "Maa ka Sandesh",
+      "title": "Maa ka Divya Sandesh माँ का दिव्य संदेश",
+      "id": "UCYYSAqrtwdKW8dzxHHMbDeA",
+      "handle": "channel/UCYYSAqrtwdKW8dzxHHMbDeA"
+    }
+  ],
+  "mainGroups": [
+    {
+      "key": "start",
+      "hi": "शुरुआत यहाँ से",
+      "en": "Start here",
+      "lists": [
+        "PLhwIbX87USVHjMcC--WcJ9CFEKwW0WIJ3",
+        "PLb8F7kBe5Xj7Mn2KR6gQvkN4VECujfn9p",
+        "PLhwIbX87USVF3Cdph7AUNEdCyrkh4Y_Mr",
+        "PLhwIbX87USVHXS1E1hMO6DHUp_Cj76ewe",
+        "PLhwIbX87USVEdNd_8jLi3_dMTf7pNONLX",
+        "PLhwIbX87USVH7mKRdJky50rm9QdZocONP",
+        "PLhwIbX87USVE_DgY37tMvaROzxz40SbHE",
+        "PLhwIbX87USVHAMdNEQ1WoWexVqR_fOikk"
+      ]
+    },
+    {
+      "key": "courses",
+      "hi": "कोर्स",
+      "en": "Courses",
+      "types": [
+        "COURSE"
+      ],
+      "lists": [
+        "PLhwIbX87USVFJbuxEY-0arMrNCaJGluBH"
+      ],
+      "listsLast": true
+    },
+    {
+      "key": "podcasts",
+      "hi": "बापूजी और अनंत पटेल · पॉडकास्ट",
+      "en": "Podcasts with Bapuji & Anant Patel",
+      "types": [
+        "PODCAST"
+      ],
+      "lists": [
+        "PLhwIbX87USVGx4xIb-Cai0b9Ret3ppK-0",
+        "PLhwIbX87USVGbifVLNSXjLQweLHPOf1BS",
+        "PLhwIbX87USVEFZ_IgwiEhtI_zBH3ORVR2"
+      ],
+      "exclude": [
+        "PLhwIbX87USVEzNegEHHacrynd50xQHUQA"
+      ]
+    },
+    {
+      "key": "media",
+      "hi": "फ़िल्में, ऑडियो बुक और गीत",
+      "en": "Films, audio books & songs",
+      "lists": [
+        "PLIQms2VNi018",
+        "PLhwIbX87USVFjkV_q8vHtTtzjWOJqrQ5I",
+        "PLhwIbX87USVEoEDrQKR2BmGH7Mqoidt4Z",
+        "PLhwIbX87USVEzNegEHHacrynd50xQHUQA",
+        "PLhwIbX87USVEM2Y0TMZ-oNEjIGTkpdFgO",
+        "PLhwIbX87USVH-EZ3KJt-Y5Bjt5F62uviq"
+      ]
+    },
+    {
+      "key": "more",
+      "hi": "और प्लेलिस्ट",
+      "en": "More playlists",
+      "rest": true,
+      "exclude": [
+        "PLSOi3_jqOKqM",
+        "PLhwIbX87USVGPxUv1w7TzEtRjYuhCtVpm",
+        "PLhwIbX87USVHkGagUtOalE6aBX8V68Z_p"
+      ]
+    }
+  ],
+  "english": {
+    "rows": [
+      {
+        "key": "new",
+        "list": "PLhwIbX87USVHkGagUtOalE6aBX8V68Z_p",
+        "hi": "नए अंग्रेज़ी वीडियो",
+        "en": "Latest English videos"
+      },
+      {
+        "key": "all",
+        "list": "PLhwIbX87USVGPxUv1w7TzEtRjYuhCtVpm",
+        "hi": "बापूजी के वीडियो — अंग्रेज़ी में",
+        "en": "Bapuji's videos in English"
+      }
+    ],
+    "extraChannel": "UCWB6NcdierPRCTzmL1M19-w"
+  }
+}
